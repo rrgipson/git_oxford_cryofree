@@ -296,18 +296,20 @@ class Application:
                     vti_temp= (0.988*float(temperature)) - 0.063 #based on regression of factor tested temp offsets
                 else: 
                     vti_temp= (0.984*float(temperature)) - 0.999
-                
+
+                stop=False
                 print("Setting VTI Temp to", vti_temp)
                 vti_response = self.serial_t.transmit(isobus_temp + 'T' + format_temp(vti_temp))
                 if vti_response[0] == '?':
                     print('TempControl: Instrument confused by VTI Temp Setting', '\a')  # try to beep
-                    break
+                    stop=True
                     
-                self.serial_t.transmit(isobus_temp+'H3', 'TempControl: Error changing back to Sample Temp') #Change back to Sample Temp sensor
-                print("Setting Sample Temp to", temperature)
-                response = self.serial_t.transmit(isobus_temp + 'T' + format_temp(temperature))
-                if response[0] == '?':
-                    print('TempControl: Instrument confused by', self.gui.user_temperature(), '\a')  # try to beep
+                if not stop:
+                    self.serial_t.transmit(isobus_temp+'H3', 'TempControl: Error changing back to Sample Temp') #Change back to Sample Temp sensor
+                    print("Setting Sample Temp to", temperature)
+                    response = self.serial_t.transmit(isobus_temp + 'T' + format_temp(temperature))
+                    if response[0] == '?':
+                        print('TempControl: Instrument confused by', self.gui.user_temperature(), '\a')  # try to beep
 
         self.get_temperature()
 
