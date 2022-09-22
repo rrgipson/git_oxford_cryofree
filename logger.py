@@ -3,6 +3,7 @@ Will hopefully eventually include both background logging always happening
 as well as logging notes during scan collection'''
 
 import os
+import sys
 from time import sleep
 from threading import Thread
 import csv
@@ -17,7 +18,10 @@ def print(*args, sep=' ', end='\n',**kwargs):
             f.write(str(s))
             f.write(sep)
         f.write(end)
-        
+
+def print_to_log(string):
+    with open('UserLogs/error_log.txt', 'a+') as f:
+        f.write(string)
 
 class LOGGER:
     def __init__(self):
