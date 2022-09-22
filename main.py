@@ -122,6 +122,7 @@ class Application:
             'X' to inspect the current state of the system
         Based on the current state of the system, prepares the system in a specific state.
         """
+        print_to_log('Initializing serial_connect Procedure')
         # Try to open communication to the COM port, and switch 'Connect' button to 'Disconnect' if successful
         self.serial_m.port = default_comport_m
         self.serial_t.port = default_comport_t
@@ -211,9 +212,12 @@ class Application:
 
         #start logging
         self.start_bg_logging()
+
+        print_to_log('Finished serial_connect Procedure')
     
                 
     def serial_disconnect(self):
+        print_to_log('Initializing serial_disconnect Procedure')
         if self.serial_t.is_open:
             if self._temp_connect:
                 self.serial_t.transmit(isobus_temp+temperature_return_control)
@@ -826,6 +830,7 @@ class Application:
 
 
 if __name__ == '__main__':
+    print_to_log('------------------------------New Session Started')
     print(datetime.datetime.now())
     app = Application()
     app.run()

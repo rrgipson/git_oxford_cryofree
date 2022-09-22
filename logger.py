@@ -21,7 +21,7 @@ def print(*args, sep=' ', end='\n',**kwargs):
 
 def print_to_log(string):
     with open('UserLogs/error_log.txt', 'a+') as f:
-        f.write(string)
+        f.write(string + '\n')
 
 class LOGGER:
     def __init__(self):
