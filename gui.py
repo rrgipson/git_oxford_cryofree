@@ -238,6 +238,10 @@ class GUI(tk.Frame):
         fields_string=self.ent_vtvh_field.get().replace(' ', '')
         return list(fields_string.split(','))
     
+    def user_vtvh_temps(self):
+        temps_string=self.ent_vtvh_temps.get().replace(' ', '')
+        return list(temps_string.split(','))
+    
     def user_scanTime(self):
         return self.ent_vtvh_scanTime.get().replace(' ', '')
 

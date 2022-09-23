@@ -724,11 +724,11 @@ class Application:
         if self._field_connect:
             self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field)
         if self._temp_connect:
-             self.vtvh_logger.assign_temp_log_fxns() #TODO ADD TEMP GET FUNCTIONS
+             self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_nv_pressure=self.get_nv_value)
         
         
         #go to each field and scan
-        scan_num=0
+        scan_num=1
         for h in field_list:
             #check if interrupt was pressed
             if self._vtvh_interrupt == True:
@@ -778,7 +778,6 @@ class Application:
             print('Waiting for switch heater to cool (5 mins).')
             sleep(300)
         
-        #Currently leaves switch heater on at end of isotherm
         #set Cryofree GUI at END
         self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_INACTIVE)
         self._vtvh_interrupt = False
@@ -791,6 +790,7 @@ class Application:
                 print('Magnet: VTVH is currently in progress; interrupt or try again afterwards')
             else:  # if there are no background threads taking action
                 vhs=self.gui.user_vtvh_field()
+                temps=self.gui.user_vtvh_temps()
                 st=self.gui.user_scanTime()
                 #set Cryofree GUI
                 self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_ACTIVE)
