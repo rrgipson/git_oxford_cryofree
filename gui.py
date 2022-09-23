@@ -17,7 +17,7 @@ NOT_REFRESHING = 'not_refreshing'
 VTVH_ACTIVE = 'active'
 VTVH_INACTIVE = 'inactive'
 ISOTHERM_DEFAULTS=[0,7,0,-7,0]
-
+TEMP_DEFAULTS=['Work in Progress']
 
 class GUI(tk.Frame):
     def __init__(self, master=tk.Tk()):
@@ -89,17 +89,28 @@ class GUI(tk.Frame):
         #VTVH/isotherm entry and button
         self.frm_vtvh=tk.Frame(self.frm_cryofree)
         self.frm_vtvh.grid(row=2, column=0, sticky=tk.N, padx=3, pady=10)
-        self.lbl_vtvh_fields=tk.Label(self.frm_vtvh, text='Collect Isotherm')
-        self.lbl_vtvh_fields.grid(row=0)
+        self.lbl_vtvh=tk.Label(self.frm_vtvh, text='VTVH', font=med_font+' underline')
+        self.lbl_vtvh.grid(row=0)
+        self.lbl_vtvh_fields=tk.Label(self.frm_vtvh, text='Fields for VTVH (T)')
+        self.lbl_vtvh_fields.grid(row=1)
         self.ent_vtvh_field = tk.Entry(self.frm_vtvh, fg='white', bg='black', insertbackground='white',
                                         font=small_font, width=36, disabledforeground='black',
                                         disabledbackground='white', justify='center')
-        self.ent_vtvh_field.grid(row=1)
+        self.ent_vtvh_field.grid(row=2)
         self.ent_vtvh_field.insert(tk.END, ','.join(map(str,ISOTHERM_DEFAULTS)))
         self.ent_vtvh_field['state'] = 'disabled'
         
+        self.lbl_vtvh_temps=tk.Label(self.frm_vtvh, text='Temps for VTVH (K)')
+        self.lbl_vtvh_temps.grid(row=3)
+        self.ent_vtvh_temps = tk.Entry(self.frm_vtvh, fg='white', bg='black', insertbackground='white',
+                                        font=small_font, width=36, disabledforeground='black',
+                                        disabledbackground='white', justify='center')
+        self.ent_vtvh_temps.grid(row=4)
+        self.ent_vtvh_temps.insert(tk.END, ','.join(map(str,TEMP_DEFAULTS)))
+        self.ent_vtvh_temps['state'] = 'disabled'
+        
         self.frm_scanTime=tk.Frame(self.frm_vtvh)
-        self.frm_scanTime.grid(row=2, column=0, sticky=tk.N, padx=3)
+        self.frm_scanTime.grid(row=5, column=0, sticky=tk.N, padx=3)
         self.lbl_vtvh_scanTime=tk.Label(self.frm_scanTime, text='How long is J1700 Scan (seconds)?')
         self.lbl_vtvh_scanTime.grid(row=0, column=0)
         self.ent_vtvh_scanTime = tk.Entry(self.frm_scanTime, fg='white', bg='black', insertbackground='white',
@@ -109,8 +120,8 @@ class GUI(tk.Frame):
         self.ent_vtvh_scanTime.insert(tk.END, '0')
         self.ent_vtvh_scanTime['state'] = 'disabled'
         
-        self.btn_vtvh = tk.Button(self.frm_vtvh, text='Collect Isotherm', state='disabled')
-        self.btn_vtvh.grid(row=3)
+        self.btn_vtvh = tk.Button(self.frm_vtvh, text='Run VTVH (Currently just isotherm)', state='disabled')
+        self.btn_vtvh.grid(row=6)
         
         
         # Temperature frame
@@ -400,12 +411,14 @@ class GUI(tk.Frame):
                     self.btn_vtvh['text'] = 'Collect Isotherm'
                     self.btn_vtvh['command'] = self.func_vtvh
                     self.ent_vtvh_field['state'] = 'normal'
+                    #self.ent_vtvh_temps['state'] = 'normal'
                     self.ent_vtvh_scanTime['state'] = 'normal'
                 elif vtvh_status == VTVH_ACTIVE:
                     self.btn_vtvh['state'] = 'normal'
                     self.btn_vtvh['text'] = 'Interrupt VTVH'
                     self.btn_vtvh['command'] = self.func_vtvh_interrupt
                     self.ent_vtvh_field['state'] = 'disabled'
+                    self.ent_vtvh_temps['state'] = 'disabled'
                     self.ent_vtvh_scanTime['state'] = 'disabled'
 
         else:
@@ -413,6 +426,7 @@ class GUI(tk.Frame):
             self.btn_vtvh['state'] = 'disabled'
             self.btn_vtvh['text'] = 'Collect Isotherm'
             self.ent_vtvh_field['state'] = 'disabled'
+            self.ent_vtvh_temps['state'] = 'disabled'
             self.ent_vtvh_scanTime['state'] = 'disabled'
 
 if __name__ == '__main__':
