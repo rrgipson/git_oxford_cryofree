@@ -273,7 +273,7 @@ class Application:
         self.gui.update_temps(sensor1='—', sensor3='—', current_nv= '—')
         return
 
-    def set_temperature(self, *args):
+    def set_temperature(self, temperature=None, *args):
         if self.serial_t.is_open and self._temp_connect:
             self.serial_t.transmit(isobus_temp+'A1', 'TempControl: Error setting heater to Auto') #CRYOFREE - CURRENTLY SETS HEATER TO AUTO AND GAS TO MANUAL
             temperature = self.gui.user_temperature()
@@ -766,6 +766,118 @@ class Application:
             
             #iterate scan number
             scan_num+=1
+
+        #Does not return to 0 at end because this is commented out
+        #if didn't end at zero and didn't interrupt, go to zero
+        #if int(field_list[-1]) != 0 and self._vtvh_interrupt==False:
+        #    self.zero_field()
+
+        #TODO TURN OFF SWITCH HEATER AT END AND IF DIDNT INTERRUPT
+        if self._vtvh_interrupt==False and self._switch_status == SWITCH_ENABLED:
+            self.disengage_switch_heater()
+            print('Waiting for switch heater to cool (5 mins).')
+            sleep(300)
+        
+        #set Cryofree GUI at END
+        self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_INACTIVE)
+        self._vtvh_interrupt = False
+        print('VTVH Ended')
+        self._vtvh_thread = None
+        
+    def _collect_full_vtvh(self, field_list, temp_list, scanTime):      
+        #measure scan duration??
+
+        #Check if fields are in correct range
+        if any(abs(float(h)) > 7 for h in field_list):
+            print('Error in Fields: Must be between -7 and 7 T')
+            self.vtvh_interrupt()
+            
+        #Check if temps are in correct range
+        if any(float(t) < 0 for t in temp_list) or any(float(t) > 300 for t in temp_list):
+            print('Error in Temps: Must be between 0 and 300 K')
+            self.vtvh_interrupt()
+        
+        #Read the inputted time for scan and use as delay
+        scanDelay=int(scanTime)
+        if scanDelay > 0:
+            print('Each scan takes %i seconds.'%scanDelay)
+        else:
+            print('Invalid Time Delay for Scan')
+            self.vtvh_interrupt()
+        
+        #turn on switch heater
+        if self._switch_status in [SWITCH_DISABLED, SWITCH_WARMING, SWITCH_COOLING] and not self._vtvh_interrupt:
+            self.engage_switch_heater()
+            print('Waiting for switch heater to warm up (5 mins).')
+            sleep(300)
+        elif self._switch_status == SWITCH_ENABLED and not self._vtvh_interrupt:
+            print('Switch Heater ON: Waiting 5 Mins.')
+            sleep(300) #Wait 5 minutes even if switch heater is on
+        else: #interrupt or switch error
+            self.vtvh_interrupt()
+        
+        #setup logging
+        self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
+        if self._field_connect:
+            self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field)
+        if self._temp_connect:
+             self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_nv_pressure=self.get_nv_value)
+        
+        #go to each temperature
+        for t in temp_list:
+            #check if interrupt was pressed
+            if self._vtvh_interrupt == True:
+                break
+            
+            #update temp setpoint on gui then on instrument
+            self.gui.update_temps(setpoint=str(t)+'K')
+            self.set_temperature()
+            
+            #check every minute to see if have reached the correct temp
+            while abs(float(t)-float(self.get_sample_temp)) > 0.01:
+                if self._vtvh_interrupt == True:
+                    break
+                sleep(60)
+            
+            #go to each field and scan
+            scan_num=1
+            for h in field_list:
+                #check if interrupt was pressed
+                if self._vtvh_interrupt == True:
+                    break
+                #check ramp rate
+                if float(self.get_ramp_rate()) > 0.154:
+                    print('RAMP RATE EXCEEDS LIMIT: Ending VTVH. Change Rate before proceeding.')
+                    self.vtvh_interrupt()
+                    break
+                #check magnet temp
+                if float(self.get_magnet_temp()) > 4.00:
+                    print('Magnet is Too Warm: Ending VTVH')
+                    self.vtvh_interrupt()
+                    break
+
+                #go to next field
+                self.set_field_and_go(newfield=h)
+                #Let field stabilize
+                sleep(30)
+
+                #check if interrupt was pressed
+                if self._vtvh_interrupt == True:
+                    break
+
+                #log at start of scan
+                self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
+
+                #take a scan 
+                print('Taking a Scan')
+                j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
+                sleep(scanDelay) #for scan waiting
+
+                #log at end of scan
+                self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
+
+                #iterate scan number
+                scan_num+=1
 
         #Does not return to 0 at end because this is commented out
         #if didn't end at zero and didn't interrupt, go to zero
