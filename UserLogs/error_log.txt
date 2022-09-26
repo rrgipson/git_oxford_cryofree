@@ -36,3 +36,5 @@ Initializing serial_disconnect Procedure
 @2C3 C 
 @1A0 A0 
 @1C1 C 
+------------------------------New Session Started
+2022-09-26 09:31:40.251364 
