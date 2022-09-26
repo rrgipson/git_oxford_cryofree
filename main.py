@@ -772,7 +772,7 @@ class Application:
         #if int(field_list[-1]) != 0 and self._vtvh_interrupt==False:
         #    self.zero_field()
 
-        #TODO TURN OFF SWITCH HEATER AT END AND IF DIDNT INTERRUPT
+        #TURN OFF SWITCH HEATER AT END AND IF DIDNT INTERRUPT
         if self._vtvh_interrupt==False and self._switch_status == SWITCH_ENABLED:
             self.disengage_switch_heater()
             print('Waiting for switch heater to cool (5 mins).')
@@ -822,45 +822,56 @@ class Application:
             self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field)
         if self._temp_connect:
              self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_nv_pressure=self.get_nv_value)
-        
-        #go to each temperature
-        for t in temp_list:
+            
+        #go to each field
+        scan_num=1
+        for h in field_list:
             #check if interrupt was pressed
             if self._vtvh_interrupt == True:
                 break
+            #check ramp rate
+            if float(self.get_ramp_rate()) > 0.154:
+                print('RAMP RATE EXCEEDS LIMIT: Ending VTVH. Change Rate before proceeding.')
+                self.vtvh_interrupt()
+                break
+            #check magnet temp
+            if float(self.get_magnet_temp()) > 4.00:
+                print('Magnet is Too Warm: Ending VTVH')
+                self.vtvh_interrupt()
+                break
+
+            #go to next field
+            self.set_field_and_go(newfield=h)
+            #Let field stabilize
+            sleep(30)
+            print('Next Field Reaches %f T'%h)
             
-            #update temp setpoint on gui then on instrument
-            self.gui.update_temps(setpoint=str(t)+'K')
-            self.set_temperature()
-            
-            #check every minute to see if have reached the correct temp
-            while abs(float(t)-float(self.get_sample_temp)) > 0.01:
-                if self._vtvh_interrupt == True:
-                    break
-                sleep(60)
-            
-            #go to each field and scan
-            scan_num=1
-            for h in field_list:
+            #go to each temperature and scan
+            for t in temp_list:
                 #check if interrupt was pressed
                 if self._vtvh_interrupt == True:
                     break
-                #check ramp rate
-                if float(self.get_ramp_rate()) > 0.154:
-                    print('RAMP RATE EXCEEDS LIMIT: Ending VTVH. Change Rate before proceeding.')
-                    self.vtvh_interrupt()
-                    break
-                #check magnet temp
-                if float(self.get_magnet_temp()) > 4.00:
-                    print('Magnet is Too Warm: Ending VTVH')
-                    self.vtvh_interrupt()
-                    break
 
-                #go to next field
-                self.set_field_and_go(newfield=h)
-                #Let field stabilize
-                sleep(30)
+                #update temp setpoint on gui then on instrument
+                self.gui.update_temps(setpoint=str(t)+'K')
+                self.set_temperature()
 
+                #check every minute to see if have reached the correct temp
+                tempcheck_iters=0
+                while abs(float(t)-float(self.get_sample_temp())) > 0.05: #Temp Accuarcy Cutoff
+                    if self._vtvh_interrupt == True:
+                        break
+                    sleep(60) #waits 1 min between temp checks
+                    tempcheck_iters+=1
+                    #if temp hasnt stabilized after 30 mins, interrupt the vtvh run
+                    if tempcheck_iters>30:
+                        self.vtvh_interrupt()
+                        #TODO: If temp too hot, open needle valve more?
+                        #read current, open like 10% more, wait, read temp, do again or break if too open
+                        
+                #exit loop when made it to new temp
+                print('Next Temp Reached %f K'%t)
+            
                 #check if interrupt was pressed
                 if self._vtvh_interrupt == True:
                     break
@@ -879,12 +890,8 @@ class Application:
                 #iterate scan number
                 scan_num+=1
 
-        #Does not return to 0 at end because this is commented out
-        #if didn't end at zero and didn't interrupt, go to zero
-        #if int(field_list[-1]) != 0 and self._vtvh_interrupt==False:
-        #    self.zero_field()
 
-        #TODO TURN OFF SWITCH HEATER AT END AND IF DIDNT INTERRUPT
+        #TURN OFF SWITCH HEATER AT END AND IF DIDNT INTERRUPT
         if self._vtvh_interrupt==False and self._switch_status == SWITCH_ENABLED:
             self.disengage_switch_heater()
             print('Waiting for switch heater to cool (5 mins).')
@@ -906,6 +913,7 @@ class Application:
                 st=self.gui.user_scanTime()
                 #set Cryofree GUI
                 self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_ACTIVE)
+                #CHANGE THIS THREAD BELOW TO SWITCH FROM ISOTHERM TO FULL VTVH
                 self._vtvh_thread = Thread(target=self._collect_isotherm, args=(vhs,st,))
                 self._vtvh_thread.start()
         else:
