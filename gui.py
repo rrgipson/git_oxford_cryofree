@@ -324,9 +324,10 @@ class GUI(tk.Frame):
             self.btn_temp_set['command'] = self.func_set_temperature
             self.btn_temp_get['state'] = 'normal'
             self.btn_temp_get['command'] = self.func_get_temperature
-            self.btn_nv_set['state'] = 'normal'
-            self.btn_nv_set['command'] = self.func_set_nv
-            self.ent_nv['state'] = 'normal'
+            
+            self.btn_nv_set['state'] = 'disabled'
+            #self.btn_nv_set['command'] = self.func_set_nv
+            self.ent_nv['state'] = 'disabled'
         else:
             self.ent_temperature['state'] = 'disabled'
             self.btn_temp_set['state'] = 'disabled'

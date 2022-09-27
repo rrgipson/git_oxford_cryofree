@@ -276,6 +276,7 @@ class Application:
     def set_temperature(self, temperature=None, *args):
         if self.serial_t.is_open and self._temp_connect:
             self.serial_t.transmit(isobus_temp+'A1', 'TempControl: Error setting heater to Auto') #CRYOFREE - CURRENTLY SETS HEATER TO AUTO AND GAS TO MANUAL
+            print('Setting Heater to Auto and Gas to Manual (A1)')
             temperature = self.gui.user_temperature()
             shift = 0
             if len(temperature) > 0:
@@ -611,7 +612,8 @@ class Application:
     
     def set_nv(self, *args):
         if self.serial_t.is_open and self._temp_connect:
-            self.serial_t.transmit(isobus_temp+'A1', 'TempControl: Error setting heater to Auto and NV to Manual') #CRYOFREE - CURRENTLY SETS HEATER TO AUTO AND GAS TO MANUAL
+            #self.serial_t.transmit(isobus_temp+'A1', 'TempControl: Error setting heater to Auto and NV to Manual') #CRYOFREE - CURRENTLY SETS HEATER TO AUTO AND GAS TO MANUAL
+            #print('Setting Heater to Auto & Gas to Manual (A1)')
             nv_val = self.gui.user_nv()
             
             try:

@@ -1,6 +1,6 @@
 from time import sleep
 from threading import Thread
-from oxford import SerialPort, default_comport
+from oxford import SerialPort
 import spectrometer as j1700
 ##In OXFORD.PY
 '''
@@ -14,12 +14,12 @@ Changed number of stopbits to 1
 delay_sensor = 5  # time between updates for sensors
 
 # Temperature controller settings
-isobus_temp = '@2' #NOT CORRECT, JUST TO PREVENT OVERLAP WITH MAGNET - CRYOFREE
+isobus_temp = '@2'
 isobus_temp_version = 'ITC503 Version  4.01 (c) OXFORD 2011'
 min_temp, max_temp = 0, 300
 temperature_sensor = 1  # sensor 1, sensor 2, or sensor 3 for auto regulation to the set point
 temperature_return_control = 'C3'  # return instrument to 'C0' (LOCAL & LOCKED) or 'C2' (LOCAL & UNLOCKED) or C3 Remote and Unlocked
-com_port='COM3'
+com_port='COM4'
 len_x= 13 #length of the eXamine command @2X
 
 """
