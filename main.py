@@ -300,7 +300,7 @@ class Application:
                     
                 self.serial_t.transmit(isobus_temp+'H1', 'TempControl: Error changing to VTI Temp') #Change to VTI Temp sensor
                 if temperature <= 10:
-                    vti_temp= (0.988*float(temperature)) - 0.063 #based on regression of factor tested temp offsets
+                    vti_temp= (0.988*float(temperature)) - 0.063 #based on regression of factory tested temp offsets
                 else: 
                     vti_temp= (0.984*float(temperature)) - 0.999
 
@@ -846,7 +846,7 @@ class Application:
             self.set_field_and_go(newfield=h)
             #Let field stabilize
             sleep(30)
-            print('Next Field Reaches %f T'%h)
+            print('Next Field Reached %f T'%h)
             
             #go to each temperature and scan
             for t in temp_list:
@@ -864,25 +864,27 @@ class Application:
                     if self._vtvh_interrupt == True:
                         break
                     sleep(60) #waits 1 min between temp checks
-                    tempcheck_iters+=1
+                    tempcheck_iters+=1 #count number of checks done 
                     #if temp hasnt stabilized after 30 mins, interrupt the vtvh run
                     if tempcheck_iters>30:
+                        print('VTVH TIMEOUT: Temperature (%f K) Not Reached after 30 mins'%t)
                         self.vtvh_interrupt()
                         #TODO: If temp too hot, open needle valve more?
                         #read current, open like 10% more, wait, read temp, do again or break if too open
+                    #exit loop when made it to new temp
                         
-                #exit loop when made it to new temp
-                print('Next Temp Reached %f K'%t)
-            
                 #check if interrupt was pressed
                 if self._vtvh_interrupt == True:
                     break
+                    
+                #print that made it to new temp
+                print('Next Temp Reached %f K (took %i mins)'%(t,tempcheck_iters)
 
                 #log at start of scan
                 self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
 
                 #take a scan 
-                print('Taking a Scan')
+                print('Taking a Scan - One Lamp Only')
                 j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
                 sleep(scanDelay) #for scan waiting
 
