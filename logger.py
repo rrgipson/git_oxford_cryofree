@@ -27,7 +27,7 @@ class LOGGER:
     def __init__(self):
         #things for background logging 
         self.bg_file = 'background_log.csv'
-        self.bg_log_delay = 30 #minutes
+        self.bg_log_delay = 90 #minutes
         
         self.log_file = 'current_log.csv'
         

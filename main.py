@@ -23,7 +23,7 @@ max_field = 7  # maximum strength of magnetic field
 switch_wait = 5  # seconds to wait when turning switch heater on/off
 
 #send stderr to file - uncomment to write errors to file
-#sys.stderr = open('UserLogs/error_log.txt', 'a+')
+sys.stderr = open('UserLogs/error_log.txt', 'a+')
 
 def format_temp(temperature):
     """
