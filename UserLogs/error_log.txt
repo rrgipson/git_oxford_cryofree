@@ -40,3 +40,234 @@ Initializing serial_disconnect Procedure
 2022-09-26 09:31:40.251364 
 ------------------------------New Session Started
 2022-09-30 13:13:53.384438 
+------------------------------New Session Started
+2022-09-30 13:14:39.565423 
+Initializing serial_connect Procedure
+@2V  
+@2V  
+TempControl: Version error () 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A4C1H2M00 
+@1C1 C 
+@1A0 A0 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+@1R10 R294.893 
+Magnet Temp: 294.893 K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+------------------------------New Session Started
+2022-09-30 13:16:52.457013 
+Initializing serial_connect Procedure
+@2V ITC503 Version  4.01 (c) OXFORD 2011 
+@2X X0A0C1S00H1L1 
+@2C3 C 
+@2H3 H3 
+@2R0 R0.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+@1R10 R294.892 
+Magnet Temp: 294.892 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R294.928 
+Magnet Temp: 294.928 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R294.972 
+Magnet Temp: 294.972 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R294.987 
+Magnet Temp: 294.987 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.019 
+Magnet Temp: 295.019 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.067 
+Magnet Temp: 295.067 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.098 
+Magnet Temp: 295.098 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.160 
+Magnet Temp: 295.160 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.240 
+Magnet Temp: 295.240 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.279 
+Magnet Temp: 295.279 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.333 
+Magnet Temp: 295.333 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.370 
+Magnet Temp: 295.370 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.433 
+Magnet Temp: 295.433 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.484 
+Magnet Temp: 295.484 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.547 
+Magnet Temp: 295.547 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.582 
+Magnet Temp: 295.582 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.626 
+Magnet Temp: 295.626 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.666 
+Magnet Temp: 295.666 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.713 
+Magnet Temp: 295.713 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.758 
+Magnet Temp: 295.758 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.802 
+Magnet Temp: 295.802 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.818 
+Magnet Temp: 295.818 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.855 
+Magnet Temp: 295.855 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.899 
+Magnet Temp: 295.899 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.931 
+Magnet Temp: 295.931 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.946 
+Magnet Temp: 295.946 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R295.982 
+Magnet Temp: 295.982 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.005 
+Magnet Temp: 296.005 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.036 
+Magnet Temp: 296.036 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.063 
+Magnet Temp: 296.063 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.077 
+Magnet Temp: 296.077 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.114 
+Magnet Temp: 296.114 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.113 
+Magnet Temp: 296.113 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.146 
+Magnet Temp: 296.146 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.171 
+Magnet Temp: 296.171 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.170 
+Magnet Temp: 296.170 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.194 
+Magnet Temp: 296.194 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.220 
+Magnet Temp: 296.220 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.216 
+Magnet Temp: 296.216 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.241 
+Magnet Temp: 296.241 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.237 
+Magnet Temp: 296.237 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.259 
+Magnet Temp: 296.259 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.266 
+Magnet Temp: 296.266 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.256 
+Magnet Temp: 296.256 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.242 
+Magnet Temp: 296.242 K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R296.239 
+Magnet Temp: 296.239 K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@2C3 C 
+Exception in thread Thread-4:
+Traceback (most recent call last):
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\threading.py", line 892, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Jasco\Desktop\git_oxford_cryofree\oxford.py", line 94, in _serial_io_thread
+    response = self._serial.readline()
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\site-packages\serial\serialwin32.py", line 275, in read
+    raise SerialException("ClearCommError failed ({!r})".format(ctypes.WinError()))
+serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
+@1A0 A0 
+@1C1 C 
