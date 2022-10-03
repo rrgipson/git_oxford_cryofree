@@ -229,6 +229,7 @@ class Application:
 
         sleep(max(self._temp_delay, self._field_delay))  # wait to update to '—'
         self.gui.set_connection_frame(connected=False)
+        print('Completed Disconnect Procedure')
 
     def _monitor_temperature(self): 
         """
@@ -247,7 +248,7 @@ class Application:
             sensor3 = self.serial_t.transmit(isobus_temp +READ+SAMPLE+CURRENT_TEMP, 'TempControl: Error reading sample sensor', False)
             if len(sensor3) > 0:
                 if sensor3.split(':')[-1] != 'INVALID':
-                    sensor3 = sensor1.split(':')[-1]
+                    sensor3 = sensor3.split(':')[-1]
                 else:
                     sensor3 = '—'
             else:
