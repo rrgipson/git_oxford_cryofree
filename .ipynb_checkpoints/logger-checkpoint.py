@@ -21,13 +21,13 @@ def print(*args, sep=' ', end='\n',**kwargs):
 
 def print_to_log(string):
     with open('UserLogs/error_log.txt', 'a+') as f:
-        f.write(string)
+        f.write(string + '\n')
 
 class LOGGER:
     def __init__(self):
         #things for background logging 
         self.bg_file = 'background_log.csv'
-        self.bg_log_delay = 30 #minutes
+        self.bg_log_delay = 120 #minutes
         
         self.log_file = 'current_log.csv'
         
@@ -47,17 +47,18 @@ class LOGGER:
     def set_log_file(self, newfile):
         self.log_file = newfile
     
-    def assign_field_log_fxns(self, get_mag_temp=None, get_mag_field=None):
+    def assign_field_log_fxns(self, get_mag_temp=None, get_mag_field=None, get_field_set=None):
         self.get_mag_temp = get_mag_temp
         self.get_mag_field = get_mag_field
+        self.get_field_set = get_field_set
         #self.get_mag_examine = None
 
         
-    def assign_temp_log_fxns(self, get_vti_temp=None, get_sample_temp=None, get_nv_pressure=None):
+    def assign_temp_log_fxns(self, get_vti_temp=None, get_sample_temp=None, get_nv_pressure=None, get_temp_set=None):
         self.get_vti_temp = get_vti_temp
         self.get_nv_pressure = get_nv_pressure
         self.get_sample_temp = get_sample_temp
-        #self.get_temp_error = get_temp_error #difference between setpoint and measured (+ when set>actual)
+        self.get_temp_set = get_temp_set
         #self.get_heater_output = None
         
     def format_for_csv(self, item_list):
@@ -95,10 +96,12 @@ class LOGGER:
         log_fxns={}
         log_fxns['Magnet_Temp']=self.get_mag_temp
         log_fxns['Magnet_Field']=self.get_mag_field
+        log_fxns['Field_SetPoint']=self.get_field_set
         
         log_fxns['VTI_Temp'] = self.get_vti_temp
         log_fxns['Sample_Temp'] = self.get_sample_temp
-        log_fxns['NV_pressure'] = self.get_nv_pressure
+        log_fxns['NV_Percent'] = self.get_nv_pressure
+        log_fxns['Temp_SetPoint'] = self.get_temp_set
         #log_fxns['Temp_Error'] = self.get_temp_error
         
         for k in log_fxns.keys():

@@ -926,7 +926,7 @@ class Application:
     def start_bg_logging(self, *args):
         if (self.serial_t.is_open or self.serial_m.is_open) and self._bglog_thread == None:
             if self._field_connect:
-                self.bglogger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field)
+                self.bglogger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field, get_temp_set=self.get_temperature)
             if self._temp_connect:
                 self.bglogger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_nv_pressure=self.get_nv_value)
             self._bglog_thread=Thread(target=self._bg_logging)
