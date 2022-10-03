@@ -595,6 +595,18 @@ class Application:
             else:
                 temp1 = None
         return temp1
+    
+    def get_pt2_temp(self):
+        if self.serial_t.is_open and self._temp_connect:
+            temp1 = self.serial_t.transmit(isobus_temp +READ+PT2+CURRENT_TEMP, 'TempControl: Error reading PT2 Temp sensor', False)
+            if len(temp1) > 0:
+                if temp1.split(':')[-1] != 'INVALID':
+                    temp1 = temp1.split(':')[-1]
+                else:
+                    temp1 = None
+            else:
+                temp1 = None
+        return temp1
         
     def get_nv_pressure(self):
         if self.serial_t.is_open and self._temp_connect:
@@ -622,8 +634,6 @@ class Application:
     
     def set_nv(self, *args): # NEEDS NEW COMMAND UPDATE
         if self.serial_t.is_open and self._temp_connect:
-            #self.serial_t.transmit(isobus_temp+'A1', 'TempControl: Error setting heater to Auto and NV to Manual') #CRYOFREE - CURRENTLY SETS HEATER TO AUTO AND GAS TO MANUAL
-            #print('Setting Heater to Auto & Gas to Manual (A1)')
             nv_val = self.gui.user_nv()
             
             try:
@@ -635,7 +645,9 @@ class Application:
             if nv_val is None:
                 print('TempControl: Invalid NV set point request of', self.gui.user_nv(), '\a')  # try to beep
             else:
-                response = self.serial_t.transmit(isobus_temp + 'G' + str(nv_val))
+                self.serial_t.transmit(isobus_temp+SET+NV+AUTO_SET+':OFF', 'TempControl: Error setting heater to Auto and NV to Manual') #Set NV control to Manual
+                print('Setting NV to Manual')
+                response = self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':'+str(nv_val))
                 if response[0] == '?':
                     print('TempControl: Instrument (NV) confused by', self.gui.user_nv(), '\a')  # try to beep
                 
@@ -736,7 +748,7 @@ class Application:
         if self._field_connect:
             self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field)
         if self._temp_connect:
-             self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_nv_pressure=self.get_nv_pressure)
+             self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_pt2_temp=self.get_pt2_temp, get_nv_pressure=self.get_nv_pressure, get_nv_percent=self.get_nv_percent, get_temp_set=self.get_temperature)
         
         
         #go to each field and scan
@@ -833,7 +845,7 @@ class Application:
         if self._field_connect:
             self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field)
         if self._temp_connect:
-             self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_nv_pressure=self.get_nv_pressure)
+             self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_pt2_temp=self.get_pt2_temp, get_nv_pressure=self.get_nv_pressure, get_nv_percent=self.get_nv_percent, get_temp_set=self.get_temperature)
             
         #go to each field
         scan_num=1
@@ -938,7 +950,7 @@ class Application:
             if self._field_connect:
                 self.bglogger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field, get_field_set=self.get_field)
             if self._temp_connect:
-                self.bglogger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_nv_pressure=self.get_nv_pressure, get_temp_set=self.get_temperature)
+                self.bglogger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_pt2_temp=self.get_pt2_temp, get_nv_pressure=self.get_nv_pressure, get_nv_percent=self.get_nv_percent, get_temp_set=self.get_temperature)
             self._bglog_thread=Thread(target=self._bg_logging)
             self._bglog_thread.start()
                 

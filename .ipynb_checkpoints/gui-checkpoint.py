@@ -132,7 +132,7 @@ class GUI(tk.Frame):
         self.lbl_sensor_3 = tk.Label(self.frm_temp_sensor, text='Sample Sensor (3)')
         self.lbl_sensor_3_temp = tk.Label(self.frm_temp_sensor, text='—', font=input_font, width=8,
                                           relief='groove', justify='center')
-        self.lbl_temperature = tk.Label(self.frm_temp_setpoint, text='Temp. Set Point')
+        self.lbl_temperature = tk.Label(self.frm_temp_setpoint, text='Sample Temp. Set Point')
         self.ent_temperature = tk.Entry(self.frm_temp_setpoint, fg='red', bg='black', insertbackground='white',
                                         font=input_font, width=8, disabledforeground='black',
                                         disabledbackground='white', justify='center')
@@ -152,20 +152,20 @@ class GUI(tk.Frame):
         #new for Cryofree
         self.frm_temp_nv = tk.Frame(self.frm_temp_setpoint)
         self.frm_temp_nv.grid(row=4, column=0, sticky=tk.N, padx=3)
-        self.lbl_nv = tk.Label(self.frm_temp_nv, text='Needle Valve Set Point')
-        self.lbl_nv_val_top = tk.Label(self.frm_temp_nv, text='Current NV Value')
+        self.lbl_nv = tk.Label(self.frm_temp_nv, text='Needle Valve (Work in Progress)')
+        self.lbl_nv_val_top = tk.Label(self.frm_temp_nv, text='Current NV Pressure')
         self.ent_nv = tk.Entry(self.frm_temp_nv, fg='red', bg='black', insertbackground='white',
                                         font=med_font, width=7, disabledforeground='black',
                                         disabledbackground='white', justify='center')
         self.lbl_nv_val = tk.Label(self.frm_temp_nv, text='—', font=med_font, width=7,
                                           relief='groove', justify='center')
-        self.btn_nv_set = tk.Button(self.frm_temp_nv, text='Write NV Set Point', state='disabled')
+        #self.btn_nv_set = tk.Button(self.frm_temp_nv, text='Write NV Set Point', state='disabled')
         self.ent_nv.insert(tk.END, '—')
         self.ent_nv['state'] = 'disabled'
         self.lbl_nv.grid(row=0, column=0)
         self.lbl_nv_val_top.grid(row=0, column=1)
         self.ent_nv.grid(row=1, column=0)
-        self.btn_nv_set.grid(row=2)
+        #self.btn_nv_set.grid(row=2)
         self.lbl_nv_val.grid(row=1, column=1)
 
         # Magnet frame
@@ -325,14 +325,14 @@ class GUI(tk.Frame):
             self.btn_temp_get['state'] = 'normal'
             self.btn_temp_get['command'] = self.func_get_temperature
             
-            self.btn_nv_set['state'] = 'disabled'
+            #self.btn_nv_set['state'] = 'disabled'
             #self.btn_nv_set['command'] = self.func_set_nv
             self.ent_nv['state'] = 'disabled'
         else:
             self.ent_temperature['state'] = 'disabled'
             self.btn_temp_set['state'] = 'disabled'
             self.btn_temp_get['state'] = 'disabled'
-            self.btn_nv_set['state'] = 'disabled'
+            #self.btn_nv_set['state'] = 'disabled'
             self.ent_nv['state'] = 'disabled'
 
     def set_field_frame(self, connected, switch_setting=None, field_movement=None, setpoint_change=None):

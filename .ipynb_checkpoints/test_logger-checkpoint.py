@@ -10,10 +10,3 @@ test_log = LOGGER()
 test_log.set_bg_file('test_bg_log.csv')
 test_log.assign_field_log_fxns(get_mag_temp=make_string1,get_mag_field=make_string2)
 test_log.generate_bg_log()
-
-test_log.set_log_file('UserLogs/test_vtvh_log.csv')
-test_log.assign_field_log_fxns(get_mag_temp=make_string2,get_mag_field=make_string1)
-test_log.generate_vtvh_log()
-
-print('test error log')
-print(datetime.datetime.now())

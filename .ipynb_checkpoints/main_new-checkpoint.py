@@ -11,7 +11,7 @@ delay_sensor = 5  # time between updates for sensors
 
 # Temperature controller settings
 isobus_temp = '@2' 
-isobus_temp_version = 'ITC503 Version  4.01 (c) OXFORD 2011'
+isobus_temp_version = '81'
 min_temp, max_temp = 0, 300
 temperature_sensor = 3  # sensor 1, sensor 2, or sensor 3 for auto regulation to the set point - UPDATED FOR CRYOFREE to sample
 temperature_return_control = 'SET:SYS:LOCK:OFF'  # makes sure the iTC won't be locked when disconnect
@@ -144,10 +144,10 @@ class Application:
         # Connect to temperature controller
         success = True  # flag to monitor successful communication to temperature controller
         version = self.serial_t.transmit(isobus_temp+READ_VERSION, 'TempControl: Error receiving version')
-        if version == isobus_temp_version:  # if version matches expectation
+        if version.split(':')[-1] == isobus_temp_version:  # if version matches expectation
             status = self.serial_t.transmit(isobus_temp+READ_ALARMS, 'TempControl: Error retrieving alarms')
-            # `status' takes form `XnAnCnSnnHnLn' as in ITC503 manual
-            if status.split(':')[-1] != 'NONE':
+            # Check if any alarms have been triggered
+            if status.split(':')[-1] != '':
                 success = False
         else:
             print('TempControl: Version error', '('+str(version)+')')
@@ -259,7 +259,7 @@ class Application:
                 sensor3 = '—'
                 
             #CRYOFREE Added NV
-            current_nv= self.get_nv_percent()
+            current_nv= self.get_nv_pressure()
             
             self.gui.update_temps(sensor1=sensor1, sensor3=sensor3, current_nv=current_nv)
             sleep(self._temp_delay)
@@ -595,6 +595,18 @@ class Application:
             else:
                 temp1 = None
         return temp1
+    
+    def get_pt2_temp(self):
+        if self.serial_t.is_open and self._temp_connect:
+            temp1 = self.serial_t.transmit(isobus_temp +READ+PT2+CURRENT_TEMP, 'TempControl: Error reading PT2 Temp sensor', False)
+            if len(temp1) > 0:
+                if temp1.split(':')[-1] != 'INVALID':
+                    temp1 = temp1.split(':')[-1]
+                else:
+                    temp1 = None
+            else:
+                temp1 = None
+        return temp1
         
     def get_nv_pressure(self):
         if self.serial_t.is_open and self._temp_connect:
@@ -607,11 +619,21 @@ class Application:
             else:
                 val = None
         return val
+
+    def get_nv_percent(self):
+        if self.serial_t.is_open and self._temp_connect:
+            val = self.serial_t.transmit(isobus_temp +READ_NV_PERC, 'TempControl: Error reading Needle Valve Percent', False)
+            if len(val) > 0:
+                if val.split(':')[-1] != 'INVALID':
+                    val = val.split(':')[-1]
+                else:
+                    val = None
+            else:
+                val = None
+        return val
     
     def set_nv(self, *args): # NEEDS NEW COMMAND UPDATE
         if self.serial_t.is_open and self._temp_connect:
-            #self.serial_t.transmit(isobus_temp+'A1', 'TempControl: Error setting heater to Auto and NV to Manual') #CRYOFREE - CURRENTLY SETS HEATER TO AUTO AND GAS TO MANUAL
-            #print('Setting Heater to Auto & Gas to Manual (A1)')
             nv_val = self.gui.user_nv()
             
             try:
@@ -623,7 +645,9 @@ class Application:
             if nv_val is None:
                 print('TempControl: Invalid NV set point request of', self.gui.user_nv(), '\a')  # try to beep
             else:
-                response = self.serial_t.transmit(isobus_temp + 'G' + str(nv_val))
+                self.serial_t.transmit(isobus_temp+SET+NV+AUTO_SET+':OFF', 'TempControl: Error setting heater to Auto and NV to Manual') #Set NV control to Manual
+                print('Setting NV to Manual')
+                response = self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':'+str(nv_val))
                 if response[0] == '?':
                     print('TempControl: Instrument (NV) confused by', self.gui.user_nv(), '\a')  # try to beep
                 
@@ -724,7 +748,7 @@ class Application:
         if self._field_connect:
             self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field)
         if self._temp_connect:
-             self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_nv_pressure=self.get_nv_pressure)
+             self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_pt2_temp=self.get_pt2_temp, get_nv_pressure=self.get_nv_pressure, get_nv_percent=self.get_nv_percent, get_temp_set=self.get_temperature)
         
         
         #go to each field and scan
@@ -821,7 +845,7 @@ class Application:
         if self._field_connect:
             self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field)
         if self._temp_connect:
-             self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_nv_pressure=self.get_nv_pressure)
+             self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_pt2_temp=self.get_pt2_temp, get_nv_pressure=self.get_nv_pressure, get_nv_percent=self.get_nv_percent, get_temp_set=self.get_temperature)
             
         #go to each field
         scan_num=1
@@ -926,7 +950,7 @@ class Application:
             if self._field_connect:
                 self.bglogger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field, get_field_set=self.get_field)
             if self._temp_connect:
-                self.bglogger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_nv_pressure=self.get_nv_pressure, get_temp_set=self.get_temperature)
+                self.bglogger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_pt2_temp=self.get_pt2_temp, get_nv_pressure=self.get_nv_pressure, get_nv_percent=self.get_nv_percent, get_temp_set=self.get_temperature)
             self._bglog_thread=Thread(target=self._bg_logging)
             self._bglog_thread.start()
                 

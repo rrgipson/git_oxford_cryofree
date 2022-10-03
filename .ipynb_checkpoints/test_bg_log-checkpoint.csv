@@ -1,0 +1,19 @@
+Date,Magnet_Temp,Magnet_Field,VTI_Temp,NV_pressure,Sample_Temp,Temp_Error
+2022-08-19 14:59:36.587904,test1,test2,None,None,None,None
+Magnet_Temp,Sample_Temp,Magnet_Field,VTI_Temp,Date,NV_pressure
+test1,None,test2,None,2022-09-21 19:36:47.499000,None
+Date,Magnet_Temp,Magnet_Field,VTI_Temp,Sample_Temp,NV_pressure
+2022-09-21 19:56:25.691602,test1,test2,None,None,None
+Date,Magnet_Temp,Magnet_Field,VTI_Temp,Sample_Temp,NV_pressure
+2022-09-21 19:58:16.606588,test1,test2,None,None,None
+Date,Magnet_Temp,Magnet_Field,VTI_Temp,Sample_Temp,NV_pressure
+2022-09-21 20:00:30.674432,test1,test2,None,None,None
+Date,Magnet_Temp,Magnet_Field,VTI_Temp,Sample_Temp,NV_pressure
+2022-09-21 20:00:56.035328,test1,test2,None,None,None
+
+
+Magnet_Temp,Sample_Temp,PT2_Temp,Magnet_Field,NV_Percent,VTI_Temp,Field_SetPoint,Date,NV_Pressure,SampleTemp_SetPt
+test1,None,None,test2,None,None,None,2022-10-03 14:29:32.103000,None,None
+
+Magnet_Temp,Sample_Temp,PT2_Temp,Magnet_Field,NV_Percent,VTI_Temp,Field_SetPoint,Date,NV_Pressure,SampleTemp_SetPt
+test1,None,None,test2,None,None,None,2022-10-03 14:29:53.074000,None,None
