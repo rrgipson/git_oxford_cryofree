@@ -329,7 +329,7 @@ class Application:
         self.gui.update_temps(setpoint=temperature)
         if temperature == '—':
             return None
-        return temperature
+        return temperature.replace('K','')
 
     def engage_switch_heater(self):
         if self._switch_status == SWITCH_DISABLED:
