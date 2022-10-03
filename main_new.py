@@ -11,7 +11,7 @@ delay_sensor = 5  # time between updates for sensors
 
 # Temperature controller settings
 isobus_temp = '@2' 
-isobus_temp_version = 'ITC503 Version  4.01 (c) OXFORD 2011'
+isobus_temp_version = '81'
 min_temp, max_temp = 0, 300
 temperature_sensor = 3  # sensor 1, sensor 2, or sensor 3 for auto regulation to the set point - UPDATED FOR CRYOFREE to sample
 temperature_return_control = 'SET:SYS:LOCK:OFF'  # makes sure the iTC won't be locked when disconnect
@@ -144,10 +144,10 @@ class Application:
         # Connect to temperature controller
         success = True  # flag to monitor successful communication to temperature controller
         version = self.serial_t.transmit(isobus_temp+READ_VERSION, 'TempControl: Error receiving version')
-        if version == isobus_temp_version:  # if version matches expectation
+        if version.split(':')[-1] == isobus_temp_version:  # if version matches expectation
             status = self.serial_t.transmit(isobus_temp+READ_ALARMS, 'TempControl: Error retrieving alarms')
-            # `status' takes form `XnAnCnSnnHnLn' as in ITC503 manual
-            if status.split(':')[-1] != 'NONE':
+            # Check if any alarms have been triggered
+            if status.split(':')[-1] != '':
                 success = False
         else:
             print('TempControl: Version error', '('+str(version)+')')
@@ -259,7 +259,7 @@ class Application:
                 sensor3 = '—'
                 
             #CRYOFREE Added NV
-            current_nv= self.get_nv_percent()
+            current_nv= self.get_nv_pressure()
             
             self.gui.update_temps(sensor1=sensor1, sensor3=sensor3, current_nv=current_nv)
             sleep(self._temp_delay)
@@ -599,6 +599,18 @@ class Application:
     def get_nv_pressure(self):
         if self.serial_t.is_open and self._temp_connect:
             val = self.serial_t.transmit(isobus_temp +READ+NV+CURRENT_PRES, 'TempControl: Error reading Needle Valve Pressure', False)
+            if len(val) > 0:
+                if val.split(':')[-1] != 'INVALID':
+                    val = val.split(':')[-1]
+                else:
+                    val = None
+            else:
+                val = None
+        return val
+
+    def get_nv_percent(self):
+        if self.serial_t.is_open and self._temp_connect:
+            val = self.serial_t.transmit(isobus_temp +READ_NV_PERC, 'TempControl: Error reading Needle Valve Percent', False)
             if len(val) > 0:
                 if val.split(':')[-1] != 'INVALID':
                     val = val.split(':')[-1]
