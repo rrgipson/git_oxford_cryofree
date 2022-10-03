@@ -127,14 +127,14 @@ class GUI(tk.Frame):
         # Temperature frame
         self.lbl_temp_frame = tk.Label(self.frm_temp_sensor, text='Temperature Control (Kelvin)')
         self.lbl_sensor_1 = tk.Label(self.frm_temp_sensor, text='VTI Sensor (1)')
-        self.lbl_sensor_1_temp = tk.Label(self.frm_temp_sensor, text='—', font=input_font, width=8,
+        self.lbl_sensor_1_temp = tk.Label(self.frm_temp_sensor, text='—', font=input_font, width=10,
                                           relief='groove', justify='center')
         self.lbl_sensor_3 = tk.Label(self.frm_temp_sensor, text='Sample Sensor (3)')
-        self.lbl_sensor_3_temp = tk.Label(self.frm_temp_sensor, text='—', font=input_font, width=8,
+        self.lbl_sensor_3_temp = tk.Label(self.frm_temp_sensor, text='—', font=input_font, width=10,
                                           relief='groove', justify='center')
         self.lbl_temperature = tk.Label(self.frm_temp_setpoint, text='Sample Temp. Set Point')
         self.ent_temperature = tk.Entry(self.frm_temp_setpoint, fg='red', bg='black', insertbackground='white',
-                                        font=input_font, width=8, disabledforeground='black',
+                                        font=input_font, width=10, disabledforeground='black',
                                         disabledbackground='white', justify='center')
         self.btn_temp_set = tk.Button(self.frm_temp_setpoint, text='Write Set Point', state='disabled')
         self.btn_temp_get = tk.Button(self.frm_temp_setpoint, text='Read Set Point', state='disabled')
@@ -157,7 +157,7 @@ class GUI(tk.Frame):
         self.ent_nv = tk.Entry(self.frm_temp_nv, fg='red', bg='black', insertbackground='white',
                                         font=med_font, width=7, disabledforeground='black',
                                         disabledbackground='white', justify='center')
-        self.lbl_nv_val = tk.Label(self.frm_temp_nv, text='—', font=med_font, width=7,
+        self.lbl_nv_val = tk.Label(self.frm_temp_nv, text='—', font=med_font, width=11,
                                           relief='groove', justify='center')
         #self.btn_nv_set = tk.Button(self.frm_temp_nv, text='Write NV Set Point', state='disabled')
         self.ent_nv.insert(tk.END, '—')
@@ -259,7 +259,7 @@ class GUI(tk.Frame):
             self.ent_com_port.insert(tk.END, str(port))
             self.ent_com_port['state'] = state
 
-    def update_temps(self, sensor1=None, sensor3=None, setpoint=None, setpoint_sensor=None, current_nv=None, nv_setpoint=None):
+    def update_temps(self, sensor1=None, sensor3=None, setpoint=None, current_nv=None, nv_setpoint=None):
         if sensor1 is not None:
             self.lbl_sensor_1_temp['text'] = str(sensor1)
         if sensor3 is not None:
@@ -274,8 +274,6 @@ class GUI(tk.Frame):
                 self.ent_temperature.delete(0, tk.END)
                 self.ent_temperature.insert(tk.END, str(setpoint))
                 self.ent_temperature['state'] = state
-        if setpoint_sensor is not None:
-            self.lbl_temperature['text'] = 'Temp. Set Point (Sensor ' + str(setpoint_sensor) + ')'
             
         if current_nv is not None:
             self.lbl_nv_val['text'] = str(current_nv)

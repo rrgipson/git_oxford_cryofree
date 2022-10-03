@@ -107,16 +107,16 @@ class LOGGER:
         log_data['Date']=datetime.datetime.now()
         
         log_fxns={}
-        log_fxns['Magnet_Temp']=self.get_mag_temp
-        log_fxns['Magnet_Field']=self.get_mag_field
-        log_fxns['Field_SetPoint']=self.get_field_set
+        log_fxns['Magnet_Temp(K)']=self.get_mag_temp
+        log_fxns['Magnet_Field(T)']=self.get_mag_field
+        log_fxns['Field_SetPoint(T)']=self.get_field_set
         
-        log_fxns['Sample_Temp']=self.get_sample_temp
-        log_fxns['VTI_Temp']=self.get_vti_temp
-        log_fxns['PT2_Temp']=self.get_pt2_temp
-        log_fxns['NV_Pressure']=self.get_nv_pressure
+        log_fxns['Sample_Temp(K)']=self.get_sample_temp
+        log_fxns['VTI_Temp(K)']=self.get_vti_temp
+        log_fxns['PT2_Temp(K)']=self.get_pt2_temp
+        log_fxns['NV_Pressure(mB)']=self.get_nv_pressure
         log_fxns['NV_Percent']=self.get_nv_percent
-        log_fxns['SampleTemp_SetPt']=self.get_temp_set
+        log_fxns['SampleTemp_SetPt(K)']=self.get_temp_set
         
         for k in log_fxns.keys():
             if log_fxns[k] == None:
@@ -145,14 +145,14 @@ class LOGGER:
         
         #setup functions that get other data parameters
         log_fxns={}
-        log_fxns['Magnet_Temp']=self.get_mag_temp
-        log_fxns['Magnet_Field']=self.get_mag_field
-        log_fxns['Field_SetPoint']=self.get_field_set
+        log_fxns['Magnet_Temp(K)']=self.get_mag_temp
+        log_fxns['Magnet_Field(T)']=self.get_mag_field
+        log_fxns['Field_SetPoint(T)']=self.get_field_set
         
-        log_fxns['Sample_Temp']=self.get_sample_temp
-        log_fxns['VTI_Temp']=self.get_vti_temp
-        log_fxns['NV_Pressure']=self.get_nv_pressure
-        log_fxns['SampleTemp_SetPt']=self.get_temp_set
+        log_fxns['Sample_Temp(K)']=self.get_sample_temp
+        log_fxns['VTI_Temp(K)']=self.get_vti_temp
+        log_fxns['NV_Pressure(mB)']=self.get_nv_pressure
+        log_fxns['SampleTemp_SetPt(K)']=self.get_temp_set
         
         for k in log_fxns.keys():
             if log_fxns[k] == None:

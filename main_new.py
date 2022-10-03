@@ -13,8 +13,6 @@ delay_sensor = 5  # time between updates for sensors
 isobus_temp = '@2' 
 isobus_temp_version = '81'
 min_temp, max_temp = 0, 300
-temperature_sensor = 3  # sensor 1, sensor 2, or sensor 3 for auto regulation to the set point - UPDATED FOR CRYOFREE to sample
-temperature_return_control = 'SET:SYS:LOCK:OFF'  # makes sure the iTC won't be locked when disconnect
 
 # Magnet controller settings - UPDATED FOR CRYOFREE
 isobus_magnet = '@1'
@@ -96,7 +94,6 @@ class Application:
         self.gui.update_com_port(port='2 COMs')
         self.gui.set_connection_frame(connected=False)
         self.gui.set_cryofree_frame(connected=False)
-        self.gui.update_temps(setpoint_sensor=temperature_sensor)
         self.gui.set_temperature_frame(connected=False)
         self.gui.set_field_frame(connected=False)
         
@@ -213,8 +210,6 @@ class Application:
     def serial_disconnect(self):
         print_to_log('Initializing serial_disconnect Procedure')
         if self.serial_t.is_open:
-            if self._temp_connect:
-                self.serial_t.transmit(isobus_temp+temperature_return_control)
             self.serial_t.close()
         if self.serial_m.is_open:
             if self._field_connect:
@@ -316,7 +311,7 @@ class Application:
         temperature = '—'
         if self.serial_t.is_open and self._temp_connect:
             response = self.serial_t.transmit(isobus_temp+READ+SAMPLE+SETPT_TEMP, 'TempControl: Error reading set point')
-            if response.split(':')[-1]=='INVALID':
+            if response.split(':')[-1]!='INVALID':
                 temperature = response.split(':')[-1]
         self.gui.update_temps(setpoint=temperature)
         if temperature == '—':
@@ -582,7 +577,7 @@ class Application:
                     temp3 = None
             else:
                 temp3 = None
-        return temp3
+        return temp3.replace('K','')
 
     def get_vti_temp(self):
         if self.serial_t.is_open and self._temp_connect:
@@ -594,7 +589,7 @@ class Application:
                     temp1 = None
             else:
                 temp1 = None
-        return temp1
+        return temp1.replace('K','')
     
     def get_pt2_temp(self):
         if self.serial_t.is_open and self._temp_connect:
@@ -606,7 +601,7 @@ class Application:
                     temp1 = None
             else:
                 temp1 = None
-        return temp1
+        return temp1.replace('K','')
         
     def get_nv_pressure(self):
         if self.serial_t.is_open and self._temp_connect:
@@ -618,7 +613,7 @@ class Application:
                     val = None
             else:
                 val = None
-        return val
+        return val.replace('mB','')
 
     def get_nv_percent(self):
         if self.serial_t.is_open and self._temp_connect:
