@@ -257,7 +257,7 @@ class Application:
             #CRYOFREE Added NV
             current_nv= self.get_nv_pressure()
             
-            self.gui.update_temps(sensor1=sensor1, sensor3=sensor3, current_nv=current_nv)
+            self.gui.update_temps(sensor1=sensor1, sensor3=sensor3, current_nv=current_nv+'mB')
             sleep(self._temp_delay)
         # after 'while' loop breaks
         self.gui.update_temps(sensor1='—', sensor3='—', current_nv= '—')
