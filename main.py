@@ -23,7 +23,7 @@ max_field = 7  # maximum strength of magnetic field
 switch_wait = 5  # seconds to wait when turning switch heater on/off
 
 #send stderr to file - uncomment to write errors to file
-#sys.stderr = open('UserLogs/error_log.txt', 'a+')
+sys.stderr = open('UserLogs/error_log.txt', 'a+')
 
 def format_temp(temperature):
     """
@@ -878,7 +878,7 @@ class Application:
                     break
                     
                 #print that made it to new temp
-                print('Next Temp Reached %f K (took %i mins)'%(t,tempcheck_iters)
+                print('Next Temp Reached %f K (took %i mins)'%(t,tempcheck_iters))
 
                 #log at start of scan
                 self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
