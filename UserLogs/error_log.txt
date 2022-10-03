@@ -422,3 +422,49 @@ Error Performing Task
 @2SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF STAT:SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF:VALID 
 @2READ:DEV:DB5.P1:PRES:LOOP:PSET STAT:DEV:DB5.P1:PRES:LOOP:PSET:INVALID 
 @2READ:DEV:DB5.P1:PRES:LOOP:HSET STAT:DEV:DB5.P1:PRES:LOOP:HSET:0 
+------------------------------New Session Started
+2022-10-03 11:57:29.253342 
+Initializing serial_connect Procedure
+@2V V:INVALID 
+TempControl: Version error (V:INVALID) 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Initializing serial_disconnect Procedure
+@1R10 R296.225 
+Magnet Temp: 296.225 K 
+@1A0 A0 
+@1C1 C 
+Exception in thread Thread-3:
+Traceback (most recent call last):
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\threading.py", line 892, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Jasco\Desktop\git_oxford_cryofree\oxford.py", line 94, in _serial_io_thread
+    response = self._serial.readline()
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\site-packages\serial\serialwin32.py", line 271, in read
+    win32.ResetEvent(self._overlapped_read.hEvent)
+AttributeError: 'NoneType' object has no attribute 'hEvent'
+------------------------------New Session Started
+2022-10-03 11:59:14.003665 
+Initializing serial_connect Procedure
+@2V ITC503 Version  4.01 (c) OXFORD 2011 
+@2X X0A0C1S00H3L0 
+@2C3 C 
+@2H3 H3 
+@2R0 R0.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+@1R10 R296.199 
+Magnet Temp: 296.199 K 
+@1R8 R0.00000 
+@2R0 R0.0000K 
+Finished Background Log Update 
