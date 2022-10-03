@@ -27,18 +27,21 @@ class LOGGER:
     def __init__(self):
         #things for background logging 
         self.bg_file = 'background_log.csv'
-        self.bg_log_delay = 90 #minutes
+        self.bg_log_delay = 120 #minutes
         
         self.log_file = 'current_log.csv'
         
         #functions to get data
         self.get_mag_temp = None
         self.get_mag_field = None
+        self.get_field_set = None
         #self.get_mag_examine = None
         self.get_vti_temp = None
-        self.get_nv_pressure = None
         self.get_sample_temp = None
-        #self.get_temp_error = None #difference between setpoint and measured (+ when set>actual)
+        self.get_pt2_temp = None
+        self.get_nv_pressure = None
+        self.get_nv_percent = None
+        self.get_temp_set = None
         #self.get_heater_output = None
 
     def set_bg_file(self, newfile): #this is primarily for testing
@@ -54,10 +57,13 @@ class LOGGER:
         #self.get_mag_examine = None
 
         
-    def assign_temp_log_fxns(self, get_vti_temp=None, get_sample_temp=None, get_nv_pressure=None, get_temp_set=None):
+    def assign_temp_log_fxns(self, get_vti_temp=None, get_sample_temp=None, get_pt2_temp=None, 
+                             get_nv_pressure=None, get_nv_percent=None, get_temp_set=None):
         self.get_vti_temp = get_vti_temp
-        self.get_nv_pressure = get_nv_pressure
         self.get_sample_temp = get_sample_temp
+        self.get_pt2_temp = get_pt2_temp
+        self.get_nv_pressure = get_nv_pressure
+        self.get_nv_percent = get_nv_percent
         self.get_temp_set = get_temp_set
         #self.get_heater_output = None
         
@@ -70,15 +76,22 @@ class LOGGER:
         f_head=None
         #check if file exists
         if os.path.exists(logfile):
+            headnext=True
             #open file to read
             with open(logfile, 'r') as f:
-                #check if correct header present
-                f_head=f.readline()
+                #check if correct header present as most recent header
+                for line in f:
+                    if headnext==True:
+                        f_head=line
+                        headnext=False
+                    if line=='\n':
+                        headnext=True
         
         #open to append only
         f = open(logfile, 'a+')
         #if no header, add it
         if f_head != header:
+            f.write('\n')
             f.write(header)
         
         #add data
@@ -98,11 +111,12 @@ class LOGGER:
         log_fxns['Magnet_Field']=self.get_mag_field
         log_fxns['Field_SetPoint']=self.get_field_set
         
-        log_fxns['VTI_Temp'] = self.get_vti_temp
-        log_fxns['Sample_Temp'] = self.get_sample_temp
-        log_fxns['NV_Percent'] = self.get_nv_pressure
-        log_fxns['Temp_SetPoint'] = self.get_temp_set
-        #log_fxns['Temp_Error'] = self.get_temp_error
+        log_fxns['Sample_Temp']=self.get_sample_temp
+        log_fxns['VTI_Temp']=self.get_vti_temp
+        log_fxns['PT2_Temp']=self.get_pt2_temp
+        log_fxns['NV_Pressure']=self.get_nv_pressure
+        log_fxns['NV_Percent']=self.get_nv_percent
+        log_fxns['SampleTemp_SetPt']=self.get_temp_set
         
         for k in log_fxns.keys():
             if log_fxns[k] == None:
@@ -133,11 +147,12 @@ class LOGGER:
         log_fxns={}
         log_fxns['Magnet_Temp']=self.get_mag_temp
         log_fxns['Magnet_Field']=self.get_mag_field
+        log_fxns['Field_SetPoint']=self.get_field_set
         
-        log_fxns['VTI_Temp'] = self.get_vti_temp
-        log_fxns['NV_pressure'] = self.get_nv_pressure
-        log_fxns['Sample_Temp'] = self.get_sample_temp
-        #log_fxns['Temp_Error'] = self.get_temp_error
+        log_fxns['Sample_Temp']=self.get_sample_temp
+        log_fxns['VTI_Temp']=self.get_vti_temp
+        log_fxns['NV_Pressure']=self.get_nv_pressure
+        log_fxns['SampleTemp_SetPt']=self.get_temp_set
         
         for k in log_fxns.keys():
             if log_fxns[k] == None:
