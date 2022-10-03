@@ -10,3 +10,5 @@ Date,Magnet_Temp,Magnet_Field,VTI_Temp,Sample_Temp,NV_pressure
 2022-09-30 13:17:29.934931,294.892,0.0000,294.728,294.988,100.000
 2022-09-30 14:47:47.890106,294.928,0.0000,294.685,295.021,100.000
 
+Date,Magnet_Temp,Magnet_Field,Field_SetPoint,VTI_Temp,Sample_Temp,NV_Percent,Temp_SetPoint
+2022-10-03 09:49:01.784470,296.226,0.0000,None,295.697,296.286,100.000,None

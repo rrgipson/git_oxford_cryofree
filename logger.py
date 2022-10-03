@@ -34,10 +34,12 @@ class LOGGER:
         #functions to get data
         self.get_mag_temp = None
         self.get_mag_field = None
+        self.get_field_set = None
         #self.get_mag_examine = None
         self.get_vti_temp = None
         self.get_nv_pressure = None
         self.get_sample_temp = None
+        self.get_temp_set = None
         #self.get_temp_error = None #difference between setpoint and measured (+ when set>actual)
         #self.get_heater_output = None
 

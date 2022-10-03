@@ -271,3 +271,26 @@ Traceback (most recent call last):
 serial.serialutil.SerialException: ClearCommError failed (OSError(9, 'The handle is invalid.', None, 6))
 @1A0 A0 
 @1C1 C 
+------------------------------New Session Started
+2022-10-03 09:48:33.870095 
+Initializing serial_connect Procedure
+@2V ITC503 Version  4.01 (c) OXFORD 2011 
+@2X X0A0C1S00H3L0 
+@2C3 C 
+@2H3 H3 
+@2R0 R0.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+@1R10 R296.226 
+Magnet Temp: 296.226 K 
+@1R8 R0.00000 
+@2R0 R0.0000K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@2C3 C 
+@1A0 A0 
+@1C1 C 

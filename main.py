@@ -327,6 +327,9 @@ class Application:
             if response[0] == 'R':
                 temperature = response[1:]
         self.gui.update_temps(setpoint=temperature)
+        if temperature == '—':
+            return None
+        return temperature
 
     def engage_switch_heater(self):
         if self._switch_status == SWITCH_DISABLED:
@@ -541,6 +544,9 @@ class Application:
             if response[0] == 'R':
                 field = response[1:]
         self.gui.update_fields(setpoint=field)
+        if field == '—':
+            return None
+        return field
         
         
     ### ROB'S UPDATES FOR THE CRYOFREE SYSTEM
