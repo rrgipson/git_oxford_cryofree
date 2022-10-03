@@ -318,3 +318,107 @@ Initializing serial_disconnect Procedure
 Error sending, SerialException: @2R1, <class 'serial.serialutil.SerialException'>  
 @1A0 A0 
 @1C1 C 
+------------------------------New Session Started
+2022-10-03 10:55:35.825214 
+Initializing serial_connect Procedure
+@2V ITC503 Version  4.01 (c) OXFORD 2011 
+@2X X0A0C1S00H3L0 
+@2C3 C 
+@2H3 H3 
+@2R0 R0.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+@1R10 R296.216 
+Magnet Temp: 296.216 K 
+@1R8 R0.00000 
+@2R0 R0.0000K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@2C3 C 
+@1A0 A0 
+@1C1 C 
+------------------------------New Session Started
+2022-10-03 10:58:31.340388 
+Initializing serial_connect Procedure
+@2V ITC503 Version  4.01 (c) OXFORD 2011 
+@2X X0A0C1S00H3L0 
+@2C3 C 
+@2H3 H3 
+@2R0 R0.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+@1R10 R296.214 
+Magnet Temp: 296.214 K 
+@1R8 R0.00000 
+@2R0 R0.0000K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@2C3 C 
+Exception in thread Thread-4:
+Traceback (most recent call last):
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\threading.py", line 892, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Jasco\Desktop\git_oxford_cryofree\oxford.py", line 94, in _serial_io_thread
+    response = self._serial.readline()
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\site-packages\serial\serialwin32.py", line 271, in read
+    win32.ResetEvent(self._overlapped_read.hEvent)
+AttributeError: 'NoneType' object has no attribute 'hEvent'
+@1A0 A0 
+@1C1 C 
+@2V ITC503 Version  4.01 (c) OXFORD 2011 
+@2X X0A0C1S00H3L0 
+@2R1 R295.748 
+@2R2 ?R2 
+@2R2 ?R2 
+Error Reading 
+@2R3 R296.277 
+@2R4 ?R4 
+@2R4 ?R4 
+Error Reading 
+@2R5 R0.000 
+@2R1 R295.717 
+@2X X0A0C1S00H3L0 
+@2H2 ?H2 
+@2H2 ?H2 
+Error Performing Task 
+@2H1 H1 
+@2R1 R295.709 
+@2R1 R295.722 
+@2H3 H3 
+@2R1 R295.705 
+@2C3 C 
+@2V ITC503 Version  4.01 (c) OXFORD 2011 
+@2X X0A0C1S00H3L0 
+@2C3 C 
+@2READ:SYS:CAT STAT:SYS:CAT:DEV:DB3.H1:HTR:DEV:DB4.G1:AUX:DEV:DB5.P1:PRES:DEV:DB7.T1:TEMP:DEV:DB8.T1:TEMP:DEV:MB0.H1:HTR:DEV:MB1.T1:TEMP 
+@2READ:DEV:DB8.T1:TEMP:NICK STAT:DEV:DB8.T1:TEMP:NICK:SAMPLE_DB8 
+@2READ:DEV:DB8.T1:TEMP:SIG:TEMP STAT:DEV:DB8.T1:TEMP:SIG:TEMP:295.7556K 
+@2READ:DEV:DB5.P1:PRES:NICK STAT:DEV:DB5.P1:PRES:NICK:Pressure_DB5 
+@2READ:DEV:DB5.P1:PRES:SIG:PRES STAT:DEV:DB5.P1:PRES:SIG:PRES:3.8526mB 
+@2READ:DEV:DB8.T1:TEMP:NICK STAT:DEV:DB8.T1:TEMP:NICK:SAMPLE_DB8 
+@2READ:DEV:DB8.T1:TEMP:LOOP:FAUT STAT:DEV:DB8.T1:TEMP:LOOP:FAUT:OFF 
+@2READ:DEV:DB8.T1:TEMP:LOOP:FSET STAT:DEV:DB8.T1:TEMP:LOOP:FSET:0 
+@2READ:DEV:DB5.P1:PRES:LOOP:FAUT STAT:DEV:DB5.P1:PRES:LOOP:FAUT:OFF 
+@2READ:DEV:DB5.P1:PRES:LOOP:FSET STAT:DEV:DB5.P1:PRES:LOOP:FSET:100 
+@2CAT:DEV:DB5.P1:PRES:LOOP CAT:INVALID 
+@2SYS:CAT:DEV:DB5.P1:PRES:LOOP :SYSSYS:INVALID 
+@2READ:DEV:DB5.P1:PRES:LOOP:TSET STAT:DEV:DB5.P1:PRES:LOOP:TSET:INVALID 
+@2READ:DEV:DB5.P1:PRES:LOOP:FSET STAT:DEV:DB5.P1:PRES:LOOP:FSET:100 
+@2READ:DEV:DB5.P1:PRES:LOOP:TSET STAT:DEV:DB5.P1:PRES:LOOP:TSET:INVALID 
+@2READ:DEV:DB5.P1:PRES:LOOP:FAUT STAT:DEV:DB5.P1:PRES:LOOP:FAUT:OFF 
+@2SET:DEV:DB5.P1:PRES:LOOP:FAUT:ON STAT:SET:DEV:DB5.P1:PRES:LOOP:FAUT:ON:VALID 
+@2READ:DEV:DB5.P1:PRES:LOOP:TSET STAT:DEV:DB5.P1:PRES:LOOP:TSET:INVALID 
+@2READ:DEV:DB5.P1:PRES:LOOP:FSET STAT:DEV:DB5.P1:PRES:LOOP:FSET:100 
+@2SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF STAT:SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF:VALID 
+@2READ:DEV:DB5.P1:PRES:LOOP:PSET STAT:DEV:DB5.P1:PRES:LOOP:PSET:INVALID 
+@2READ:DEV:DB5.P1:PRES:LOOP:HSET STAT:DEV:DB5.P1:PRES:LOOP:HSET:0 
