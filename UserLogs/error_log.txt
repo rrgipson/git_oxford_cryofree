@@ -468,3 +468,8 @@ Magnet Temp: 296.199 K
 @1R8 R0.00000 
 @2R0 R0.0000K 
 Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@2C3 C 
+Error sending, SerialException: @2R3, <class 'serial.serialutil.SerialException'>  
+@1A0 A0 
+@1C1 C 
