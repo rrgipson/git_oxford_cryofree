@@ -263,7 +263,7 @@ class Application:
         self.gui.update_temps(sensor1='—', sensor3='—', current_nv= '—')
         return
 
-    def set_temperature(self, temperature=None, *args):
+    def set_temperature(self, *args):
         if self.serial_t.is_open and self._temp_connect:
             self.serial_t.transmit(isobus_temp+SET+SAMPLE+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto') #Sets both heaters to auto
             self.serial_t.transmit(isobus_temp+SET+VTI+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto')
