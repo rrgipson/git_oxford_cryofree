@@ -255,7 +255,7 @@ class Application:
                 sensor3 = '—'
                 
             #CRYOFREE Added NV
-            current_nv= self.get_nv_pressure()
+            current_nv= self.get_nv_pressure(print=False)
             
             self.gui.update_temps(sensor1=sensor1, sensor3=sensor3, current_nv=current_nv+'mB')
             sleep(self._temp_delay)
@@ -605,9 +605,9 @@ class Application:
                 temp1 = None
         return temp1.replace('K','')
         
-    def get_nv_pressure(self):
+    def get_nv_pressure(self, print=True):
         if self.serial_t.is_open and self._temp_connect:
-            val = self.serial_t.transmit(isobus_temp +READ+NV+CURRENT_PRES, 'TempControl: Error reading Needle Valve Pressure')
+            val = self.serial_t.transmit(isobus_temp +READ+NV+CURRENT_PRES, 'TempControl: Error reading Needle Valve Pressure', print)
             if len(val) > 0:
                 if val.split(':')[-1] != 'INVALID':
                     val = val.split(':')[-1]
@@ -806,17 +806,22 @@ class Application:
         self._vtvh_thread = None
         
     def _collect_full_vtvh(self, field_list, temp_list, scanTime):      
+        print('Starting Full VTVH Run')
         #measure scan duration??
 
         #Check if fields are in correct range
         if any(abs(float(h)) > 7 for h in field_list):
             print('Error in Fields: Must be between -7 and 7 T')
             self.vtvh_interrupt()
+        else:
+            print('Fields Read in Correctly')
             
         #Check if temps are in correct range
         if any(float(t) < 0 for t in temp_list) or any(float(t) > 300 for t in temp_list):
             print('Error in Temps: Must be between 0 and 300 K')
             self.vtvh_interrupt()
+        else:
+            print('Temps Read in Correctly')
         
         #Read the inputted time for scan and use as delay
         scanDelay=int(scanTime)
