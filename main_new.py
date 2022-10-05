@@ -870,7 +870,7 @@ class Application:
             self.set_field_and_go(newfield=h)
             #Let field stabilize
             sleep(30)
-            print('Next Field Reached %f T'%h)
+            print('Next Field Reached %s T'%str(h))
             
             #go to each temperature and scan
             for t in temp_list:
@@ -895,7 +895,7 @@ class Application:
                             print('Warning: Using Secondary Temp Criteria After 30mins')
                             break
                         else:
-                            print('VTVH TIMEOUT: Temperature (%f K) Not Reached after 30 mins'%t)
+                            print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 30 mins'%str(t))
                             self.vtvh_interrupt()
                             #TODO: If temp too hot, open needle valve more?
                         #read current, open like 10% more, wait, read temp, do again or break if too open
@@ -906,7 +906,7 @@ class Application:
                     break
                     
                 #print that made it to new temp
-                print('Next Temp Reached %f K (took %i mins)'%(t,tempcheck_iters))
+                print('Next Temp Reached %s K (took %i mins)'%(str(t),tempcheck_iters))
 
                 #log at start of scan
                 self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
