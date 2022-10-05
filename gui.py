@@ -17,7 +17,7 @@ NOT_REFRESHING = 'not_refreshing'
 VTVH_ACTIVE = 'active'
 VTVH_INACTIVE = 'inactive'
 ISOTHERM_DEFAULTS=[0,7,0,-7,0]
-TEMP_DEFAULTS=['Work in Progress']
+TEMP_DEFAULTS=[2,5,10,15,25]
 
 class GUI(tk.Frame):
     def __init__(self, master=tk.Tk()):
@@ -414,7 +414,7 @@ class GUI(tk.Frame):
                     self.btn_vtvh['text'] = 'Collect Isotherm'
                     self.btn_vtvh['command'] = self.func_vtvh
                     self.ent_vtvh_field['state'] = 'normal'
-                    #self.ent_vtvh_temps['state'] = 'normal'
+                    self.ent_vtvh_temps['state'] = 'normal'
                     self.ent_vtvh_scanTime['state'] = 'normal'
                 elif vtvh_status == VTVH_ACTIVE:
                     self.btn_vtvh['state'] = 'normal'

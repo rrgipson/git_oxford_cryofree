@@ -886,9 +886,13 @@ class Application:
                     tempcheck_iters+=1 #count number of checks done 
                     #if temp hasnt stabilized after 30 mins, interrupt the vtvh run
                     if tempcheck_iters>30:
-                        print('VTVH TIMEOUT: Temperature (%f K) Not Reached after 30 mins'%t)
-                        self.vtvh_interrupt()
-                        #TODO: If temp too hot, open needle valve more?
+                        if abs(float(t)-float(self.get_sample_temp())) < 1.0: #if its within 1K just keep running
+                            print('Warning: Using Secondary Temp Criteria After 30mins')
+                            break
+                        else:
+                            print('VTVH TIMEOUT: Temperature (%f K) Not Reached after 30 mins'%t)
+                            self.vtvh_interrupt()
+                            #TODO: If temp too hot, open needle valve more?
                         #read current, open like 10% more, wait, read temp, do again or break if too open
                     #exit loop when made it to new temp
                         
@@ -937,7 +941,7 @@ class Application:
                 #set Cryofree GUI
                 self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_ACTIVE)
                 #CHANGE THIS THREAD BELOW TO SWITCH FROM ISOTHERM TO FULL VTVH
-                self._vtvh_thread = Thread(target=self._collect_isotherm, args=(vhs,st,))
+                self._vtvh_thread = Thread(target=self._collect_full_vtvh, args=(vhs,st,))
                 self._vtvh_thread.start()
         else:
             print('Must be Connected to Start VTVH.')
