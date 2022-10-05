@@ -821,3 +821,5 @@ Initializing serial_disconnect Procedure
 Completed Disconnect Procedure 
 ------------------------------New Session Started
 2022-10-05 10:14:23.417539 
+------------------------------New Session Started
+2022-10-05 10:17:15.877310 

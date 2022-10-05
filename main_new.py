@@ -255,7 +255,7 @@ class Application:
                 sensor3 = '—'
                 
             #CRYOFREE Added NV
-            current_nv= self.get_nv_pressure(print=False)
+            current_nv= self.get_nv_pressure(print_out=False)
             
             self.gui.update_temps(sensor1=sensor1, sensor3=sensor3, current_nv=current_nv+'mB')
             sleep(self._temp_delay)
@@ -605,9 +605,9 @@ class Application:
                 temp1 = None
         return temp1.replace('K','')
         
-    def get_nv_pressure(self, print=True):
+    def get_nv_pressure(self, print_out=True):
         if self.serial_t.is_open and self._temp_connect:
-            val = self.serial_t.transmit(isobus_temp +READ+NV+CURRENT_PRES, 'TempControl: Error reading Needle Valve Pressure', print)
+            val = self.serial_t.transmit(isobus_temp +READ+NV+CURRENT_PRES, 'TempControl: Error reading Needle Valve Pressure', print_out)
             if len(val) > 0:
                 if val.split(':')[-1] != 'INVALID':
                     val = val.split(':')[-1]
