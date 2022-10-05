@@ -642,3 +642,150 @@ Traceback (most recent call last):
     win32.ResetEvent(self._overlapped_read.hEvent)
 AttributeError: 'NoneType' object has no attribute 'hEvent'
 Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-10-03 15:29:06.047067 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Updating Background Log 
+ocedure
+@1R10 R268.700 
+Magnet Temp: 268.700 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R250.846 
+Magnet Temp: 250.846 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R233.702 
+Magnet Temp: 233.702 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R217.403 
+Magnet Temp: 217.403 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R201.933 
+Magnet Temp: 201.933 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R187.126 
+Magnet Temp: 187.126 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R172.775 
+Magnet Temp: 172.775 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R158.874 
+Magnet Temp: 158.874 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R145.089 
+Magnet Temp: 145.089 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R131.069 
+Magnet Temp: 131.069 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R116.985 
+Magnet Temp: 116.985 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R102.118 
+Magnet Temp: 102.118 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R85.817 
+Magnet Temp: 85.817 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R66.543 
+Magnet Temp: 66.543 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R36.382 
+Magnet Temp: 36.382 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R3.522 
+Magnet Temp: 3.522 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R3.436 
+Magnet Temp: 3.436 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R3.434 
+Magnet Temp: 3.434 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R3.459 
+Magnet Temp: 3.459 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R3.445 
+Magnet Temp: 3.445 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R3.426 
+Magnet Temp: 3.426 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+@1R10 R3.451 
+Magnet Temp: 3.451 K 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
