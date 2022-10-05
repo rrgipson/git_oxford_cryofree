@@ -946,7 +946,7 @@ class Application:
                 #set Cryofree GUI
                 self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_ACTIVE)
                 #CHANGE THIS THREAD BELOW TO SWITCH FROM ISOTHERM TO FULL VTVH
-                self._vtvh_thread = Thread(target=self._collect_full_vtvh, args=(vhs,st,))
+                self._vtvh_thread = Thread(target=self._collect_full_vtvh, args=(vhs,temps,st,))
                 self._vtvh_thread.start()
         else:
             print('Must be Connected to Start VTVH.')

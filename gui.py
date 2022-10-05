@@ -411,7 +411,7 @@ class GUI(tk.Frame):
             if vtvh_status!=None:
                 if vtvh_status==VTVH_INACTIVE:
                     self.btn_vtvh['state'] = 'normal'
-                    self.btn_vtvh['text'] = 'Collect Isotherm'
+                    self.btn_vtvh['text'] = 'Collect VTVH'
                     self.btn_vtvh['command'] = self.func_vtvh
                     self.ent_vtvh_field['state'] = 'normal'
                     self.ent_vtvh_temps['state'] = 'normal'
