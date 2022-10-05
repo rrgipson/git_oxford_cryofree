@@ -13,8 +13,6 @@ delay_sensor = 5  # time between updates for sensors
 isobus_temp = '@2' 
 isobus_temp_version = '81'
 min_temp, max_temp = 0, 300
-temperature_sensor = 3  # sensor 1, sensor 2, or sensor 3 for auto regulation to the set point - UPDATED FOR CRYOFREE to sample
-temperature_return_control = 'SET:SYS:LOCK:OFF'  # makes sure the iTC won't be locked when disconnect
 
 # Magnet controller settings - UPDATED FOR CRYOFREE
 isobus_magnet = '@1'
@@ -96,7 +94,6 @@ class Application:
         self.gui.update_com_port(port='2 COMs')
         self.gui.set_connection_frame(connected=False)
         self.gui.set_cryofree_frame(connected=False)
-        self.gui.update_temps(setpoint_sensor=temperature_sensor)
         self.gui.set_temperature_frame(connected=False)
         self.gui.set_field_frame(connected=False)
         
@@ -213,8 +210,6 @@ class Application:
     def serial_disconnect(self):
         print_to_log('Initializing serial_disconnect Procedure')
         if self.serial_t.is_open:
-            if self._temp_connect:
-                self.serial_t.transmit(isobus_temp+temperature_return_control)
             self.serial_t.close()
         if self.serial_m.is_open:
             if self._field_connect:
@@ -234,6 +229,7 @@ class Application:
 
         sleep(max(self._temp_delay, self._field_delay))  # wait to update to '—'
         self.gui.set_connection_frame(connected=False)
+        print('Completed Disconnect Procedure')
 
     def _monitor_temperature(self): 
         """
@@ -252,7 +248,7 @@ class Application:
             sensor3 = self.serial_t.transmit(isobus_temp +READ+SAMPLE+CURRENT_TEMP, 'TempControl: Error reading sample sensor', False)
             if len(sensor3) > 0:
                 if sensor3.split(':')[-1] != 'INVALID':
-                    sensor3 = sensor1.split(':')[-1]
+                    sensor3 = sensor3.split(':')[-1]
                 else:
                     sensor3 = '—'
             else:
@@ -261,13 +257,13 @@ class Application:
             #CRYOFREE Added NV
             current_nv= self.get_nv_pressure()
             
-            self.gui.update_temps(sensor1=sensor1, sensor3=sensor3, current_nv=current_nv)
+            self.gui.update_temps(sensor1=sensor1, sensor3=sensor3, current_nv=current_nv+'mB')
             sleep(self._temp_delay)
         # after 'while' loop breaks
         self.gui.update_temps(sensor1='—', sensor3='—', current_nv= '—')
         return
 
-    def set_temperature(self, temperature=None, *args):
+    def set_temperature(self, *args):
         if self.serial_t.is_open and self._temp_connect:
             self.serial_t.transmit(isobus_temp+SET+SAMPLE+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto') #Sets both heaters to auto
             self.serial_t.transmit(isobus_temp+SET+VTI+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto')
@@ -316,7 +312,7 @@ class Application:
         temperature = '—'
         if self.serial_t.is_open and self._temp_connect:
             response = self.serial_t.transmit(isobus_temp+READ+SAMPLE+SETPT_TEMP, 'TempControl: Error reading set point')
-            if response.split(':')[-1]=='INVALID':
+            if response.split(':')[-1]!='INVALID':
                 temperature = response.split(':')[-1]
         self.gui.update_temps(setpoint=temperature)
         if temperature == '—':
@@ -545,7 +541,7 @@ class Application:
     def get_ramp_rate(self): #gets field set point
         ramp_rate = '—'
         if self.serial_m.is_open and self._field_connect:
-            response = self.serial_m.transmit(isobus_magnet + 'R9', 'Magnet: Error reading ramp rate')
+            response = self.serial_m.transmit(isobus_magnet + 'R9', 'Magnet: Error reading ramp rate', False)
             if response[0] == 'R':
                 ramp_rate = response[1:]
         print('Magnet Ramp Rate:',ramp_rate, 'T/min')
@@ -554,7 +550,7 @@ class Application:
     def get_magnet_temp(self): #gets magnet temperature
         mag_temp = '—'
         if self.serial_m.is_open and self._field_connect:
-            response = self.serial_m.transmit(isobus_magnet + 'R10', 'Magnet: Error reading temperature')
+            response = self.serial_m.transmit(isobus_magnet + 'R10', 'Magnet: Error reading temperature', False)
             if response[0] == 'R':
                 mag_temp = response[1:]
         print('Magnet Temp:',mag_temp, 'K')
@@ -570,11 +566,12 @@ class Application:
                     field = None
             else:
                 field = None
+        print('Current Magnet Field: %s T'%field)
         return field
     
     def get_sample_temp(self):
         if self.serial_t.is_open and self._temp_connect:
-            temp3 = self.serial_t.transmit(isobus_temp +READ+SAMPLE+CURRENT_TEMP, 'TempControl: Error reading sample temp sensor', False)
+            temp3 = self.serial_t.transmit(isobus_temp +READ+SAMPLE+CURRENT_TEMP, 'TempControl: Error reading sample temp sensor')
             if len(temp3) > 0:
                 if temp3.split(':')[-1] != 'INVALID':
                     temp3 = temp3.split(':')[-1]
@@ -582,11 +579,11 @@ class Application:
                     temp3 = None
             else:
                 temp3 = None
-        return temp3
+        return temp3.replace('K','')
 
     def get_vti_temp(self):
         if self.serial_t.is_open and self._temp_connect:
-            temp1 = self.serial_t.transmit(isobus_temp +READ+VTI+CURRENT_TEMP, 'TempControl: Error reading temp sensor 1', False)
+            temp1 = self.serial_t.transmit(isobus_temp +READ+VTI+CURRENT_TEMP, 'TempControl: Error reading temp sensor 1')
             if len(temp1) > 0:
                 if temp1.split(':')[-1] != 'INVALID':
                     temp1 = temp1.split(':')[-1]
@@ -594,11 +591,11 @@ class Application:
                     temp1 = None
             else:
                 temp1 = None
-        return temp1
+        return temp1.replace('K','')
     
     def get_pt2_temp(self):
         if self.serial_t.is_open and self._temp_connect:
-            temp1 = self.serial_t.transmit(isobus_temp +READ+PT2+CURRENT_TEMP, 'TempControl: Error reading PT2 Temp sensor', False)
+            temp1 = self.serial_t.transmit(isobus_temp +READ+PT2+CURRENT_TEMP, 'TempControl: Error reading PT2 Temp sensor')
             if len(temp1) > 0:
                 if temp1.split(':')[-1] != 'INVALID':
                     temp1 = temp1.split(':')[-1]
@@ -606,11 +603,11 @@ class Application:
                     temp1 = None
             else:
                 temp1 = None
-        return temp1
+        return temp1.replace('K','')
         
     def get_nv_pressure(self):
         if self.serial_t.is_open and self._temp_connect:
-            val = self.serial_t.transmit(isobus_temp +READ+NV+CURRENT_PRES, 'TempControl: Error reading Needle Valve Pressure', False)
+            val = self.serial_t.transmit(isobus_temp +READ+NV+CURRENT_PRES, 'TempControl: Error reading Needle Valve Pressure')
             if len(val) > 0:
                 if val.split(':')[-1] != 'INVALID':
                     val = val.split(':')[-1]
@@ -618,11 +615,11 @@ class Application:
                     val = None
             else:
                 val = None
-        return val
+        return val.replace('mB','')
 
     def get_nv_percent(self):
         if self.serial_t.is_open and self._temp_connect:
-            val = self.serial_t.transmit(isobus_temp +READ_NV_PERC, 'TempControl: Error reading Needle Valve Percent', False)
+            val = self.serial_t.transmit(isobus_temp +READ_NV_PERC, 'TempControl: Error reading Needle Valve Percent')
             if len(val) > 0:
                 if val.split(':')[-1] != 'INVALID':
                     val = val.split(':')[-1]
