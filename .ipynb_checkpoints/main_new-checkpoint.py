@@ -894,7 +894,7 @@ class Application:
                 tempcheck_iters=0
                 last3_temps=[]
                 #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
-                while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.3 and np.std(last3_temps) < 0.05): #Temp Accuarcy Cutoff
+                while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.3 and np.std(last3_temps) < 0.01): #Temp Accuarcy Cutoff
                     print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
                     if self._vtvh_interrupt == True:
                         break
