@@ -867,6 +867,10 @@ class Application:
                 self.vtvh_interrupt()
                 break
 
+            #Go to first temp in list while going to next field
+            self.gui.update_temps(setpoint=str(temp_list[0])+'K')
+            self.set_temperature()
+            
             #go to next field
             self.set_field_and_go(newfield=h)
             #Let field stabilize
@@ -882,12 +886,16 @@ class Application:
                 #update temp setpoint on gui then on instrument
                 self.gui.update_temps(setpoint=str(t)+'K')
                 self.set_temperature()
+                #wait 5 mins for temp to be reached/stabilize
+                print('Waiting 5 mins for temp to stabilize')
+                sleep(300)
 
                 #check every minute to see if have reached the correct temp
                 tempcheck_iters=0
                 last3_temps=[]
                 #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
                 while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.3 and np.std(last3_temps) < 0.05): #Temp Accuarcy Cutoff
+                    print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
                     if self._vtvh_interrupt == True:
                         break
                     sleep(60) #waits 1 min between temp checks
@@ -914,6 +922,7 @@ class Application:
                     
                 #print that made it to new temp
                 print('Temps:', last3_temps)
+                print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
                 print('Next Temp Reached %s K (took %i mins)'%(str(t),tempcheck_iters))
 
                 #log at start of scan
@@ -921,6 +930,7 @@ class Application:
 
                 #take a scan 
                 print('Taking a Scan - One Lamp Only')
+                print('Scan Number %i'%scan_num)
                 j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
                 sleep(scanDelay) #for scan waiting
 
@@ -929,6 +939,8 @@ class Application:
 
                 #iterate scan number
                 scan_num+=1
+
+
 
 
         #TURN OFF SWITCH HEATER AT END AND IF DIDNT INTERRUPT
