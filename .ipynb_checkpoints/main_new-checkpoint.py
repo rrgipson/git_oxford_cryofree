@@ -1,3 +1,4 @@
+import numpy as np
 from time import sleep
 from threading import Thread
 from oxford import SerialPort, default_comport_m, default_comport_t
@@ -255,7 +256,7 @@ class Application:
                 sensor3 = '—'
                 
             #CRYOFREE Added NV
-            current_nv= self.get_nv_pressure()
+            current_nv= self.get_nv_pressure(print_out=False)
             
             self.gui.update_temps(sensor1=sensor1, sensor3=sensor3, current_nv=current_nv+'mB')
             sleep(self._temp_delay)
@@ -605,9 +606,9 @@ class Application:
                 temp1 = None
         return temp1.replace('K','')
         
-    def get_nv_pressure(self):
+    def get_nv_pressure(self, print_out=True):
         if self.serial_t.is_open and self._temp_connect:
-            val = self.serial_t.transmit(isobus_temp +READ+NV+CURRENT_PRES, 'TempControl: Error reading Needle Valve Pressure')
+            val = self.serial_t.transmit(isobus_temp +READ+NV+CURRENT_PRES, 'TempControl: Error reading Needle Valve Pressure', print_out)
             if len(val) > 0:
                 if val.split(':')[-1] != 'INVALID':
                     val = val.split(':')[-1]
@@ -806,17 +807,22 @@ class Application:
         self._vtvh_thread = None
         
     def _collect_full_vtvh(self, field_list, temp_list, scanTime):      
+        print('Starting Full VTVH Run')
         #measure scan duration??
 
         #Check if fields are in correct range
         if any(abs(float(h)) > 7 for h in field_list):
             print('Error in Fields: Must be between -7 and 7 T')
             self.vtvh_interrupt()
+        else:
+            print('Fields Read in Correctly')
             
         #Check if temps are in correct range
         if any(float(t) < 0 for t in temp_list) or any(float(t) > 300 for t in temp_list):
             print('Error in Temps: Must be between 0 and 300 K')
             self.vtvh_interrupt()
+        else:
+            print('Temps Read in Correctly')
         
         #Read the inputted time for scan and use as delay
         scanDelay=int(scanTime)
@@ -840,7 +846,7 @@ class Application:
         #setup logging
         self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
         if self._field_connect:
-            self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field)
+            self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field, get_field_set=self.get_field)
         if self._temp_connect:
              self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_pt2_temp=self.get_pt2_temp, get_nv_pressure=self.get_nv_pressure, get_nv_percent=self.get_nv_percent, get_temp_set=self.get_temperature)
             
@@ -865,7 +871,7 @@ class Application:
             self.set_field_and_go(newfield=h)
             #Let field stabilize
             sleep(30)
-            print('Next Field Reached %f T'%h)
+            print('Next Field Reached %s T'%str(h))
             
             #go to each temperature and scan
             for t in temp_list:
@@ -879,18 +885,24 @@ class Application:
 
                 #check every minute to see if have reached the correct temp
                 tempcheck_iters=0
-                while abs(float(t)-float(self.get_sample_temp())) > 0.05: #Temp Accuarcy Cutoff
+                last3_temps=[]
+                #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
+                while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.3 and np.std(last3_temps) < 0.05): #Temp Accuarcy Cutoff
                     if self._vtvh_interrupt == True:
                         break
                     sleep(60) #waits 1 min between temp checks
+                    temp_chk=float(self.get_sample_temp())
+                    last3_temps.append(temp_chk)
+                    while len(last3_temps)>3:
+                        last3_temps.pop(0)
                     tempcheck_iters+=1 #count number of checks done 
                     #if temp hasnt stabilized after 30 mins, interrupt the vtvh run
-                    if tempcheck_iters>30:
-                        if abs(float(t)-float(self.get_sample_temp())) < 1.0: #if its within 1K just keep running
-                            print('Warning: Using Secondary Temp Criteria After 30mins')
+                    if tempcheck_iters>20:
+                        if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < 0.05: #secondary criteria after 20 mins
+                            print('Warning: Using Secondary Temp Criteria After 20mins')
                             break
                         else:
-                            print('VTVH TIMEOUT: Temperature (%f K) Not Reached after 30 mins'%t)
+                            print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 20 mins'%str(t))
                             self.vtvh_interrupt()
                             #TODO: If temp too hot, open needle valve more?
                         #read current, open like 10% more, wait, read temp, do again or break if too open
@@ -901,7 +913,8 @@ class Application:
                     break
                     
                 #print that made it to new temp
-                print('Next Temp Reached %f K (took %i mins)'%(t,tempcheck_iters))
+                print('Temps:', last3_temps)
+                print('Next Temp Reached %s K (took %i mins)'%(str(t),tempcheck_iters))
 
                 #log at start of scan
                 self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
@@ -941,7 +954,7 @@ class Application:
                 #set Cryofree GUI
                 self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_ACTIVE)
                 #CHANGE THIS THREAD BELOW TO SWITCH FROM ISOTHERM TO FULL VTVH
-                self._vtvh_thread = Thread(target=self._collect_full_vtvh, args=(vhs,st,))
+                self._vtvh_thread = Thread(target=self._collect_full_vtvh, args=(vhs,temps,st,))
                 self._vtvh_thread.start()
         else:
             print('Must be Connected to Start VTVH.')

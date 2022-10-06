@@ -1,3 +1,4 @@
+import numpy as np
 from time import sleep
 from threading import Thread
 from oxford import SerialPort, default_comport_m, default_comport_t
@@ -884,18 +885,24 @@ class Application:
 
                 #check every minute to see if have reached the correct temp
                 tempcheck_iters=0
-                while abs(float(t)-float(self.get_sample_temp())) > 0.05: #Temp Accuarcy Cutoff
+                last3_temps=[]
+                #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
+                while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.3 and np.std(last3_temps) < 0.05): #Temp Accuarcy Cutoff
                     if self._vtvh_interrupt == True:
                         break
                     sleep(60) #waits 1 min between temp checks
+                    temp_chk=float(self.get_sample_temp())
+                    last3_temps.append(temp_chk)
+                    while len(last3_temps)>3:
+                        last3_temps.pop(0)
                     tempcheck_iters+=1 #count number of checks done 
                     #if temp hasnt stabilized after 30 mins, interrupt the vtvh run
-                    if tempcheck_iters>30:
-                        if abs(float(t)-float(self.get_sample_temp())) < 1.0: #if its within 1K just keep running
-                            print('Warning: Using Secondary Temp Criteria After 30mins')
+                    if tempcheck_iters>20:
+                        if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < 0.05: #secondary criteria after 20 mins
+                            print('Warning: Using Secondary Temp Criteria After 20mins')
                             break
                         else:
-                            print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 30 mins'%str(t))
+                            print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 20 mins'%str(t))
                             self.vtvh_interrupt()
                             #TODO: If temp too hot, open needle valve more?
                         #read current, open like 10% more, wait, read temp, do again or break if too open
@@ -906,6 +913,7 @@ class Application:
                     break
                     
                 #print that made it to new temp
+                print('Temps:', last3_temps)
                 print('Next Temp Reached %s K (took %i mins)'%(str(t),tempcheck_iters))
 
                 #log at start of scan
