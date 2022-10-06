@@ -867,6 +867,10 @@ class Application:
                 self.vtvh_interrupt()
                 break
 
+            #Go to first temp in list while going to next field
+            self.gui.update_temps(setpoint=str(temp_list[0])+'K')
+            self.set_temperature()
+            
             #go to next field
             self.set_field_and_go(newfield=h)
             #Let field stabilize
@@ -882,12 +886,16 @@ class Application:
                 #update temp setpoint on gui then on instrument
                 self.gui.update_temps(setpoint=str(t)+'K')
                 self.set_temperature()
+                #wait 5 mins for temp to be reached/stabilize
+                print('Waiting 5 mins for temp to stabilize')
+                sleep(300)
 
                 #check every minute to see if have reached the correct temp
                 tempcheck_iters=0
                 last3_temps=[]
                 #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
                 while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.3 and np.std(last3_temps) < 0.05): #Temp Accuarcy Cutoff
+                    print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
                     if self._vtvh_interrupt == True:
                         break
                     sleep(60) #waits 1 min between temp checks
@@ -914,6 +922,7 @@ class Application:
                     
                 #print that made it to new temp
                 print('Temps:', last3_temps)
+                print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
                 print('Next Temp Reached %s K (took %i mins)'%(str(t),tempcheck_iters))
 
                 #log at start of scan
@@ -921,14 +930,28 @@ class Application:
 
                 #take a scan 
                 print('Taking a Scan - One Lamp Only')
+                print('Scan Number %i'%scan_num)
                 j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
-                sleep(scanDelay) #for scan waiting
+                #Handle waiting for scan and logging during scan
+                if scanDelay>300: #if scan is longer than 5 mins
+                    wait_left=scanDelay
+                    while wait_left > 300:
+                        sleep(295)
+                        self.vtvh_logger.generate_vtvh_log(scan_num=scan_num) #log every 5 mins
+                        sleep(5)
+                        wait_left-=300 #track how long left to wait
+                    #wait remaining (less than 5 min) amount    
+                    sleep(wait_left) 
+                else:              
+                    sleep(scanDelay) #wait for whole scan time
 
                 #log at end of scan
                 self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
 
                 #iterate scan number
                 scan_num+=1
+
+
 
 
         #TURN OFF SWITCH HEATER AT END AND IF DIDNT INTERRUPT
@@ -951,6 +974,12 @@ class Application:
                 vhs=self.gui.user_vtvh_field()
                 temps=self.gui.user_vtvh_temps()
                 st=self.gui.user_scanTime()
+                #parse minutes and seconds of scan time
+                if ':' in st:
+                    mins=st.split(':')[0]
+                    secs=st.split(':')[1]
+                    print('Scan Time Read as %i mins and %i secs'%(int(mins),int(secs)))
+                    st=int(mins*60)+int(secs)
                 #set Cryofree GUI
                 self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_ACTIVE)
                 #CHANGE THIS THREAD BELOW TO SWITCH FROM ISOTHERM TO FULL VTVH

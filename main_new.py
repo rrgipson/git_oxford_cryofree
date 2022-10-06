@@ -932,7 +932,18 @@ class Application:
                 print('Taking a Scan - One Lamp Only')
                 print('Scan Number %i'%scan_num)
                 j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
-                sleep(scanDelay) #for scan waiting
+                #Handle waiting for scan and logging during scan
+                if scanDelay>300: #if scan is longer than 5 mins
+                    wait_left=scanDelay
+                    while wait_left > 300:
+                        sleep(295)
+                        self.vtvh_logger.generate_vtvh_log(scan_num=scan_num) #log every 5 mins
+                        sleep(5)
+                        wait_left-=300 #track how long left to wait
+                    #wait remaining (less than 5 min) amount    
+                    sleep(wait_left) 
+                else:              
+                    sleep(scanDelay) #wait for whole scan time
 
                 #log at end of scan
                 self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
@@ -963,6 +974,12 @@ class Application:
                 vhs=self.gui.user_vtvh_field()
                 temps=self.gui.user_vtvh_temps()
                 st=self.gui.user_scanTime()
+                #parse minutes and seconds of scan time
+                if ':' in st:
+                    mins=st.split(':')[0]
+                    secs=st.split(':')[1]
+                    print('Scan Time Read as %i mins and %i secs'%(int(mins),int(secs)))
+                    st=int(mins*60)+int(secs)
                 #set Cryofree GUI
                 self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_ACTIVE)
                 #CHANGE THIS THREAD BELOW TO SWITCH FROM ISOTHERM TO FULL VTVH

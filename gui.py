@@ -111,7 +111,7 @@ class GUI(tk.Frame):
         
         self.frm_scanTime=tk.Frame(self.frm_vtvh)
         self.frm_scanTime.grid(row=5, column=0, sticky=tk.N, padx=3)
-        self.lbl_vtvh_scanTime=tk.Label(self.frm_scanTime, text='How long is J1700 Scan (seconds)?')
+        self.lbl_vtvh_scanTime=tk.Label(self.frm_scanTime, text='How long is J1700 Scan (mins:seconds)?')
         self.lbl_vtvh_scanTime.grid(row=0, column=0)
         self.ent_vtvh_scanTime = tk.Entry(self.frm_scanTime, fg='white', bg='black', insertbackground='white',
                                         font=small_font, width=6, disabledforeground='black',
