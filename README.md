@@ -15,6 +15,9 @@ Code for running the Solomon Lab MCD.
 4. gui.py handles the setup and changes made to the gui (activating/deactivating fields) during running.
 5. logger.py contains a class that handles all of the logging activities (writing data from background/VTVH to csv files as well as printed text and errors [stderr is overwritten]).
     - the background_log.csv file is in the main folder and the VTVH and error logs are in UserLogs/
+    - Background log is updated when connection is established and every 2 hours after
+    - VTVH logging happens at the beginning and end of every scan
+    - Error logging just prints all messages to a file (that is time stamped) including ones from stderr for later reference
 6. scpi_iTC just stores as strings some of the base SCPI commands for the temp controller
 7. All the other python files in the main folder are tests for various parts. test_connection, test_temp_connection, and test_temp_newCmds allow you to communicate with the box without the GUI
 
