@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import filedialog
 
 # Settings flags for magnet controller
 SWITCH_ENABLED = 'enabled'
@@ -43,6 +44,9 @@ class GUI(tk.Frame):
         self.func_vtvh = None
         self.func_vtvh_interrupt = None
         self.func_set_nv = None
+        self.func_vtvh_browse = self.browse_for_dir
+        #set one variable for browse folder
+        self.path_vtvh_browse = None
 
         # Make container frames
         self.frm_connection = tk.Frame(self)
@@ -120,9 +124,14 @@ class GUI(tk.Frame):
         self.ent_vtvh_scanTime.insert(tk.END, '0')
         self.ent_vtvh_scanTime['state'] = 'disabled'
         
-        self.btn_vtvh = tk.Button(self.frm_vtvh, text='Run VTVH (Currently just isotherm)', state='disabled')
+        self.btn_vtvh = tk.Button(self.frm_vtvh, text='Collect VTVH', state='disabled')
         self.btn_vtvh.grid(row=6)
         
+        self.btn_vtvh_browse = tk.Button(self.frm_vtvh, text='Browse for Folder', state='normal')
+        self.btn_vtvh_browse.grid(row=8)
+        self.btn_vtvh_browse['command'] = self.func_vtvh_browse
+        self.lbl_vtvh_browse = tk.Label(self.frm_vtvh, text='Select Folder that Spectral Measurement is Autosaving to:')
+        self.lbl_vtvh_browse.grid(row=7)
         
         # Temperature frame
         self.lbl_temp_frame = tk.Label(self.frm_temp_sensor, text='Temperature Control (Kelvin)')
@@ -244,6 +253,9 @@ class GUI(tk.Frame):
     
     def user_scanTime(self):
         return self.ent_vtvh_scanTime.get().replace(' ', '')
+    
+    def user_vtvh_dir(self):
+        return self.path_vtvh_browse
 
     def user_nv(self):
         return self.ent_nv.get().replace(' ', '')
@@ -416,6 +428,7 @@ class GUI(tk.Frame):
                     self.ent_vtvh_field['state'] = 'normal'
                     self.ent_vtvh_temps['state'] = 'normal'
                     self.ent_vtvh_scanTime['state'] = 'normal'
+                    self.btn_vtvh_browse['state'] = 'normal'
                 elif vtvh_status == VTVH_ACTIVE:
                     self.btn_vtvh['state'] = 'normal'
                     self.btn_vtvh['text'] = 'Interrupt VTVH'
@@ -423,6 +436,7 @@ class GUI(tk.Frame):
                     self.ent_vtvh_field['state'] = 'disabled'
                     self.ent_vtvh_temps['state'] = 'disabled'
                     self.ent_vtvh_scanTime['state'] = 'disabled'
+                    self.btn_vtvh_browse['state'] = 'disabled'
 
         else:
             self.btn_refresh['state']='disabled'
@@ -431,6 +445,12 @@ class GUI(tk.Frame):
             self.ent_vtvh_field['state'] = 'disabled'
             self.ent_vtvh_temps['state'] = 'disabled'
             self.ent_vtvh_scanTime['state'] = 'disabled'
+            
+    def browse_for_dir(self):
+        dirname = filedialog.askdirectory()
+        self.lbl_vtvh_browse['text']='...'+dirname[-40:]
+        self.path_vtvh_browse = dirname
+        return dirname
 
 if __name__ == '__main__':
     pass

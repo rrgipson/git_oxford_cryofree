@@ -21,3 +21,10 @@ test1,None,None,test2,None,None,None,2022-10-03 14:29:53.074000,None,None
 Date,Magnet_Temp,Magnet_Field,Field_SetPoint,Sample_Temp,VTI_Temp,PT2_Temp,NV_Pressure,NV_Percent,SampleTemp_SetPt
 2022-10-03 14:36:46.044124,test1,test2,None,None,None,None,None,None,None
 2022-10-03 14:37:18.019399,test1,test2,None,None,None,None,None,None,None
+
+Date,Magnet_Temp(K),Magnet_Field(T),Field_SetPoint(T),Sample_Temp(K),VTI_Temp(K),PT2_Temp(K),NV_Pressure(mB),NV_Percent,SampleTemp_SetPt(K)
+2022-10-07 10:54:19.310757,test1,test2,None,None,None,None,None,None,None
+2022-10-07 10:55:36.054036,test1,test2,None,None,None,None,None,None,None
+2022-10-07 10:56:33.313534,test1,test2,None,None,None,None,None,None,None
+2022-10-07 10:59:00.596371,test1,test2,None,None,None,None,None,None,None
+2022-10-07 11:02:27.121837,test1,test2,None,None,None,None,None,None,None

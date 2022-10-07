@@ -2325,3 +2325,13 @@ Setting Sample Temp to 1.9
 @1A1 A1 
  At New Field: 4.2 T 
 @1X X00A0C1H1M00 
+Finished Background Log Update 
+Logged VTVH Data for Scan None to test_vtvh_log.csv 
+Finished Background Log Update 
+Logged VTVH Data for Scan None to test_vtvh_log.csv 
+Finished Background Log Update 
+Logged VTVH Data for Scan None to test_vtvh_log.csv 
+Finished Background Log Update 
+Logged VTVH Data for Scan None to test_vtvh_log.csv 
+Finished Background Log Update 
+Logged VTVH Data for Scan None to test_vtvh_log.csv 
