@@ -87,8 +87,14 @@ class LOGGER:
                     if line=='\n':
                         headnext=True
         
-        #open to append only
-        f = open(logfile, 'a+')
+        #open log file to append
+        try:
+            f = open(logfile, 'a+') #open to append only
+        #if don't have permission (open already by user), try open a "new" file
+        except PermissionError:
+            logfile=logfile.replace('.','_new.')
+            f = open(logfile, 'a+')
+        
         #if no header, add it
         if f_head != header:
             f.write('\n')
