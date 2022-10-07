@@ -831,6 +831,10 @@ class Application:
         else:
             print('Invalid Time Delay for Scan')
             self.vtvh_interrupt()
+            
+        #estimate time for run and print 
+        runtime=self.estimate_runtime(field_list,temp_list,scanDelay)
+        print('Est. Time for VTVH: %.2f hours'%runtime)
         
         #turn on switch heater
         if self._switch_status in [SWITCH_DISABLED, SWITCH_WARMING, SWITCH_COOLING] and not self._vtvh_interrupt:
@@ -1016,6 +1020,18 @@ class Application:
                 else:
                     break
         self._bglog_thread=None
+        
+    def estimate_runtime(self, fields, temps, scanSecs):
+        time_sum=0 
+        #0 to first field
+        time_sum+=abs(0-float(fields[0]))/(0.15*60)
+        #time to each of other fields
+        for i in range(1,len(fields)):
+            time_sum+=abs(float(fields[i-1])-float(fields[i]))/(0.15*60)
+        #time for temps
+        time_sum+=(len(fields)*len(temps)*0.25)
+        time_sum+=(len(fields)*len(temps)*(scanSecs/(60*60)))
+        return time_sum #in hours
             
             
 
