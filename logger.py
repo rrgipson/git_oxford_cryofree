@@ -92,8 +92,10 @@ class LOGGER:
             f = open(logfile, 'a+') #open to append only
         #if don't have permission (open already by user), try open a "new" file
         except PermissionError:
+            print('Please close the log file.')
             logfile=logfile.replace('.','_new.')
             f = open(logfile, 'a+')
+            print('Wrote to %s instead (you may want to merge later)'%logfile)
         
         #if no header, add it
         if f_head != header:
