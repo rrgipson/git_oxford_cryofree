@@ -898,7 +898,7 @@ class Application:
 
                 #check every minute to see if have reached the correct temp
                 tempcheck_iters=0
-                last3_temps=[]
+                last3_temps=[float(self.get_sample_temp())]
                 #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
                 while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < 0.01): #Temp Accuarcy Cutoff
                     print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
