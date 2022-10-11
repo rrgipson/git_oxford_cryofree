@@ -831,6 +831,10 @@ class Application:
         else:
             print('Invalid Time Delay for Scan')
             self.vtvh_interrupt()
+            
+        #estimate time for run and print 
+        runtime=self.estimate_runtime(field_list,temp_list,scanDelay)
+        print('Est. Time for VTVH: %.2f hours'%runtime)
         
         #turn on switch heater
         if self._switch_status in [SWITCH_DISABLED, SWITCH_WARMING, SWITCH_COOLING] and not self._vtvh_interrupt:
@@ -849,6 +853,8 @@ class Application:
             self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field, get_field_set=self.get_field)
         if self._temp_connect:
              self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_pt2_temp=self.get_pt2_temp, get_nv_pressure=self.get_nv_pressure, get_nv_percent=self.get_nv_percent, get_temp_set=self.get_temperature)
+        if os.path.exists(self.gui.user_vtvh_dir()):
+            self.vtvh_logger.set_dirpath(self.gui.user_vtvh_dir())
             
         #go to each field
         scan_num=1
@@ -892,9 +898,9 @@ class Application:
 
                 #check every minute to see if have reached the correct temp
                 tempcheck_iters=0
-                last3_temps=[]
+                last3_temps=[float(self.get_sample_temp())]
                 #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
-                while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.3 and np.std(last3_temps) < 0.05): #Temp Accuarcy Cutoff
+                while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < 0.01): #Temp Accuarcy Cutoff
                     print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
                     if self._vtvh_interrupt == True:
                         break
@@ -905,9 +911,9 @@ class Application:
                         last3_temps.pop(0)
                     tempcheck_iters+=1 #count number of checks done 
                     #if temp hasnt stabilized after 30 mins, interrupt the vtvh run
-                    if tempcheck_iters>20:
-                        if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < 0.05: #secondary criteria after 20 mins
-                            print('Warning: Using Secondary Temp Criteria After 20mins')
+                    if tempcheck_iters>15:
+                        if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 1.0 and np.std(last3_temps) < 0.05: #secondary criteria after 20 mins
+                            print('Warning: Using Secondary Temp Criteria After 15mins')
                             break
                         else:
                             print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 20 mins'%str(t))
@@ -932,7 +938,18 @@ class Application:
                 print('Taking a Scan - One Lamp Only')
                 print('Scan Number %i'%scan_num)
                 j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
-                sleep(scanDelay) #for scan waiting
+                #Handle waiting for scan and logging during scan
+                if scanDelay>300: #if scan is longer than 5 mins
+                    wait_left=scanDelay
+                    while wait_left > 300:
+                        sleep(295)
+                        self.vtvh_logger.generate_vtvh_log(scan_num=scan_num) #log every 5 mins
+                        sleep(5)
+                        wait_left-=300 #track how long left to wait
+                    #wait remaining (less than 5 min) amount    
+                    sleep(wait_left) 
+                else:              
+                    sleep(scanDelay) #wait for whole scan time
 
                 #log at end of scan
                 self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
@@ -963,6 +980,12 @@ class Application:
                 vhs=self.gui.user_vtvh_field()
                 temps=self.gui.user_vtvh_temps()
                 st=self.gui.user_scanTime()
+                #parse minutes and seconds of scan time
+                if ':' in st:
+                    mins=st.split(':')[0]
+                    secs=st.split(':')[1]
+                    print('Scan Time Read as %i mins and %i secs'%(int(mins),int(secs)))
+                    st=int(mins*60)+int(secs)
                 #set Cryofree GUI
                 self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_ACTIVE)
                 #CHANGE THIS THREAD BELOW TO SWITCH FROM ISOTHERM TO FULL VTVH
@@ -997,6 +1020,18 @@ class Application:
                 else:
                     break
         self._bglog_thread=None
+        
+    def estimate_runtime(self, fields, temps, scanSecs):
+        time_sum=0 
+        #0 to first field
+        time_sum+=abs(0-float(fields[0]))/(0.15*60)
+        #time to each of other fields
+        for i in range(1,len(fields)):
+            time_sum+=abs(float(fields[i-1])-float(fields[i]))/(0.15*60)
+        #time for temps
+        time_sum+=(len(fields)*len(temps)*0.25)
+        time_sum+=(len(fields)*len(temps)*(scanSecs/(60*60)))
+        return time_sum #in hours
             
             
 

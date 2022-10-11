@@ -9,6 +9,7 @@ from threading import Thread
 import csv
 import datetime
 import builtins
+from tkinter import filedialog
 
 #redefined the print function in order to log errors in error_log.txt
 def print(*args, sep=' ', end='\n',**kwargs):
@@ -43,12 +44,18 @@ class LOGGER:
         self.get_nv_percent = None
         self.get_temp_set = None
         #self.get_heater_output = None
+        
+        #where are the jasco files autosaving
+        self.dirpath = None
 
     def set_bg_file(self, newfile): #this is primarily for testing
         self.bg_file = newfile
         
     def set_log_file(self, newfile):
         self.log_file = newfile
+        
+    def set_dirpath(self, path):
+        self.dirpath = path
     
     def assign_field_log_fxns(self, get_mag_temp=None, get_mag_field=None, get_field_set=None):
         self.get_mag_temp = get_mag_temp
@@ -87,8 +94,16 @@ class LOGGER:
                     if line=='\n':
                         headnext=True
         
-        #open to append only
-        f = open(logfile, 'a+')
+        #open log file to append
+        try:
+            f = open(logfile, 'a+') #open to append only
+        #if don't have permission (open already by user), try open a "new" file
+        except PermissionError:
+            print('Please close the log file.')
+            logfile=logfile.replace('.','_new.')
+            f = open(logfile, 'a+')
+            print('Wrote to %s instead (you may want to merge later)'%logfile)
+        
         #if no header, add it
         if f_head != header:
             f.write('\n')
@@ -154,12 +169,16 @@ class LOGGER:
         log_fxns['NV_Pressure(mB)']=self.get_nv_pressure
         log_fxns['SampleTemp_SetPt(K)']=self.get_temp_set
         
+        
         for k in log_fxns.keys():
             if log_fxns[k] == None:
                 log_data[k] = None
             else:
                 get_func=log_fxns[k]
                 log_data[k] = get_func()
+        
+        #say what file the scan is saved to
+        log_data['File']=self.get_newest_file(self.dirpath)
         
         #parse dict into list of keys (for header) and data
         head_list, data_list = zip(*log_data.items())
@@ -171,3 +190,13 @@ class LOGGER:
         #send dict and file to send_to_file
         self.send_to_file(logfile=self.log_file, data=data, header=header)
         print('Logged VTVH Data for Scan', scan_num, 'to', self.log_file)
+        
+    def get_newest_file(self, dirpath):
+        if dirpath == None or (not os.path.exists(dirpath)) or len(os.listdir(dirpath))==0:
+            return None
+        else:
+            files = os.listdir(dirpath)
+            paths = [os.path.join(dirpath, basename) for basename in files]
+            newest = max(paths, key=os.path.getctime)
+            return newest.replace(dirpath, '').replace('\\','')
+            
