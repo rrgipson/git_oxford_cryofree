@@ -14326,3 +14326,29 @@ C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\site-packages\numpy\co
   arrmean = um.true_divide(
 C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\site-packages\numpy\core\_methods.py:226: RuntimeWarning: invalid value encountered in double_scalars
   ret = ret.dtype.type(ret / rcount)
+------------------------------New Session Started
+2022-10-11 10:05:40.568472 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:79.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.269 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:SIG:TEMP STAT:DEV:DB8.T1:TEMP:SIG:TEMP:80.2272K 
+@2READ:DEV:MB1.T1:TEMP:SIG:TEMP STAT:DEV:MB1.T1:TEMP:SIG:TEMP:78.2309K 
+@2READ:DEV:DB7.T1:TEMP:SIG:TEMP STAT:DEV:DB7.T1:TEMP:SIG:TEMP:3.2803K 
+@2READ:DEV:DB5.P1:PRES:SIG:PRES STAT:DEV:DB5.P1:PRES:SIG:PRES:4.8070mB 
+@2READ:DEV:DB4.G1:AUX:SIG:PERC STAT:DEV:DB4.G1:AUX:SIG:PERC:19.2905% 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:79.0000K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
