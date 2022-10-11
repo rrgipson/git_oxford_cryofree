@@ -150,7 +150,7 @@ class LOGGER:
         self.send_to_file(logfile=self.bg_file, data=data, header=header)
         print('Finished Background Log Update')
         
-    def generate_vtvh_log(self, scan_num=None):
+    def generate_vtvh_log(self, scan_num=None, after=False):
         #add correct things
         #waiting happens in main
         #create dict of data to log
@@ -178,7 +178,10 @@ class LOGGER:
                 log_data[k] = get_func()
         
         #say what file the scan is saved to
-        log_data['File']=self.get_newest_file(self.dirpath)
+        if after == True:
+            log_data['File']=self.get_newest_file(self.dirpath)
+        else:
+            log_data['File']=None
         
         #parse dict into list of keys (for header) and data
         head_list, data_list = zip(*log_data.items())

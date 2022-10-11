@@ -952,7 +952,7 @@ class Application:
                     sleep(scanDelay) #wait for whole scan time
 
                 #log at end of scan
-                self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
+                self.vtvh_logger.generate_vtvh_log(scan_num=scan_num, after=True)
 
                 #iterate scan number
                 scan_num+=1
