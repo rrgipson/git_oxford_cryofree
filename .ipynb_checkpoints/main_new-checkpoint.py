@@ -714,97 +714,6 @@ class Application:
         else:
             self._vtvh_interrupt = False
         
-    def _collect_isotherm(self, field_list, scanTime):      
-        #measure scan duration??
-
-        #Check if fields are in correct range
-        if any(abs(float(h)) > 7 for h in field_list):
-            print('Error in Fields: Must be between -7 and 7 T')
-            self.vtvh_interrupt()
-        
-        #Read the inputted time for scan and use as delay
-        scanDelay=int(scanTime)
-        if scanDelay > 0:
-            print('Each scan takes %i seconds.'%scanDelay)
-        else:
-            print('Invalid Time Delay for Scan')
-            self.vtvh_interrupt()
-        
-        #turn on switch heater
-        if self._switch_status in [SWITCH_DISABLED, SWITCH_WARMING, SWITCH_COOLING] and not self._vtvh_interrupt:
-            self.engage_switch_heater()
-            print('Waiting for switch heater to warm up (5 mins).')
-            sleep(300)
-        elif self._switch_status == SWITCH_ENABLED and not self._vtvh_interrupt:
-            print('Switch Heater ON: Waiting 5 Mins.')
-            sleep(300) #Wait 5 minutes even if switch heater is on
-        else: #interrupt or switch error
-            self.vtvh_interrupt()
-        
-        #setup logging
-        self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
-        if self._field_connect:
-            self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field)
-        if self._temp_connect:
-             self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_pt2_temp=self.get_pt2_temp, get_nv_pressure=self.get_nv_pressure, get_nv_percent=self.get_nv_percent, get_temp_set=self.get_temperature)
-        
-        
-        #go to each field and scan
-        scan_num=1
-        for h in field_list:
-            #check if interrupt was pressed
-            if self._vtvh_interrupt == True:
-                break
-            #check ramp rate
-            if float(self.get_ramp_rate()) > 0.154:
-                print('RAMP RATE EXCEEDS LIMIT: Ending VTVH. Change Rate before proceeding.')
-                self.vtvh_interrupt()
-                break
-            #check magnet temp
-            if float(self.get_magnet_temp()) > 4.00:
-                print('Magnet is Too Warm: Ending VTVH')
-                self.vtvh_interrupt()
-                break
-            
-            #go to next field
-            self.set_field_and_go(newfield=h)
-            #Let field stabilize
-            sleep(30)
-            
-            #check if interrupt was pressed
-            if self._vtvh_interrupt == True:
-                break
-            
-            #log at start of scan
-            self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
-            
-            #take a scan 
-            print('Taking a Scan')
-            j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
-            sleep(scanDelay) #for scan waiting
-            
-            #log at end of scan
-            self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
-            
-            #iterate scan number
-            scan_num+=1
-
-        #Does not return to 0 at end because this is commented out
-        #if didn't end at zero and didn't interrupt, go to zero
-        #if int(field_list[-1]) != 0 and self._vtvh_interrupt==False:
-        #    self.zero_field()
-
-        #TURN OFF SWITCH HEATER AT END AND IF DIDNT INTERRUPT
-        if self._vtvh_interrupt==False and self._switch_status == SWITCH_ENABLED:
-            self.disengage_switch_heater()
-            print('Waiting for switch heater to cool (5 mins).')
-            sleep(300)
-        
-        #set Cryofree GUI at END
-        self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_INACTIVE)
-        self._vtvh_interrupt = False
-        print('VTVH Ended')
-        self._vtvh_thread = None
         
     def _collect_full_vtvh(self, field_list, temp_list, scanTime):      
         print('Starting Full VTVH Run')
@@ -848,13 +757,15 @@ class Application:
             self.vtvh_interrupt()
         
         #setup logging
-        self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
         if self._field_connect:
             self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field, get_field_set=self.get_field)
         if self._temp_connect:
              self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_pt2_temp=self.get_pt2_temp, get_nv_pressure=self.get_nv_pressure, get_nv_percent=self.get_nv_percent, get_temp_set=self.get_temperature)
         if os.path.exists(self.gui.user_vtvh_dir()):
             self.vtvh_logger.set_dirpath(self.gui.user_vtvh_dir())
+            self.vtvh_logger.set_log_file(self.gui.user_vtvh_dir()+'/vtvh_log.csv')
+        else:
+            self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
             
         #go to each field
         scan_num=1
@@ -952,7 +863,7 @@ class Application:
                     sleep(scanDelay) #wait for whole scan time
 
                 #log at end of scan
-                self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
+                self.vtvh_logger.generate_vtvh_log(scan_num=scan_num, after=True)
 
                 #iterate scan number
                 scan_num+=1
@@ -985,10 +896,10 @@ class Application:
                     mins=st.split(':')[0]
                     secs=st.split(':')[1]
                     print('Scan Time Read as %i mins and %i secs'%(int(mins),int(secs)))
-                    st=int(mins*60)+int(secs)
+                    st=int(mins)*60+int(secs)
                 #set Cryofree GUI
                 self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_ACTIVE)
-                #CHANGE THIS THREAD BELOW TO SWITCH FROM ISOTHERM TO FULL VTVH
+                #Line below controls what happens when click "Collect VTVH"
                 self._vtvh_thread = Thread(target=self._collect_full_vtvh, args=(vhs,temps,st,))
                 self._vtvh_thread.start()
         else:
