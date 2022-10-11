@@ -14391,3 +14391,230 @@ Traceback (most recent call last):
     win32.ResetEvent(self._overlapped_read.hEvent)
 AttributeError: 'NoneType' object has no attribute 'hEvent'
 Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-10-11 10:43:17.359720 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM:DB8.T1	Open Circuit; 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.285 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-10-11 10:46:37.910261 
+------------------------------New Session Started
+2022-10-11 10:47:18.895370 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:79.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.290 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:SIG:TEMP STAT:DEV:DB8.T1:TEMP:SIG:TEMP:80.8649K 
+@2READ:DEV:MB1.T1:TEMP:SIG:TEMP STAT:DEV:MB1.T1:TEMP:SIG:TEMP:95.2855K 
+@2READ:DEV:DB7.T1:TEMP:SIG:TEMP STAT:DEV:DB7.T1:TEMP:SIG:TEMP:3.3072K 
+@2READ:DEV:DB5.P1:PRES:SIG:PRES STAT:DEV:DB5.P1:PRES:SIG:PRES:5.0449mB 
+@2READ:DEV:DB4.G1:AUX:SIG:PERC STAT:DEV:DB4.G1:AUX:SIG:PERC:20.0961% 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:79.0000K 
+Finished Background Log Update 
+@2SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto:VALID 
+@2SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto:VALID 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:5.0000K 
+Scan Time Read as 1 mins and 20 secs 
+Starting Full VTVH Run 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 111111111111111111111111111111111111111111111111111111111131 seconds. 
+Est. Time for VTVH: 30864197530864199157478592967335536724061414228924301312.00 hours 
+Waiting for switch heater to warm up (5 mins). 
+@1H1 H1 
+@1A0 A0 
+Interrupting VTVH 
+@1X X00A0C1H1M00 
+ @1R8 R0.00000 
+VTVH Ended 
+Updating Background Log 
+Magnet Temp: 3.651 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:SIG:TEMP STAT:DEV:DB8.T1:TEMP:SIG:TEMP:5.0747K 
+@2READ:DEV:MB1.T1:TEMP:SIG:TEMP STAT:DEV:MB1.T1:TEMP:SIG:TEMP:4.8689K 
+@2READ:DEV:DB7.T1:TEMP:SIG:TEMP STAT:DEV:DB7.T1:TEMP:SIG:TEMP:3.7620K 
+@2READ:DEV:DB5.P1:PRES:SIG:PRES STAT:DEV:DB5.P1:PRES:SIG:PRES:9.9763mB 
+@2READ:DEV:DB4.G1:AUX:SIG:PERC STAT:DEV:DB4.G1:AUX:SIG:PERC:19.0784% 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:5.0000K 
+Finished Background Log Update 
+@2SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto:VALID 
+@2SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto:VALID 
+Setting VTI Temp to 1.6166 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617:VALID 
+Setting Sample Temp to 1.7 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700:VALID 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Exception in thread Thread-3:
+Traceback (most recent call last):
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\threading.py", line 892, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Jasco\Desktop\git_oxford_cryofree\oxford.py", line 94, in _serial_io_thread
+    response = self._serial.readline()
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\site-packages\serial\serialwin32.py", line 271, in read
+    win32.ResetEvent(self._overlapped_read.hEvent)
+AttributeError: 'NoneType' object has no attribute 'hEvent'
+Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-10-11 13:19:27.360023 
+------------------------------New Session Started
+2022-10-11 13:20:38.123688 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H1M00 
+Waiting 5 mins for Heater Warming 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.495 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:SIG:TEMP STAT:DEV:DB8.T1:TEMP:SIG:TEMP:2.1443K 
+@2READ:DEV:MB1.T1:TEMP:SIG:TEMP STAT:DEV:MB1.T1:TEMP:SIG:TEMP:1.9363K 
+@2READ:DEV:DB7.T1:TEMP:SIG:TEMP STAT:DEV:DB7.T1:TEMP:SIG:TEMP:3.4518K 
+@2READ:DEV:DB5.P1:PRES:SIG:PRES STAT:DEV:DB5.P1:PRES:SIG:PRES:5.1130mB 
+@2READ:DEV:DB4.G1:AUX:SIG:PERC STAT:DEV:DB4.G1:AUX:SIG:PERC:12.6955% 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Scan Time Read as 2 mins and 20 secs 
+Starting Full VTVH Run 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 140 seconds. 
+Est. Time for VTVH: 0.29 hours 
+Switch Heater ON: Waiting 5 Mins. 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.434 K 
+@2SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto:VALID 
+@2SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto:VALID 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:2.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+ At New Field: 0 T 
+@1X X00A0C1H1M00 
+Next Field Reached 0 T 
+@2SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto:VALID 
+@2SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto:VALID 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:2.0000K 
+Waiting 5 mins for temp to stabilize 
+@2READ:DEV:DB8.T1:TEMP:SIG:TEMP STAT:DEV:DB8.T1:TEMP:SIG:TEMP:2.0043K 
+1 2.0043 0.0 
+@2READ:DEV:DB8.T1:TEMP:SIG:TEMP STAT:DEV:DB8.T1:TEMP:SIG:TEMP:2.0049K 
+2 2.0046 0.00029999999999996696 
+@2READ:DEV:DB8.T1:TEMP:SIG:TEMP STAT:DEV:DB8.T1:TEMP:SIG:TEMP:2.0076K 
+Temps: [2.0043, 2.0049, 2.0076] 
+3 2.0056 0.0014352700094406774 
+Next Temp Reached 2 K (took 2 mins) 
+Magnet Temp: 3.431 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:SIG:TEMP STAT:DEV:DB8.T1:TEMP:SIG:TEMP:2.0084K 
+@2READ:DEV:MB1.T1:TEMP:SIG:TEMP STAT:DEV:MB1.T1:TEMP:SIG:TEMP:1.9346K 
+@2READ:DEV:DB5.P1:PRES:SIG:PRES STAT:DEV:DB5.P1:PRES:SIG:PRES:4.7304mB 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:2.0000K 
+Logged VTVH Data for Scan 1 to UserLogs/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 1 
+Jasco scan event 
+Magnet Temp: 3.431 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:SIG:TEMP STAT:DEV:DB8.T1:TEMP:SIG:TEMP:2.0291K 
+@2READ:DEV:MB1.T1:TEMP:SIG:TEMP STAT:DEV:MB1.T1:TEMP:SIG:TEMP:1.9320K 
+@2READ:DEV:DB5.P1:PRES:SIG:PRES STAT:DEV:DB5.P1:PRES:SIG:PRES:4.6906mB 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:2.0000K 
+Logged VTVH Data for Scan 1 to UserLogs/vtvh_log.csv 
+Waiting for switch heater to cool (5 mins). 
+@1A0 A0 
+@1H0 H0 
+@1X X00A0C1H2M00 
+ @1R8 R0.00000 
+------------------------------New Session Started
+2022-10-11 14:44:11.504669 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:2.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.287 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+@2READ:DEV:DB8.T1:TEMP:SIG:TEMP STAT:DEV:DB8.T1:TEMP:SIG:TEMP:2.0008K 
+@2READ:DEV:MB1.T1:TEMP:SIG:TEMP STAT:DEV:MB1.T1:TEMP:SIG:TEMP:1.9223K 
+@2READ:DEV:DB7.T1:TEMP:SIG:TEMP STAT:DEV:DB7.T1:TEMP:SIG:TEMP:3.3072K 
+@2READ:DEV:DB5.P1:PRES:SIG:PRES STAT:DEV:DB5.P1:PRES:SIG:PRES:5.1396mB 
+@2READ:DEV:DB4.G1:AUX:SIG:PERC STAT:DEV:DB4.G1:AUX:SIG:PERC:18.6694% 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:2.0000K 
+Finished Background Log Update 
+Starting Full VTVH Run 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 60 seconds. 
+Est. Time for VTVH: 4.18 hours 
+Waiting for switch heater to warm up (5 mins). 
+@1H1 H1 
+@1A0 A0 
+@1X X00A0C1H1M00 
+ @1R8 R0.00000 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.422 K 
+@2SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto:VALID 
+@2SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto:VALID 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:2.0000K 
+@1J+7.0000 J+7.0000 
+@1R8 R7.00000 
+@1A1 A1 

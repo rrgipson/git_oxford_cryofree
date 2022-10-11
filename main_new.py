@@ -985,7 +985,7 @@ class Application:
                     mins=st.split(':')[0]
                     secs=st.split(':')[1]
                     print('Scan Time Read as %i mins and %i secs'%(int(mins),int(secs)))
-                    st=int(mins*60)+int(secs)
+                    st=int(mins)*60+int(secs)
                 #set Cryofree GUI
                 self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_ACTIVE)
                 #CHANGE THIS THREAD BELOW TO SWITCH FROM ISOTHERM TO FULL VTVH
