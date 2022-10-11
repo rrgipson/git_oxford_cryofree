@@ -14311,3 +14311,18 @@ Setting VTI Temp to 76.73700000000001
 Setting Sample Temp to 79.0 
 @2SET:DEV:DB8.T1:TEMP:LOOP:TSET:79.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:79.00:VALID 
 @2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:79.0000K 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Error sending, SerialException: @1R7, <class 'serial.serialutil.SerialException'>  
+Completed Disconnect Procedure 
+C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\site-packages\numpy\core\fromnumeric.py:3372: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\site-packages\numpy\core\_methods.py:170: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\site-packages\numpy\core\_methods.py:233: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\site-packages\numpy\core\_methods.py:194: RuntimeWarning: invalid value encountered in true_divide
+  arrmean = um.true_divide(
+C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\site-packages\numpy\core\_methods.py:226: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
