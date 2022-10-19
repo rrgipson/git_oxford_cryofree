@@ -221,7 +221,7 @@ class Application:
                 self.serial_m.transmit(isobus_magnet + magnet_return_control)  # relinquish control to front panel
             self.serial_m.close()
         self._temp_connect = False
-        self.gui.update_temps(setpoint='—', nv_setpoint='—')
+        self.gui.update_temps(setpoint='—')
         self.gui.set_temperature_frame(connected=False)
         self._field_connect = False
         self.gui.update_fields(setpoint='—')

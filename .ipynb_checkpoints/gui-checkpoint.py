@@ -161,21 +161,21 @@ class GUI(tk.Frame):
         #new for Cryofree
         self.frm_temp_nv = tk.Frame(self.frm_temp_setpoint)
         self.frm_temp_nv.grid(row=4, column=0, sticky=tk.N, padx=3)
-        self.lbl_nv = tk.Label(self.frm_temp_nv, text='Needle Valve (Work in Progress)')
+        #self.lbl_nv = tk.Label(self.frm_temp_nv, text='Needle Valve (Work in Progress)')
         self.lbl_nv_val_top = tk.Label(self.frm_temp_nv, text='Current NV Pressure')
-        self.ent_nv = tk.Entry(self.frm_temp_nv, fg='red', bg='black', insertbackground='white',
-                                        font=med_font, width=7, disabledforeground='black',
-                                        disabledbackground='white', justify='center')
+        #self.ent_nv = tk.Entry(self.frm_temp_nv, fg='red', bg='black', insertbackground='white',
+        #                                font=med_font, width=7, disabledforeground='black',
+        #                                disabledbackground='white', justify='center')
         self.lbl_nv_val = tk.Label(self.frm_temp_nv, text='—', font=med_font, width=11,
                                           relief='groove', justify='center')
         #self.btn_nv_set = tk.Button(self.frm_temp_nv, text='Write NV Set Point', state='disabled')
-        self.ent_nv.insert(tk.END, '—')
-        self.ent_nv['state'] = 'disabled'
-        self.lbl_nv.grid(row=0, column=0)
-        self.lbl_nv_val_top.grid(row=0, column=1)
-        self.ent_nv.grid(row=1, column=0)
+        #self.ent_nv.insert(tk.END, '—')
+        #self.ent_nv['state'] = 'disabled'
+        #self.lbl_nv.grid(row=0, column=0)
+        self.lbl_nv_val_top.grid(row=0) #, column=1)
+        #self.ent_nv.grid(row=1, column=0)
         #self.btn_nv_set.grid(row=2)
-        self.lbl_nv_val.grid(row=1, column=1)
+        self.lbl_nv_val.grid(row=1) #, column=1)
 
         # Magnet frame
         self.lbl_magnet_frame = tk.Label(self.frm_mag_sensor, text='Magnet Control (Tesla)')
@@ -257,8 +257,8 @@ class GUI(tk.Frame):
     def user_vtvh_dir(self):
         return self.path_vtvh_browse
 
-    def user_nv(self):
-        return self.ent_nv.get().replace(' ', '')
+    #def user_nv(self):
+    #    return self.ent_nv.get().replace(' ', '')
 
     def update_com_port(self, port):
         state = self.ent_com_port['state']
@@ -290,16 +290,17 @@ class GUI(tk.Frame):
         if current_nv is not None:
             self.lbl_nv_val['text'] = str(current_nv)
 
-        if nv_setpoint is not None:
-            state = self.ent_nv['state']
-            if state == 'normal':
-                self.ent_nv.delete(0, tk.END)
-                self.ent_nv.insert(tk.END, str(nv_setpoint))
-            else:
-                self.ent_nv['state'] = 'normal'
-                self.ent_nv.delete(0, tk.END)
-                self.ent_nv.insert(tk.END, str(nv_setpoint))
-                self.ent_nv['state'] = state
+        if nv_setpoint is not None: #should never be triggered anyways
+            #state = self.ent_nv['state']
+            #if state == 'normal':
+            #    self.ent_nv.delete(0, tk.END)
+            #    self.ent_nv.insert(tk.END, str(nv_setpoint))
+            #else:
+            #    self.ent_nv['state'] = 'normal'
+            #    self.ent_nv.delete(0, tk.END)
+            #    self.ent_nv.insert(tk.END, str(nv_setpoint))
+            #    self.ent_nv['state'] = state
+            pass
 
     def update_fields(self, current_field=None, setpoint=None):
         if current_field is not None:
@@ -337,13 +338,13 @@ class GUI(tk.Frame):
             
             #self.btn_nv_set['state'] = 'disabled'
             #self.btn_nv_set['command'] = self.func_set_nv
-            self.ent_nv['state'] = 'disabled'
+            #self.ent_nv['state'] = 'disabled'
         else:
             self.ent_temperature['state'] = 'disabled'
             self.btn_temp_set['state'] = 'disabled'
             self.btn_temp_get['state'] = 'disabled'
             #self.btn_nv_set['state'] = 'disabled'
-            self.ent_nv['state'] = 'disabled'
+            #self.ent_nv['state'] = 'disabled'
 
     def set_field_frame(self, connected, switch_setting=None, field_movement=None, setpoint_change=None):
         if connected:
