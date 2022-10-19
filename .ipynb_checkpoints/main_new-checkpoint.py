@@ -572,7 +572,7 @@ class Application:
     
     def get_sample_temp(self):
         if self.serial_t.is_open and self._temp_connect:
-            temp3 = self.serial_t.transmit(isobus_temp +READ+SAMPLE+CURRENT_TEMP, 'TempControl: Error reading sample temp sensor')
+            temp3 = self.serial_t.transmit(isobus_temp +READ+SAMPLE+CURRENT_TEMP, 'TempControl: Error reading sample temp sensor', False)
             if len(temp3) > 0:
                 if temp3.split(':')[-1] != 'INVALID':
                     temp3 = temp3.split(':')[-1]
@@ -580,11 +580,12 @@ class Application:
                     temp3 = None
             else:
                 temp3 = None
+        print('Sample Temp: {}'.format(temp3))
         return temp3.replace('K','')
 
     def get_vti_temp(self):
         if self.serial_t.is_open and self._temp_connect:
-            temp1 = self.serial_t.transmit(isobus_temp +READ+VTI+CURRENT_TEMP, 'TempControl: Error reading temp sensor 1')
+            temp1 = self.serial_t.transmit(isobus_temp +READ+VTI+CURRENT_TEMP, 'TempControl: Error reading temp sensor 1', False)
             if len(temp1) > 0:
                 if temp1.split(':')[-1] != 'INVALID':
                     temp1 = temp1.split(':')[-1]
@@ -592,11 +593,12 @@ class Application:
                     temp1 = None
             else:
                 temp1 = None
+        print('VTI Temp: {}'.format(temp1))
         return temp1.replace('K','')
     
     def get_pt2_temp(self):
         if self.serial_t.is_open and self._temp_connect:
-            temp1 = self.serial_t.transmit(isobus_temp +READ+PT2+CURRENT_TEMP, 'TempControl: Error reading PT2 Temp sensor')
+            temp1 = self.serial_t.transmit(isobus_temp +READ+PT2+CURRENT_TEMP, 'TempControl: Error reading PT2 Temp sensor', False)
             if len(temp1) > 0:
                 if temp1.split(':')[-1] != 'INVALID':
                     temp1 = temp1.split(':')[-1]
@@ -604,6 +606,7 @@ class Application:
                     temp1 = None
             else:
                 temp1 = None
+        print('PT2 Temp: {}'.format(temp1))
         return temp1.replace('K','')
         
     def get_nv_pressure(self, print_out=True):
@@ -620,7 +623,7 @@ class Application:
 
     def get_nv_percent(self):
         if self.serial_t.is_open and self._temp_connect:
-            val = self.serial_t.transmit(isobus_temp +READ_NV_PERC, 'TempControl: Error reading Needle Valve Percent')
+            val = self.serial_t.transmit(isobus_temp +READ_NV_PERC, 'TempControl: Error reading Needle Valve Percent', False)
             if len(val) > 0:
                 if val.split(':')[-1] != 'INVALID':
                     val = val.split(':')[-1]
@@ -628,6 +631,7 @@ class Application:
                     val = None
             else:
                 val = None
+        print('Needle Valve Percent: {}'.format(val))
         return val
     
     def set_nv(self, *args): # NEEDS NEW COMMAND UPDATE
@@ -761,11 +765,14 @@ class Application:
             self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field, get_field_set=self.get_field)
         if self._temp_connect:
              self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_pt2_temp=self.get_pt2_temp, get_nv_pressure=self.get_nv_pressure, get_nv_percent=self.get_nv_percent, get_temp_set=self.get_temperature)
-        if os.path.exists(self.gui.user_vtvh_dir()):
-            self.vtvh_logger.set_dirpath(self.gui.user_vtvh_dir())
-            self.vtvh_logger.set_log_file(self.gui.user_vtvh_dir()+'/vtvh_log.csv')
+        if self.gui.user_vtvh_dir() is not None:
+            if os.path.exists(self.gui.user_vtvh_dir()):
+                self.vtvh_logger.set_dirpath(self.gui.user_vtvh_dir())
+                self.vtvh_logger.set_log_file(self.gui.user_vtvh_dir()+'/vtvh_log.csv')
+            else:
+                self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
         else:
-            self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
+                self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
             
         #go to each field
         scan_num=1
