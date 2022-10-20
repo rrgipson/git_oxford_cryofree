@@ -10,6 +10,7 @@ ImageSearch, FoundX, FoundY, 140, 50, 240, 150, C:\Users\Jasco\Desktop\vtvh-mcd 
 ; Click the FoundX and FoundY pixel location on the Spectra Measurement Window 
 ControlClick, X%FoundX% Y%FoundY%, Spectra Measurement - J1700/D001461900
 ; MsgBox % "Start Button Found at X " . FoundX . " " . "Y " . FoundY . " - Scan Initiated"
+FileAppend, Start Button Found at X= %FoundX% and Y= %FoundY%, *
 
 ;Send Enter when prompt asks for both lamps to be lit
 Send {Enter}

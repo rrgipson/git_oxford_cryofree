@@ -1,6 +1,6 @@
 from time import sleep
 from threading import Thread
-from oxford import SerialPort, default_comport
+from oxford import SerialPort
 import spectrometer as j1700
 ##In OXFORD.PY
 '''

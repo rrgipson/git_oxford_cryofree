@@ -30,5 +30,5 @@ def initiate_scan_onelamp():
     print('Jasco scan event')
     #just added an additional enter press in order to close the popup asking for both lamps to be lit
     autohotkey_event = subprocess.run((autohotkey_exe, 'lib/J1700_scan_start_1lamp.ahk'), capture_output=True) ## Edited by Rob
-    print(autohotkey_event.stdout)
-    print(autohotkey_event.stderr)
+    print(autohotkey_event.stdout.decode('utf-8').replace('\n',''))
+    #print(autohotkey_event.stderr.decode('utf-8').replace('\r\n',''))
