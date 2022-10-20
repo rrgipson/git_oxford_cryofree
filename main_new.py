@@ -266,8 +266,8 @@ class Application:
 
     def set_temperature(self, *args):
         if self.serial_t.is_open and self._temp_connect:
-            self.serial_t.transmit(isobus_temp+SET+SAMPLE+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto') #Sets both heaters to auto
-            self.serial_t.transmit(isobus_temp+SET+VTI+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto')
+            self.serial_t.transmit(isobus_temp+SET+SAMPLE+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto', False) #Sets both heaters to auto
+            self.serial_t.transmit(isobus_temp+SET+VTI+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto', False)
             temperature = self.gui.user_temperature()
             shift = 0
             if len(temperature) > 0:
@@ -312,12 +312,13 @@ class Application:
     def get_temperature(self): #Gets temp set point
         temperature = '—'
         if self.serial_t.is_open and self._temp_connect:
-            response = self.serial_t.transmit(isobus_temp+READ+SAMPLE+SETPT_TEMP, 'TempControl: Error reading set point')
+            response = self.serial_t.transmit(isobus_temp+READ+SAMPLE+SETPT_TEMP, 'TempControl: Error reading set point', False)
             if response.split(':')[-1]!='INVALID':
                 temperature = response.split(':')[-1]
         self.gui.update_temps(setpoint=temperature)
         if temperature == '—':
             return None
+        print('Sample Temp Set Point is {}'.format(temperature))
         return temperature.replace('K','')
 
     def engage_switch_heater(self):
@@ -609,9 +610,9 @@ class Application:
         print('PT2 Temp: {}'.format(temp1))
         return temp1.replace('K','')
         
-    def get_nv_pressure(self, print_out=False):
+    def get_nv_pressure(self, print_out=True):
         if self.serial_t.is_open and self._temp_connect:
-            val = self.serial_t.transmit(isobus_temp +READ+NV+CURRENT_PRES, 'TempControl: Error reading Needle Valve Pressure', print_out)
+            val = self.serial_t.transmit(isobus_temp +READ+NV+CURRENT_PRES, 'TempControl: Error reading Needle Valve Pressure', False)
             if len(val) > 0:
                 if val.split(':')[-1] != 'INVALID':
                     val = val.split(':')[-1]
@@ -619,7 +620,8 @@ class Application:
                     val = None
             else:
                 val = None
-        print('Needle Valve Pressure: {}'.format(val))
+        if print_out:
+            print('Needle Valve Pressure: {}'.format(val))
         return val.replace('mB','')
 
     def get_nv_percent(self):

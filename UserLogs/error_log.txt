@@ -4,3 +4,133 @@
 Jasco scan event 
 Start Button Found at X=  and Y=  
 @1C0 C 
+------------------------------New Session Started
+2022-10-20 15:59:54.330689 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:79.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+Needle Valve Pressure: 4.7747mB 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Updating Background Log 
+ocedure
+Magnet Temp: 3.281 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 86.8527K 
+VTI Temp: 94.4743K 
+Needle Valve Pressure: 4.9800mB 
+PT2 Temp: 3.2929K 
+Needle Valve Pressure: 4.5847mB 
+Needle Valve Percent: 16.4553% 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:79.0000K 
+Finished Background Log Update 
+Needle Valve Pressure: 4.9431mB 
+Needle Valve Pressure: 5.1908mB 
+@2SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto:VALID 
+@2SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto:VALID 
+Setting VTI Temp to 1.6166 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617:VALID 
+Setting Sample Temp to 1.7 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700:VALID 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Needle Valve Pressure: 4.8670mB 
+Needle Valve Pressure: 4.8499mB 
+Needle Valve Pressure: 4.9075mB 
+Needle Valve Pressure: 5.0330mB 
+Needle Valve Pressure: 4.9284mB 
+Needle Valve Pressure: 4.6196mB 
+Needle Valve Pressure: 4.8360mB 
+Needle Valve Pressure: 4.8130mB 
+Needle Valve Pressure: 4.8480mB 
+Needle Valve Pressure: 4.7693mB 
+Needle Valve Pressure: 4.7978mB 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-10-20 16:03:37.383989 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.283 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 88.7993K 
+VTI Temp: 92.1995K 
+PT2 Temp: 3.2960K 
+Needle Valve Pressure: 5.1371mB 
+Needle Valve Percent: 16.5698% 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Finished Background Log Update 
+Scan Time Read as 1 mins and 10 secs 
+Starting Full VTVH Run 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 70 seconds. 
+Est. Time for VTVH: 0.27 hours 
+Waiting for switch heater to warm up (5 mins). 
+@1H1 H1 
+@1A0 A0 
+@1X X00A0C1H1M00 
+ @1R8 R0.00000 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.426 K 
+@2SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto:VALID 
+@2SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto:VALID 
+Setting VTI Temp to 83.625 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:83.62 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:83.62:VALID 
+Setting Sample Temp to 86.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:86.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:86.00:VALID 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:86.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 0 T 
+Next Field Reached 0 T 
+@2SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto:VALID 
+@2SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto:VALID 
+Setting VTI Temp to 83.625 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:83.62 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:83.62:VALID 
+Setting Sample Temp to 86.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:86.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:86.00:VALID 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:86.0000K 
+Waiting 5 mins for temp to stabilize 
+Interrupting VTVH 
+Sample Temp: 93.2519K 
+1 93.2519 0.0 
+VTVH Ended 
+@2SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:DB8.T1:TEMP:LOOP:FAUT:Auto:VALID 
+@2SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto STAT:SET:DEV:MB1.T1:TEMP:LOOP:FAUT:Auto:VALID 
+Setting VTI Temp to 1.6166 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617:VALID 
+Setting Sample Temp to 1.7 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700:VALID 
+@2READ:DEV:DB8.T1:TEMP:LOOP:TSET STAT:DEV:DB8.T1:TEMP:LOOP:TSET:1.7000K 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Exception in thread Thread-3:
+Traceback (most recent call last):
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\threading.py", line 892, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Jasco\Desktop\git_oxford_cryofree\oxford.py", line 94, in _serial_io_thread
+    response = self._serial.readline()
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\site-packages\serial\serialwin32.py", line 271, in read
+    win32.ResetEvent(self._overlapped_read.hEvent)
+AttributeError: 'NoneType' object has no attribute 'hEvent'
+Completed Disconnect Procedure 
