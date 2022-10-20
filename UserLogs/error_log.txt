@@ -24620,3 +24620,5 @@ Initializing serial_disconnect Procedure
 @1A0 A0 
 @1C1 C 
 Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-10-20 10:14:53.651866 
