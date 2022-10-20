@@ -609,7 +609,7 @@ class Application:
         print('PT2 Temp: {}'.format(temp1))
         return temp1.replace('K','')
         
-    def get_nv_pressure(self, print_out=True):
+    def get_nv_pressure(self, print_out=False):
         if self.serial_t.is_open and self._temp_connect:
             val = self.serial_t.transmit(isobus_temp +READ+NV+CURRENT_PRES, 'TempControl: Error reading Needle Valve Pressure', print_out)
             if len(val) > 0:
@@ -619,6 +619,7 @@ class Application:
                     val = None
             else:
                 val = None
+        print('Needle Valve Pressure: {}'.format(val))
         return val.replace('mB','')
 
     def get_nv_percent(self):
