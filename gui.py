@@ -451,6 +451,17 @@ class GUI(tk.Frame):
         dirname = filedialog.askdirectory()
         self.lbl_vtvh_browse['text']='...'+dirname[-40:]
         self.path_vtvh_browse = dirname
+        #Change button
+        self.btn_vtvh_browse['text']='Remove Folder'
+        self.btn_vtvh_browse['command']=self.reset_browse_for_dir
+        return dirname
+    
+    def reset_browse_for_dir(self):
+        self.lbl_vtvh_browse['text']='Select Folder that Spectral Measurement is Autosaving to:'
+        self.path_vtvh_browse = None
+        #Change button
+        self.btn_vtvh_browse['text']='Browse'
+        self.btn_vtvh_browse['command']=self.browse_for_dir
         return dirname
 
 if __name__ == '__main__':
