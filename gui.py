@@ -462,7 +462,7 @@ class GUI(tk.Frame):
         #Change button
         self.btn_vtvh_browse['text']='Browse'
         self.btn_vtvh_browse['command']=self.browse_for_dir
-        return dirname
+        return None
 
 if __name__ == '__main__':
     pass
