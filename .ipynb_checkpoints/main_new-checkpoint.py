@@ -221,7 +221,7 @@ class Application:
                 self.serial_m.transmit(isobus_magnet + magnet_return_control)  # relinquish control to front panel
             self.serial_m.close()
         self._temp_connect = False
-        self.gui.update_temps(setpoint='—', nv_setpoint='—')
+        self.gui.update_temps(setpoint='—')
         self.gui.set_temperature_frame(connected=False)
         self._field_connect = False
         self.gui.update_fields(setpoint='—')
@@ -572,7 +572,7 @@ class Application:
     
     def get_sample_temp(self):
         if self.serial_t.is_open and self._temp_connect:
-            temp3 = self.serial_t.transmit(isobus_temp +READ+SAMPLE+CURRENT_TEMP, 'TempControl: Error reading sample temp sensor')
+            temp3 = self.serial_t.transmit(isobus_temp +READ+SAMPLE+CURRENT_TEMP, 'TempControl: Error reading sample temp sensor', False)
             if len(temp3) > 0:
                 if temp3.split(':')[-1] != 'INVALID':
                     temp3 = temp3.split(':')[-1]
@@ -580,11 +580,12 @@ class Application:
                     temp3 = None
             else:
                 temp3 = None
+        print('Sample Temp: {}'.format(temp3))
         return temp3.replace('K','')
 
     def get_vti_temp(self):
         if self.serial_t.is_open and self._temp_connect:
-            temp1 = self.serial_t.transmit(isobus_temp +READ+VTI+CURRENT_TEMP, 'TempControl: Error reading temp sensor 1')
+            temp1 = self.serial_t.transmit(isobus_temp +READ+VTI+CURRENT_TEMP, 'TempControl: Error reading temp sensor 1', False)
             if len(temp1) > 0:
                 if temp1.split(':')[-1] != 'INVALID':
                     temp1 = temp1.split(':')[-1]
@@ -592,11 +593,12 @@ class Application:
                     temp1 = None
             else:
                 temp1 = None
+        print('VTI Temp: {}'.format(temp1))
         return temp1.replace('K','')
     
     def get_pt2_temp(self):
         if self.serial_t.is_open and self._temp_connect:
-            temp1 = self.serial_t.transmit(isobus_temp +READ+PT2+CURRENT_TEMP, 'TempControl: Error reading PT2 Temp sensor')
+            temp1 = self.serial_t.transmit(isobus_temp +READ+PT2+CURRENT_TEMP, 'TempControl: Error reading PT2 Temp sensor', False)
             if len(temp1) > 0:
                 if temp1.split(':')[-1] != 'INVALID':
                     temp1 = temp1.split(':')[-1]
@@ -604,9 +606,10 @@ class Application:
                     temp1 = None
             else:
                 temp1 = None
+        print('PT2 Temp: {}'.format(temp1))
         return temp1.replace('K','')
         
-    def get_nv_pressure(self, print_out=True):
+    def get_nv_pressure(self, print_out=False):
         if self.serial_t.is_open and self._temp_connect:
             val = self.serial_t.transmit(isobus_temp +READ+NV+CURRENT_PRES, 'TempControl: Error reading Needle Valve Pressure', print_out)
             if len(val) > 0:
@@ -616,11 +619,12 @@ class Application:
                     val = None
             else:
                 val = None
+        print('Needle Valve Pressure: {}'.format(val))
         return val.replace('mB','')
 
     def get_nv_percent(self):
         if self.serial_t.is_open and self._temp_connect:
-            val = self.serial_t.transmit(isobus_temp +READ_NV_PERC, 'TempControl: Error reading Needle Valve Percent')
+            val = self.serial_t.transmit(isobus_temp +READ_NV_PERC, 'TempControl: Error reading Needle Valve Percent', False)
             if len(val) > 0:
                 if val.split(':')[-1] != 'INVALID':
                     val = val.split(':')[-1]
@@ -628,6 +632,7 @@ class Application:
                     val = None
             else:
                 val = None
+        print('Needle Valve Percent: {}'.format(val))
         return val
     
     def set_nv(self, *args): # NEEDS NEW COMMAND UPDATE
@@ -714,97 +719,6 @@ class Application:
         else:
             self._vtvh_interrupt = False
         
-    def _collect_isotherm(self, field_list, scanTime):      
-        #measure scan duration??
-
-        #Check if fields are in correct range
-        if any(abs(float(h)) > 7 for h in field_list):
-            print('Error in Fields: Must be between -7 and 7 T')
-            self.vtvh_interrupt()
-        
-        #Read the inputted time for scan and use as delay
-        scanDelay=int(scanTime)
-        if scanDelay > 0:
-            print('Each scan takes %i seconds.'%scanDelay)
-        else:
-            print('Invalid Time Delay for Scan')
-            self.vtvh_interrupt()
-        
-        #turn on switch heater
-        if self._switch_status in [SWITCH_DISABLED, SWITCH_WARMING, SWITCH_COOLING] and not self._vtvh_interrupt:
-            self.engage_switch_heater()
-            print('Waiting for switch heater to warm up (5 mins).')
-            sleep(300)
-        elif self._switch_status == SWITCH_ENABLED and not self._vtvh_interrupt:
-            print('Switch Heater ON: Waiting 5 Mins.')
-            sleep(300) #Wait 5 minutes even if switch heater is on
-        else: #interrupt or switch error
-            self.vtvh_interrupt()
-        
-        #setup logging
-        self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
-        if self._field_connect:
-            self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field)
-        if self._temp_connect:
-             self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_pt2_temp=self.get_pt2_temp, get_nv_pressure=self.get_nv_pressure, get_nv_percent=self.get_nv_percent, get_temp_set=self.get_temperature)
-        
-        
-        #go to each field and scan
-        scan_num=1
-        for h in field_list:
-            #check if interrupt was pressed
-            if self._vtvh_interrupt == True:
-                break
-            #check ramp rate
-            if float(self.get_ramp_rate()) > 0.154:
-                print('RAMP RATE EXCEEDS LIMIT: Ending VTVH. Change Rate before proceeding.')
-                self.vtvh_interrupt()
-                break
-            #check magnet temp
-            if float(self.get_magnet_temp()) > 4.00:
-                print('Magnet is Too Warm: Ending VTVH')
-                self.vtvh_interrupt()
-                break
-            
-            #go to next field
-            self.set_field_and_go(newfield=h)
-            #Let field stabilize
-            sleep(30)
-            
-            #check if interrupt was pressed
-            if self._vtvh_interrupt == True:
-                break
-            
-            #log at start of scan
-            self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
-            
-            #take a scan 
-            print('Taking a Scan')
-            j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
-            sleep(scanDelay) #for scan waiting
-            
-            #log at end of scan
-            self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
-            
-            #iterate scan number
-            scan_num+=1
-
-        #Does not return to 0 at end because this is commented out
-        #if didn't end at zero and didn't interrupt, go to zero
-        #if int(field_list[-1]) != 0 and self._vtvh_interrupt==False:
-        #    self.zero_field()
-
-        #TURN OFF SWITCH HEATER AT END AND IF DIDNT INTERRUPT
-        if self._vtvh_interrupt==False and self._switch_status == SWITCH_ENABLED:
-            self.disengage_switch_heater()
-            print('Waiting for switch heater to cool (5 mins).')
-            sleep(300)
-        
-        #set Cryofree GUI at END
-        self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_INACTIVE)
-        self._vtvh_interrupt = False
-        print('VTVH Ended')
-        self._vtvh_thread = None
         
     def _collect_full_vtvh(self, field_list, temp_list, scanTime):      
         print('Starting Full VTVH Run')
@@ -848,13 +762,18 @@ class Application:
             self.vtvh_interrupt()
         
         #setup logging
-        self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
         if self._field_connect:
             self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field, get_field_set=self.get_field)
         if self._temp_connect:
              self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_pt2_temp=self.get_pt2_temp, get_nv_pressure=self.get_nv_pressure, get_nv_percent=self.get_nv_percent, get_temp_set=self.get_temperature)
-        if os.path.exists(self.gui.user_vtvh_dir()):
-            self.vtvh_logger.set_dirpath(self.gui.user_vtvh_dir())
+        if self.gui.user_vtvh_dir() is not None:
+            if os.path.exists(self.gui.user_vtvh_dir()):
+                self.vtvh_logger.set_dirpath(self.gui.user_vtvh_dir())
+                self.vtvh_logger.set_log_file(self.gui.user_vtvh_dir()+'/vtvh_log.csv')
+            else:
+                self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
+        else:
+                self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
             
         #go to each field
         scan_num=1
@@ -952,7 +871,7 @@ class Application:
                     sleep(scanDelay) #wait for whole scan time
 
                 #log at end of scan
-                self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
+                self.vtvh_logger.generate_vtvh_log(scan_num=scan_num, after=True)
 
                 #iterate scan number
                 scan_num+=1
@@ -985,10 +904,10 @@ class Application:
                     mins=st.split(':')[0]
                     secs=st.split(':')[1]
                     print('Scan Time Read as %i mins and %i secs'%(int(mins),int(secs)))
-                    st=int(mins*60)+int(secs)
+                    st=int(mins)*60+int(secs)
                 #set Cryofree GUI
                 self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_ACTIVE)
-                #CHANGE THIS THREAD BELOW TO SWITCH FROM ISOTHERM TO FULL VTVH
+                #Line below controls what happens when click "Collect VTVH"
                 self._vtvh_thread = Thread(target=self._collect_full_vtvh, args=(vhs,temps,st,))
                 self._vtvh_thread.start()
         else:
