@@ -248,10 +248,12 @@ class Application:
                 sensor1 = '—'
             sensor3 = self.serial_t.transmit(isobus_temp +READ+SAMPLE+CURRENT_TEMP, 'TempControl: Error reading sample sensor', False)
             if len(sensor3) > 0:
-                if sensor3.split(':')[-1] != 'INVALID':
-                    sensor3 = sensor3.split(':')[-1]
-                else:
+                if sensor3.split(':')[-1] == 'INVALID':
                     sensor3 = '—'
+                elif sensor3.split(':')[-1] == '1.1986K':
+                    sensor3 = 'Unplugged'
+                else:
+                    sensor3 = sensor3.split(':')[-1]
             else:
                 sensor3 = '—'
                 
@@ -266,8 +268,8 @@ class Application:
 
     def set_temperature(self, *args):
         if self.serial_t.is_open and self._temp_connect:
-            self.serial_t.transmit(isobus_temp+SET+SAMPLE+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto') #Sets both heaters to auto
-            self.serial_t.transmit(isobus_temp+SET+VTI+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto')
+            self.serial_t.transmit(isobus_temp+SET+SAMPLE+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto', False) #Sets both heaters to auto
+            self.serial_t.transmit(isobus_temp+SET+VTI+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto', False)
             temperature = self.gui.user_temperature()
             shift = 0
             if len(temperature) > 0:
@@ -312,12 +314,13 @@ class Application:
     def get_temperature(self): #Gets temp set point
         temperature = '—'
         if self.serial_t.is_open and self._temp_connect:
-            response = self.serial_t.transmit(isobus_temp+READ+SAMPLE+SETPT_TEMP, 'TempControl: Error reading set point')
+            response = self.serial_t.transmit(isobus_temp+READ+SAMPLE+SETPT_TEMP, 'TempControl: Error reading set point', False)
             if response.split(':')[-1]!='INVALID':
                 temperature = response.split(':')[-1]
         self.gui.update_temps(setpoint=temperature)
         if temperature == '—':
             return None
+        print('Sample Temp Set Point is {}'.format(temperature))
         return temperature.replace('K','')
 
     def engage_switch_heater(self):
@@ -609,9 +612,9 @@ class Application:
         print('PT2 Temp: {}'.format(temp1))
         return temp1.replace('K','')
         
-    def get_nv_pressure(self, print_out=False):
+    def get_nv_pressure(self, print_out=True):
         if self.serial_t.is_open and self._temp_connect:
-            val = self.serial_t.transmit(isobus_temp +READ+NV+CURRENT_PRES, 'TempControl: Error reading Needle Valve Pressure', print_out)
+            val = self.serial_t.transmit(isobus_temp +READ+NV+CURRENT_PRES, 'TempControl: Error reading Needle Valve Pressure', False)
             if len(val) > 0:
                 if val.split(':')[-1] != 'INVALID':
                     val = val.split(':')[-1]
@@ -619,7 +622,8 @@ class Application:
                     val = None
             else:
                 val = None
-        print('Needle Valve Pressure: {}'.format(val))
+        if print_out:
+            print('Needle Valve Pressure: {}'.format(val))
         return val.replace('mB','')
 
     def get_nv_percent(self):
@@ -766,6 +770,7 @@ class Application:
             self.vtvh_logger.assign_field_log_fxns(get_mag_temp=self.get_magnet_temp, get_mag_field=self.get_current_magnet_field, get_field_set=self.get_field)
         if self._temp_connect:
              self.vtvh_logger.assign_temp_log_fxns(get_vti_temp=self.get_vti_temp, get_sample_temp=self.get_sample_temp, get_pt2_temp=self.get_pt2_temp, get_nv_pressure=self.get_nv_pressure, get_nv_percent=self.get_nv_percent, get_temp_set=self.get_temperature)
+
         if self.gui.user_vtvh_dir() is not None:
             if os.path.exists(self.gui.user_vtvh_dir()):
                 self.vtvh_logger.set_dirpath(self.gui.user_vtvh_dir())
@@ -774,7 +779,7 @@ class Application:
                 self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
         else:
                 self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
-            
+                
         #go to each field
         scan_num=1
         for h in field_list:

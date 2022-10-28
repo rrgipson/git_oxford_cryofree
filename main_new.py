@@ -248,10 +248,12 @@ class Application:
                 sensor1 = '—'
             sensor3 = self.serial_t.transmit(isobus_temp +READ+SAMPLE+CURRENT_TEMP, 'TempControl: Error reading sample sensor', False)
             if len(sensor3) > 0:
-                if sensor3.split(':')[-1] != 'INVALID':
-                    sensor3 = sensor3.split(':')[-1]
-                else:
+                if sensor3.split(':')[-1] == 'INVALID':
                     sensor3 = '—'
+                elif sensor3.split(':')[-1] == '1.1986K':
+                    sensor3 = 'Unplugged'
+                else:
+                    sensor3 = sensor3.split(':')[-1]
             else:
                 sensor3 = '—'
                 
