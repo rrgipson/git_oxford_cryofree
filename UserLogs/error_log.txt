@@ -1057,3 +1057,524 @@ Needle Valve Pressure: 74.0799mB
 Needle Valve Percent: 100.0000% 
 Sample Temp Set Point is 300.000K 
 Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 281.013 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 284.1865K 
+PT2 Temp: 282.3743K 
+Needle Valve Pressure: 74.1412mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 282.994 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 285.6812K 
+PT2 Temp: 284.1809K 
+Needle Valve Pressure: 74.1608mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 284.710 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 286.9653K 
+PT2 Temp: 285.7369K 
+Needle Valve Pressure: 74.1905mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 286.153 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 288.0645K 
+PT2 Temp: 287.0274K 
+Needle Valve Pressure: 74.2140mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 287.386 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 288.9824K 
+PT2 Temp: 288.1290K 
+Needle Valve Pressure: 74.2423mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 288.429 K 
+Current Magnet Field: 0.0001 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 289.7788K 
+PT2 Temp: 289.0632K 
+Needle Valve Pressure: 74.1528mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 289.304 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 290.4539K 
+PT2 Temp: 289.8437K 
+Needle Valve Pressure: 74.2239mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 290.020 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 291.0585K 
+PT2 Temp: 290.5554K 
+Needle Valve Pressure: 74.2545mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 290.685 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 291.5154K 
+PT2 Temp: 291.1253K 
+Needle Valve Pressure: 74.2754mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 291.224 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 291.9446K 
+PT2 Temp: 291.6181K 
+Needle Valve Pressure: 74.2846mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 291.711 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 292.2933K 
+PT2 Temp: 292.0346K 
+Needle Valve Pressure: 74.2880mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 292.094 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 292.6089K 
+PT2 Temp: 292.3893K 
+Needle Valve Pressure: 74.3045mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 292.507 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 292.9451K 
+PT2 Temp: 292.7612K 
+Needle Valve Pressure: 74.4389mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 292.886 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 293.4047K 
+PT2 Temp: 293.1816K 
+Needle Valve Pressure: 74.6772mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 293.367 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 293.8818K 
+PT2 Temp: 293.6713K 
+Needle Valve Pressure: 74.9356mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 293.790 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 293.7870K 
+PT2 Temp: 294.0740K 
+Needle Valve Pressure: 75.0516mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.089 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.4626K 
+PT2 Temp: 294.3268K 
+Needle Valve Pressure: 74.9938mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.312 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.5707K 
+PT2 Temp: 294.4843K 
+Needle Valve Pressure: 74.6767mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.437 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.5974K 
+PT2 Temp: 294.5527K 
+Needle Valve Pressure: 74.3125mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.494 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.5504K 
+PT2 Temp: 294.5987K 
+Needle Valve Pressure: 74.1913mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.524 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.5550K 
+PT2 Temp: 294.5973K 
+Needle Valve Pressure: 74.3232mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.512 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.5400K 
+PT2 Temp: 294.6007K 
+Needle Valve Pressure: 74.3527mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.529 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.5428K 
+PT2 Temp: 294.5891K 
+Needle Valve Pressure: 74.3577mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.541 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.5244K 
+PT2 Temp: 294.5922K 
+Needle Valve Pressure: 74.3828mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.535 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.5303K 
+PT2 Temp: 294.5894K 
+Needle Valve Pressure: 74.3586mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.567 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.6165K 
+PT2 Temp: 294.6485K 
+Needle Valve Pressure: 74.4580mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.605 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.6737K 
+PT2 Temp: 294.7069K 
+Needle Valve Pressure: 74.4267mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.678 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.7132K 
+PT2 Temp: 294.7580K 
+Needle Valve Pressure: 74.4146mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.718 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.7553K 
+PT2 Temp: 294.8041K 
+Needle Valve Pressure: 74.4440mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.753 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.7937K 
+PT2 Temp: 294.8384K 
+Needle Valve Pressure: 74.4265mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.775 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.8249K 
+PT2 Temp: 294.8547K 
+Needle Valve Pressure: 74.2990mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.770 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.7828K 
+PT2 Temp: 294.8539K 
+Needle Valve Pressure: 74.3768mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.778 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.7639K 
+PT2 Temp: 294.8365K 
+Needle Valve Pressure: 74.3711mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.788 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.7620K 
+PT2 Temp: 294.8413K 
+Needle Valve Pressure: 74.3805mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.760 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.7449K 
+PT2 Temp: 294.8200K 
+Needle Valve Pressure: 74.3866mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.748 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.7172K 
+PT2 Temp: 294.7959K 
+Needle Valve Pressure: 74.4268mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.715 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.7113K 
+PT2 Temp: 294.7642K 
+Needle Valve Pressure: 74.4283mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.718 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.7193K 
+PT2 Temp: 294.7694K 
+Needle Valve Pressure: 74.5178mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.736 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.8018K 
+PT2 Temp: 294.8419K 
+Needle Valve Pressure: 74.5615mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.801 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.8357K 
+PT2 Temp: 294.8723K 
+Needle Valve Pressure: 74.5230mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.827 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.8579K 
+PT2 Temp: 294.9086K 
+Needle Valve Pressure: 74.5029mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.867 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.8877K 
+PT2 Temp: 294.9302K 
+Needle Valve Pressure: 74.4344mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.843 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.8514K 
+PT2 Temp: 294.9206K 
+Needle Valve Pressure: 74.4735mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.854 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.8265K 
+PT2 Temp: 294.8908K 
+Needle Valve Pressure: 74.5039mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.814 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.7646K 
+PT2 Temp: 294.8555K 
+Needle Valve Pressure: 74.5140mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.767 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.7554K 
+PT2 Temp: 294.8264K 
+Needle Valve Pressure: 74.5142mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 294.776 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 294.7159K 
+PT2 Temp: 294.7933K 
+Needle Valve Pressure: 74.5206mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 300.000K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
