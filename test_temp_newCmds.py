@@ -47,7 +47,13 @@ version = my_serial.transmit(isobus_temp+READ_VERSION, 'TempControl: Error recei
 if version.split(':')[-1] == isobus_temp_version:  # if version matches expectation
     status = my_serial.transmit(isobus_temp+READ_ALARMS, 'TempControl: Error retrieving alarms')
     # Check if any alarms have been triggered
-    if status.split(':')[-1] != '':
+    if status.split(':')[-1] == '':
+        pass
+    elif status.split(':')[-1] == 'DB8.T1\tOpen Circuit;':
+        print('-'*10)
+        print('Sample Probe Unplugged! (If not, other error present.)')
+        print('-'*10)
+    else:
         success = False
 else:
     print('TempControl: Version error', '('+str(version)+')')
