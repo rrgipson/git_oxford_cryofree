@@ -274,8 +274,8 @@ class Application:
 
     def set_temperature(self, *args):
         if self.serial_t.is_open and self._temp_connect:
-            self.serial_t.transmit(isobus_temp+SET+SAMPLE+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto', False) #Sets both heaters to auto
-            self.serial_t.transmit(isobus_temp+SET+VTI+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto', False)
+            #self.serial_t.transmit(isobus_temp+SET+SAMPLE+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto', False) #Sets both heaters to auto
+            #self.serial_t.transmit(isobus_temp+SET+VTI+AUTO_SET+':Auto', 'TempControl: Error setting sample heater to Auto', False)
             temperature = self.gui.user_temperature()
             shift = 0
             if len(temperature) > 0:
