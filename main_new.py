@@ -822,35 +822,38 @@ class Application:
                 #update temp setpoint on gui then on instrument
                 self.gui.update_temps(setpoint=str(t)+'K')
                 self.set_temperature()
-                #wait 5 mins for temp to be reached/stabilize
-                print('Waiting 5 mins for temp to stabilize')
-                sleep(300)
 
-                #check every minute to see if have reached the correct temp
-                tempcheck_iters=0
-                last3_temps=[float(self.get_sample_temp())]
-                #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
-                while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < 0.01): #Temp Accuarcy Cutoff
-                    print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
-                    if self._vtvh_interrupt == True:
-                        break
-                    sleep(60) #waits 1 min between temp checks
-                    temp_chk=float(self.get_sample_temp())
-                    last3_temps.append(temp_chk)
-                    while len(last3_temps)>3:
-                        last3_temps.pop(0)
-                    tempcheck_iters+=1 #count number of checks done 
-                    #if temp hasnt stabilized after 30 mins, interrupt the vtvh run
-                    if tempcheck_iters>15:
-                        if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 1.0 and np.std(last3_temps) < 0.05: #secondary criteria after 20 mins
-                            print('Warning: Using Secondary Temp Criteria After 15mins')
+                #only wait and run temp checks if you've got more than 1 temp
+                if len(temp_list)>1:
+                    #wait 5 mins for temp to be reached/stabilize
+                    print('Waiting 5 mins for temp to stabilize')
+                    sleep(300)
+
+                    #check every minute to see if have reached the correct temp
+                    tempcheck_iters=0
+                    last3_temps=[float(self.get_sample_temp())]
+                    #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
+                    while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < 0.01): #Temp Accuarcy Cutoff
+                        print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
+                        if self._vtvh_interrupt == True:
                             break
-                        else:
-                            print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 20 mins'%str(t))
-                            self.vtvh_interrupt()
-                            #TODO: If temp too hot, open needle valve more?
-                        #read current, open like 10% more, wait, read temp, do again or break if too open
-                    #exit loop when made it to new temp
+                        sleep(60) #waits 1 min between temp checks
+                        temp_chk=float(self.get_sample_temp())
+                        last3_temps.append(temp_chk)
+                        while len(last3_temps)>3:
+                            last3_temps.pop(0)
+                        tempcheck_iters+=1 #count number of checks done 
+                        #if temp hasnt stabilized after 30 mins, interrupt the vtvh run
+                        if tempcheck_iters>15:
+                            if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 1.0 and np.std(last3_temps) < 0.05: #secondary criteria after 20 mins
+                                print('Warning: Using Secondary Temp Criteria After 15mins')
+                                break
+                            else:
+                                print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 20 mins'%str(t))
+                                self.vtvh_interrupt()
+                                #TODO: If temp too hot, open needle valve more?
+                            #read current, open like 10% more, wait, read temp, do again or break if too open
+                        #exit loop when made it to new temp
                         
                 #check if interrupt was pressed
                 if self._vtvh_interrupt == True:
@@ -959,7 +962,8 @@ class Application:
         for i in range(1,len(fields)):
             time_sum+=abs(float(fields[i-1])-float(fields[i]))/(0.15*60)
         #time for temps
-        time_sum+=(len(fields)*len(temps)*0.25)
+        if len(temps)>1:
+            time_sum+=(len(fields)*len(temps)*0.25)
         time_sum+=(len(fields)*len(temps)*(scanSecs/(60*60)))
         return time_sum #in hours
             
