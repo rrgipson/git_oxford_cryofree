@@ -855,14 +855,17 @@ class Application:
                             #read current, open like 10% more, wait, read temp, do again or break if too open
                         #exit loop when made it to new temp
                         
-                #check if interrupt was pressed
-                if self._vtvh_interrupt == True:
-                    break
+                    #check if interrupt was pressed
+                    if self._vtvh_interrupt == True:
+                        break
+                        
+                    #print that made it to new temp
+                    print('Temps:', last3_temps)
+                    print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
+                    print('Next Temp Reached %s K (took %i mins)'%(str(t),tempcheck_iters))
                     
-                #print that made it to new temp
-                print('Temps:', last3_temps)
-                print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
-                print('Next Temp Reached %s K (took %i mins)'%(str(t),tempcheck_iters))
+                else:
+                    print('Only 1 Temp. Proceeding.')
 
                 #log at start of scan
                 self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
