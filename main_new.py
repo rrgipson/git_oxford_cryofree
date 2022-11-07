@@ -823,8 +823,8 @@ class Application:
                 self.gui.update_temps(setpoint=str(t)+'K')
                 self.set_temperature()
 
-                #only wait and run temp checks if you've got more than 1 temp
-                if len(temp_list)>1:
+                #only wait and run temp checks if you've got more than 1 temp or current temp is off by more than 0.75K
+                if len(temp_list)>1 or abs(float(t)-float(self.get_sample_temp()))>0.75:
                     #wait 5 mins for temp to be reached/stabilize
                     print('Waiting 5 mins for temp to stabilize')
                     sleep(300)
