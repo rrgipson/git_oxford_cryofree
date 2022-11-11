@@ -13,7 +13,7 @@ Code for running the Solomon Lab MCD.
 3. spectrometer.py handles communication with the J1700 and Jasco software via the autohotkey scripts found in lib
     - Note that there are 2 scripts- the "one lamp" one just had an extra "Enter" keypress to close the popup that tells you there is only 1 lamp on
 4. gui.py handles the setup and changes made to the gui (activating/deactivating fields) during running.
-5. logger.py contains a class that handles all of the logging activities (writing data from background/VTVH to csv files as well as printed text and errors [stderr is overwritten]).
+5. logger.py contains a class that handles all of the logging activities (writing data from background/VTVH to csv files as well as printed text and errors, stderr is overwritten).
     - the background_log.csv file is in the main folder and the VTVH and error logs are in UserLogs/
     - Background log is updated when connection is established and every 2 hours after
     - VTVH logging happens at the beginning and end of every scan
@@ -33,6 +33,7 @@ Code for running the Solomon Lab MCD.
 - Open the Jasco software for running scans on the J1700. (And do all the prerequisite warm up procedures involved with the instrument.)
 - Time how long it takes to run a scan with your desired parameters (just use your phone or something). Add a few extra seconds to this time before inputting it just to be safe.
 - Input the time that the scan took in seconds into the third box in the VTVH Section. 
+- Optional: Select the folder that the Jasco software is autosaving to using the Browse button. This will make a note of which file each scan corresponds to in the VTVH log file and will save the VTVH log file to this location so everything is together.  
 - Click Collect VTVH to start the run.
 - Look for messages on the black screen (it will tell you if you've inputted any temps or fields incorrectly). It will also make you wait 5 minutes for the Switch Heater to Warm Up (the switch heater will be turned on automatically if it isn't already). 
 - Make sure the Jasco Scanning Software window is open (not minimized but it can be behind the program). Scans will not be collected if it is minimized or not open.
