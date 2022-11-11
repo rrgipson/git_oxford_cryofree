@@ -966,7 +966,8 @@ class Application:
             time_sum+=abs(float(fields[i-1])-float(fields[i]))/(0.15*60)
         #time for temps
         if len(temps)>1:
-            time_sum+=(len(fields)*len(temps)*0.25)
+            time_sum+=(len(fields)*len(temps)*0.15)
+        #time for scans
         time_sum+=(len(fields)*len(temps)*(scanSecs/(60*60)))
         return time_sum #in hours
             
