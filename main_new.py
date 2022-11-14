@@ -413,7 +413,14 @@ class Application:
             self._switch_status = SWITCH_ENABLED
             #CRYOFREE TO-DO
             #add a wait 5 minutes loop while the switch warms up before can ramp to field
-            
+            print('Wait 5 mins for Switch Heater Warming')
+            count_warm=300
+            while count_warm > 0:
+                if self._action_interrupt:
+                    break
+                self.gui.update_fields(setpoint='Wait '+str(count_warm)+'s')
+                count_warm = count_warm - 1
+                sleep(1)
             
             field_movement = FIELD_HOLD
         elif response[7:9] in ['H5', 'H8']:
@@ -763,11 +770,11 @@ class Application:
         #turn on switch heater
         if self._switch_status in [SWITCH_DISABLED, SWITCH_WARMING, SWITCH_COOLING] and not self._vtvh_interrupt:
             self.engage_switch_heater()
-            print('Waiting for switch heater to warm up (5 mins).')
-            sleep(300)
+            #print('Waiting for switch heater to warm up (5 mins).')
+            #sleep(300) #now happens in engage switch function
         elif self._switch_status == SWITCH_ENABLED and not self._vtvh_interrupt:
-            print('Switch Heater ON: Waiting 5 Mins.')
-            sleep(300) #Wait 5 minutes even if switch heater is on
+            print('Switch Heater ON: Waiting 5 Seconds.')
+            sleep(5) #Wait 5 minutes even if switch heater is on
         else: #interrupt or switch error
             self.vtvh_interrupt()
         
