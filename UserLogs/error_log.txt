@@ -5600,3 +5600,2639 @@ Traceback (most recent call last):
     win32.ResetEvent(self._overlapped_read.hEvent)
 AttributeError: 'NoneType' object has no attribute 'hEvent'
 Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-11-11 11:45:22.508711 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 2.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.283 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.9981K 
+VTI Temp: 1.9181K 
+PT2 Temp: 3.3123K 
+Needle Valve Pressure: 4.9998mB 
+Needle Valve Percent: 14.9798% 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+Starting Full VTVH Run 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 60 seconds. 
+Est. Time for VTVH: 1.86 hours 
+Waiting for switch heater to warm up (5 mins). 
+@1H1 H1 
+@1A0 A0 
+@1X X00A0C1H1M00 
+ @1R8 R0.00000 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.421 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+ At New Field: 0 T 
+@1X X00A0C1H1M00 
+Next Field Reached 0 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 1.9986K 
+Only 1 Temp. Proceeding. 
+Magnet Temp: 3.431 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0006K 
+VTI Temp: 1.9087K 
+Needle Valve Pressure: 5.1439mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 1 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 1 
+Jasco scan event 
+Start Button Found at X= 213 and Y= 112 
+Magnet Temp: 3.437 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.9987K 
+VTI Temp: 1.9089K 
+Needle Valve Pressure: 5.1429mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 1 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.439 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+4.0000 J+4.0000 
+@1R8 R4.00000 
+@1A1 A1 
+ At New Field: 4 T 
+@1X X00A0C1H1M00 
+Next Field Reached 4 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0052K 
+Only 1 Temp. Proceeding. 
+Magnet Temp: 3.533 K 
+Current Magnet Field: 4.0000 T 
+@1R8 R4.00000 
+Sample Temp: 2.0037K 
+VTI Temp: 1.9088K 
+Needle Valve Pressure: 4.8191mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 2 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 2 
+Jasco scan event 
+Start Button Found at X= 213 and Y= 112 
+Magnet Temp: 3.492 K 
+Current Magnet Field: 4.0000 T 
+@1R8 R4.00000 
+Sample Temp: 2.0048K 
+VTI Temp: 1.9165K 
+Needle Valve Pressure: 4.7761mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 2 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.484 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+ At New Field: 0 T 
+@1X X00A0C1H1M00 
+Next Field Reached 0 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0006K 
+Only 1 Temp. Proceeding. 
+Magnet Temp: 3.680 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0012K 
+VTI Temp: 1.9133K 
+Needle Valve Pressure: 5.0159mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 3 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 3 
+Jasco scan event 
+Start Button Found at X= 213 and Y= 112 
+Magnet Temp: 3.554 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0047K 
+VTI Temp: 1.9213K 
+Needle Valve Pressure: 4.8762mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 3 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.538 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-4.0000 J-4.0000 
+@1R8 R-4.00000 
+@1A1 A1 
+ At New Field: -4 T 
+@1X X00A0C1H1M00 
+Next Field Reached -4 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0053K 
+Only 1 Temp. Proceeding. 
+Magnet Temp: 3.543 K 
+Current Magnet Field: -4.0000 T 
+@1R8 R-4.00000 
+Sample Temp: 2.0044K 
+VTI Temp: 1.9127K 
+Needle Valve Pressure: 4.7948mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 4 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 4 
+Jasco scan event 
+Start Button Found at X= 213 and Y= 112 
+Magnet Temp: 3.499 K 
+Current Magnet Field: -4.0000 T 
+@1R8 R-4.00000 
+Sample Temp: 2.0031K 
+VTI Temp: 1.9148K 
+Needle Valve Pressure: 4.7629mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 4 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.489 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+Updating Background Log 
+Magnet Temp: 3.738 K 
+Current Magnet Field: -0.8388 T 
+@1R8 R0.00000 
+Sample Temp: 1.9980K 
+VTI Temp: 1.9157K 
+PT2 Temp: 3.5323K 
+Needle Valve Pressure: 4.9661mB 
+Needle Valve Percent: 17.2274% 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+ @1X X00A0C1H1M00 
+At New Field: 0 T 
+Next Field Reached 0 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0016K 
+Only 1 Temp. Proceeding. 
+Magnet Temp: 3.641 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0048K 
+VTI Temp: 1.9182K 
+Needle Valve Pressure: 4.9668mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 5 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 5 
+Jasco scan event 
+Start Button Found at X= 213 and Y= 112 
+Magnet Temp: 3.541 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0031K 
+VTI Temp: 1.9229K 
+Needle Valve Pressure: 4.8481mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 5 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Waiting for switch heater to cool (5 mins). 
+@1A0 A0 
+@1H0 H0 
+@1X X00A0C1H2M00 
+ @1R8 R0.00000 
+VTVH Ended 
+Scan Time Read as 1 mins and 45 secs 
+Starting Full VTVH Run 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 105 seconds. 
+Est. Time for VTVH: 1.92 hours 
+Waiting for switch heater to warm up (5 mins). 
+@1H1 H1 
+@1A0 A0 
+@1X X00A0C1H1M00 
+ @1R8 R0.00000 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.427 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+ At New Field: 0 T 
+@1X X00A0C1H1M00 
+Next Field Reached 0 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0008K 
+Only 1 Temp. Proceeding. 
+Magnet Temp: 3.438 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.9992K 
+VTI Temp: 1.9079K 
+Needle Valve Pressure: 5.2328mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 1 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 1 
+Jasco scan event 
+Start Button Found at X= 213 and Y= 112 
+Magnet Temp: 3.447 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0000K 
+VTI Temp: 1.9086K 
+Needle Valve Pressure: 5.2638mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 1 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.448 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+4.0000 J+4.0000 
+@1R8 R4.00000 
+@1A1 A1 
+ At New Field: 4 T 
+@1X X00A0C1H1M00 
+Next Field Reached 4 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0047K 
+Only 1 Temp. Proceeding. 
+Magnet Temp: 3.542 K 
+Current Magnet Field: 4.0000 T 
+@1R8 R4.00000 
+Sample Temp: 2.0039K 
+VTI Temp: 1.9103K 
+Needle Valve Pressure: 4.9317mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 2 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 2 
+Jasco scan event 
+Start Button Found at X= 213 and Y= 112 
+Magnet Temp: 3.486 K 
+Current Magnet Field: 4.0000 T 
+@1R8 R4.00000 
+Sample Temp: 2.0038K 
+VTI Temp: 1.9144K 
+Needle Valve Pressure: 4.8681mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 2 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.479 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+ At New Field: 0 T 
+@1X X00A0C1H1M00 
+Next Field Reached 0 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0022K 
+Only 1 Temp. Proceeding. 
+Magnet Temp: 3.637 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0040K 
+VTI Temp: 1.9181K 
+Needle Valve Pressure: 5.0949mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 3 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 3 
+Jasco scan event 
+Start Button Found at X= 213 and Y= 112 
+Updating Background Log 
+Magnet Temp: 3.536 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0042K 
+VTI Temp: 1.9232K 
+PT2 Temp: 3.4759K 
+Needle Valve Pressure: 4.9114mB 
+Needle Valve Percent: 14.4305% 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+Magnet Temp: 3.515 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0019K 
+VTI Temp: 1.9253K 
+Needle Valve Pressure: 4.8711mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 3 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.505 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-4.0000 J-4.0000 
+@1R8 R-4.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -4 T 
+Next Field Reached -4 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0033K 
+Only 1 Temp. Proceeding. 
+Magnet Temp: 3.537 K 
+Current Magnet Field: -4.0000 T 
+@1R8 R-4.00000 
+Sample Temp: 2.0039K 
+VTI Temp: 1.9101K 
+Needle Valve Pressure: 4.7754mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 4 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 4 
+Jasco scan event 
+Start Button Found at X= 213 and Y= 112 
+Magnet Temp: 3.480 K 
+Current Magnet Field: -4.0000 T 
+@1R8 R-4.00000 
+Sample Temp: 2.0041K 
+VTI Temp: 1.9162K 
+Needle Valve Pressure: 4.7002mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 4 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.474 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 0 T 
+Next Field Reached 0 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0015K 
+Only 1 Temp. Proceeding. 
+Magnet Temp: 3.645 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0042K 
+VTI Temp: 1.9167K 
+Needle Valve Pressure: 4.9628mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 5 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 5 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.513 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0018K 
+VTI Temp: 1.9236K 
+Needle Valve Pressure: 4.7709mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 5 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Waiting for switch heater to cool (5 mins). 
+@1A0 A0 
+@1H0 H0 
+@1X X00A0C1H2M00 
+ @1R8 R0.00000 
+VTVH Ended 
+Scan Time Read as 5 mins and 50 secs 
+Starting Full VTVH Run 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 350 seconds. 
+Est. Time for VTVH: 13.99 hours 
+Waiting for switch heater to warm up (5 mins). 
+@1H1 H1 
+@1A0 A0 
+@1X X00A0C1H1M00 
+ @1R8 R0.00000 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.429 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+ At New Field: 0 T 
+@1X X00A0C1H1M00 
+Next Field Reached 0 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 2.0011K 
+1 2.0011 0.0 
+Sample Temp: 2.0011K 
+2 2.0011 0.0 
+Sample Temp: 2.0009K 
+Temps: [2.0011, 2.0011, 2.0009] 
+3 2.0010333333333334 9.428090415819596e-05 
+Next Temp Reached 2 K (took 2 mins) 
+Magnet Temp: 3.456 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0005K 
+VTI Temp: 1.9095K 
+Needle Valve Pressure: 5.2777mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 1 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 1 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.458 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.9994K 
+VTI Temp: 1.9132K 
+Needle Valve Pressure: 5.3130mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 1 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.458 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.9982K 
+VTI Temp: 1.9113K 
+Needle Valve Pressure: 5.3241mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 1 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Waiting 5 mins for temp to stabilize 
+Updating Background Log 
+Magnet Temp: 3.459 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 5.1117K 
+Sample Temp: 5.1214K 
+1 5.1214 0.0 
+VTI Temp: 4.8737K 
+PT2 Temp: 3.4300K 
+Needle Valve Pressure: 5.3993mB 
+Needle Valve Percent: 15.8755% 
+Sample Temp Set Point is 5.0000K 
+Finished Background Log Update 
+Sample Temp: 5.1456K 
+2 5.1335 0.012099999999999778 
+Sample Temp: 5.1551K 
+3 5.1407 0.014187553230443281 
+Sample Temp: 5.1540K 
+Temps: [5.1456, 5.1551, 5.154] 
+3 5.151566666666667 0.004242902570437166 
+Next Temp Reached 5 K (took 3 mins) 
+Magnet Temp: 3.459 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 5.1418K 
+VTI Temp: 4.8915K 
+Needle Valve Pressure: 5.3466mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 2 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 2 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.459 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 5.1539K 
+VTI Temp: 4.8701K 
+Needle Valve Pressure: 5.3773mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 2 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.459 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 5.1422K 
+VTI Temp: 4.9023K 
+Needle Valve Pressure: 5.3007mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 2 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 14.9732K 
+1 14.9732 0.0 
+Sample Temp: 14.9892K 
+2 14.981200000000001 0.008000000000000007 
+Sample Temp: 14.9917K 
+Temps: [14.9732, 14.9892, 14.9917] 
+3 14.984700000000002 0.008195527235429363 
+Next Temp Reached 15 K (took 2 mins) 
+Magnet Temp: 3.448 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 14.9967K 
+VTI Temp: 13.7755K 
+Needle Valve Pressure: 4.7191mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 3 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 3 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.446 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 14.9973K 
+VTI Temp: 13.7773K 
+Needle Valve Pressure: 5.2667mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 3 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.446 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 15.0040K 
+VTI Temp: 13.7645K 
+Needle Valve Pressure: 5.4974mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 3 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 24.9867K 
+1 24.9867 0.0 
+Sample Temp: 24.9908K 
+2 24.98875 0.0020500000000005514 
+Sample Temp: 24.9996K 
+Temps: [24.9867, 24.9908, 24.9996] 
+3 24.99236666666667 0.005381656085465726 
+Next Temp Reached 25 K (took 2 mins) 
+Magnet Temp: 3.440 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 24.9994K 
+VTI Temp: 23.5908K 
+Needle Valve Pressure: 5.2241mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 4 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 4 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.440 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 25.0010K 
+VTI Temp: 23.6153K 
+Needle Valve Pressure: 4.4379mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 4 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.440 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 25.0021K 
+VTI Temp: 23.6285K 
+Needle Valve Pressure: 5.3032mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 4 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.440 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+1.0000 J+1.0000 
+@1R8 R1.00000 
+@1A1 A1 
+ At New Field: 1 T 
+@1X X00A0C1H1M00 
+Next Field Reached 1 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 2.0003K 
+1 2.0003 0.0 
+Sample Temp: 1.9427K 
+2 1.9715000000000003 0.028800000000000048 
+Sample Temp: 1.9000K 
+3 1.9476666666666667 0.04109763442773276 
+Sample Temp: 1.8784K 
+3 1.9070333333333334 0.02671732687892928 
+Sample Temp: 1.8902K 
+Temps: [1.9, 1.8784, 1.8902] 
+3 1.8895333333333333 0.008830754340497822 
+Next Temp Reached 2 K (took 4 mins) 
+Magnet Temp: 3.448 K 
+Current Magnet Field: 1.0000 T 
+@1R8 R1.00000 
+Sample Temp: 1.9705K 
+VTI Temp: 1.8594K 
+Needle Valve Pressure: 5.0149mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 5 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 5 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.445 K 
+Current Magnet Field: 1.0000 T 
+@1R8 R1.00000 
+Sample Temp: 2.0041K 
+VTI Temp: 1.9075K 
+Needle Valve Pressure: 5.0116mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 5 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.445 K 
+Current Magnet Field: 1.0000 T 
+@1R8 R1.00000 
+Sample Temp: 2.0056K 
+VTI Temp: 1.9143K 
+Needle Valve Pressure: 4.9654mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 5 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 5.1334K 
+1 5.1334 0.0 
+Sample Temp: 5.1616K 
+2 5.1475 0.014100000000000001 
+Sample Temp: 5.1549K 
+3 5.149966666666667 0.012029500774715787 
+Sample Temp: 5.1531K 
+Temps: [5.1616, 5.1549, 5.1531] 
+3 5.156533333333333 0.0036572606627851044 
+Next Temp Reached 5 K (took 3 mins) 
+Magnet Temp: 3.440 K 
+Current Magnet Field: 1.0000 T 
+@1R8 R1.00000 
+Sample Temp: 5.1505K 
+VTI Temp: 4.8625K 
+Needle Valve Pressure: 4.8217mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 6 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 6 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.439 K 
+Current Magnet Field: 1.0000 T 
+@1R8 R1.00000 
+Sample Temp: 5.1509K 
+VTI Temp: 4.8795K 
+Needle Valve Pressure: 4.9025mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 6 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.439 K 
+Current Magnet Field: 1.0000 T 
+@1R8 R1.00000 
+Sample Temp: 5.1609K 
+VTI Temp: 4.8671K 
+Needle Valve Pressure: 4.9527mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 6 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 14.9786K 
+1 14.9786 0.0 
+Sample Temp: 14.9935K 
+2 14.986049999999999 0.007449999999999513 
+Sample Temp: 14.9918K 
+Temps: [14.9786, 14.9935, 14.9918] 
+3 14.987966666666665 0.006659496143769726 
+Next Temp Reached 15 K (took 2 mins) 
+Magnet Temp: 3.437 K 
+Current Magnet Field: 1.0000 T 
+@1R8 R1.00000 
+Sample Temp: 14.9955K 
+VTI Temp: 13.7874K 
+Needle Valve Pressure: 4.8524mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 7 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 7 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.437 K 
+Current Magnet Field: 1.0000 T 
+@1R8 R1.00000 
+Sample Temp: 14.9966K 
+VTI Temp: 13.7657K 
+Needle Valve Pressure: 4.5282mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 7 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.436 K 
+Current Magnet Field: 1.0000 T 
+@1R8 R1.00000 
+Sample Temp: 14.9980K 
+VTI Temp: 13.7650K 
+Needle Valve Pressure: 5.3096mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 7 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 24.9857K 
+1 24.9857 0.0 
+Sample Temp: 24.9916K 
+2 24.98865 0.002949999999998454 
+Sample Temp: 24.9954K 
+Temps: [24.9857, 24.9916, 24.9954] 
+3 24.9909 0.0039908228057208145 
+Next Temp Reached 25 K (took 2 mins) 
+Magnet Temp: 3.435 K 
+Current Magnet Field: 1.0000 T 
+@1R8 R1.00000 
+Sample Temp: 24.9984K 
+VTI Temp: 23.6320K 
+Needle Valve Pressure: 5.4587mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 8 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 8 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.434 K 
+Current Magnet Field: 1.0000 T 
+@1R8 R1.00000 
+Sample Temp: 25.0022K 
+VTI Temp: 23.5809K 
+Needle Valve Pressure: 4.3649mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 8 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.434 K 
+Current Magnet Field: 1.0000 T 
+@1R8 R1.00000 
+Sample Temp: 25.0018K 
+VTI Temp: 23.6257K 
+Needle Valve Pressure: 5.3724mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 8 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.434 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+3.0000 J+3.0000 
+@1R8 R3.00000 
+@1A1 A1 
+Updating Background Log 
+Magnet Temp: 3.634 K 
+Current Magnet Field: 2.9998 T 
+@1R8 R3.00000 
+Sample Temp: 2.0304K 
+VTI Temp: 1.9520K 
+PT2 Temp: 3.4974K 
+ Needle Valve Pressure: 5.0139mB 
+Needle Valve Percent: 17.1496% 
+@1X X00A0C1H1M00 
+At New Field: 3 T 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+Next Field Reached 3 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 2.0014K 
+1 2.0014 0.0 
+Sample Temp: 2.0124K 
+2 2.0069 0.00550000000000006 
+Sample Temp: 2.0125K 
+Temps: [2.0014, 2.0124, 2.0125] 
+3 2.008766666666667 0.0052091799311942254 
+Next Temp Reached 2 K (took 2 mins) 
+Magnet Temp: 3.445 K 
+Current Magnet Field: 3.0000 T 
+@1R8 R3.00000 
+Sample Temp: 2.0118K 
+VTI Temp: 1.9005K 
+Needle Valve Pressure: 4.8811mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 9 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 9 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.441 K 
+Current Magnet Field: 3.0000 T 
+@1R8 R3.00000 
+Sample Temp: 1.9980K 
+VTI Temp: 1.9212K 
+Needle Valve Pressure: 4.9291mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 9 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.441 K 
+Current Magnet Field: 3.0000 T 
+@1R8 R3.00000 
+Sample Temp: 1.9968K 
+VTI Temp: 1.9159K 
+Needle Valve Pressure: 4.9440mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 9 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 5.1638K 
+1 5.1638 0.0 
+Sample Temp: 5.1735K 
+2 5.1686499999999995 0.004849999999999799 
+Sample Temp: 5.1598K 
+Temps: [5.1638, 5.1735, 5.1598] 
+3 5.1657 0.005752101065407868 
+Next Temp Reached 5 K (took 2 mins) 
+Magnet Temp: 3.444 K 
+Current Magnet Field: 3.0000 T 
+@1R8 R3.00000 
+Sample Temp: 5.1639K 
+VTI Temp: 4.8494K 
+Needle Valve Pressure: 4.8907mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 10 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 10 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.445 K 
+Current Magnet Field: 3.0000 T 
+@1R8 R3.00000 
+Sample Temp: 5.1566K 
+VTI Temp: 4.8855K 
+Needle Valve Pressure: 4.9364mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 10 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.445 K 
+Current Magnet Field: 3.0000 T 
+@1R8 R3.00000 
+Sample Temp: 5.1620K 
+VTI Temp: 4.8510K 
+Needle Valve Pressure: 5.0240mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 10 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 14.9679K 
+1 14.9679 0.0 
+Sample Temp: 14.9808K 
+2 14.974350000000001 0.006450000000000067 
+Sample Temp: 14.9880K 
+Temps: [14.9679, 14.9808, 14.988] 
+3 14.978900000000001 0.008315046602394731 
+Next Temp Reached 15 K (took 2 mins) 
+Magnet Temp: 3.445 K 
+Current Magnet Field: 3.0000 T 
+@1R8 R3.00000 
+Sample Temp: 14.9915K 
+VTI Temp: 13.7949K 
+Needle Valve Pressure: 5.1175mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 11 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 11 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.446 K 
+Current Magnet Field: 3.0000 T 
+@1R8 R3.00000 
+Sample Temp: 15.0003K 
+VTI Temp: 13.7569K 
+Needle Valve Pressure: 4.8791mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 11 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.446 K 
+Current Magnet Field: 3.0000 T 
+@1R8 R3.00000 
+Sample Temp: 14.9923K 
+VTI Temp: 13.7452K 
+Needle Valve Pressure: 4.6724mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 11 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 24.9921K 
+1 24.9921 0.0 
+Sample Temp: 24.9932K 
+2 24.99265 0.0005500000000004945 
+Sample Temp: 24.9997K 
+Temps: [24.9921, 24.9932, 24.9997] 
+3 24.995 0.0033536050254413742 
+Next Temp Reached 25 K (took 2 mins) 
+Magnet Temp: 3.445 K 
+Current Magnet Field: 3.0000 T 
+@1R8 R3.00000 
+Sample Temp: 25.0013K 
+VTI Temp: 23.6236K 
+Needle Valve Pressure: 4.8458mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 12 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 12 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.446 K 
+Current Magnet Field: 3.0000 T 
+@1R8 R3.00000 
+Sample Temp: 25.0016K 
+VTI Temp: 23.5647K 
+Needle Valve Pressure: 4.3881mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 12 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.446 K 
+Current Magnet Field: 3.0000 T 
+@1R8 R3.00000 
+Sample Temp: 25.0018K 
+VTI Temp: 23.5710K 
+Needle Valve Pressure: 4.5560mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 12 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.446 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+5.0000 J+5.0000 
+@1R8 R5.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 5 T 
+Next Field Reached 5 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 2.0235K 
+1 2.0235 0.0 
+Sample Temp: 2.0253K 
+2 2.0244 0.0009000000000001229 
+Sample Temp: 2.0188K 
+Temps: [2.0235, 2.0253, 2.0188] 
+3 2.0225333333333335 0.002740235188608563 
+Next Temp Reached 2 K (took 2 mins) 
+Magnet Temp: 3.464 K 
+Current Magnet Field: 5.0000 T 
+@1R8 R5.00000 
+Sample Temp: 2.0178K 
+VTI Temp: 1.9108K 
+Needle Valve Pressure: 5.2308mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 13 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 13 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.459 K 
+Current Magnet Field: 5.0000 T 
+@1R8 R5.00000 
+Sample Temp: 2.0155K 
+VTI Temp: 1.9155K 
+Needle Valve Pressure: 5.1800mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 13 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.459 K 
+Current Magnet Field: 5.0000 T 
+@1R8 R5.00000 
+Sample Temp: 2.0108K 
+VTI Temp: 1.9128K 
+Needle Valve Pressure: 5.1972mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 13 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 5.1779K 
+1 5.1779 0.0 
+Sample Temp: 5.1804K 
+2 5.17915 0.0012499999999997513 
+Sample Temp: 5.1689K 
+Temps: [5.1779, 5.1804, 5.1689] 
+3 5.1757333333333335 0.004938510796676352 
+Next Temp Reached 5 K (took 2 mins) 
+Magnet Temp: 3.459 K 
+Current Magnet Field: 5.0000 T 
+@1R8 R5.00000 
+Sample Temp: 5.1785K 
+VTI Temp: 4.8448K 
+Needle Valve Pressure: 5.1294mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 14 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 14 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.459 K 
+Current Magnet Field: 5.0000 T 
+@1R8 R5.00000 
+Sample Temp: 5.1799K 
+VTI Temp: 4.8628K 
+Needle Valve Pressure: 5.1433mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 14 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.459 K 
+Current Magnet Field: 5.0000 T 
+@1R8 R5.00000 
+Sample Temp: 5.1711K 
+VTI Temp: 4.8603K 
+Needle Valve Pressure: 5.0747mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 14 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 14.9763K 
+1 14.9763 0.0 
+Sample Temp: 14.9935K 
+2 14.9849 0.008599999999999497 
+Sample Temp: 14.9928K 
+Temps: [14.9763, 14.9935, 14.9928] 
+3 14.987533333333333 0.007948305200201723 
+Next Temp Reached 15 K (took 2 mins) 
+Magnet Temp: 3.456 K 
+Current Magnet Field: 5.0000 T 
+@1R8 R5.00000 
+Sample Temp: 14.9930K 
+VTI Temp: 13.7657K 
+Needle Valve Pressure: 4.9084mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 15 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 15 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.454 K 
+Current Magnet Field: 5.0000 T 
+@1R8 R5.00000 
+Sample Temp: 15.0027K 
+VTI Temp: 13.7672K 
+Needle Valve Pressure: 5.1065mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 15 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.455 K 
+Current Magnet Field: 5.0000 T 
+@1R8 R5.00000 
+Sample Temp: 15.0008K 
+VTI Temp: 13.7416K 
+Needle Valve Pressure: 5.0251mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 15 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 24.9864K 
+1 24.9864 0.0 
+Updating Background Log 
+Magnet Temp: 3.451 K 
+Current Magnet Field: 5.0000 T 
+@1R8 R5.00000 
+Sample Temp: 24.9873K 
+VTI Temp: 23.6382K 
+PT2 Temp: 3.3998K 
+Needle Valve Pressure: 5.4462mB 
+Needle Valve Percent: 14.8486% 
+Sample Temp Set Point is 25.0000K 
+Finished Background Log Update 
+Sample Temp: 24.9913K 
+2 24.98885 0.002449999999999619 
+Sample Temp: 24.9942K 
+Temps: [24.9864, 24.9913, 24.9942] 
+3 24.990633333333335 0.003219040574801892 
+Next Temp Reached 25 K (took 2 mins) 
+Magnet Temp: 3.451 K 
+Current Magnet Field: 5.0000 T 
+@1R8 R5.00000 
+Sample Temp: 24.9976K 
+VTI Temp: 23.6352K 
+Needle Valve Pressure: 5.0366mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 16 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 16 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.451 K 
+Current Magnet Field: 5.0000 T 
+@1R8 R5.00000 
+Sample Temp: 25.0011K 
+VTI Temp: 23.6269K 
+Needle Valve Pressure: 5.1906mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 16 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.451 K 
+Current Magnet Field: 5.0000 T 
+@1R8 R5.00000 
+Sample Temp: 25.0016K 
+VTI Temp: 23.5962K 
+Needle Valve Pressure: 4.8447mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 16 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.451 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+7.0000 J+7.0000 
+@1R8 R7.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 7 T 
+Next Field Reached 7 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 1.9690K 
+1 1.969 0.0 
+Sample Temp: 2.0235K 
+2 1.9962499999999999 0.027249999999999885 
+Sample Temp: 2.0287K 
+3 2.0070666666666668 0.027000781881683002 
+Sample Temp: 2.0333K 
+Temps: [2.0235, 2.0287, 2.0333] 
+3 2.0284999999999997 0.004003331945600754 
+Next Temp Reached 2 K (took 3 mins) 
+Magnet Temp: 3.473 K 
+Current Magnet Field: 7.0000 T 
+@1R8 R7.00000 
+Sample Temp: 2.0348K 
+VTI Temp: 1.9165K 
+Needle Valve Pressure: 5.0435mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 17 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 17 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.470 K 
+Current Magnet Field: 7.0000 T 
+@1R8 R7.00000 
+Sample Temp: 2.0429K 
+VTI Temp: 1.9210K 
+Needle Valve Pressure: 4.9943mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 17 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.469 K 
+Current Magnet Field: 7.0000 T 
+@1R8 R7.00000 
+Sample Temp: 2.0383K 
+VTI Temp: 1.9155K 
+Needle Valve Pressure: 4.9923mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 17 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 5.1962K 
+1 5.1962 0.0 
+Sample Temp: 5.1794K 
+2 5.1878 0.008399999999999963 
+Sample Temp: 5.1824K 
+Temps: [5.1962, 5.1794, 5.1824] 
+3 5.186 0.0073157364632687 
+Next Temp Reached 5 K (took 2 mins) 
+Magnet Temp: 3.468 K 
+Current Magnet Field: 7.0000 T 
+@1R8 R7.00000 
+Sample Temp: 5.1824K 
+VTI Temp: 4.8637K 
+Needle Valve Pressure: 4.9261mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 18 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 18 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.469 K 
+Current Magnet Field: 7.0000 T 
+@1R8 R7.00000 
+Sample Temp: 5.1891K 
+VTI Temp: 4.8745K 
+Needle Valve Pressure: 5.0724mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 18 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.469 K 
+Current Magnet Field: 7.0000 T 
+@1R8 R7.00000 
+Sample Temp: 5.1848K 
+VTI Temp: 4.8929K 
+Needle Valve Pressure: 4.9552mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 18 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 14.9754K 
+1 14.9754 0.0 
+Sample Temp: 14.9918K 
+2 14.9836 0.008199999999999541 
+Sample Temp: 14.9917K 
+Temps: [14.9754, 14.9918, 14.9917] 
+3 14.9863 0.007707572034477578 
+Next Temp Reached 15 K (took 2 mins) 
+Magnet Temp: 3.468 K 
+Current Magnet Field: 7.0000 T 
+@1R8 R7.00000 
+Sample Temp: 14.9926K 
+VTI Temp: 13.7751K 
+Needle Valve Pressure: 4.6855mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 19 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 19 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.469 K 
+Current Magnet Field: 7.0000 T 
+@1R8 R7.00000 
+Sample Temp: 15.0006K 
+VTI Temp: 13.7391K 
+Needle Valve Pressure: 4.8003mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 19 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.469 K 
+Current Magnet Field: 7.0000 T 
+@1R8 R7.00000 
+Sample Temp: 14.9969K 
+VTI Temp: 13.7619K 
+Needle Valve Pressure: 5.1409mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 19 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 24.9857K 
+1 24.9857 0.0 
+Sample Temp: 24.9895K 
+2 24.9876 0.0018999999999991246 
+Sample Temp: 24.9981K 
+Temps: [24.9857, 24.9895, 24.9981] 
+3 24.9911 0.005187163643713808 
+Next Temp Reached 25 K (took 2 mins) 
+Magnet Temp: 3.469 K 
+Current Magnet Field: 7.0000 T 
+@1R8 R7.00000 
+Sample Temp: 24.9997K 
+VTI Temp: 23.6200K 
+Needle Valve Pressure: 5.5626mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 20 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 20 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.470 K 
+Current Magnet Field: 7.0000 T 
+@1R8 R7.00000 
+Sample Temp: 24.9996K 
+VTI Temp: 23.5735K 
+Needle Valve Pressure: 4.0482mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 20 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.470 K 
+Current Magnet Field: 7.0000 T 
+@1R8 R7.00000 
+Sample Temp: 25.0031K 
+VTI Temp: 23.5872K 
+Needle Valve Pressure: 4.1082mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 20 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.470 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+Updating Background Log 
+Magnet Temp: 3.732 K 
+Current Magnet Field: 1.1876 T 
+@1R8 R0.00000 
+Sample Temp: 1.9951K 
+VTI Temp: 1.9185K 
+PT2 Temp: 3.5419K 
+Needle Valve Pressure: 5.1337mB 
+Needle Valve Percent: 16.0082% 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+ At New Field: 0 T 
+@1X X00A0C1H1M00 
+Next Field Reached 0 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 1.9992K 
+1 1.9992 0.0 
+Sample Temp: 1.9985K 
+2 1.99885 0.0003500000000000725 
+Sample Temp: 1.9982K 
+Temps: [1.9992, 1.9985, 1.9982] 
+3 1.9986333333333333 0.0004189935029992718 
+Next Temp Reached 2 K (took 2 mins) 
+Magnet Temp: 3.459 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.9977K 
+VTI Temp: 1.9200K 
+Needle Valve Pressure: 4.8809mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 21 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 21 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.449 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.9983K 
+VTI Temp: 1.9109K 
+Needle Valve Pressure: 4.8460mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 21 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.448 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.9970K 
+VTI Temp: 1.9157K 
+Needle Valve Pressure: 4.8537mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 21 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 5.1362K 
+1 5.1362 0.0 
+Sample Temp: 5.1549K 
+2 5.14555 0.00934999999999997 
+Sample Temp: 5.1608K 
+3 5.150633333333333 0.010486287342154265 
+Sample Temp: 5.1554K 
+Temps: [5.1549, 5.1608, 5.1554] 
+3 5.157033333333334 0.002671246067953315 
+Next Temp Reached 5 K (took 3 mins) 
+Magnet Temp: 3.446 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 5.1520K 
+VTI Temp: 4.8856K 
+Needle Valve Pressure: 4.8291mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 22 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 22 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.444 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 5.1513K 
+VTI Temp: 4.8882K 
+Needle Valve Pressure: 4.8587mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 22 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.444 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 5.1503K 
+VTI Temp: 4.8598K 
+Needle Valve Pressure: 4.6784mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 22 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 14.9759K 
+1 14.9759 0.0 
+Sample Temp: 14.9849K 
+2 14.9804 0.0045000000000001705 
+Sample Temp: 14.9886K 
+Temps: [14.9759, 14.9849, 14.9886] 
+3 14.983133333333333 0.005333124995931073 
+Next Temp Reached 15 K (took 2 mins) 
+Magnet Temp: 3.441 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 14.9907K 
+VTI Temp: 13.7803K 
+Needle Valve Pressure: 4.8056mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 23 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 23 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.440 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 14.9989K 
+VTI Temp: 13.7597K 
+Needle Valve Pressure: 4.5806mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 23 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.441 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 14.9988K 
+VTI Temp: 13.7709K 
+Needle Valve Pressure: 5.0176mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 23 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 24.9904K 
+1 24.9904 0.0 
+Sample Temp: 24.9920K 
+2 24.9912 0.0007999999999999119 
+Sample Temp: 24.9998K 
+Temps: [24.9904, 24.992, 24.9998] 
+3 24.99406666666667 0.004106363625182286 
+Next Temp Reached 25 K (took 2 mins) 
+Magnet Temp: 3.447 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 24.9981K 
+VTI Temp: 23.5696K 
+Needle Valve Pressure: 4.6742mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 24 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 24 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.447 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 25.0031K 
+VTI Temp: 23.5967K 
+Needle Valve Pressure: 5.6307mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 24 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.447 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 24.9999K 
+VTI Temp: 23.5908K 
+Needle Valve Pressure: 4.7385mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 24 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.447 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-1.0000 J-1.0000 
+@1R8 R-1.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -1 T 
+Next Field Reached -1 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 1.9573K 
+1 1.9573 0.0 
+Sample Temp: 1.9100K 
+2 1.93365 0.02365000000000006 
+Sample Temp: 1.8786K 
+3 1.9153000000000002 0.032346973068073416 
+Sample Temp: 1.8788K 
+3 1.8891333333333333 0.014755187411739437 
+Sample Temp: 1.9773K 
+3 1.9115666666666666 0.0464805574646241 
+Sample Temp: 1.9944K 
+3 1.9501666666666668 0.050944435962679516 
+Sample Temp: 1.9989K 
+Temps: [1.9773, 1.9944, 1.9989] 
+3 1.9902 0.00930483745156243 
+Next Temp Reached 2 K (took 6 mins) 
+Magnet Temp: 3.454 K 
+Current Magnet Field: -1.0000 T 
+@1R8 R-1.00000 
+Sample Temp: 2.0033K 
+VTI Temp: 1.8810K 
+Needle Valve Pressure: 5.1834mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 25 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 25 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.452 K 
+Current Magnet Field: -1.0000 T 
+@1R8 R-1.00000 
+Sample Temp: 2.0065K 
+VTI Temp: 1.9128K 
+Needle Valve Pressure: 5.1448mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 25 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.452 K 
+Current Magnet Field: -1.0000 T 
+@1R8 R-1.00000 
+Sample Temp: 2.0014K 
+VTI Temp: 1.9142K 
+Needle Valve Pressure: 5.1678mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 25 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 5.1466K 
+1 5.1466 0.0 
+Sample Temp: 5.1561K 
+2 5.151350000000001 0.004750000000000032 
+Sample Temp: 5.1653K 
+Temps: [5.1466, 5.1561, 5.1653] 
+3 5.156000000000001 0.007634570496541786 
+Next Temp Reached 5 K (took 2 mins) 
+Magnet Temp: 3.451 K 
+Current Magnet Field: -1.0000 T 
+@1R8 R-1.00000 
+Sample Temp: 5.1472K 
+VTI Temp: 4.8826K 
+Needle Valve Pressure: 5.0980mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 26 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 26 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.449 K 
+Current Magnet Field: -1.0000 T 
+@1R8 R-1.00000 
+Sample Temp: 5.1566K 
+VTI Temp: 4.8690K 
+Needle Valve Pressure: 5.2026mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 26 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.449 K 
+Current Magnet Field: -1.0000 T 
+@1R8 R-1.00000 
+Sample Temp: 5.1553K 
+VTI Temp: 4.8742K 
+Needle Valve Pressure: 5.1915mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 26 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 14.9763K 
+1 14.9763 0.0 
+Sample Temp: 14.9924K 
+2 14.98435 0.00804999999999989 
+Sample Temp: 14.9885K 
+Temps: [14.9763, 14.9924, 14.9885] 
+3 14.985733333333334 0.00685776121550524 
+Next Temp Reached 15 K (took 2 mins) 
+Magnet Temp: 3.446 K 
+Current Magnet Field: -1.0000 T 
+@1R8 R-1.00000 
+Sample Temp: 14.9867K 
+VTI Temp: 13.8016K 
+Needle Valve Pressure: 5.3540mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 27 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 27 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.447 K 
+Current Magnet Field: -1.0000 T 
+Updating Background Log 
+@1R8 R-1.00000 
+Sample Temp: 15.0055K 
+Magnet Temp: 3.447 K 
+Current Magnet Field: -1.0000 T 
+VTI Temp: 13.7525K 
+@1R8 R-1.00000 
+Needle Valve Pressure: 4.9306mB 
+Sample Temp: 14.9893K 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 27 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+VTI Temp: 13.7532K 
+PT2 Temp: 3.4036K 
+Needle Valve Pressure: 5.2469mB 
+Needle Valve Percent: 14.6563% 
+Sample Temp Set Point is 15.0000K 
+Finished Background Log Update 
+Magnet Temp: 3.447 K 
+Current Magnet Field: -1.0000 T 
+@1R8 R-1.00000 
+Sample Temp: 14.9968K 
+VTI Temp: 13.7529K 
+Needle Valve Pressure: 5.0014mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 27 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 24.9868K 
+1 24.9868 0.0 
+Sample Temp: 24.9912K 
+2 24.988999999999997 0.002200000000000202 
+Sample Temp: 24.9977K 
+Temps: [24.9868, 24.9912, 24.9977] 
+3 24.991899999999998 0.004477350406955481 
+Next Temp Reached 25 K (took 2 mins) 
+Magnet Temp: 3.442 K 
+Current Magnet Field: -1.0000 T 
+@1R8 R-1.00000 
+Sample Temp: 25.0007K 
+VTI Temp: 23.6386K 
+Needle Valve Pressure: 5.1905mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 28 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 28 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.441 K 
+Current Magnet Field: -1.0000 T 
+@1R8 R-1.00000 
+Sample Temp: 25.0017K 
+VTI Temp: 23.5983K 
+Needle Valve Pressure: 4.2705mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 28 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.441 K 
+Current Magnet Field: -1.0000 T 
+@1R8 R-1.00000 
+Sample Temp: 24.9999K 
+VTI Temp: 23.5920K 
+Needle Valve Pressure: 4.3561mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 28 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.441 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-3.0000 J-3.0000 
+@1R8 R-3.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -3 T 
+Next Field Reached -3 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 2.0070K 
+1 2.007 0.0 
+Sample Temp: 2.0131K 
+2 2.01005 0.003049999999999997 
+Sample Temp: 2.0136K 
+Temps: [2.007, 2.0131, 2.0136] 
+3 2.011233333333333 0.0030003703475107485 
+Next Temp Reached 2 K (took 2 mins) 
+Magnet Temp: 3.447 K 
+Current Magnet Field: -3.0000 T 
+@1R8 R-3.00000 
+Sample Temp: 2.0162K 
+VTI Temp: 1.9072K 
+Needle Valve Pressure: 4.9006mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 29 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 29 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.440 K 
+Current Magnet Field: -3.0000 T 
+@1R8 R-3.00000 
+Sample Temp: 1.9975K 
+VTI Temp: 1.9220K 
+Needle Valve Pressure: 4.8689mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 29 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.440 K 
+Current Magnet Field: -3.0000 T 
+@1R8 R-3.00000 
+Sample Temp: 1.9956K 
+VTI Temp: 1.9222K 
+Needle Valve Pressure: 4.8889mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 29 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 5.1560K 
+1 5.156 0.0 
+Sample Temp: 5.1535K 
+2 5.15475 0.0012499999999997513 
+Sample Temp: 5.1605K 
+Temps: [5.156, 5.1535, 5.1605] 
+3 5.156666666666666 0.0028963578661636885 
+Next Temp Reached 5 K (took 2 mins) 
+Magnet Temp: 3.439 K 
+Current Magnet Field: -3.0000 T 
+@1R8 R-3.00000 
+Sample Temp: 5.1567K 
+VTI Temp: 4.9094K 
+Needle Valve Pressure: 4.8413mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 30 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 30 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.438 K 
+Current Magnet Field: -3.0000 T 
+@1R8 R-3.00000 
+Sample Temp: 5.1606K 
+VTI Temp: 4.8731K 
+Needle Valve Pressure: 4.7448mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 30 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.438 K 
+Current Magnet Field: -3.0000 T 
+@1R8 R-3.00000 
+Sample Temp: 5.1607K 
+VTI Temp: 4.8722K 
+Needle Valve Pressure: 4.7625mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 30 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 14.9779K 
+1 14.9779 0.0 
+Sample Temp: 14.9813K 
+2 14.9796 0.0016999999999995907 
+Sample Temp: 14.9937K 
+Temps: [14.9779, 14.9813, 14.9937] 
+3 14.9843 0.006790189000806333 
+Next Temp Reached 15 K (took 2 mins) 
+Magnet Temp: 3.436 K 
+Current Magnet Field: -3.0000 T 
+@1R8 R-3.00000 
+Sample Temp: 14.9928K 
+VTI Temp: 13.7870K 
+Needle Valve Pressure: 4.6036mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 31 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 31 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.436 K 
+Current Magnet Field: -3.0000 T 
+@1R8 R-3.00000 
+Sample Temp: 15.0022K 
+VTI Temp: 13.7922K 
+Needle Valve Pressure: 5.2818mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 31 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.436 K 
+Current Magnet Field: -3.0000 T 
+@1R8 R-3.00000 
+Sample Temp: 14.9900K 
+VTI Temp: 13.7779K 
+Needle Valve Pressure: 5.5094mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 31 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 24.9840K 
+1 24.984 0.0 
+Sample Temp: 24.9881K 
+2 24.98605 0.002049999999998775 
+Sample Temp: 24.9951K 
+Temps: [24.984, 24.9881, 24.9951] 
+3 24.989066666666663 0.004582818152863997 
+Next Temp Reached 25 K (took 2 mins) 
+Magnet Temp: 3.433 K 
+Current Magnet Field: -3.0000 T 
+@1R8 R-3.00000 
+Sample Temp: 24.9992K 
+VTI Temp: 23.5801K 
+Needle Valve Pressure: 3.8389mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 32 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 32 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.433 K 
+Current Magnet Field: -3.0000 T 
+@1R8 R-3.00000 
+Sample Temp: 24.9983K 
+VTI Temp: 23.5799K 
+Needle Valve Pressure: 4.2877mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 32 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.434 K 
+Current Magnet Field: -3.0000 T 
+@1R8 R-3.00000 
+Sample Temp: 24.9963K 
+VTI Temp: 23.5532K 
+Needle Valve Pressure: 4.1709mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 32 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.434 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-5.0000 J-5.0000 
+@1R8 R-5.00000 
+@1A1 A1 
+ At New Field: -5 T 
+@1X X00A0C1H1M00 
+Next Field Reached -5 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 2.0187K 
+1 2.0187 0.0 
+Sample Temp: 2.0243K 
+2 2.0215 0.0028000000000001357 
+Sample Temp: 2.0236K 
+Temps: [2.0187, 2.0243, 2.0236] 
+3 2.0222 0.002491318258807406 
+Next Temp Reached 2 K (took 2 mins) 
+Magnet Temp: 3.458 K 
+Current Magnet Field: -5.0000 T 
+@1R8 R-5.00000 
+Sample Temp: 2.0206K 
+VTI Temp: 1.9014K 
+Needle Valve Pressure: 5.0892mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 33 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 33 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.452 K 
+Current Magnet Field: -5.0000 T 
+@1R8 R-5.00000 
+Sample Temp: 2.0176K 
+VTI Temp: 1.9216K 
+Needle Valve Pressure: 5.0568mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 33 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.452 K 
+Current Magnet Field: -5.0000 T 
+@1R8 R-5.00000 
+Sample Temp: 2.0132K 
+VTI Temp: 1.9156K 
+Needle Valve Pressure: 5.0509mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 33 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Waiting 5 mins for temp to stabilize 
+Updating Background Log 
+Magnet Temp: 3.452 K 
+Current Magnet Field: -5.0000 T 
+@1R8 R-5.00000 
+Sample Temp: 5.1764K 
+VTI Temp: 4.8998K 
+PT2 Temp: 3.4045K 
+Needle Valve Pressure: 4.9278mB 
+Needle Valve Percent: 16.4324% 
+Sample Temp Set Point is 5.0000K 
+Finished Background Log Update 
+Sample Temp: 5.1775K 
+1 5.1775 0.0 
+Sample Temp: 5.1629K 
+2 5.1701999999999995 0.007300000000000306 
+Sample Temp: 5.1836K 
+Temps: [5.1775, 5.1629, 5.1836] 
+3 5.174666666666666 0.008684980649885966 
+Next Temp Reached 5 K (took 2 mins) 
+Magnet Temp: 3.452 K 
+Current Magnet Field: -5.0000 T 
+@1R8 R-5.00000 
+Sample Temp: 5.1695K 
+VTI Temp: 4.8835K 
+Needle Valve Pressure: 4.9015mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 34 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 34 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.452 K 
+Current Magnet Field: -5.0000 T 
+@1R8 R-5.00000 
+Sample Temp: 5.1737K 
+VTI Temp: 4.8812K 
+Needle Valve Pressure: 5.0563mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 34 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.452 K 
+Current Magnet Field: -5.0000 T 
+@1R8 R-5.00000 
+Sample Temp: 5.1762K 
+VTI Temp: 4.8893K 
+Needle Valve Pressure: 5.0104mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 34 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 15.0144K 
+1 15.0144 0.0 
+Sample Temp: 15.0149K 
+2 15.01465 0.00025000000000030553 
+Sample Temp: 15.0089K 
+Temps: [15.0144, 15.0149, 15.0089] 
+3 15.012733333333335 0.002718251071716664 
+Next Temp Reached 15 K (took 2 mins) 
+Magnet Temp: 3.450 K 
+Current Magnet Field: -5.0000 T 
+@1R8 R-5.00000 
+Sample Temp: 15.0112K 
+VTI Temp: 13.7756K 
+Needle Valve Pressure: 5.1984mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 35 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 35 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.451 K 
+Current Magnet Field: -5.0000 T 
+@1R8 R-5.00000 
+Sample Temp: 14.9990K 
+VTI Temp: 13.7107K 
+Needle Valve Pressure: 4.5764mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 35 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.451 K 
+Current Magnet Field: -5.0000 T 
+@1R8 R-5.00000 
+Sample Temp: 14.9989K 
+VTI Temp: 13.7662K 
+Needle Valve Pressure: 4.6830mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 35 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 24.9632K 
+1 24.9632 0.0 
+Sample Temp: 24.9734K 
+2 24.9683 0.0051000000000005485 
+Sample Temp: 24.9900K 
+3 24.97553333333333 0.011044556225679724 
+Sample Temp: 24.9961K 
+Temps: [24.9734, 24.99, 24.9961] 
+3 24.986499999999996 0.00959201056435193 
+Next Temp Reached 25 K (took 3 mins) 
+Magnet Temp: 3.450 K 
+Current Magnet Field: -5.0000 T 
+@1R8 R-5.00000 
+Sample Temp: 25.0002K 
+VTI Temp: 23.6060K 
+Needle Valve Pressure: 4.4072mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 36 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 36 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.450 K 
+Current Magnet Field: -5.0000 T 
+@1R8 R-5.00000 
+Sample Temp: 25.0001K 
+VTI Temp: 23.5721K 
+Needle Valve Pressure: 4.5061mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 36 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.450 K 
+Current Magnet Field: -5.0000 T 
+@1R8 R-5.00000 
+Sample Temp: 25.0012K 
+VTI Temp: 23.6000K 
+Needle Valve Pressure: 4.5383mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 36 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.450 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-7.0000 J-7.0000 
+@1R8 R-7.00000 
+@1A1 A1 
+At New Field: -7 T 
+ @1X X00A0C1H1M00 
+Next Field Reached -7 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 1.9662K 
+1 1.9662 0.0 
+Sample Temp: 2.0201K 
+2 1.99315 0.02694999999999992 
+Sample Temp: 2.0271K 
+3 2.0044666666666666 0.027209107952219844 
+Sample Temp: 2.0310K 
+Temps: [2.0201, 2.0271, 2.031] 
+3 2.026066666666667 0.0045094961531812845 
+Next Temp Reached 2 K (took 3 mins) 
+Magnet Temp: 3.473 K 
+Current Magnet Field: -7.0000 T 
+@1R8 R-7.00000 
+Sample Temp: 2.0331K 
+VTI Temp: 1.9131K 
+Needle Valve Pressure: 5.1023mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 37 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 37 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.470 K 
+Current Magnet Field: -7.0000 T 
+@1R8 R-7.00000 
+Sample Temp: 2.0424K 
+VTI Temp: 1.9186K 
+Needle Valve Pressure: 5.0634mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 37 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.471 K 
+Current Magnet Field: -7.0000 T 
+@1R8 R-7.00000 
+Sample Temp: 2.0379K 
+VTI Temp: 1.9157K 
+Needle Valve Pressure: 5.1189mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 37 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 5.1866K 
+1 5.1866 0.0 
+Sample Temp: 5.1867K 
+2 5.18665 4.999999999988347e-05 
+Sample Temp: 5.1874K 
+Temps: [5.1866, 5.1867, 5.1874] 
+3 5.1869000000000005 0.00035590260840104613 
+Next Temp Reached 5 K (took 2 mins) 
+Magnet Temp: 3.472 K 
+Current Magnet Field: -7.0000 T 
+@1R8 R-7.00000 
+Sample Temp: 5.1868K 
+VTI Temp: 4.8750K 
+Needle Valve Pressure: 5.0918mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 38 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 38 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.473 K 
+Current Magnet Field: -7.0000 T 
+@1R8 R-7.00000 
+Sample Temp: 5.1812K 
+VTI Temp: 4.8820K 
+Needle Valve Pressure: 4.8661mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 38 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.473 K 
+Current Magnet Field: -7.0000 T 
+@1R8 R-7.00000 
+Sample Temp: 5.1868K 
+VTI Temp: 4.8789K 
+Needle Valve Pressure: 5.0153mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 38 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 14.9759K 
+1 14.9759 0.0 
+Sample Temp: 14.9938K 
+2 14.98485 0.008950000000000458 
+Sample Temp: 15.0006K 
+3 14.9901 0.01041761329032117 
+Sample Temp: 14.9968K 
+Temps: [14.9938, 15.0006, 14.9968] 
+3 14.997066666666667 0.0027824849006279494 
+Next Temp Reached 15 K (took 3 mins) 
+Magnet Temp: 3.473 K 
+Current Magnet Field: -7.0000 T 
+@1R8 R-7.00000 
+Sample Temp: 14.9977K 
+VTI Temp: 13.7678K 
+Needle Valve Pressure: 5.0955mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 39 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 39 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.474 K 
+Current Magnet Field: -7.0000 T 
+@1R8 R-7.00000 
+Sample Temp: 14.9957K 
+VTI Temp: 13.7880K 
+Needle Valve Pressure: 4.8886mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 39 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.474 K 
+Current Magnet Field: -7.0000 T 
+@1R8 R-7.00000 
+Sample Temp: 15.0019K 
+VTI Temp: 13.7461K 
+Needle Valve Pressure: 4.6791mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 39 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 24.9895K 
+1 24.9895 0.0 
+Sample Temp: 24.9942K 
+2 24.99185 0.002349999999999852 
+Sample Temp: 24.9980K 
+Temps: [24.9895, 24.9942, 24.998] 
+3 24.9939 0.00347658836600923 
+Next Temp Reached 25 K (took 2 mins) 
+Magnet Temp: 3.474 K 
+Current Magnet Field: -7.0000 T 
+@1R8 R-7.00000 
+Sample Temp: 25.0006K 
+VTI Temp: 23.6260K 
+Needle Valve Pressure: 4.8497mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 40 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 40 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.475 K 
+Current Magnet Field: -7.0000 T 
+@1R8 R-7.00000 
+Sample Temp: 24.9989K 
+VTI Temp: 23.5717K 
+Needle Valve Pressure: 4.3216mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 40 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.475 K 
+Current Magnet Field: -7.0000 T 
+@1R8 R-7.00000 
+Sample Temp: 24.9983K 
+VTI Temp: 23.5721K 
+Needle Valve Pressure: 4.8796mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 40 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.475 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+Updating Background Log 
+Magnet Temp: 3.639 K 
+Current Magnet Field: -5.8249 T 
+@1R8 R0.00000 
+Sample Temp: 10.9681K 
+VTI Temp: 10.1768K 
+PT2 Temp: 3.5082K 
+Needle Valve Pressure: 5.2640mB 
+Needle Valve Percent: 15.8267% 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+ At New Field: 0 T 
+@1X X00A0C1H1M00 
+Next Field Reached 0 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 1.9994K 
+1 1.9994 0.0 
+Sample Temp: 1.9985K 
+2 1.99895 0.00045000000000006146 
+Sample Temp: 1.9971K 
+Temps: [1.9994, 1.9985, 1.9971] 
+3 1.9983333333333333 0.0009463379711052053 
+Next Temp Reached 2 K (took 2 mins) 
+Magnet Temp: 3.448 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.9972K 
+VTI Temp: 1.9227K 
+Needle Valve Pressure: 4.6252mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 41 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 41 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.439 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.9975K 
+VTI Temp: 1.9147K 
+Needle Valve Pressure: 4.6013mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 41 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.438 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.9957K 
+VTI Temp: 1.9152K 
+Needle Valve Pressure: 4.5864mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 41 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 5.1391K 
+1 5.1391 0.0 
+Sample Temp: 5.1630K 
+2 5.15105 0.011950000000000127 
+Sample Temp: 5.1466K 
+Temps: [5.1391, 5.163, 5.1466] 
+3 5.149566666666666 0.009980091293281037 
+Next Temp Reached 5 K (took 2 mins) 
+Magnet Temp: 3.436 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 5.1426K 
+VTI Temp: 4.8803K 
+Needle Valve Pressure: 4.6478mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 42 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 42 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.437 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 5.1375K 
+VTI Temp: 4.8594K 
+Needle Valve Pressure: 4.6852mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 42 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.439 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 5.1393K 
+VTI Temp: 4.8556K 
+Needle Valve Pressure: 4.8975mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 42 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 14.9726K 
+1 14.9726 0.0 
+Sample Temp: 14.9910K 
+2 14.9818 0.009199999999999875 
+Sample Temp: 14.9956K 
+Temps: [14.9726, 14.991, 14.9956] 
+3 14.986399999999998 0.009937135737558583 
+Next Temp Reached 15 K (took 2 mins) 
+Magnet Temp: 3.449 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 14.9984K 
+VTI Temp: 13.7686K 
+Needle Valve Pressure: 5.0489mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 43 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 43 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.449 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 14.9997K 
+VTI Temp: 13.7788K 
+Needle Valve Pressure: 4.7378mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 43 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.450 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 14.9999K 
+VTI Temp: 13.7792K 
+Needle Valve Pressure: 5.2775mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 43 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 24.9874K 
+1 24.9874 0.0 
+Sample Temp: 24.9915K 
+2 24.989449999999998 0.002049999999998775 
+Sample Temp: 24.9960K 
+Temps: [24.9874, 24.9915, 24.996] 
+3 24.99163333333333 0.003512200956031579 
+Next Temp Reached 25 K (took 2 mins) 
+Magnet Temp: 3.449 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 24.9955K 
+VTI Temp: 23.6528K 
+Needle Valve Pressure: 5.5854mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 44 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 44 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.449 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 25.0007K 
+VTI Temp: 23.6155K 
+Needle Valve Pressure: 4.8665mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 44 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Magnet Temp: 3.449 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 25.0023K 
+VTI Temp: 23.6213K 
+Needle Valve Pressure: 5.3945mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 44 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_11_TPH_trp_pterin_NO/sample4B_spot2/vtvh_log.csv 
+Waiting for switch heater to cool (5 mins). 
+@1A0 A0 
+@1H0 H0 
+@1X X00A0C1H2M00 
+ @1R8 R0.00000 
+VTVH Ended 
+Updating Background Log 
+Magnet Temp: 3.292 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 25.0008K 
+VTI Temp: 23.5934K 
+PT2 Temp: 3.3176K 
+Needle Valve Pressure: 5.7299mB 
+Needle Valve Percent: 17.9980% 
+Sample Temp Set Point is 25.0000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 3.291 K 
+Current Magnet Field: 0.0001 T 
+@1R8 R0.00000 
+Sample Temp: 24.9995K 
+VTI Temp: 23.5828K 
+PT2 Temp: 3.3215K 
+Needle Valve Pressure: 5.5638mB 
+Needle Valve Percent: 17.6623% 
+Sample Temp Set Point is 25.0000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 3.292 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 24.9990K 
+VTI Temp: 23.5724K 
+PT2 Temp: 3.3203K 
+Needle Valve Pressure: 6.1355mB 
+Needle Valve Percent: 18.1292% 
+Sample Temp Set Point is 25.0000K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Exception in thread Thread-3:
+Traceback (most recent call last):
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\threading.py", line 892, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Jasco\Desktop\git_oxford_cryofree\oxford.py", line 94, in _serial_io_thread
+    response = self._serial.readline()
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\site-packages\serial\serialwin32.py", line 271, in read
+    win32.ResetEvent(self._overlapped_read.hEvent)
+AttributeError: 'NoneType' object has no attribute 'hEvent'
+Completed Disconnect Procedure 
