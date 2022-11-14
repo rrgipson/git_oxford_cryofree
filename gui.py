@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog
+from tkinter import messagebox
 
 # Settings flags for magnet controller
 SWITCH_ENABLED = 'enabled'
@@ -463,6 +464,9 @@ class GUI(tk.Frame):
         self.btn_vtvh_browse['text']='Browse'
         self.btn_vtvh_browse['command']=self.browse_for_dir
         return None
+    
+    def warning_popup(self, title, message):
+        messagebox.showwarning(title,message)
 
 if __name__ == '__main__':
     pass

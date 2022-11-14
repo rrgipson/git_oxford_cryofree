@@ -243,6 +243,7 @@ class Application:
         Daemon thread function to update the temperature every `_temp_delay' seconds. Does not print each
         message/response to std_out so as to prevent clutter from background monitoring operations.
         """
+        plug_state=True
         while self.serial_t.is_open and self._temp_connect:
             sensor1 = self.serial_t.transmit(isobus_temp +READ+VTI+CURRENT_TEMP, 'TempControl: Error reading VTI sensor', False)
             if len(sensor1) > 0:
@@ -258,8 +259,12 @@ class Application:
                     sensor3 = '—'
                 elif sensor3.split(':')[-1] == '1.1986K':
                     sensor3 = 'Unplugged'
+                    plug_state=False
                 else:
                     sensor3 = sensor3.split(':')[-1]
+                    if plug_state==False:
+                        self.gui.warning_popup('Sample Probe Warning', 'Sample Probe Plugged back in. Please reset temp control to Auto using the box. See SOP (Sample Loading) for details.')
+                        plug_state=True
             else:
                 sensor3 = '—'
                 
@@ -774,7 +779,7 @@ class Application:
             #sleep(300) #now happens in engage switch function
         elif self._switch_status == SWITCH_ENABLED and not self._vtvh_interrupt:
             print('Switch Heater ON: Waiting 5 Seconds.')
-            sleep(5) #Wait 5 minutes even if switch heater is on
+            sleep(5) #Wait 5 seconds if switch heater is on
         else: #interrupt or switch error
             self.vtvh_interrupt()
         
