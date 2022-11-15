@@ -18,6 +18,8 @@ REFRESHING= 'refreshing'
 NOT_REFRESHING = 'not_refreshing'
 VTVH_ACTIVE = 'active'
 VTVH_INACTIVE = 'inactive'
+ACTIVE = 'active'
+INACTIVE = 'inactive'
 ISOTHERM_DEFAULTS=[0,7,0,-7,0]
 TEMP_DEFAULTS=[2,5,10,15,25]
 
@@ -91,9 +93,12 @@ class GUI(tk.Frame):
         #refresh button - added for CYROFREE
         self.btn_refresh = tk.Button(self.frm_cryofree, text='Refresh (Magnet Only)', state='disabled')
         self.btn_refresh.grid(row=1)
+        #Quick Cooldown button
+        self.btn_qkcool = tk.Button(self.frm_cryofree, text='Quick Cooldown', state='disabled')
+        self.btn_qkcool.grid(row=2)
         #VTVH/isotherm entry and button
         self.frm_vtvh=tk.Frame(self.frm_cryofree)
-        self.frm_vtvh.grid(row=2, column=0, sticky=tk.N, padx=3, pady=10)
+        self.frm_vtvh.grid(row=3, column=0, sticky=tk.N, padx=3, pady=10)
         self.lbl_vtvh=tk.Label(self.frm_vtvh, text='VTVH', font=med_font+' underline')
         self.lbl_vtvh.grid(row=0)
         self.lbl_vtvh_fields=tk.Label(self.frm_vtvh, text='Fields for VTVH (T)')
@@ -214,7 +219,7 @@ class GUI(tk.Frame):
                       engage_switch_heater=None, disengage_switch_heater=None,
                       goto_field=None, zero_field=None, interrupt=None,
                       set_field=None, get_field=None, refresh=None, vtvh=None, vtvh_interrupt=None,
-                     set_nv=None):
+                     set_nv=None, qkcool=None):
         self.func_serial_connect = serial_connect
         self.func_serial_disconnect = serial_disconnect
         self.func_set_temperature = set_temperature
@@ -231,6 +236,7 @@ class GUI(tk.Frame):
         self.func_vtvh = vtvh
         self.func_vtvh_interrupt = vtvh_interrupt
         self.func_set_nv = set_nv
+        self.func_qkcool = qkcool
 
     def set_close_method(self, command):
         self.master.protocol('WM_DELETE_WINDOW', command)
@@ -413,8 +419,16 @@ class GUI(tk.Frame):
             self.btn_field_set['state'] = 'disabled'
             self.btn_field_get['state'] = 'disabled'
             
-    def set_cryofree_frame(self, connected, refresh_status=None, vtvh_status=None):
+    def set_cryofree_frame(self, connected, refresh_status=None, vtvh_status=None, qkcool_status=None):
         if connected:
+            
+            if qkcool_status!=None:
+                if qkcool_status==INACTIVE:
+                    self.btn_qkcool['state']='normal'
+                    self.btn_qkcool['command']=self.func_qkcool
+                elif qkcool_status==ACTIVE:
+                    self.btn_qkcool['text']='Interrupt Quick Cool'
+                    self.btn_qkcool['command']=self.func_interrupt
             
             if refresh_status!=None:
                 if refresh_status==REFRESHING:
@@ -432,6 +446,7 @@ class GUI(tk.Frame):
                     self.ent_vtvh_temps['state'] = 'normal'
                     self.ent_vtvh_scanTime['state'] = 'normal'
                     self.btn_vtvh_browse['state'] = 'normal'
+                    self.btn_qkcool['state']='normal'
                 elif vtvh_status == VTVH_ACTIVE:
                     self.btn_vtvh['state'] = 'normal'
                     self.btn_vtvh['text'] = 'Interrupt VTVH'
@@ -440,9 +455,11 @@ class GUI(tk.Frame):
                     self.ent_vtvh_temps['state'] = 'disabled'
                     self.ent_vtvh_scanTime['state'] = 'disabled'
                     self.btn_vtvh_browse['state'] = 'disabled'
+                    self.btn_qkcool['state']='disabled'
 
         else:
             self.btn_refresh['state']='disabled'
+            self.btn_qkcool['state']='disabled'
             self.btn_vtvh['state'] = 'disabled'
             self.btn_vtvh['text'] = 'Collect Isotherm'
             self.ent_vtvh_field['state'] = 'disabled'

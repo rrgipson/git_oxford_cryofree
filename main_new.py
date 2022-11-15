@@ -82,6 +82,7 @@ class Application:
         self._switch_status = SWITCH_DISABLED
         self._action_thread, self._action_interrupt = None, False
         self._vtvh_thread, self._vtvh_interrupt = None, False
+        self._qkcool_thread = None
         self.gui = GUI()
         self.gui.set_functions(serial_connect=self.serial_connect, serial_disconnect=self.serial_disconnect,
                                set_temperature=self.set_temperature, get_temperature=self.get_temperature,
@@ -90,7 +91,8 @@ class Application:
                                goto_field=self.goto_field, zero_field=self.zero_field, interrupt=self.interrupt,
                                set_field=self.set_field, get_field=self.get_field, 
                                refresh=self.refresh_magnet_gui, vtvh=self.start_vtvh, 
-                               vtvh_interrupt=self.vtvh_interrupt, set_nv=self.set_nv) #cryofree added 
+                               vtvh_interrupt=self.vtvh_interrupt, set_nv=self.set_nv,
+                              qkcool=self.start_qkcool) #cryofree added 
         self.gui.set_close_method(self.on_closing)
         #self.gui.update_com_port(port='2 COMs')
         self.gui.set_connection_frame(connected=False)
@@ -206,7 +208,7 @@ class Application:
             setpoint = SETPOINT_INACTIVE
         self.gui.set_field_frame(connected=self._field_connect, switch_setting=self._switch_status,
                                  field_movement=field_movement, setpoint_change=setpoint)
-        self.gui.set_cryofree_frame(connected=self.serial_m.is_open, refresh_status=NOT_REFRESHING, vtvh_status=VTVH_INACTIVE) #cryofree
+        self.gui.set_cryofree_frame(connected=self.serial_m.is_open, refresh_status=NOT_REFRESHING, vtvh_status=VTVH_INACTIVE, qkcool_status=INACTIVE) #cryofree
 
         #start logging
         self.start_bg_logging()
@@ -921,7 +923,7 @@ class Application:
         self._vtvh_thread = None
     
     def start_vtvh(self, *args):
-        if self.serial_m.is_open and self._field_connect:
+        if self.serial_m.is_open and self._field_connect and self.serial_t.is_open and self._temp_connect:
             if self._vtvh_thread is not None:  # if an action is already being taken
                 print('Magnet: VTVH is currently in progress; interrupt or try again afterwards')
             else:  # if there are no background threads taking action
@@ -981,9 +983,62 @@ class Application:
             time_sum+=(len(fields)*len(temps)*0.25)
         time_sum+=(len(fields)*len(temps)*(scanSecs/(60*60)))
         return time_sum #in hours
+    
+    def _quick_cooldown(self):
+        if self._temp_connect and float(self.get_sample_temp()) > 25:
+            self.gui.set_cryofree_frame(connected=self._temp_connect, qkcool_status=ACTIVE)
+            #Set Temp to Base
+            self.gui.update_temps(setpoint='1.7K')
+            self.set_temperature()
             
-            
+            if not self._action_interrupt:
+                #Set NV to Manual Control
+                print('Setting NV to Manual')
+                self.serial_t.transmit(isobus_temp+SET+NV+AUTO_SET+':OFF', 'TempControl: Error setting NV to Manual')
 
+                #Open NV to 100%
+                self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':100', 'NVControl: Error Opening NV to 100%')
+            
+            #Wait until 17K reached
+            while float(self.get_sample_temp()) > 17:
+                if self._action_interrupt:
+                    break
+                sleep(120)
+
+            #Step down
+            if not self._action_interrupt:
+                self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':35', 'NVControl: Error Opening NV to 35%')
+            
+            #Wait till next temp point
+            while float(self.get_sample_temp()) > 7:
+                if self._action_interrupt:
+                    break
+                sleep(60)
+            
+            #Step Down and then Reset to Auto Control (Should be set to 5mBar)
+            if not self._action_interrupt:
+                self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':20', 'NVControl: Error Opening NV to 20%')
+                sleep(30)
+                self.serial_t.transmit(isobus_temp+SET+NV+AUTO_SET+':ON', 'TempControl: Error setting NV to Auto')
+                print('NV Returned to Automatic Control')
+            self.gui.set_cryofree_frame(connected=self._temp_connect, qkcool_status=INACTIVE)
+            print('Quick Cooldown Finished.')
+            
+        else:
+            print('Quick Cooldown Error: Already too cold to start.')
+            
+    def start_qkcool(self, *args):
+        if self.serial_t.is_open and self._temp_connect:
+            if self._vtvh_thread is not None:  # if an action is already being taken
+                print('VTVH is currently in progress; interrupt or try again afterwards')
+            elif self._action_thread is not None: #if already performing an action
+                print('Other action being taken. Please interrupt or try again afterwards')
+            else:  # if there are no background threads taking action
+                self._action_thread = Thread(target=self._quick_cooldown, args=())
+                self._action_thread.start()
+        else:
+            print('Must be Connected to Start Quick Cooldown.')
+            
 
 if __name__ == '__main__':
     print_to_log('------------------------------New Session Started')
