@@ -6,7 +6,5 @@ from gui import *
 test_gui = GUI()
 
 
-
-test_gui.mainloop()
-sleep(1)
 test_gui.warning_popup('title','message')
+test_gui.mainloop()

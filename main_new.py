@@ -92,7 +92,7 @@ class Application:
                                refresh=self.refresh_magnet_gui, vtvh=self.start_vtvh, 
                                vtvh_interrupt=self.vtvh_interrupt, set_nv=self.set_nv) #cryofree added 
         self.gui.set_close_method(self.on_closing)
-        self.gui.update_com_port(port='2 COMs')
+        #self.gui.update_com_port(port='2 COMs')
         self.gui.set_connection_frame(connected=False)
         self.gui.set_cryofree_frame(connected=False)
         self.gui.set_temperature_frame(connected=False)
@@ -129,7 +129,7 @@ class Application:
             if s.is_open:  # if the port is somehow already open, close it
                 s.close()
         if not self.serial_m.open() or not self.serial_t.open():  # if open() returns False, then opening has failed
-            self.gui.update_com_port(port='fail')
+            self.gui.update_com_port(port='Connection Failed')
             self.gui.set_connection_frame(connected=False)
             self.gui.set_cryofree_frame(connected=False)
             self.gui.set_temperature_frame(connected=False)

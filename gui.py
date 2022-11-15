@@ -73,15 +73,15 @@ class GUI(tk.Frame):
         small_font = 'Arial 10'
 
         # Connection frame
-        self.lbl_com_port = tk.Label(self.frm_connection, text='COM Port')
-        self.ent_com_port = tk.Entry(self.frm_connection, fg='red', bg='black', insertbackground='white',
-                                     font=input_font, width=8, disabledforeground='black', disabledbackground='white',
-                                     justify='center')
-        self.btn_com_port = tk.Button(self.frm_connection, text='Connect')
-        self.ent_com_port.insert(tk.END, '—')
+        self.lbl_com_port = tk.Label(self.frm_connection, text='2COM Port Connection:')
+        #self.ent_com_port = tk.Entry(self.frm_connection, fg='red', bg='black', insertbackground='white',
+        #                             font=input_font, width=8, disabledforeground='black', disabledbackground='white',
+        #                             justify='center')
+        self.btn_com_port = tk.Button(self.frm_connection, text='Connect', font='Arial 18')
+        #self.ent_com_port.insert(tk.END, '—')
         self.lbl_com_port.grid(row=0)
-        self.ent_com_port.grid(row=1)
-        self.btn_com_port.grid(row=2)
+        #self.ent_com_port.grid(row=1)
+        self.btn_com_port.grid(row=1)
         
         #New for CRYOFREE Frame
         self.frm_cryofree=tk.Frame(self.frm_connection)
@@ -126,13 +126,13 @@ class GUI(tk.Frame):
         self.ent_vtvh_scanTime['state'] = 'disabled'
         
         self.btn_vtvh = tk.Button(self.frm_vtvh, text='Collect VTVH', state='disabled')
-        self.btn_vtvh.grid(row=6)
+        self.btn_vtvh.grid(row=8)
         
         self.btn_vtvh_browse = tk.Button(self.frm_vtvh, text='Browse for Folder', state='normal')
-        self.btn_vtvh_browse.grid(row=8)
+        self.btn_vtvh_browse.grid(row=7)
         self.btn_vtvh_browse['command'] = self.func_vtvh_browse
         self.lbl_vtvh_browse = tk.Label(self.frm_vtvh, text='Select Folder that Spectral Measurement is Autosaving to:')
-        self.lbl_vtvh_browse.grid(row=7)
+        self.lbl_vtvh_browse.grid(row=6)
         
         # Temperature frame
         self.lbl_temp_frame = tk.Label(self.frm_temp_sensor, text='Temperature Control (Kelvin)')
@@ -235,8 +235,8 @@ class GUI(tk.Frame):
     def set_close_method(self, command):
         self.master.protocol('WM_DELETE_WINDOW', command)
 
-    def user_com_port(self):
-        return self.ent_com_port.get()
+    #def user_com_port(self):
+    #    return self.ent_com_port.get()
 
     def user_temperature(self):
         return self.ent_temperature.get().replace(' ', '')
@@ -262,15 +262,16 @@ class GUI(tk.Frame):
     #    return self.ent_nv.get().replace(' ', '')
 
     def update_com_port(self, port):
-        state = self.ent_com_port['state']
-        if state == 'normal':
-            self.ent_com_port.delete(0, tk.END)
-            self.ent_com_port.insert(tk.END, str(port))
-        else:
-            self.ent_com_port['state'] = 'normal'
-            self.ent_com_port.delete(0, tk.END)
-            self.ent_com_port.insert(tk.END, str(port))
-            self.ent_com_port['state'] = state
+        self.lbl_com_port['text']=port
+    #    state = self.ent_com_port['state']
+    #    if state == 'normal':
+    #        self.ent_com_port.delete(0, tk.END)
+    #        self.ent_com_port.insert(tk.END, str(port))
+    #    else:
+    #        self.ent_com_port['state'] = 'normal'
+    #        self.ent_com_port.delete(0, tk.END)
+    #        self.ent_com_port.insert(tk.END, str(port))
+    #        self.ent_com_port['state'] = state
 
     def update_temps(self, sensor1=None, sensor3=None, setpoint=None, current_nv=None, nv_setpoint=None):
         if sensor1 is not None:
@@ -319,11 +320,11 @@ class GUI(tk.Frame):
 
     def set_connection_frame(self, connected):
         if connected:
-            self.ent_com_port['state'] = 'disabled'
+            #self.ent_com_port['state'] = 'disabled'
             self.btn_com_port['text'] = 'Disconnect'
             self.btn_com_port['command'] = self.func_serial_disconnect
         else:
-            self.ent_com_port['state'] = 'disabled'
+            #self.ent_com_port['state'] = 'disabled'
             #self.ent_com_port.bind('<Return>', func=self.func_serial_connect)
             self.btn_com_port['text'] = 'Connect'
             self.btn_com_port['command'] = self.func_serial_connect
@@ -466,7 +467,7 @@ class GUI(tk.Frame):
         return None
     
     def warning_popup(self, title, message):
-        messagebox.showwarning(title,message)
+        messagebox.showwarning(title,message,parent=self)
 
 if __name__ == '__main__':
     pass
