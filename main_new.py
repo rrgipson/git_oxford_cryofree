@@ -865,9 +865,6 @@ class Application:
                             else:
                                 print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 20 mins'%str(t))
                                 self.vtvh_interrupt()
-                                #TODO: If temp too hot, open needle valve more?
-                            #read current, open like 10% more, wait, read temp, do again or break if too open
-                        #exit loop when made it to new temp
                         
                     #check if interrupt was pressed
                     if self._vtvh_interrupt == True:
@@ -980,8 +977,9 @@ class Application:
             time_sum+=abs(float(fields[i-1])-float(fields[i]))/(0.15*60)
         #time for temps
         if len(temps)>1:
-            time_sum+=(len(fields)*len(temps)*0.25)
+            time_sum+=(len(fields)*len(temps)*0.15)
         time_sum+=(len(fields)*len(temps)*(scanSecs/(60*60)))
+        time_sum+=0.2 #12 mins for heating warm/cool (and misc)
         return time_sum #in hours
     
     def _quick_cooldown(self):

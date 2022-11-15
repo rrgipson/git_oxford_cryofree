@@ -150,7 +150,7 @@ class LOGGER:
         self.send_to_file(logfile=self.bg_file, data=data, header=header)
         print('Finished Background Log Update')
         
-    def generate_vtvh_log(self, scan_num=None, after=False):
+    def generate_vtvh_log(self, scan_num=None, after=False, extras=None):
         #add correct things
         #waiting happens in main
         #create dict of data to log
@@ -176,6 +176,9 @@ class LOGGER:
             else:
                 get_func=log_fxns[k]
                 log_data[k] = get_func()
+        
+        if extras is not None:
+            log_data = log_data | extras #merge the two dicts
         
         #say what file the scan is saved to
         if after == True:
