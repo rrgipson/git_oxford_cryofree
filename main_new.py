@@ -867,6 +867,10 @@ class Application:
                 print('Next Field Reached %s T'%str(h))
                 #End of Field Handling
 
+                #check if interrupt was pressed
+                if self._vtvh_interrupt == True:
+                    break
+
                 #log at start of scan
                 self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
 
