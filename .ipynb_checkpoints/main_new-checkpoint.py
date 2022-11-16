@@ -757,8 +757,10 @@ class Application:
             self.vtvh_interrupt()
             
         #estimate time for run and print 
-        runtime=self.estimate_runtime(field_list,temp_list,scanDelay)
+        runtime=self.estimate_runtime_reverse(field_list,temp_list,scanDelay)
+        print('****')
         print('Est. Time for VTVH: %.2f hours'%runtime)
+        print('****')
         
         #turn on switch heater
         if self._switch_status in [SWITCH_DISABLED, SWITCH_WARMING, SWITCH_COOLING] and not self._vtvh_interrupt:
@@ -786,86 +788,84 @@ class Application:
         else:
                 self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
                 
-        #go to each field
         scan_num=1
-        for h in field_list:
+        #go to each temperature
+        for t in temp_list:
             #check if interrupt was pressed
             if self._vtvh_interrupt == True:
                 break
-            #check ramp rate
-            if float(self.get_ramp_rate()) > 0.154:
-                print('RAMP RATE EXCEEDS LIMIT: Ending VTVH. Change Rate before proceeding.')
-                self.vtvh_interrupt()
-                break
-            #check magnet temp
-            if float(self.get_magnet_temp()) > 4.00:
-                print('Magnet is Too Warm: Ending VTVH')
-                self.vtvh_interrupt()
-                break
 
-            #Go to first temp in list while going to next field
-            self.gui.update_temps(setpoint=str(temp_list[0])+'K')
+            #update temp setpoint on gui then on instrument
+            self.gui.update_temps(setpoint=str(t)+'K')
             self.set_temperature()
-            
-            #go to next field
-            self.set_field_and_go(newfield=h)
-            #Let field stabilize
-            sleep(30)
-            print('Next Field Reached %s T'%str(h))
-            
-            #go to each temperature and scan
-            for t in temp_list:
+
+            #only wait and run temp checks if you've got more than 1 temp or current temp is off by more than 0.75K
+            if len(temp_list)>1 or abs(float(t)-float(self.get_sample_temp()))>0.75:
+                #wait 5 mins for temp to be reached/stabilize
+                print('Waiting 5 mins for temp to stabilize')
+                sleep(300)
+
+                #check every minute to see if have reached the correct temp
+                tempcheck_iters=0
+                last3_temps=[float(self.get_sample_temp())]
+                #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
+                while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < 0.01): #Temp Accuarcy Cutoff
+                    print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
+                    if self._vtvh_interrupt == True:
+                        break
+                    sleep(60) #waits 1 min between temp checks
+                    temp_chk=float(self.get_sample_temp())
+                    last3_temps.append(temp_chk)
+                    while len(last3_temps)>3:
+                        last3_temps.pop(0)
+                    tempcheck_iters+=1 #count number of checks done 
+                    #if temp hasnt stabilized after 30 mins, interrupt the vtvh run
+                    if tempcheck_iters>15:
+                        if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 1.0 and np.std(last3_temps) < 0.05: #secondary criteria after 20 mins
+                            print('Warning: Using Secondary Temp Criteria After 15mins')
+                            break
+                        else:
+                            print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 20 mins'%str(t))
+                            self.vtvh_interrupt()
+                            #TODO: If temp too hot, open needle valve more?
+                        #read current, open like 10% more, wait, read temp, do again or break if too open
+                    #exit loop when made it to new temp
+
                 #check if interrupt was pressed
                 if self._vtvh_interrupt == True:
                     break
 
-                #update temp setpoint on gui then on instrument
-                self.gui.update_temps(setpoint=str(t)+'K')
-                self.set_temperature()
+                #print that made it to new temp
+                print('Temps:', last3_temps)
+                print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
+                print('Next Temp Reached %s K (took %i mins)'%(str(t),tempcheck_iters))
 
-                #only wait and run temp checks if you've got more than 1 temp or current temp is off by more than 0.75K
-                if len(temp_list)>1 or abs(float(t)-float(self.get_sample_temp()))>0.75:
-                    #wait 5 mins for temp to be reached/stabilize
-                    print('Waiting 5 mins for temp to stabilize')
-                    sleep(300)
+            else:
+                print('Only 1 Temp. Proceeding.')
+            #Finish of temp handling
+            
+            #go to each field
+            for h in field_list:
+                #check if interrupt was pressed
+                if self._vtvh_interrupt == True:
+                    break
+                #check ramp rate
+                if float(self.get_ramp_rate()) > 0.154:
+                    print('RAMP RATE EXCEEDS LIMIT: Ending VTVH. Change Rate before proceeding.')
+                    self.vtvh_interrupt()
+                    break
+                #check magnet temp
+                if float(self.get_magnet_temp()) > 4.00:
+                    print('Magnet is Too Warm: Ending VTVH')
+                    self.vtvh_interrupt()
+                    break
 
-                    #check every minute to see if have reached the correct temp
-                    tempcheck_iters=0
-                    last3_temps=[float(self.get_sample_temp())]
-                    #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
-                    while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < 0.01): #Temp Accuarcy Cutoff
-                        print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
-                        if self._vtvh_interrupt == True:
-                            break
-                        sleep(60) #waits 1 min between temp checks
-                        temp_chk=float(self.get_sample_temp())
-                        last3_temps.append(temp_chk)
-                        while len(last3_temps)>3:
-                            last3_temps.pop(0)
-                        tempcheck_iters+=1 #count number of checks done 
-                        #if temp hasnt stabilized after 30 mins, interrupt the vtvh run
-                        if tempcheck_iters>15:
-                            if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 1.0 and np.std(last3_temps) < 0.05: #secondary criteria after 20 mins
-                                print('Warning: Using Secondary Temp Criteria After 15mins')
-                                break
-                            else:
-                                print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 20 mins'%str(t))
-                                self.vtvh_interrupt()
-                                #TODO: If temp too hot, open needle valve more?
-                            #read current, open like 10% more, wait, read temp, do again or break if too open
-                        #exit loop when made it to new temp
-                        
-                    #check if interrupt was pressed
-                    if self._vtvh_interrupt == True:
-                        break
-                        
-                    #print that made it to new temp
-                    print('Temps:', last3_temps)
-                    print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
-                    print('Next Temp Reached %s K (took %i mins)'%(str(t),tempcheck_iters))
-                    
-                else:
-                    print('Only 1 Temp. Proceeding.')
+                #go to next field
+                self.set_field_and_go(newfield=h)
+                #Let field stabilize
+                sleep(30)
+                print('Next Field Reached %s T'%str(h))
+                #End of Field Handling
 
                 #log at start of scan
                 self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
@@ -966,8 +966,27 @@ class Application:
             time_sum+=abs(float(fields[i-1])-float(fields[i]))/(0.15*60)
         #time for temps
         if len(temps)>1:
-            time_sum+=(len(fields)*len(temps)*0.25)
+            time_sum+=(len(fields)*len(temps)*0.15)
+        #time for scans
         time_sum+=(len(fields)*len(temps)*(scanSecs/(60*60)))
+        return time_sum #in hours
+    
+    def estimate_runtime_reverse(self, fields, temps, scanSecs):
+        time_sum=0 
+        #0 to first field
+        time_sum+=abs(0-float(fields[0]))/(0.15*60)
+        #time to each of other fields
+        for i in range(1,len(fields)):
+            time_sum+=len(temps)*abs(float(fields[i-1])-float(fields[i]))/(0.15*60)
+        #going back to first field at end of each temp string
+        time_sum+=len(temps)*abs(float(fields[0])-float(fields[-1]))/(0.15*60)
+        #time for temps
+        if len(temps)>1:
+            time_sum+=(len(temps)*0.15)
+        #time for scans
+        time_sum+=(len(fields)*len(temps)*(scanSecs/(60*60)))
+        #time for swtich heater operations
+        time_sum+= 0.2
         return time_sum #in hours
             
             
