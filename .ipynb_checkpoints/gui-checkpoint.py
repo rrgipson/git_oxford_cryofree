@@ -252,11 +252,19 @@ class GUI(tk.Frame):
     
     def user_vtvh_field(self):
         fields_string=self.ent_vtvh_field.get().replace(' ', '')
-        return list(fields_string.split(','))
+        if ';' in fields_string:
+            field_list=[hs.split(',') for hs in fields_string.split(';')]
+        else:
+            field_list=list(fields_string.split(','))
+        return field_list
     
     def user_vtvh_temps(self):
         temps_string=self.ent_vtvh_temps.get().replace(' ', '')
-        return list(temps_string.split(','))
+        if ';' in temps_string:
+            temp_list=[ts.split(',') for ts in temps_string.split(';')]
+        else:
+            temp_list=list(temps_string.split(','))
+        return temp_list
     
     def user_scanTime(self):
         return self.ent_vtvh_scanTime.get().replace(' ', '')
