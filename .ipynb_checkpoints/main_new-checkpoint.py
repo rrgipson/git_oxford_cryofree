@@ -1001,7 +1001,7 @@ class Application:
             while float(self.get_sample_temp()) > 17:
                 if self._action_interrupt:
                     break
-                sleep(120)
+                sleep(240)
 
             #Step down
             if not self._action_interrupt:

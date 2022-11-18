@@ -434,9 +434,13 @@ class GUI(tk.Frame):
                 if qkcool_status==INACTIVE:
                     self.btn_qkcool['state']='normal'
                     self.btn_qkcool['command']=self.func_qkcool
+                    self.btn_qkcool['text']='Quick Cooldown'
+                    self.btn_vtvh['state'] = 'normal'
                 elif qkcool_status==ACTIVE:
+                    self.btn_qkcool['state']='normal'
                     self.btn_qkcool['text']='Interrupt Quick Cool'
                     self.btn_qkcool['command']=self.func_interrupt
+                    self.btn_vtvh['state'] = 'disabled'
             
             if refresh_status!=None:
                 if refresh_status==REFRESHING:
@@ -469,7 +473,7 @@ class GUI(tk.Frame):
             self.btn_refresh['state']='disabled'
             self.btn_qkcool['state']='disabled'
             self.btn_vtvh['state'] = 'disabled'
-            self.btn_vtvh['text'] = 'Collect Isotherm'
+            self.btn_vtvh['text'] = 'Collect VTVH'
             self.ent_vtvh_field['state'] = 'disabled'
             self.ent_vtvh_temps['state'] = 'disabled'
             self.ent_vtvh_scanTime['state'] = 'disabled'
