@@ -2906,3 +2906,69 @@ Initializing serial_disconnect Procedure
 @1A0 A0 
 @1C1 C 
 Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-11-17 15:44:51.530485 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM:DB8.T1	Open Circuit; 
+---------- 
+Sample Probe Unplugged! (If not, other error present.) 
+---------- 
+Sample Temp Set Point is 79.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.305 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 76.7007K 
+PT2 Temp: 3.3372K 
+Needle Valve Pressure: 5.0097mB 
+Needle Valve Percent: 18.6435% 
+Sample Temp Set Point is 79.0000K 
+Finished Background Log Update 
+Sample Temp: 87.3841K 
+Setting VTI Temp to 1.6166 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617:VALID 
+Setting Sample Temp to 1.7 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700:VALID 
+Sample Temp Set Point is 1.7000K 
+Setting NV to Manual 
+@2SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF STAT:SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF:VALID 
+@2SET:DEV:DB5.P1:PRES:LOOP:FSET:100 STAT:SET:DEV:DB5.P1:PRES:LOOP:FSET:100:VALID 
+Sample Temp: 87.5247K 
+Sample Temp: 87.8506K 
+Sample Temp: 86.0260K 
+Sample Temp: 82.1526K 
+Sample Temp: 76.9421K 
+Sample Temp: 70.8563K 
+Sample Temp: 64.2187K 
+Sample Temp: 57.2996K 
+Sample Temp: 49.8866K 
+Sample Temp: 42.0726K 
+Sample Temp: 33.9657K 
+Sample Temp: 25.2715K 
+Sample Temp: 18.3761K 
+Sample Temp: 12.4295K 
+@2SET:DEV:DB5.P1:PRES:LOOP:FSET:35 STAT:SET:DEV:DB5.P1:PRES:LOOP:FSET:35:VALID 
+Sample Temp: 12.1769K 
+Sample Temp: 9.7476K 
+Sample Temp: 8.1382K 
+Sample Temp: 6.6599K 
+@2SET:DEV:DB5.P1:PRES:LOOP:FSET:20 STAT:SET:DEV:DB5.P1:PRES:LOOP:FSET:20:VALID 
+@2SET:DEV:DB5.P1:PRES:LOOP:FAUT:ON STAT:SET:DEV:DB5.P1:PRES:LOOP:FAUT:ON:VALID 
+NV Returned to Automatic Control 
+Quick Cooldown Finished. 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
