@@ -50,6 +50,9 @@ class GUI(tk.Frame):
         self.func_vtvh_browse = self.browse_for_dir
         #set one variable for browse folder
         self.path_vtvh_browse = None
+        #container variable for vtvh grids
+        self.vtvh_grids_temps = [None]*3
+        self.vtvh_grids_fields = [None]*3
 
         # Make container frames
         self.frm_connection = tk.Frame(self)
@@ -119,8 +122,19 @@ class GUI(tk.Frame):
         self.ent_vtvh_temps.insert(tk.END, ','.join(map(str,TEMP_DEFAULTS)))
         self.ent_vtvh_temps['state'] = 'disabled'
         
+        grid_row=5
+        #self.frm_grids=tk.Frame(self.frm_vtvh)
+        #self.frm_grids.grid(row=grid_row, column=0, sticky=tk.N, padx=3)
+        #gtxt=['#','Fields','Temps']
+        #self.lbl_gridsHeader=[None]*len(gtxt)
+        #for i in range(len(gtxt)):
+        #    self.lbl_gridsHeader[i]=tk.Label(self.frm_grids, text=gtxt[i], fg='black', 
+        #                                font=small_font, width=(3 if i==0 else 25), justify='center')
+        #    self.lbl_gridsHeader[i].grid(row=0, column=i, sticky=tk.N, padx=3, pady=3)
+        #self.make_vtvh_grids(self.vtvh_grids_fields,self.vtvh_grids_temps)
+        
         self.frm_scanTime=tk.Frame(self.frm_vtvh)
-        self.frm_scanTime.grid(row=5, column=0, sticky=tk.N, padx=3)
+        self.frm_scanTime.grid(row=grid_row+1, column=0, sticky=tk.N, padx=3)
         self.lbl_vtvh_scanTime=tk.Label(self.frm_scanTime, text='How long is J1700 Scan (mins:seconds)?')
         self.lbl_vtvh_scanTime.grid(row=0, column=0)
         self.ent_vtvh_scanTime = tk.Entry(self.frm_scanTime, fg='white', bg='black', insertbackground='white',
@@ -130,14 +144,16 @@ class GUI(tk.Frame):
         self.ent_vtvh_scanTime.insert(tk.END, '0')
         self.ent_vtvh_scanTime['state'] = 'disabled'
         
-        self.btn_vtvh = tk.Button(self.frm_vtvh, text='Collect VTVH', state='disabled')
-        self.btn_vtvh.grid(row=8)
-        
         self.btn_vtvh_browse = tk.Button(self.frm_vtvh, text='Browse for Folder', state='normal')
-        self.btn_vtvh_browse.grid(row=7)
+        self.btn_vtvh_browse.grid(row=grid_row+3)
         self.btn_vtvh_browse['command'] = self.func_vtvh_browse
         self.lbl_vtvh_browse = tk.Label(self.frm_vtvh, text='Select Folder that Spectral Measurement is Autosaving to:')
-        self.lbl_vtvh_browse.grid(row=6)
+        self.lbl_vtvh_browse.grid(row=grid_row+2)
+        
+        self.btn_vtvh = tk.Button(self.frm_vtvh, text='Collect VTVH', state='disabled')
+        self.btn_vtvh.grid(row=grid_row+4)
+        
+        
         
         # Temperature frame
         self.lbl_temp_frame = tk.Label(self.frm_temp_sensor, text='Temperature Control (Kelvin)')
@@ -493,6 +509,17 @@ class GUI(tk.Frame):
     
     def warning_popup(self, title, message):
         messagebox.showwarning(title,message,parent=self)
+        
+    def make_vtvh_grids(self, fields,temps):
+        if len(fields)==len(temps):
+            row_len=3
+            self.lbl_grids=[[None for i in range(len(temps))] for j in range(row_len)]
+            for row in range(len(fields)):
+                txt=[row+1,fields[row],temps[row]]
+                for col in range(len(txt)):
+                    self.lbl_grids[row][col]=tk.Label(self.frm_grids, text=txt[col], fg='black', bg='white', 
+                                                font='Arial 10', width=(3 if col==0 else 25), justify='center')
+                    self.lbl_grids[row][col].grid(row=row+1, column=col, sticky=tk.N, padx=3, pady=1)
 
 if __name__ == '__main__':
     pass

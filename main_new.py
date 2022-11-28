@@ -754,6 +754,8 @@ class Application:
         #iterate through all the grids to perform checks
         total_time=0
         for field_list,temp_list in zip(field_grids, temp_grids):
+            print('Fields in Grid:', field_list)
+            print('Temps in Grid:', temp_list)
             #Check if fields are in correct range
             if any(abs(float(h)) > 7 for h in field_list):
                 print('Error in Fields: Must be between -7 and 7 T')
