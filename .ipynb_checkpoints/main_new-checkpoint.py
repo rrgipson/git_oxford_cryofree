@@ -748,6 +748,9 @@ class Application:
         print('Starting Full VTVH Run')
         #measure scan duration??
         
+        #Put start time in log
+        print_to_log(datetime.datetime.now())
+        
         #iterate through all the grids to perform checks
         total_time=0
         for field_list,temp_list in zip(field_grids, temp_grids):
@@ -931,6 +934,8 @@ class Application:
         self._vtvh_interrupt = False
         print('VTVH Ended')
         self._vtvh_thread = None
+        #Put end time in log
+        print_to_log(datetime.datetime.now())
     
     def start_vtvh(self, *args):
         if self.serial_m.is_open and self._field_connect and self.serial_t.is_open and self._temp_connect:
