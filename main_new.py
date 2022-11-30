@@ -926,7 +926,7 @@ class Application:
         #End of Grid Loops
 
         #TURN OFF SWITCH HEATER AT END AND IF DIDNT INTERRUPT and last field was 0T
-        if self._vtvh_interrupt==False and self._switch_status == SWITCH_ENABLED and field_grids[-1][-1]==0:
+        if self._vtvh_interrupt==False and self._switch_status == SWITCH_ENABLED and float(field_grids[-1][-1])==0.0:
             self.disengage_switch_heater()
             print('Waiting for switch heater to cool (5 mins).')
             sleep(300)
