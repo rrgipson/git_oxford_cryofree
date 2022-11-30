@@ -2972,3 +2972,160 @@ Initializing serial_disconnect Procedure
 @1A0 A0 
 @1C1 C 
 Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-11-29 13:33:08.206526 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM:DB8.T1	Open Circuit; 
+---------- 
+Sample Probe Unplugged! (If not, other error present.) 
+---------- 
+Sample Temp Set Point is 80.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R-6.30000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.300 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R-6.30000 
+Sample Temp: 1.1986K 
+VTI Temp: 77.7318K 
+PT2 Temp: 3.3297K 
+Needle Valve Pressure: 5.1788mB 
+Needle Valve Percent: 16.5042% 
+Sample Temp Set Point is 80.0000K 
+Finished Background Log Update 
+Sample Temp: 88.8806K 
+Setting VTI Temp to 1.6166 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617:VALID 
+Setting Sample Temp to 1.7 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700:VALID 
+Sample Temp Set Point is 1.7000K 
+Setting NV to Manual 
+@2SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF STAT:SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF:VALID 
+@2SET:DEV:DB5.P1:PRES:LOOP:FSET:100 STAT:SET:DEV:DB5.P1:PRES:LOOP:FSET:100:VALID 
+Sample Temp: 89.0120K 
+Sample Temp: 87.3790K 
+Sample Temp: 78.6302K 
+Sample Temp: 66.8801K 
+Sample Temp: 53.5203K 
+Sample Temp: 38.3879K 
+Sample Temp: 22.3088K 
+Sample Temp: 10.7556K 
+@2SET:DEV:DB5.P1:PRES:LOOP:FSET:35 STAT:SET:DEV:DB5.P1:PRES:LOOP:FSET:35:VALID 
+Sample Temp: 10.4997K 
+Sample Temp: 8.8142K 
+Sample Temp: 7.5434K 
+Sample Temp: 6.3483K 
+@2SET:DEV:DB5.P1:PRES:LOOP:FSET:20 STAT:SET:DEV:DB5.P1:PRES:LOOP:FSET:20:VALID 
+@2SET:DEV:DB5.P1:PRES:LOOP:FAUT:ON STAT:SET:DEV:DB5.P1:PRES:LOOP:FAUT:ON:VALID 
+NV Returned to Automatic Control 
+Quick Cooldown Finished. 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+Scan Time Read as 1 mins and 25 secs 
+Starting Full VTVH Run 
+Exception in thread Thread-9:
+Traceback (most recent call last):
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\threading.py", line 892, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Jasco\Desktop\git_oxford_cryofree\main_new.py", line 752, in _collect_full_vtvh
+    print_to_log(datetime.datetime.now())
+  File "C:\Users\Jasco\Desktop\git_oxford_cryofree\logger.py", line 25, in print_to_log
+    f.write(string + '\n')
+TypeError: unsupported operand type(s) for +: 'datetime.datetime' and 'str'
+Interrupting VTVH 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-11-29 16:01:56.177758 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 2.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.657 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0156K 
+VTI Temp: 1.7681K 
+PT2 Temp: 3.7973K 
+Needle Valve Pressure: 7.4393mB 
+Needle Valve Percent: 12.3873% 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+Scan Time Read as 1 mins and 25 secs 
+Starting Full VTVH Run 
+2022-11-29 16:02:56.385882
+Fields in Grid: ['0', '7', '0', '-7', '0'] 
+Temps in Grid: ['2'] 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 85 seconds. 
+Est. Time for Grid: 3.43 hours 
+****** 
+Est. Time for Full VTVH: 3.43 hours 
+****** 
+Magnet Ramp Rate: 0.1500 T/min 
+@1H1 H1 
+Magnet Temp: 3.622 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@1A0 A0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1X X00A0C1H1M00 
+Wait 5 mins for Switch Heater Warming 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+Magnet: Action is currently being taken; interrupt or try again afterwards 
+ @1R8 R0.00000 
+At New Field: 0 T 
+Next Field Reached 0 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0092K 
+Only 1 Temp. Proceeding. 
+Magnet Temp: 3.514 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0055K 
+VTI Temp: 1.9613K 
+Needle Valve Pressure: 5.0163mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 1 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_29_TPH_NO/1Z/vtvh_log.csv 
+Taking a Scan - One Lamp Only 
+Scan Number 1 
+Jasco scan event 
+Start Button Found at X= 191 and Y= 112 
+Magnet Temp: 3.495 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.9859K 
+VTI Temp: 1.9447K 
+Needle Valve Pressure: 4.9187mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 1 to C:/UserData/Dory/TPH/TPH_MCD/2022_11_29_TPH_NO/1Z/vtvh_log.csv 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.492 K 
+Setting VTI Temp to 1.913 

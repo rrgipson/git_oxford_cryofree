@@ -749,7 +749,7 @@ class Application:
         #measure scan duration??
         
         #Put start time in log
-        print_to_log(datetime.datetime.now())
+        print_to_log(str(datetime.datetime.now()))
         
         #iterate through all the grids to perform checks
         total_time=0
@@ -790,7 +790,7 @@ class Application:
         if self._switch_status in [SWITCH_DISABLED, SWITCH_WARMING, SWITCH_COOLING] and not self._vtvh_interrupt:
             self.engage_switch_heater()
             #print('Waiting for switch heater to warm up (5 mins).')
-            #sleep(300) #now happens in engage switch function
+            sleep(310) #waiting for engage switch function
         elif self._switch_status == SWITCH_ENABLED and not self._vtvh_interrupt:
             print('Switch Heater ON: Waiting 5 Seconds.')
             sleep(5) #Wait 5 seconds if switch heater is on
@@ -937,7 +937,7 @@ class Application:
         print('VTVH Ended')
         self._vtvh_thread = None
         #Put end time in log
-        print_to_log(datetime.datetime.now())
+        print_to_log(str(datetime.datetime.now()))
     
     def start_vtvh(self, *args):
         if self.serial_m.is_open and self._field_connect and self.serial_t.is_open and self._temp_connect:
