@@ -4806,3 +4806,37 @@ Initializing serial_disconnect Procedure
 @1A0 A0 
 @1C1 C 
 Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-12-01 12:03:35.049913 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 2.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.292 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0022K 
+VTI Temp: 1.9139K 
+PT2 Temp: 3.3262K 
+Needle Valve Pressure: 4.9901mB 
+Needle Valve Percent: 17.5509% 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+Starting Full VTVH Run 
+2022-12-01 12:15:35.658148
+Fields in Grid: ['0'] 
+Temps in Grid: ['2'] 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 30 seconds. 
+Est. Time for Grid: 0.21 hours 
+****** 
+Est. Time for Full VTVH: 0.21 hours 
+****** 
+@1H1 H1 
