@@ -186,7 +186,7 @@ class Application:
                 self._switch_status = SWITCH_ENABLED
                 field_movement = FIELD_HOLD
                 print('Waiting 5 mins for Heater Warming') #CRYOFREE
-                sleep(300) #CRYOFREE
+                sleep(3) #CRYOFREE - change back to 300
             else:  # if 'H5' (fault) or 'H8' (missing), don't proceed
                 print('Magnet: Switch heater fault or missing', status[7:9], 'in', status)
                 success = False
@@ -904,7 +904,7 @@ class Application:
                     #setup to collect temps and fields
                     actual_temps = []
                     actual_temps.append(float(self.get_sample_temp(prt=False)))
-                    acutal_fields = []
+                    actual_fields = []
                     actual_fields.append(float(self.get_current_magnet_field(prt=False)))
 
                     #take a scan 
