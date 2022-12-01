@@ -580,7 +580,7 @@ class Application:
         print('Magnet Temp:',mag_temp, 'K')
         return mag_temp
     
-    def get_current_magnet_field(self):
+    def get_current_magnet_field(self, prt=True):
         if self.serial_m.is_open and self._field_connect:
             field = self.serial_m.transmit(isobus_magnet + 'R7', 'MagControl: Error reading field output', False)
             if len(field) > 0:
@@ -590,10 +590,11 @@ class Application:
                     field = None
             else:
                 field = None
-        print('Current Magnet Field: %s T'%field)
+        if prt:
+            print('Current Magnet Field: %s T'%field)
         return field
     
-    def get_sample_temp(self):
+    def get_sample_temp(self, prt=True):
         if self.serial_t.is_open and self._temp_connect:
             temp3 = self.serial_t.transmit(isobus_temp +READ+SAMPLE+CURRENT_TEMP, 'TempControl: Error reading sample temp sensor', False)
             if len(temp3) > 0:
@@ -603,7 +604,8 @@ class Application:
                     temp3 = None
             else:
                 temp3 = None
-        print('Sample Temp: {}'.format(temp3))
+        if prt:
+            print('Sample Temp: {}'.format(temp3))
         return temp3.replace('K','')
 
     def get_vti_temp(self):
@@ -898,27 +900,42 @@ class Application:
                         print('Only 1 Temp. Proceeding.')
 
                     #log at start of scan
-                    self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
+                    #self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
+                    #setup to collect temps and fields
+                    actual_temps = []
+                    actual_temps.append(float(self.get_sample_temp(prt=False)))
+                    acutal_fields = []
+                    actual_fields.append(float(self.get_current_magnet_field(prt=False)))
 
                     #take a scan 
                     print('Taking a Scan - One Lamp Only')
                     print('Scan Number %i'%scan_num)
                     j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
                     #Handle waiting for scan and logging during scan
-                    if scanDelay>300: #if scan is longer than 5 mins
+                    
+                    chk_interval=15
+                    if scanDelay>chk_interval: #if scan is longer than 5 mins
                         wait_left=scanDelay
-                        while wait_left > 300:
-                            sleep(295)
-                            self.vtvh_logger.generate_vtvh_log(scan_num=scan_num) #log every 5 mins
-                            sleep(5)
-                            wait_left-=300 #track how long left to wait
+                        while wait_left > chk_interval:
+                            sleep(chk_interval)
+                            actual_temps.append(float(self.get_sample_temp(prt=False)))
+                            actual_fields.append(float(self.get_current_magnet_field(prt=False)))
+                            #self.vtvh_logger.generate_vtvh_log(scan_num=scan_num) #log every 5 mins
+                            wait_left-=chk_interval #track how long left to wait
                         #wait remaining (less than 5 min) amount    
                         sleep(wait_left) 
                     else:              
                         sleep(scanDelay) #wait for whole scan time
-
+                    
+                    #prepare to log temp/field data
+                    actuals={}
+                    actuals['Avg_Sample_Temp(K)']= np.mean(actual_temps)
+                    actuals['StdDev_Sample_Temp(K)'] = np.std(actual_temps)
+                    actuals['Num_Temp_Checks'] = len(actual_temps)
+                    actuals['Avg_Magnet_Field(T)']= np.mean(actual_fields)
+                    actuals['StdDev_Magnet_Field(T)'] = np.std(actual_fields)
                     #log at end of scan
-                    self.vtvh_logger.generate_vtvh_log(scan_num=scan_num, after=True)
+                    self.vtvh_logger.generate_vtvh_log(scan_num=scan_num, after=True, extras=actuals)
 
                     #iterate scan number
                     scan_num+=1

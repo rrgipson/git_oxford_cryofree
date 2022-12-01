@@ -161,10 +161,10 @@ class LOGGER:
         #setup functions that get other data parameters
         log_fxns={}
         log_fxns['Magnet_Temp(K)']=self.get_mag_temp
-        log_fxns['Magnet_Field(T)']=self.get_mag_field
+        #log_fxns['Magnet_Field(T)']=self.get_mag_field
         log_fxns['Field_SetPoint(T)']=self.get_field_set
         
-        log_fxns['Sample_Temp(K)']=self.get_sample_temp
+        #log_fxns['Sample_Temp(K)']=self.get_sample_temp
         log_fxns['VTI_Temp(K)']=self.get_vti_temp
         log_fxns['NV_Pressure(mB)']=self.get_nv_pressure
         log_fxns['SampleTemp_SetPt(K)']=self.get_temp_set
