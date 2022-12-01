@@ -4658,3 +4658,53 @@ Initializing serial_disconnect Procedure
 @1A0 A0 
 @1C1 C 
 Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-12-01 10:02:30.698878 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 2.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.297 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 4.5185K 
+VTI Temp: 3.6531K 
+PT2 Temp: 3.3335K 
+Needle Valve Pressure: 5.2595mB 
+Needle Valve Percent: 15.4665% 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+Starting Full VTVH Run 
+2022-12-01 10:04:38.953679
+Fields in Grid: ['0'] 
+Temps in Grid: ['2'] 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 45 seconds. 
+Est. Time for Grid: 0.21 hours 
+****** 
+Est. Time for Full VTVH: 0.21 hours 
+****** 
+@1H1 H1 
+@1A0 A0 
+@1X X00A0C1H1M00 
+Wait 5 mins for Switch Heater Warming 
+Magnet Ramp Rate: 0.1500 T/min 
+Magnet Temp: 3.437 K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+ @2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+@1R8 R0.00000 
+Sample Temp Set Point is 2.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 0 T 
