@@ -149,9 +149,13 @@ class GUI(tk.Frame):
         self.btn_vtvh_browse['command'] = self.func_vtvh_browse
         self.lbl_vtvh_browse = tk.Label(self.frm_vtvh, text='Select Folder that Spectral Measurement is Autosaving to:')
         self.lbl_vtvh_browse.grid(row=grid_row+2)
+        self.xe_off = tk.IntVar()
+        self.xe_off.set(1)
+        self.chk_xe_off = tk.Checkbutton(self.frm_vtvh, text='Turn off Xe-Arc Lamp?', variable=self.xe_off)
+        self.chk_xe_off.grid(row=grid_row+4)
         
         self.btn_vtvh = tk.Button(self.frm_vtvh, text='Collect VTVH', state='disabled')
-        self.btn_vtvh.grid(row=grid_row+4)
+        self.btn_vtvh.grid(row=grid_row+5)
         
         
         

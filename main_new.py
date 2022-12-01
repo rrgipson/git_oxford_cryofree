@@ -947,6 +947,9 @@ class Application:
             self.disengage_switch_heater()
             print('Waiting for switch heater to cool (5 mins).')
             sleep(300)
+        #If box is checked, turn off Xe-Arc Lamp at the end of the run
+        if self.gui.xe_off.get():
+            j1700.turn_off_xe_lamp()
         
         #set Cryofree GUI at END
         self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_INACTIVE)
