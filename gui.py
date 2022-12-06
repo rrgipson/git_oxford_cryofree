@@ -541,6 +541,10 @@ class GUI(tk.Frame):
                 pass
             #replace with new grids
             row_len=3
+            #if there is nothing there indicate that
+            if len(fields)==0:
+                fields=[['Empty']]
+                temps=[['Empty']]
             self.lbl_grids=[[None for i in range(len(temps))] for j in range(row_len)]
             for row in range(len(fields)):
                 txt=[row+1,fields[row],temps[row]]
