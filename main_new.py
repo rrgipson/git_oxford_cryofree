@@ -759,14 +759,14 @@ class Application:
             print('Fields in Grid:', field_list)
             print('Temps in Grid:', temp_list)
             #Check if fields are in correct range
-            if any(abs(float(h)) > 7 for h in field_list):
+            if any(abs(float(h)) > 7 for h in field_list) and len(field_list)>0:
                 print('Error in Fields: Must be between -7 and 7 T')
                 self.vtvh_interrupt()
             else:
                 print('Fields Read in Correctly')
 
             #Check if temps are in correct range
-            if any(float(t) < 0 for t in temp_list) or any(float(t) > 300 for t in temp_list):
+            if (any(float(t) < 0 for t in temp_list) or any(float(t) > 300 for t in temp_list)) and len(temp_list)>0:
                 print('Error in Temps: Must be between 0 and 300 K')
                 self.vtvh_interrupt()
             else:
@@ -837,7 +837,13 @@ class Application:
                     print('Magnet is Too Warm: Ending VTVH')
                     self.vtvh_interrupt()
                     break
-
+                
+                #mark if the first temp in the next grid is the same or not (for temp checking later)
+                if float(self.get_temperature())!=float(temp_list[0]):
+                    print('Next Grid Starts with a Different Temp. Will do full temp checking.')
+                    new_temp=True
+                else:
+                    new_temp=False
                 #Go to first temp in list while going to next field
                 self.gui.update_temps(setpoint=str(temp_list[0])+'K')
                 self.set_temperature()
@@ -859,7 +865,9 @@ class Application:
                     self.set_temperature()
 
                     #only wait and run temp checks if you've got more than 1 temp or current temp is off by more than 0.75K
-                    if len(temp_list)>1 or abs(float(t)-float(self.get_sample_temp()))>0.75:
+                    if len(temp_list)>1 or abs(float(t)-float(self.get_sample_temp()))>0.75 or new_temp:
+                        #reset new_temp checker
+                        new_temp=False
                         #wait 5 mins for temp to be reached/stabilize
                         print('Waiting 5 mins for temp to stabilize')
                         sleep(300)
@@ -948,7 +956,7 @@ class Application:
             print('Waiting for switch heater to cool (5 mins).')
             sleep(300)
         #If box is checked, turn off Xe-Arc Lamp at the end of the run
-        if self.gui.xe_off.get():
+        if self.gui.xe_off.get() and self._vtvh_interrupt==False:
             j1700.turn_off_xe_lamp()
         
         #set Cryofree GUI at END
@@ -964,8 +972,10 @@ class Application:
             if self._vtvh_thread is not None:  # if an action is already being taken
                 print('Magnet: VTVH is currently in progress; interrupt or try again afterwards')
             else:  # if there are no background threads taking action
-                vhs=self.gui.user_vtvh_field()
-                temps=self.gui.user_vtvh_temps()
+                #vhs=self.gui.user_vtvh_field() #uncomment for back to only reading input box
+                #temps=self.gui.user_vtvh_temps()
+                vhs=self.gui.vtvh_grids_temps #uncomment this and next for new grids setup
+                temps=self.gui.vtvh_grids_fields
                 st=self.gui.user_scanTime()
                 #parse minutes and seconds of scan time
                 if ':' in st:
