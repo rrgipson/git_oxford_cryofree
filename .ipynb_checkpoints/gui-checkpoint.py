@@ -51,8 +51,8 @@ class GUI(tk.Frame):
         #set one variable for browse folder
         self.path_vtvh_browse = None
         #container variable for vtvh grids
-        self.vtvh_grids_temps = [None]*3
-        self.vtvh_grids_fields = [None]*3
+        self.vtvh_grids_temps = []
+        self.vtvh_grids_fields = []
 
         # Make container frames
         self.frm_connection = tk.Frame(self)
@@ -90,7 +90,7 @@ class GUI(tk.Frame):
         
         #New for CRYOFREE Frame
         self.frm_cryofree=tk.Frame(self.frm_connection)
-        self.frm_cryofree.grid(row=3,column=0, sticky=tk.N, padx=3, pady=(30,3))
+        self.frm_cryofree.grid(row=2,column=0, sticky=tk.N, padx=3, pady=(10,3))
         self.lbl_cryofree = tk.Label(self.frm_cryofree, text='Additions for Cryofree System:')
         self.lbl_cryofree.grid(row=0)
         #refresh button - added for CYROFREE
@@ -122,16 +122,28 @@ class GUI(tk.Frame):
         self.ent_vtvh_temps.insert(tk.END, ','.join(map(str,TEMP_DEFAULTS)))
         self.ent_vtvh_temps['state'] = 'disabled'
         
-        grid_row=5
-        #self.frm_grids=tk.Frame(self.frm_vtvh)
-        #self.frm_grids.grid(row=grid_row, column=0, sticky=tk.N, padx=3)
-        #gtxt=['#','Fields','Temps']
-        #self.lbl_gridsHeader=[None]*len(gtxt)
-        #for i in range(len(gtxt)):
-        #    self.lbl_gridsHeader[i]=tk.Label(self.frm_grids, text=gtxt[i], fg='black', 
-        #                                font=small_font, width=(3 if i==0 else 25), justify='center')
-        #    self.lbl_gridsHeader[i].grid(row=0, column=i, sticky=tk.N, padx=3, pady=3)
-        #self.make_vtvh_grids(self.vtvh_grids_fields,self.vtvh_grids_temps)
+        #uncomment below for new grids queue setup
+        self.frm_vtvh_btns=tk.Frame(self.frm_vtvh)
+        self.frm_vtvh_btns.grid(row=5, column=0, sticky=tk.N, padx=3, pady=3)
+        self.btn_vtvh_add = tk.Button(self.frm_vtvh_btns, text='Add Grid to Queue', state='normal')
+        self.btn_vtvh_add.grid(row=0,column=0,padx=5)
+        self.btn_vtvh_add['command'] = self.add_vtvh_grid
+        
+        self.btn_vtvh_clear = tk.Button(self.frm_vtvh_btns, text='Clear Grid Queue', state='normal')
+        self.btn_vtvh_clear.grid(row=0, column=2, padx=5)
+        self.btn_vtvh_clear['command'] = self.clear_vtvh_grid
+        
+        grid_row=6
+        self.frm_grids=tk.Frame(self.frm_vtvh)
+        self.frm_grids.grid(row=grid_row, column=0, sticky=tk.N, padx=3)
+        gtxt=['#','Fields','Temps']
+        self.lbl_gridsHeader=[None]*len(gtxt)
+        for i in range(len(gtxt)):
+            self.lbl_gridsHeader[i]=tk.Label(self.frm_grids, text=gtxt[i], fg='black', 
+                                        font=small_font, width=(3 if i==0 else 20), justify='center',
+                                            highlightbackground='black',highlightthickness=1)
+            self.lbl_gridsHeader[i].grid(row=0, column=i, sticky=tk.N, padx=0, pady=1)
+        self.make_vtvh_grids(self.vtvh_grids_fields,self.vtvh_grids_temps)
         
         self.frm_scanTime=tk.Frame(self.frm_vtvh)
         self.frm_scanTime.grid(row=grid_row+1, column=0, sticky=tk.N, padx=3)
@@ -475,6 +487,8 @@ class GUI(tk.Frame):
                     self.ent_vtvh_scanTime['state'] = 'normal'
                     self.btn_vtvh_browse['state'] = 'normal'
                     self.btn_qkcool['state']='normal'
+                    self.btn_vtvh_clear['state']='normal'
+                    self.btn_vtvh_add['state']='normal'
                 elif vtvh_status == VTVH_ACTIVE:
                     self.btn_vtvh['state'] = 'normal'
                     self.btn_vtvh['text'] = 'Interrupt VTVH'
@@ -484,6 +498,8 @@ class GUI(tk.Frame):
                     self.ent_vtvh_scanTime['state'] = 'disabled'
                     self.btn_vtvh_browse['state'] = 'disabled'
                     self.btn_qkcool['state']='disabled'
+                    self.btn_vtvh_clear['state']='disabled'
+                    self.btn_vtvh_add['state']='disabled'
 
         else:
             self.btn_refresh['state']='disabled'
@@ -516,14 +532,43 @@ class GUI(tk.Frame):
         
     def make_vtvh_grids(self, fields,temps):
         if len(fields)==len(temps):
+            #delete currently shown grids
+            try:
+                for i in self.lbl_grids:
+                    for j in i:
+                        j.destroy()
+            except: #if havent made the grids yet#
+                pass
+            #replace with new grids
             row_len=3
             self.lbl_grids=[[None for i in range(len(temps))] for j in range(row_len)]
             for row in range(len(fields)):
                 txt=[row+1,fields[row],temps[row]]
                 for col in range(len(txt)):
-                    self.lbl_grids[row][col]=tk.Label(self.frm_grids, text=txt[col], fg='black', bg='white', 
-                                                font='Arial 10', width=(3 if col==0 else 25), justify='center')
-                    self.lbl_grids[row][col].grid(row=row+1, column=col, sticky=tk.N, padx=3, pady=1)
+                    self.lbl_grids[col][row]=tk.Label(self.frm_grids, text=txt[col], fg='black', bg='white', 
+                                                font='Arial 10', width=(3 if col==0 else 20), justify='center',
+                                                     highlightbackground='black', highlightthickness=1)
+                    self.lbl_grids[col][row].grid(row=row+1, column=col, sticky=tk.N, padx=0, pady=0)
+    
+    def add_vtvh_grid(self):
+        for ts,hs in zip(self.user_vtvh_temps(), self.user_vtvh_field()):
+        #Add to interal variables
+        #TODO CHECK IF THERE ARE NONES IN THE Internally stored ones 
+            self.vtvh_grids_fields.append(hs)
+            self.vtvh_grids_temps.append(ts)
+        
+        #Update to Grids in GUI
+        self.make_vtvh_grids(self.vtvh_grids_fields,self.vtvh_grids_temps)
+        
+        #Reset fields to Defaults
+        self.ent_vtvh_field.insert(tk.END, ','.join(map(str,ISOTHERM_DEFAULTS)))
+        self.ent_vtvh_temps.insert(tk.END, ','.join(map(str,TEMP_DEFAULTS)))
+        
+    def clear_vtvh_grid(self):
+        self.vtvh_grids_fields=[]
+        self.vtvh_grids_temps=[]
+        #Update to Grids in GUI
+        self.make_vtvh_grids(self.vtvh_grids_fields,self.vtvh_grids_temps)
 
 if __name__ == '__main__':
     pass
