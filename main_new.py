@@ -974,8 +974,8 @@ class Application:
             else:  # if there are no background threads taking action
                 #vhs=self.gui.user_vtvh_field() #uncomment for back to only reading input box
                 #temps=self.gui.user_vtvh_temps()
-                vhs=self.gui.vtvh_grids_temps #uncomment this and next for new grids setup
-                temps=self.gui.vtvh_grids_fields
+                vhs=self.gui.vtvh_grids_fields #uncomment this and next for new grids setup
+                temps=self.gui.vtvh_grids_temps
                 st=self.gui.user_scanTime()
                 #parse minutes and seconds of scan time
                 if ':' in st:

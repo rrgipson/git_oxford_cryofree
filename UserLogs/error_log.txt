@@ -9063,3 +9063,203 @@ Traceback (most recent call last):
     win32.GetOverlappedResult(self._port_handle, self._overlapped_write, ctypes.byref(n), True)
 OSError: exception: access violation reading 0x0000000000000000
 Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-12-06 13:03:20.315707 
+------------------------------New Session Started
+2022-12-06 13:04:37.301257 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 2.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Updating Background Log 
+Finished serial_connect Procedure
+Magnet Temp: 3.303 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 4.8092K 
+VTI Temp: 3.9581K 
+PT2 Temp: 3.3370K 
+Needle Valve Pressure: 5.0766mB 
+Needle Valve Percent: 17.6730% 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-12-06 13:08:22.611818 
+------------------------------New Session Started
+2022-12-06 13:08:52.728305 
+------------------------------New Session Started
+2022-12-06 13:24:26.055938 
+Traceback (most recent call last):
+  File "C:\Users\Jasco\Desktop\git_oxford_cryofree\main_new.py", line 1094, in <module>
+    app = Application()
+  File "C:\Users\Jasco\Desktop\git_oxford_cryofree\main_new.py", line 86, in __init__
+    self.gui = GUI()
+  File "C:\Users\Jasco\Desktop\git_oxford_cryofree\gui.py", line 146, in __init__
+    self.make_vtvh_grids(self.vtvh_grids_fields,self.vtvh_grids_temps)
+  File "C:\Users\Jasco\Desktop\git_oxford_cryofree\gui.py", line 552, in make_vtvh_grids
+    self.lbl_grids[col][row]=tk.Label(self.frm_grids, text=txt[col], fg='black', bg='white', 
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\tkinter\__init__.py", line 3144, in __init__
+    Widget.__init__(self, master, 'label', cnf, kw)
+  File "C:\Users\Jasco\AppData\Local\Programs\Python\Python39\lib\tkinter\__init__.py", line 2568, in __init__
+    self.tk.call(
+_tkinter.TclError: unknown option "-default"
+------------------------------New Session Started
+2022-12-06 13:25:16.316584 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 2.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.304 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.9998K 
+VTI Temp: 1.9362K 
+PT2 Temp: 3.3428K 
+Needle Valve Pressure: 5.2131mB 
+Needle Valve Percent: 16.5026% 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-12-06 13:30:15.812999 
+------------------------------New Session Started
+2022-12-06 13:31:25.456953 
+------------------------------New Session Started
+2022-12-06 13:32:23.657656 
+------------------------------New Session Started
+2022-12-06 13:33:10.983130 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 2.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.303 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 2.0010K 
+VTI Temp: 1.9397K 
+PT2 Temp: 3.3424K 
+Needle Valve Pressure: 5.2052mB 
+Needle Valve Percent: 16.0189% 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-12-06 13:37:41.079199 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 2.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Updating Background Log 
+ocedure
+Magnet Temp: 3.304 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.9991K 
+VTI Temp: 1.9371K 
+PT2 Temp: 3.3422K 
+Needle Valve Pressure: 5.1660mB 
+Needle Valve Percent: 15.7763% 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+Scan Time Read as 5 mins and 45 secs 
+Starting Full VTVH Run 
+2022-12-06 13:40:36.137794
+Fields in Grid: ['2'] 
+Temps in Grid: ['0', '7', '0', '-7', '0', '5', '0', '-5', '0', '3', '0', '-3', '0', '1', '0', '-1', '0'] 
+Fields Read in Correctly 
+Error in Temps: Must be between 0 and 300 K 
+Interrupting VTVH 
+Each scan takes 345 seconds. 
+Est. Time for Grid: 4.60 hours 
+Fields in Grid: ['25'] 
+Temps in Grid: ['0', '7', '0', '-7', '0', '5', '0', '-5', '0', '3', '0', '-3', '0', '1', '0', '-1', '0'] 
+Error in Fields: Must be between -7 and 7 T 
+Interrupting VTVH 
+Error in Temps: Must be between 0 and 300 K 
+Interrupting VTVH 
+Each scan takes 345 seconds. 
+Est. Time for Grid: 7.16 hours 
+****** 
+Est. Time for Full VTVH: 11.76 hours 
+****** 
+Interrupting VTVH 
+VTVH Ended 
+2022-12-06 13:40:36.157789
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-12-06 13:42:38.526641 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 2.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Updating Background Log 
+Finished serial_connect Procedure
+Magnet Temp: 3.302 K 
+Current Magnet Field: 0.0001 T 
+@1R8 R0.00000 
+Sample Temp: 1.9994K 
+VTI Temp: 1.9376K 
+PT2 Temp: 3.3399K 
+Needle Valve Pressure: 5.1195mB 
+Needle Valve Percent: 15.5032% 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+Scan Time Read as 5 mins and 45 secs 
+Starting Full VTVH Run 
+2022-12-06 13:45:25.114512
+Fields in Grid: ['0', '7', '0', '-7', '0', '5', '0', '-5', '0', '3', '0', '-3', '0', '1', '0', '-1', '0'] 
+Temps in Grid: ['2'] 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 345 seconds. 
+Est. Time for Grid: 8.94 hours 
+Fields in Grid: ['0', '7', '0', '-7', '0', '5', '0', '-5', '0', '3', '0', '-3', '0', '1', '0', '-1', '0'] 
+Temps in Grid: ['25'] 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 345 seconds. 
+Est. Time for Grid: 8.94 hours 
+****** 
+Est. Time for Full VTVH: 17.88 hours 
+****** 
+@1H1 H1 
+@1A0 A0 
+@1X X00A0C1H1M00 
+Wait 5 mins for Switch Heater Warming 

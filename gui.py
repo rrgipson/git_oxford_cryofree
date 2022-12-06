@@ -140,9 +140,9 @@ class GUI(tk.Frame):
         self.lbl_gridsHeader=[None]*len(gtxt)
         for i in range(len(gtxt)):
             self.lbl_gridsHeader[i]=tk.Label(self.frm_grids, text=gtxt[i], fg='black', 
-                                        font=small_font, width=(3 if i==0 else 20), justify='center',
-                                            highlightbackground='black',highlightthickness=1)
-            self.lbl_gridsHeader[i].grid(row=0, column=i, sticky=tk.N, padx=0, pady=1)
+                                        font=small_font+' underline', width=(3 if i==0 else 15), justify='center',
+                                        highlightbackground='black',highlightthickness=1)
+            self.lbl_gridsHeader[i].grid(row=0, column=i, sticky=tk.N, padx=2, pady=1)
         self.make_vtvh_grids(self.vtvh_grids_fields,self.vtvh_grids_temps)
         
         self.frm_scanTime=tk.Frame(self.frm_vtvh)
@@ -543,16 +543,16 @@ class GUI(tk.Frame):
             row_len=3
             #if there is nothing there indicate that
             if len(fields)==0:
-                fields=[['Empty']]
-                temps=[['Empty']]
+                fields=['Empty']
+                temps=['Empty']
             self.lbl_grids=[[None for i in range(len(temps))] for j in range(row_len)]
             for row in range(len(fields)):
                 txt=[row+1,fields[row],temps[row]]
                 for col in range(len(txt)):
                     self.lbl_grids[col][row]=tk.Label(self.frm_grids, text=txt[col], fg='black', bg='white', 
-                                                font='Arial 10', width=(3 if col==0 else 20), justify='center',
-                                                     highlightbackground='black', highlightthickness=1)
-                    self.lbl_grids[col][row].grid(row=row+1, column=col, sticky=tk.N, padx=0, pady=0)
+                                                font='Arial 10', width=(3 if col==0 else 2*len(txt[col])), justify='center',
+                                                highlightbackground='black', highlightthickness=1)
+                    self.lbl_grids[col][row].grid(row=row+1, column=col, sticky=tk.N, padx=2, pady=1)
     
     def add_vtvh_grid(self):
         for ts,hs in zip(self.user_vtvh_temps(), self.user_vtvh_field()):
@@ -565,8 +565,10 @@ class GUI(tk.Frame):
         self.make_vtvh_grids(self.vtvh_grids_fields,self.vtvh_grids_temps)
         
         #Reset fields to Defaults
-        self.ent_vtvh_field.insert(tk.END, ','.join(map(str,ISOTHERM_DEFAULTS)))
-        self.ent_vtvh_temps.insert(tk.END, ','.join(map(str,TEMP_DEFAULTS)))
+        #self.ent_vtvh_field.delete(0, tk.END)
+        #self.ent_vtvh_field.insert(tk.END, ','.join(map(str,ISOTHERM_DEFAULTS)))
+        #self.ent_vtvh_temps.delete(0, tk.END)
+        #self.ent_vtvh_temps.insert(tk.END, ','.join(map(str,TEMP_DEFAULTS)))
         
     def clear_vtvh_grid(self):
         self.vtvh_grids_fields=[]
