@@ -18062,3 +18062,28 @@ Finished Background Log Update
 @1J+0.0000 J+0.0000 
 @1R8 R0.00000 
 @1A1 A1 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Updating Background Log 
+Magnet Temp: 3.796 K 
+Current Magnet Field: 1.6785 T 
+@1R8 R0.00000 
+Sample Temp: 66.5683K 
+VTI Temp: 63.0831K 
+PT2 Temp: 3.6362K 
+Needle Valve Pressure: 5.1184mB 
+Needle Valve Percent: 13.8018% 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+ @1X X00A0C1H1M00 
+@1A0 A0 
+@1H0 H0 
+@1X X00A0C1H2M00 
+ @1R8 R0.00000 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
