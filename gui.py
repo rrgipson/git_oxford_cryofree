@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog
+from tkinter import messagebox
 
 # Settings flags for magnet controller
 SWITCH_ENABLED = 'enabled'
@@ -17,6 +18,8 @@ REFRESHING= 'refreshing'
 NOT_REFRESHING = 'not_refreshing'
 VTVH_ACTIVE = 'active'
 VTVH_INACTIVE = 'inactive'
+ACTIVE = 'active'
+INACTIVE = 'inactive'
 ISOTHERM_DEFAULTS=[0,7,0,-7,0]
 TEMP_DEFAULTS=[2,5,10,15,25]
 
@@ -47,6 +50,9 @@ class GUI(tk.Frame):
         self.func_vtvh_browse = self.browse_for_dir
         #set one variable for browse folder
         self.path_vtvh_browse = None
+        #container variable for vtvh grids
+        self.vtvh_grids_temps = []
+        self.vtvh_grids_fields = []
 
         # Make container frames
         self.frm_connection = tk.Frame(self)
@@ -72,27 +78,30 @@ class GUI(tk.Frame):
         small_font = 'Arial 10'
 
         # Connection frame
-        self.lbl_com_port = tk.Label(self.frm_connection, text='COM Port')
-        self.ent_com_port = tk.Entry(self.frm_connection, fg='red', bg='black', insertbackground='white',
-                                     font=input_font, width=8, disabledforeground='black', disabledbackground='white',
-                                     justify='center')
-        self.btn_com_port = tk.Button(self.frm_connection, text='Connect')
-        self.ent_com_port.insert(tk.END, '—')
+        self.lbl_com_port = tk.Label(self.frm_connection, text='2COM Port Connection:')
+        #self.ent_com_port = tk.Entry(self.frm_connection, fg='red', bg='black', insertbackground='white',
+        #                             font=input_font, width=8, disabledforeground='black', disabledbackground='white',
+        #                             justify='center')
+        self.btn_com_port = tk.Button(self.frm_connection, text='Connect', font='Arial 18')
+        #self.ent_com_port.insert(tk.END, '—')
         self.lbl_com_port.grid(row=0)
-        self.ent_com_port.grid(row=1)
-        self.btn_com_port.grid(row=2)
+        #self.ent_com_port.grid(row=1)
+        self.btn_com_port.grid(row=1)
         
         #New for CRYOFREE Frame
         self.frm_cryofree=tk.Frame(self.frm_connection)
-        self.frm_cryofree.grid(row=3,column=0, sticky=tk.N, padx=3, pady=(30,3))
+        self.frm_cryofree.grid(row=2,column=0, sticky=tk.N, padx=3, pady=(10,3))
         self.lbl_cryofree = tk.Label(self.frm_cryofree, text='Additions for Cryofree System:')
         self.lbl_cryofree.grid(row=0)
         #refresh button - added for CYROFREE
         self.btn_refresh = tk.Button(self.frm_cryofree, text='Refresh (Magnet Only)', state='disabled')
         self.btn_refresh.grid(row=1)
+        #Quick Cooldown button
+        self.btn_qkcool = tk.Button(self.frm_cryofree, text='Quick Cooldown', state='disabled')
+        self.btn_qkcool.grid(row=2)
         #VTVH/isotherm entry and button
         self.frm_vtvh=tk.Frame(self.frm_cryofree)
-        self.frm_vtvh.grid(row=2, column=0, sticky=tk.N, padx=3, pady=10)
+        self.frm_vtvh.grid(row=3, column=0, sticky=tk.N, padx=3, pady=10)
         self.lbl_vtvh=tk.Label(self.frm_vtvh, text='VTVH', font=med_font+' underline')
         self.lbl_vtvh.grid(row=0)
         self.lbl_vtvh_fields=tk.Label(self.frm_vtvh, text='Fields for VTVH (T)')
@@ -113,8 +122,31 @@ class GUI(tk.Frame):
         self.ent_vtvh_temps.insert(tk.END, ','.join(map(str,TEMP_DEFAULTS)))
         self.ent_vtvh_temps['state'] = 'disabled'
         
+        #uncomment below for new grids queue setup
+        self.frm_vtvh_btns=tk.Frame(self.frm_vtvh)
+        self.frm_vtvh_btns.grid(row=5, column=0, sticky=tk.N, padx=3, pady=3)
+        self.btn_vtvh_add = tk.Button(self.frm_vtvh_btns, text='Add Grid to Queue', state='normal')
+        self.btn_vtvh_add.grid(row=0,column=0,padx=5)
+        self.btn_vtvh_add['command'] = self.add_vtvh_grid
+        
+        self.btn_vtvh_clear = tk.Button(self.frm_vtvh_btns, text='Clear Grid Queue', state='normal')
+        self.btn_vtvh_clear.grid(row=0, column=2, padx=5)
+        self.btn_vtvh_clear['command'] = self.clear_vtvh_grid
+        
+        grid_row=6
+        self.frm_grids=tk.Frame(self.frm_vtvh)
+        self.frm_grids.grid(row=grid_row, column=0, sticky=tk.N, padx=3)
+        gtxt=['#','Fields','Temps']
+        self.lbl_gridsHeader=[None]*len(gtxt)
+        for i in range(len(gtxt)):
+            self.lbl_gridsHeader[i]=tk.Label(self.frm_grids, text=gtxt[i], fg='black', 
+                                        font=small_font+' underline', width=(3 if i==0 else 15), justify='center',
+                                        highlightbackground='black',highlightthickness=1)
+            self.lbl_gridsHeader[i].grid(row=0, column=i, sticky=tk.N, padx=2, pady=1)
+        self.make_vtvh_grids(self.vtvh_grids_fields,self.vtvh_grids_temps)
+        
         self.frm_scanTime=tk.Frame(self.frm_vtvh)
-        self.frm_scanTime.grid(row=5, column=0, sticky=tk.N, padx=3)
+        self.frm_scanTime.grid(row=grid_row+1, column=0, sticky=tk.N, padx=3)
         self.lbl_vtvh_scanTime=tk.Label(self.frm_scanTime, text='How long is J1700 Scan (mins:seconds)?')
         self.lbl_vtvh_scanTime.grid(row=0, column=0)
         self.ent_vtvh_scanTime = tk.Entry(self.frm_scanTime, fg='white', bg='black', insertbackground='white',
@@ -124,14 +156,20 @@ class GUI(tk.Frame):
         self.ent_vtvh_scanTime.insert(tk.END, '0')
         self.ent_vtvh_scanTime['state'] = 'disabled'
         
-        self.btn_vtvh = tk.Button(self.frm_vtvh, text='Collect VTVH', state='disabled')
-        self.btn_vtvh.grid(row=6)
-        
         self.btn_vtvh_browse = tk.Button(self.frm_vtvh, text='Browse for Folder', state='normal')
-        self.btn_vtvh_browse.grid(row=8)
+        self.btn_vtvh_browse.grid(row=grid_row+3)
         self.btn_vtvh_browse['command'] = self.func_vtvh_browse
         self.lbl_vtvh_browse = tk.Label(self.frm_vtvh, text='Select Folder that Spectral Measurement is Autosaving to:')
-        self.lbl_vtvh_browse.grid(row=7)
+        self.lbl_vtvh_browse.grid(row=grid_row+2)
+        self.xe_off = tk.IntVar()
+        self.xe_off.set(1)
+        self.chk_xe_off = tk.Checkbutton(self.frm_vtvh, text='Turn off Xe-Arc Lamp?', variable=self.xe_off)
+        self.chk_xe_off.grid(row=grid_row+4)
+        
+        self.btn_vtvh = tk.Button(self.frm_vtvh, text='Collect VTVH', state='disabled')
+        self.btn_vtvh.grid(row=grid_row+5)
+        
+        
         
         # Temperature frame
         self.lbl_temp_frame = tk.Label(self.frm_temp_sensor, text='Temperature Control (Kelvin)')
@@ -213,7 +251,7 @@ class GUI(tk.Frame):
                       engage_switch_heater=None, disengage_switch_heater=None,
                       goto_field=None, zero_field=None, interrupt=None,
                       set_field=None, get_field=None, refresh=None, vtvh=None, vtvh_interrupt=None,
-                     set_nv=None):
+                     set_nv=None, qkcool=None):
         self.func_serial_connect = serial_connect
         self.func_serial_disconnect = serial_disconnect
         self.func_set_temperature = set_temperature
@@ -230,12 +268,13 @@ class GUI(tk.Frame):
         self.func_vtvh = vtvh
         self.func_vtvh_interrupt = vtvh_interrupt
         self.func_set_nv = set_nv
+        self.func_qkcool = qkcool
 
     def set_close_method(self, command):
         self.master.protocol('WM_DELETE_WINDOW', command)
 
-    def user_com_port(self):
-        return self.ent_com_port.get()
+    #def user_com_port(self):
+    #    return self.ent_com_port.get()
 
     def user_temperature(self):
         return self.ent_temperature.get().replace(' ', '')
@@ -245,11 +284,15 @@ class GUI(tk.Frame):
     
     def user_vtvh_field(self):
         fields_string=self.ent_vtvh_field.get().replace(' ', '')
-        return list(fields_string.split(','))
+        #parse , and ; and return a list of lists
+        field_list=[hs.split(',') for hs in fields_string.split(';')]
+        return field_list
     
     def user_vtvh_temps(self):
         temps_string=self.ent_vtvh_temps.get().replace(' ', '')
-        return list(temps_string.split(','))
+        #parse , and ; and return a list of lists
+        temp_list=[ts.split(',') for ts in temps_string.split(';')]
+        return temp_list
     
     def user_scanTime(self):
         return self.ent_vtvh_scanTime.get().replace(' ', '')
@@ -261,15 +304,16 @@ class GUI(tk.Frame):
     #    return self.ent_nv.get().replace(' ', '')
 
     def update_com_port(self, port):
-        state = self.ent_com_port['state']
-        if state == 'normal':
-            self.ent_com_port.delete(0, tk.END)
-            self.ent_com_port.insert(tk.END, str(port))
-        else:
-            self.ent_com_port['state'] = 'normal'
-            self.ent_com_port.delete(0, tk.END)
-            self.ent_com_port.insert(tk.END, str(port))
-            self.ent_com_port['state'] = state
+        self.lbl_com_port['text']=port
+    #    state = self.ent_com_port['state']
+    #    if state == 'normal':
+    #        self.ent_com_port.delete(0, tk.END)
+    #        self.ent_com_port.insert(tk.END, str(port))
+    #    else:
+    #        self.ent_com_port['state'] = 'normal'
+    #        self.ent_com_port.delete(0, tk.END)
+    #        self.ent_com_port.insert(tk.END, str(port))
+    #        self.ent_com_port['state'] = state
 
     def update_temps(self, sensor1=None, sensor3=None, setpoint=None, current_nv=None, nv_setpoint=None):
         if sensor1 is not None:
@@ -318,11 +362,11 @@ class GUI(tk.Frame):
 
     def set_connection_frame(self, connected):
         if connected:
-            self.ent_com_port['state'] = 'disabled'
+            #self.ent_com_port['state'] = 'disabled'
             self.btn_com_port['text'] = 'Disconnect'
             self.btn_com_port['command'] = self.func_serial_disconnect
         else:
-            self.ent_com_port['state'] = 'disabled'
+            #self.ent_com_port['state'] = 'disabled'
             #self.ent_com_port.bind('<Return>', func=self.func_serial_connect)
             self.btn_com_port['text'] = 'Connect'
             self.btn_com_port['command'] = self.func_serial_connect
@@ -411,8 +455,20 @@ class GUI(tk.Frame):
             self.btn_field_set['state'] = 'disabled'
             self.btn_field_get['state'] = 'disabled'
             
-    def set_cryofree_frame(self, connected, refresh_status=None, vtvh_status=None):
+    def set_cryofree_frame(self, connected, refresh_status=None, vtvh_status=None, qkcool_status=None):
         if connected:
+            
+            if qkcool_status!=None:
+                if qkcool_status==INACTIVE:
+                    self.btn_qkcool['state']='normal'
+                    self.btn_qkcool['command']=self.func_qkcool
+                    self.btn_qkcool['text']='Quick Cooldown'
+                    self.btn_vtvh['state'] = 'normal'
+                elif qkcool_status==ACTIVE:
+                    self.btn_qkcool['state']='normal'
+                    self.btn_qkcool['text']='Interrupt Quick Cool'
+                    self.btn_qkcool['command']=self.func_interrupt
+                    self.btn_vtvh['state'] = 'disabled'
             
             if refresh_status!=None:
                 if refresh_status==REFRESHING:
@@ -430,6 +486,9 @@ class GUI(tk.Frame):
                     self.ent_vtvh_temps['state'] = 'normal'
                     self.ent_vtvh_scanTime['state'] = 'normal'
                     self.btn_vtvh_browse['state'] = 'normal'
+                    self.btn_qkcool['state']='normal'
+                    self.btn_vtvh_clear['state']='normal'
+                    self.btn_vtvh_add['state']='normal'
                 elif vtvh_status == VTVH_ACTIVE:
                     self.btn_vtvh['state'] = 'normal'
                     self.btn_vtvh['text'] = 'Interrupt VTVH'
@@ -438,11 +497,15 @@ class GUI(tk.Frame):
                     self.ent_vtvh_temps['state'] = 'disabled'
                     self.ent_vtvh_scanTime['state'] = 'disabled'
                     self.btn_vtvh_browse['state'] = 'disabled'
+                    self.btn_qkcool['state']='disabled'
+                    self.btn_vtvh_clear['state']='disabled'
+                    self.btn_vtvh_add['state']='disabled'
 
         else:
             self.btn_refresh['state']='disabled'
+            self.btn_qkcool['state']='disabled'
             self.btn_vtvh['state'] = 'disabled'
-            self.btn_vtvh['text'] = 'Collect Isotherm'
+            self.btn_vtvh['text'] = 'Collect VTVH'
             self.ent_vtvh_field['state'] = 'disabled'
             self.ent_vtvh_temps['state'] = 'disabled'
             self.ent_vtvh_scanTime['state'] = 'disabled'
@@ -463,6 +526,55 @@ class GUI(tk.Frame):
         self.btn_vtvh_browse['text']='Browse'
         self.btn_vtvh_browse['command']=self.browse_for_dir
         return None
+    
+    def warning_popup(self, title, message):
+        messagebox.showwarning(title,message,parent=self)
+        
+    def make_vtvh_grids(self, fields,temps):
+        if len(fields)==len(temps):
+            #delete currently shown grids
+            try:
+                for i in self.lbl_grids:
+                    for j in i:
+                        j.destroy()
+            except: #if havent made the grids yet#
+                pass
+            #replace with new grids
+            row_len=3
+            #if there is nothing there indicate that
+            if len(fields)==0:
+                fields=['Empty']
+                temps=['Empty']
+            self.lbl_grids=[[None for i in range(len(temps))] for j in range(row_len)]
+            for row in range(len(fields)):
+                txt=[row+1,fields[row],temps[row]]
+                for col in range(len(txt)):
+                    self.lbl_grids[col][row]=tk.Label(self.frm_grids, text=txt[col], fg='black', bg='white', 
+                                                font='Arial 10', width=(3 if col==0 else 2*len(txt[col])), justify='center',
+                                                highlightbackground='black', highlightthickness=1)
+                    self.lbl_grids[col][row].grid(row=row+1, column=col, sticky=tk.N, padx=2, pady=1)
+    
+    def add_vtvh_grid(self):
+        for ts,hs in zip(self.user_vtvh_temps(), self.user_vtvh_field()):
+        #Add to interal variables
+        #TODO CHECK IF THERE ARE NONES IN THE Internally stored ones 
+            self.vtvh_grids_fields.append(hs)
+            self.vtvh_grids_temps.append(ts)
+        
+        #Update to Grids in GUI
+        self.make_vtvh_grids(self.vtvh_grids_fields,self.vtvh_grids_temps)
+        
+        #Reset fields to Defaults
+        #self.ent_vtvh_field.delete(0, tk.END)
+        #self.ent_vtvh_field.insert(tk.END, ','.join(map(str,ISOTHERM_DEFAULTS)))
+        #self.ent_vtvh_temps.delete(0, tk.END)
+        #self.ent_vtvh_temps.insert(tk.END, ','.join(map(str,TEMP_DEFAULTS)))
+        
+    def clear_vtvh_grid(self):
+        self.vtvh_grids_fields=[]
+        self.vtvh_grids_temps=[]
+        #Update to Grids in GUI
+        self.make_vtvh_grids(self.vtvh_grids_fields,self.vtvh_grids_temps)
 
 if __name__ == '__main__':
     pass

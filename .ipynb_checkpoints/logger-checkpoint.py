@@ -150,7 +150,7 @@ class LOGGER:
         self.send_to_file(logfile=self.bg_file, data=data, header=header)
         print('Finished Background Log Update')
         
-    def generate_vtvh_log(self, scan_num=None):
+    def generate_vtvh_log(self, scan_num=None, after=False, extras=None):
         #add correct things
         #waiting happens in main
         #create dict of data to log
@@ -161,10 +161,10 @@ class LOGGER:
         #setup functions that get other data parameters
         log_fxns={}
         log_fxns['Magnet_Temp(K)']=self.get_mag_temp
-        log_fxns['Magnet_Field(T)']=self.get_mag_field
+        #log_fxns['Magnet_Field(T)']=self.get_mag_field
         log_fxns['Field_SetPoint(T)']=self.get_field_set
         
-        log_fxns['Sample_Temp(K)']=self.get_sample_temp
+        #log_fxns['Sample_Temp(K)']=self.get_sample_temp
         log_fxns['VTI_Temp(K)']=self.get_vti_temp
         log_fxns['NV_Pressure(mB)']=self.get_nv_pressure
         log_fxns['SampleTemp_SetPt(K)']=self.get_temp_set
@@ -177,8 +177,14 @@ class LOGGER:
                 get_func=log_fxns[k]
                 log_data[k] = get_func()
         
+        if extras is not None:
+            log_data = log_data | extras #merge the two dicts
+        
         #say what file the scan is saved to
-        log_data['File']=self.get_newest_file(self.dirpath)
+        if after == True:
+            log_data['File']=self.get_newest_file(self.dirpath)
+        else:
+            log_data['File']=None
         
         #parse dict into list of keys (for header) and data
         head_list, data_list = zip(*log_data.items())

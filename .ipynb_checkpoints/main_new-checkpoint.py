@@ -82,6 +82,7 @@ class Application:
         self._switch_status = SWITCH_DISABLED
         self._action_thread, self._action_interrupt = None, False
         self._vtvh_thread, self._vtvh_interrupt = None, False
+        self._qkcool_thread = None
         self.gui = GUI()
         self.gui.set_functions(serial_connect=self.serial_connect, serial_disconnect=self.serial_disconnect,
                                set_temperature=self.set_temperature, get_temperature=self.get_temperature,
@@ -90,9 +91,10 @@ class Application:
                                goto_field=self.goto_field, zero_field=self.zero_field, interrupt=self.interrupt,
                                set_field=self.set_field, get_field=self.get_field, 
                                refresh=self.refresh_magnet_gui, vtvh=self.start_vtvh, 
-                               vtvh_interrupt=self.vtvh_interrupt, set_nv=self.set_nv) #cryofree added 
+                               vtvh_interrupt=self.vtvh_interrupt, set_nv=self.set_nv,
+                              qkcool=self.start_qkcool) #cryofree added 
         self.gui.set_close_method(self.on_closing)
-        self.gui.update_com_port(port='2 COMs')
+        #self.gui.update_com_port(port='2 COMs')
         self.gui.set_connection_frame(connected=False)
         self.gui.set_cryofree_frame(connected=False)
         self.gui.set_temperature_frame(connected=False)
@@ -129,7 +131,7 @@ class Application:
             if s.is_open:  # if the port is somehow already open, close it
                 s.close()
         if not self.serial_m.open() or not self.serial_t.open():  # if open() returns False, then opening has failed
-            self.gui.update_com_port(port='fail')
+            self.gui.update_com_port(port='Connection Failed')
             self.gui.set_connection_frame(connected=False)
             self.gui.set_cryofree_frame(connected=False)
             self.gui.set_temperature_frame(connected=False)
@@ -184,7 +186,7 @@ class Application:
                 self._switch_status = SWITCH_ENABLED
                 field_movement = FIELD_HOLD
                 print('Waiting 5 mins for Heater Warming') #CRYOFREE
-                sleep(300) #CRYOFREE
+                sleep(3) #CRYOFREE - change back to 300
             else:  # if 'H5' (fault) or 'H8' (missing), don't proceed
                 print('Magnet: Switch heater fault or missing', status[7:9], 'in', status)
                 success = False
@@ -206,7 +208,7 @@ class Application:
             setpoint = SETPOINT_INACTIVE
         self.gui.set_field_frame(connected=self._field_connect, switch_setting=self._switch_status,
                                  field_movement=field_movement, setpoint_change=setpoint)
-        self.gui.set_cryofree_frame(connected=self.serial_m.is_open, refresh_status=NOT_REFRESHING, vtvh_status=VTVH_INACTIVE) #cryofree
+        self.gui.set_cryofree_frame(connected=self.serial_m.is_open, refresh_status=NOT_REFRESHING, vtvh_status=VTVH_INACTIVE, qkcool_status=INACTIVE) #cryofree
 
         #start logging
         self.start_bg_logging()
@@ -243,6 +245,7 @@ class Application:
         Daemon thread function to update the temperature every `_temp_delay' seconds. Does not print each
         message/response to std_out so as to prevent clutter from background monitoring operations.
         """
+        plug_state=True
         while self.serial_t.is_open and self._temp_connect:
             sensor1 = self.serial_t.transmit(isobus_temp +READ+VTI+CURRENT_TEMP, 'TempControl: Error reading VTI sensor', False)
             if len(sensor1) > 0:
@@ -258,8 +261,12 @@ class Application:
                     sensor3 = '—'
                 elif sensor3.split(':')[-1] == '1.1986K':
                     sensor3 = 'Unplugged'
+                    plug_state=False
                 else:
                     sensor3 = sensor3.split(':')[-1]
+                    if plug_state==False:
+                        self.gui.warning_popup('Sample Probe Warning', 'Sample Probe Plugged back in. Please reset temp control to Auto using the box. See SOP (Sample Loading) for details.')
+                        plug_state=True
             else:
                 sensor3 = '—'
                 
@@ -413,7 +420,14 @@ class Application:
             self._switch_status = SWITCH_ENABLED
             #CRYOFREE TO-DO
             #add a wait 5 minutes loop while the switch warms up before can ramp to field
-            
+            print('Wait 5 mins for Switch Heater Warming')
+            count_warm=300
+            while count_warm > 0:
+                if self._action_interrupt:
+                    break
+                self.gui.update_fields(setpoint='Wait '+str(count_warm)+'s')
+                count_warm = count_warm - 1
+                sleep(1)
             
             field_movement = FIELD_HOLD
         elif response[7:9] in ['H5', 'H8']:
@@ -566,7 +580,7 @@ class Application:
         print('Magnet Temp:',mag_temp, 'K')
         return mag_temp
     
-    def get_current_magnet_field(self):
+    def get_current_magnet_field(self, prt=True):
         if self.serial_m.is_open and self._field_connect:
             field = self.serial_m.transmit(isobus_magnet + 'R7', 'MagControl: Error reading field output', False)
             if len(field) > 0:
@@ -576,10 +590,11 @@ class Application:
                     field = None
             else:
                 field = None
-        print('Current Magnet Field: %s T'%field)
+        if prt:
+            print('Current Magnet Field: %s T'%field)
         return field
     
-    def get_sample_temp(self):
+    def get_sample_temp(self, prt=True):
         if self.serial_t.is_open and self._temp_connect:
             temp3 = self.serial_t.transmit(isobus_temp +READ+SAMPLE+CURRENT_TEMP, 'TempControl: Error reading sample temp sensor', False)
             if len(temp3) > 0:
@@ -589,7 +604,8 @@ class Application:
                     temp3 = None
             else:
                 temp3 = None
-        print('Sample Temp: {}'.format(temp3))
+        if prt:
+            print('Sample Temp: {}'.format(temp3))
         return temp3.replace('K','')
 
     def get_vti_temp(self):
@@ -730,44 +746,56 @@ class Application:
             self._vtvh_interrupt = False
         
         
-    def _collect_full_vtvh(self, field_list, temp_list, scanTime):      
+    def _collect_full_vtvh(self, field_grids, temp_grids, scanTime):      
         print('Starting Full VTVH Run')
         #measure scan duration??
-
-        #Check if fields are in correct range
-        if any(abs(float(h)) > 7 for h in field_list):
-            print('Error in Fields: Must be between -7 and 7 T')
-            self.vtvh_interrupt()
-        else:
-            print('Fields Read in Correctly')
-            
-        #Check if temps are in correct range
-        if any(float(t) < 0 for t in temp_list) or any(float(t) > 300 for t in temp_list):
-            print('Error in Temps: Must be between 0 and 300 K')
-            self.vtvh_interrupt()
-        else:
-            print('Temps Read in Correctly')
         
-        #Read the inputted time for scan and use as delay
-        scanDelay=int(scanTime)
-        if scanDelay > 0:
-            print('Each scan takes %i seconds.'%scanDelay)
-        else:
-            print('Invalid Time Delay for Scan')
-            self.vtvh_interrupt()
-            
-        #estimate time for run and print 
-        runtime=self.estimate_runtime(field_list,temp_list,scanDelay)
-        print('Est. Time for VTVH: %.2f hours'%runtime)
+        #Put start time in log
+        print_to_log(str(datetime.datetime.now()))
+        
+        #iterate through all the grids to perform checks
+        total_time=0
+        for field_list,temp_list in zip(field_grids, temp_grids):
+            print('Fields in Grid:', field_list)
+            print('Temps in Grid:', temp_list)
+            #Check if fields are in correct range
+            if any(abs(float(h)) > 7 for h in field_list) and len(field_list)>0:
+                print('Error in Fields: Must be between -7 and 7 T')
+                self.vtvh_interrupt()
+            else:
+                print('Fields Read in Correctly')
+
+            #Check if temps are in correct range
+            if (any(float(t) < 0 for t in temp_list) or any(float(t) > 300 for t in temp_list)) and len(temp_list)>0:
+                print('Error in Temps: Must be between 0 and 300 K')
+                self.vtvh_interrupt()
+            else:
+                print('Temps Read in Correctly')
+
+            #Read the inputted time for scan and use as delay
+            scanDelay=int(scanTime)
+            if scanDelay > 0:
+                print('Each scan takes %i seconds.'%scanDelay)
+            else:
+                print('Invalid Time Delay for Scan')
+                self.vtvh_interrupt()
+
+            #estimate time for run and print 
+            runtime=self.estimate_runtime(field_list,temp_list,scanDelay)
+            print('Est. Time for Grid: %.2f hours'%runtime)
+            total_time+=runtime
+        print('******')
+        print('Est. Time for Full VTVH: %.2f hours'%total_time)
+        print('******')
         
         #turn on switch heater
         if self._switch_status in [SWITCH_DISABLED, SWITCH_WARMING, SWITCH_COOLING] and not self._vtvh_interrupt:
             self.engage_switch_heater()
-            print('Waiting for switch heater to warm up (5 mins).')
-            sleep(300)
+            #print('Waiting for switch heater to warm up (5 mins).')
+            sleep(310) #waiting for engage switch function
         elif self._switch_status == SWITCH_ENABLED and not self._vtvh_interrupt:
-            print('Switch Heater ON: Waiting 5 Mins.')
-            sleep(300) #Wait 5 minutes even if switch heater is on
+            print('Switch Heater ON: Waiting 5 Seconds.')
+            sleep(5) #Wait 5 seconds if switch heater is on
         else: #interrupt or switch error
             self.vtvh_interrupt()
         
@@ -786,135 +814,168 @@ class Application:
         else:
                 self.vtvh_logger.set_log_file('UserLogs/vtvh_log.csv')
                 
-        #go to each field
+        
         scan_num=1
-        for h in field_list:
+        #Iterate through each grid
+        for field_list,temp_list in zip(field_grids, temp_grids):
             #check if interrupt was pressed
             if self._vtvh_interrupt == True:
                 break
-            #check ramp rate
-            if float(self.get_ramp_rate()) > 0.154:
-                print('RAMP RATE EXCEEDS LIMIT: Ending VTVH. Change Rate before proceeding.')
-                self.vtvh_interrupt()
-                break
-            #check magnet temp
-            if float(self.get_magnet_temp()) > 4.00:
-                print('Magnet is Too Warm: Ending VTVH')
-                self.vtvh_interrupt()
-                break
-
-            #Go to first temp in list while going to next field
-            self.gui.update_temps(setpoint=str(temp_list[0])+'K')
-            self.set_temperature()
-            
-            #go to next field
-            self.set_field_and_go(newfield=h)
-            #Let field stabilize
-            sleep(30)
-            print('Next Field Reached %s T'%str(h))
-            
-            #go to each temperature and scan
-            for t in temp_list:
+                
+            #go to each field
+            for h in field_list:
                 #check if interrupt was pressed
                 if self._vtvh_interrupt == True:
                     break
-
-                #update temp setpoint on gui then on instrument
-                self.gui.update_temps(setpoint=str(t)+'K')
+                #check ramp rate
+                if float(self.get_ramp_rate()) > 0.154:
+                    print('RAMP RATE EXCEEDS LIMIT: Ending VTVH. Change Rate before proceeding.')
+                    self.vtvh_interrupt()
+                    break
+                #check magnet temp
+                if float(self.get_magnet_temp()) > 4.00:
+                    print('Magnet is Too Warm: Ending VTVH')
+                    self.vtvh_interrupt()
+                    break
+                
+                #mark if the first temp in the next grid is the same or not (for temp checking later)
+                if float(self.get_temperature())!=float(temp_list[0]):
+                    print('Next Grid Starts with a Different Temp. Will do full temp checking.')
+                    new_temp=True
+                else:
+                    new_temp=False
+                #Go to first temp in list while going to next field
+                self.gui.update_temps(setpoint=str(temp_list[0])+'K')
                 self.set_temperature()
 
-                #only wait and run temp checks if you've got more than 1 temp or current temp is off by more than 0.75K
-                if len(temp_list)>1 or abs(float(t)-float(self.get_sample_temp()))>0.75:
-                    #wait 5 mins for temp to be reached/stabilize
-                    print('Waiting 5 mins for temp to stabilize')
-                    sleep(300)
+                #go to next field
+                self.set_field_and_go(newfield=h)
+                #Let field stabilize
+                sleep(30)
+                print('Next Field Reached %s T'%str(h))
 
-                    #check every minute to see if have reached the correct temp
-                    tempcheck_iters=0
-                    last3_temps=[float(self.get_sample_temp())]
-                    #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
-                    while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < 0.01): #Temp Accuarcy Cutoff
-                        print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
-                        if self._vtvh_interrupt == True:
-                            break
-                        sleep(60) #waits 1 min between temp checks
-                        temp_chk=float(self.get_sample_temp())
-                        last3_temps.append(temp_chk)
-                        while len(last3_temps)>3:
-                            last3_temps.pop(0)
-                        tempcheck_iters+=1 #count number of checks done 
-                        #if temp hasnt stabilized after 30 mins, interrupt the vtvh run
-                        if tempcheck_iters>15:
-                            if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 1.0 and np.std(last3_temps) < 0.05: #secondary criteria after 20 mins
-                                print('Warning: Using Secondary Temp Criteria After 15mins')
-                                break
-                            else:
-                                print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 20 mins'%str(t))
-                                self.vtvh_interrupt()
-                                #TODO: If temp too hot, open needle valve more?
-                            #read current, open like 10% more, wait, read temp, do again or break if too open
-                        #exit loop when made it to new temp
-                        
+                #go to each temperature and scan
+                for t in temp_list:
                     #check if interrupt was pressed
                     if self._vtvh_interrupt == True:
                         break
-                        
-                    #print that made it to new temp
-                    print('Temps:', last3_temps)
-                    print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
-                    print('Next Temp Reached %s K (took %i mins)'%(str(t),tempcheck_iters))
+
+                    #update temp setpoint on gui then on instrument
+                    self.gui.update_temps(setpoint=str(t)+'K')
+                    self.set_temperature()
+
+                    #only wait and run temp checks if you've got more than 1 temp or current temp is off by more than 0.75K
+                    if len(temp_list)>1 or abs(float(t)-float(self.get_sample_temp()))>0.75 or new_temp:
+                        #reset new_temp checker
+                        new_temp=False
+                        #wait 5 mins for temp to be reached/stabilize
+                        print('Waiting 5 mins for temp to stabilize')
+                        sleep(300)
+
+                        #check every minute to see if have reached the correct temp
+                        tempcheck_iters=0
+                        last3_temps=[float(self.get_sample_temp())]
+                        #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
+                        while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < 0.01): #Temp Accuarcy Cutoff
+                            print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
+                            if self._vtvh_interrupt == True:
+                                break
+                            sleep(60) #waits 1 min between temp checks
+                            temp_chk=float(self.get_sample_temp())
+                            last3_temps.append(temp_chk)
+                            while len(last3_temps)>3:
+                                last3_temps.pop(0)
+                            tempcheck_iters+=1 #count number of checks done 
+                            #if temp hasnt stabilized after 30 mins, interrupt the vtvh run
+                            if tempcheck_iters>15:
+                                if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 1.0 and np.std(last3_temps) < 0.05: #secondary criteria after 20 mins
+                                    print('Warning: Using Secondary Temp Criteria After 15mins')
+                                    break
+                                else:
+                                    print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 20 mins'%str(t))
+                                    self.vtvh_interrupt()
+
+                        #check if interrupt was pressed
+                        if self._vtvh_interrupt == True:
+                            break
+
+                        #print that made it to new temp
+                        print('Temps:', last3_temps)
+                        print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
+                        print('Next Temp Reached %s K (took %i mins)'%(str(t),tempcheck_iters))
+
+                    else:
+                        print('Only 1 Temp. Proceeding.')
+
+                    #log at start of scan
+                    #self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
+                    #setup to collect temps and fields
+                    actual_temps = []
+                    actual_temps.append(float(self.get_sample_temp(prt=False)))
+                    actual_fields = []
+                    actual_fields.append(float(self.get_current_magnet_field(prt=False)))
+
+                    #take a scan 
+                    print('Taking a Scan - One Lamp Only')
+                    print('Scan Number %i'%scan_num)
+                    j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
+                    #Handle waiting for scan and logging during scan
                     
-                else:
-                    print('Only 1 Temp. Proceeding.')
+                    chk_interval=15
+                    if scanDelay>chk_interval: #if scan is longer than 5 mins
+                        wait_left=scanDelay
+                        while wait_left > chk_interval:
+                            sleep(chk_interval)
+                            actual_temps.append(float(self.get_sample_temp(prt=False)))
+                            actual_fields.append(float(self.get_current_magnet_field(prt=False)))
+                            #self.vtvh_logger.generate_vtvh_log(scan_num=scan_num) #log every 5 mins
+                            wait_left-=chk_interval #track how long left to wait
+                        #wait remaining (less than 5 min) amount    
+                        sleep(wait_left) 
+                    else:              
+                        sleep(scanDelay) #wait for whole scan time
+                    
+                    #prepare to log temp/field data
+                    actuals={}
+                    actuals['Avg_Sample_Temp(K)']= np.mean(actual_temps)
+                    actuals['StdDev_Sample_Temp(K)'] = np.std(actual_temps)
+                    actuals['Num_Temp_Checks'] = len(actual_temps)
+                    actuals['Avg_Magnet_Field(T)']= np.mean(actual_fields)
+                    actuals['StdDev_Magnet_Field(T)'] = np.std(actual_fields)
+                    #log at end of scan
+                    self.vtvh_logger.generate_vtvh_log(scan_num=scan_num, after=True, extras=actuals)
 
-                #log at start of scan
-                self.vtvh_logger.generate_vtvh_log(scan_num=scan_num)
+                    #iterate scan number
+                    scan_num+=1
+        
+        #End of Grid Loops
 
-                #take a scan 
-                print('Taking a Scan - One Lamp Only')
-                print('Scan Number %i'%scan_num)
-                j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
-                #Handle waiting for scan and logging during scan
-                if scanDelay>300: #if scan is longer than 5 mins
-                    wait_left=scanDelay
-                    while wait_left > 300:
-                        sleep(295)
-                        self.vtvh_logger.generate_vtvh_log(scan_num=scan_num) #log every 5 mins
-                        sleep(5)
-                        wait_left-=300 #track how long left to wait
-                    #wait remaining (less than 5 min) amount    
-                    sleep(wait_left) 
-                else:              
-                    sleep(scanDelay) #wait for whole scan time
-
-                #log at end of scan
-                self.vtvh_logger.generate_vtvh_log(scan_num=scan_num, after=True)
-
-                #iterate scan number
-                scan_num+=1
-
-
-
-
-        #TURN OFF SWITCH HEATER AT END AND IF DIDNT INTERRUPT
-        if self._vtvh_interrupt==False and self._switch_status == SWITCH_ENABLED:
+        #TURN OFF SWITCH HEATER AT END AND IF DIDNT INTERRUPT and last field was 0T
+        if self._vtvh_interrupt==False and self._switch_status == SWITCH_ENABLED and float(field_grids[-1][-1])==0.0:
             self.disengage_switch_heater()
             print('Waiting for switch heater to cool (5 mins).')
             sleep(300)
+        #If box is checked, turn off Xe-Arc Lamp at the end of the run
+        if self.gui.xe_off.get() and self._vtvh_interrupt==False:
+            j1700.turn_off_xe_lamp()
         
         #set Cryofree GUI at END
         self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_INACTIVE)
         self._vtvh_interrupt = False
         print('VTVH Ended')
         self._vtvh_thread = None
+        #Put end time in log
+        print_to_log(str(datetime.datetime.now()))
     
     def start_vtvh(self, *args):
-        if self.serial_m.is_open and self._field_connect:
+        if self.serial_m.is_open and self._field_connect and self.serial_t.is_open and self._temp_connect:
             if self._vtvh_thread is not None:  # if an action is already being taken
                 print('Magnet: VTVH is currently in progress; interrupt or try again afterwards')
             else:  # if there are no background threads taking action
-                vhs=self.gui.user_vtvh_field()
-                temps=self.gui.user_vtvh_temps()
+                #vhs=self.gui.user_vtvh_field() #uncomment for back to only reading input box
+                #temps=self.gui.user_vtvh_temps()
+                vhs=self.gui.vtvh_grids_fields #uncomment this and next for new grids setup
+                temps=self.gui.vtvh_grids_temps
                 st=self.gui.user_scanTime()
                 #parse minutes and seconds of scan time
                 if ':' in st:
@@ -966,12 +1027,67 @@ class Application:
             time_sum+=abs(float(fields[i-1])-float(fields[i]))/(0.15*60)
         #time for temps
         if len(temps)>1:
-            time_sum+=(len(fields)*len(temps)*0.25)
+            time_sum+=(len(fields)*len(temps)*0.15)
         time_sum+=(len(fields)*len(temps)*(scanSecs/(60*60)))
+        time_sum+=0.2 #12 mins for heating warm/cool (and misc)
         return time_sum #in hours
+    
+    def _quick_cooldown(self):
+        if self._temp_connect:
+            self.gui.set_cryofree_frame(connected=self._temp_connect, qkcool_status=ACTIVE)
+            #Set Temp to Base
+            self.gui.update_temps(setpoint='1.7K')
+            self.set_temperature()
             
-            
+            if not self._action_interrupt:
+                #Set NV to Manual Control
+                print('Setting NV to Manual')
+                self.serial_t.transmit(isobus_temp+SET+NV+AUTO_SET+':OFF', 'TempControl: Error setting NV to Manual')
 
+                #Open NV to 100%
+                self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':100', 'NVControl: Error Opening NV to 100%')
+            
+            #Wait until 17K reached
+            while float(self.get_sample_temp()) > 17:
+                if self._action_interrupt:
+                    break
+                sleep(240)
+
+            #Step down
+            if not self._action_interrupt:
+                self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':35', 'NVControl: Error Opening NV to 35%')
+                sleep(30)
+            
+            #Wait till next temp point
+            while float(self.get_sample_temp()) > 7:
+                if self._action_interrupt:
+                    break
+                sleep(60)
+            
+            #Step Down and then Reset to Auto Control (Should be set to 5mBar)
+            if not self._action_interrupt:
+                self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':20', 'NVControl: Error Opening NV to 20%')
+                sleep(30)
+                self.serial_t.transmit(isobus_temp+SET+NV+AUTO_SET+':ON', 'TempControl: Error setting NV to Auto')
+                print('NV Returned to Automatic Control')
+            self.gui.set_cryofree_frame(connected=self._temp_connect, qkcool_status=INACTIVE)
+            print('Quick Cooldown Finished.')
+            
+        else:
+            print('Quick Cooldown Error: Not Connected.')
+            
+    def start_qkcool(self, *args):
+        if self.serial_t.is_open and self._temp_connect:
+            if self._vtvh_thread is not None:  # if an action is already being taken
+                print('VTVH is currently in progress; interrupt or try again afterwards')
+            elif self._action_thread is not None: #if already performing an action
+                print('Other action being taken. Please interrupt or try again afterwards')
+            else:  # if there are no background threads taking action
+                self._action_thread = Thread(target=self._quick_cooldown, args=())
+                self._action_thread.start()
+        else:
+            print('Must be Connected to Start Quick Cooldown.')
+            
 
 if __name__ == '__main__':
     print_to_log('------------------------------New Session Started')
