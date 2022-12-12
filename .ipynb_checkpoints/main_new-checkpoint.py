@@ -974,8 +974,8 @@ class Application:
             else:  # if there are no background threads taking action
                 #vhs=self.gui.user_vtvh_field() #uncomment for back to only reading input box
                 #temps=self.gui.user_vtvh_temps()
-                vhs=self.gui.vtvh_grids_temps #uncomment this and next for new grids setup
-                temps=self.gui.vtvh_grids_fields
+                vhs=self.gui.vtvh_grids_fields #uncomment this and next for new grids setup
+                temps=self.gui.vtvh_grids_temps
                 st=self.gui.user_scanTime()
                 #parse minutes and seconds of scan time
                 if ':' in st:
@@ -1033,7 +1033,7 @@ class Application:
         return time_sum #in hours
     
     def _quick_cooldown(self):
-        if self._temp_connect and float(self.get_sample_temp()) > 25:
+        if self._temp_connect:
             self.gui.set_cryofree_frame(connected=self._temp_connect, qkcool_status=ACTIVE)
             #Set Temp to Base
             self.gui.update_temps(setpoint='1.7K')
@@ -1056,6 +1056,7 @@ class Application:
             #Step down
             if not self._action_interrupt:
                 self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':35', 'NVControl: Error Opening NV to 35%')
+                sleep(30)
             
             #Wait till next temp point
             while float(self.get_sample_temp()) > 7:
@@ -1073,7 +1074,7 @@ class Application:
             print('Quick Cooldown Finished.')
             
         else:
-            print('Quick Cooldown Error: Already too cold to start.')
+            print('Quick Cooldown Error: Not Connected.')
             
     def start_qkcool(self, *args):
         if self.serial_t.is_open and self._temp_connect:
