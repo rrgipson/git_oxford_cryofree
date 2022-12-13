@@ -876,7 +876,7 @@ class Application:
                         tempcheck_iters=0
                         last3_temps=[float(self.get_sample_temp())]
                         #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
-                        while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < 0.01): #Temp Accuarcy Cutoff
+                        while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < (0.01*np.sqrt(float(t)))): #Temp Accuarcy Cutoff
                             print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
                             if self._vtvh_interrupt == True:
                                 break
@@ -888,7 +888,7 @@ class Application:
                             tempcheck_iters+=1 #count number of checks done 
                             #if temp hasnt stabilized after 30 mins, interrupt the vtvh run
                             if tempcheck_iters>15:
-                                if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 1.5: #secondary criteria after 20 mins
+                                if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 1.0 and np.std(last3_temps) < 0.5: #secondary criteria after 20 mins
                                     print('Warning: Using Secondary Temp Criteria After 15mins')
                                     break
                                 else:

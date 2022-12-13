@@ -1,0 +1,163 @@
+------------------------------New Session Started
+2022-12-12 16:48:22.200585 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM:DB8.T1	Open Circuit; 
+---------- 
+Sample Probe Unplugged! (If not, other error present.) 
+---------- 
+Sample Temp Set Point is 2.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.319 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+Setting VTI Temp to 72.801 
+VTI Temp: 1.8591K 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:72.80 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:72.80:VALID 
+Setting Sample Temp to 75.0 
+PT2 Temp: 3.3589K 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:75.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:75.00:VALID 
+Needle Valve Pressure: 5.6045mB 
+Sample Temp Set Point is 75.0000K 
+Needle Valve Percent: 15.8495% 
+Sample Temp Set Point is 75.0000K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 75.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.320 K 
+Setting VTI Temp to 72.801 
+Current Magnet Field: 0.0000 T 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:72.80 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:72.80:VALID 
+Setting Sample Temp to 75.0 
+@1R8 R0.00000 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:75.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:75.00:VALID 
+Sample Temp Set Point is 75.0000K 
+Sample Temp: 33.3346K 
+VTI Temp: 65.4903K 
+PT2 Temp: 3.3538K 
+Needle Valve Pressure: 4.7131mB 
+Needle Valve Percent: 16.2417% 
+Sample Temp Set Point is 75.0000K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM:DB8.T1	Open Circuit; 
+---------- 
+Sample Probe Unplugged! (If not, other error present.) 
+---------- 
+Sample Temp Set Point is 1.7000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.343 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 74.2527K 
+PT2 Temp: 3.3830K 
+Needle Valve Pressure: 4.9606mB 
+Needle Valve Percent: 14.8714% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 3.324 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 10.2324K 
+PT2 Temp: 3.3602K 
+Needle Valve Pressure: 4.8831mB 
+Needle Valve Percent: 14.5083% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 3.313 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 2.6264K 
+PT2 Temp: 3.3536K 
+Needle Valve Pressure: 4.9816mB 
+Needle Valve Percent: 14.8882% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 3.325 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 2.6429K 
+PT2 Temp: 3.3671K 
+Needle Valve Pressure: 5.0809mB 
+Needle Valve Percent: 15.3201% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 3.323 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 2.6080K 
+PT2 Temp: 3.3663K 
+Needle Valve Pressure: 5.0660mB 
+Needle Valve Percent: 14.5647% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 3.318 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 2.6309K 
+PT2 Temp: 3.3598K 
+Needle Valve Pressure: 4.9468mB 
+Needle Valve Percent: 14.4335% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 3.321 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 2.6243K 
+PT2 Temp: 3.3610K 
+Needle Valve Pressure: 5.0989mB 
+Needle Valve Percent: 14.4259% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 3.324 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 2.6056K 
+PT2 Temp: 3.3660K 
+Needle Valve Pressure: 4.9201mB 
+Needle Valve Percent: 14.4381% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
