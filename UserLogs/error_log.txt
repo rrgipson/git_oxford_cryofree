@@ -161,3 +161,14 @@ Needle Valve Pressure: 4.9201mB
 Needle Valve Percent: 14.4381% 
 Sample Temp Set Point is 1.7000K 
 Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 3.323 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 2.6169K 
+PT2 Temp: 3.3608K 
+Needle Valve Pressure: 4.9609mB 
+Needle Valve Percent: 14.8486% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 

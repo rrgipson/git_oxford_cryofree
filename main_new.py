@@ -886,13 +886,13 @@ class Application:
                             while len(last3_temps)>3:
                                 last3_temps.pop(0)
                             tempcheck_iters+=1 #count number of checks done 
-                            #if temp hasnt stabilized after 30 mins, interrupt the vtvh run
-                            if tempcheck_iters>15:
-                                if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 1.0 and np.std(last3_temps) < 0.5: #secondary criteria after 20 mins
-                                    print('Warning: Using Secondary Temp Criteria After 15mins')
+                            #if temp hasnt stabilized after 25 mins, interrupt the vtvh run
+                            if tempcheck_iters>25:
+                                if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 1.0 and np.std(last3_temps) < 0.5: #secondary criteria after 25 mins
+                                    print('Warning: Using Secondary Temp Criteria After 25mins')
                                     break
                                 else:
-                                    print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 20 mins'%str(t))
+                                    print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 25 mins'%str(t))
                                     self.vtvh_interrupt()
 
                         #check if interrupt was pressed
