@@ -305,3 +305,28 @@ Initializing serial_disconnect Procedure
 @1A0 A0 
 @1C1 C 
 Completed Disconnect Procedure 
+------------------------------New Session Started
+2022-12-15 10:47:30.982902 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM:DB8.T1	Open Circuit; 
+---------- 
+Sample Probe Unplugged! (If not, other error present.) 
+---------- 
+Sample Temp Set Point is 1.7000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 285.337 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 287.3608K 
+PT2 Temp: 286.3507K 
+Needle Valve Pressure: 328.6029mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 

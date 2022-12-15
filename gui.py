@@ -560,7 +560,8 @@ class GUI(tk.Frame):
                 txt=[row+1,fields[row],temps[row]]
                 for col in range(len(txt)):
                     self.lbl_grids[col][row]=tk.Label(self.frm_grids, text=txt[col], fg='black', bg='white', 
-                                                font='Arial 10', width=(3 if col==0 else 2*len(txt[col])), justify='center',
+                                                #font='Arial 10', width=(3 if col==0 else 2*len(txt[col])), justify='center',
+                                                font='Arial 10', justify='center',
                                                 highlightbackground='black', highlightthickness=1)
                     self.lbl_grids[col][row].grid(row=row+1, column=col, sticky=tk.N, padx=2, pady=1)
     
