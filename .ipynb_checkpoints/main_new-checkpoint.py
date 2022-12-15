@@ -876,7 +876,7 @@ class Application:
                         tempcheck_iters=0
                         last3_temps=[float(self.get_sample_temp())]
                         #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
-                        while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < 0.01): #Temp Accuarcy Cutoff
+                        while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < (0.01*np.sqrt(float(t)))): #Temp Accuarcy Cutoff
                             print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
                             if self._vtvh_interrupt == True:
                                 break
@@ -886,13 +886,13 @@ class Application:
                             while len(last3_temps)>3:
                                 last3_temps.pop(0)
                             tempcheck_iters+=1 #count number of checks done 
-                            #if temp hasnt stabilized after 30 mins, interrupt the vtvh run
-                            if tempcheck_iters>15:
-                                if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 1.0 and np.std(last3_temps) < 0.05: #secondary criteria after 20 mins
-                                    print('Warning: Using Secondary Temp Criteria After 15mins')
+                            #if temp hasnt stabilized after 25 mins, interrupt the vtvh run
+                            if tempcheck_iters>25:
+                                if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 1.0 and np.std(last3_temps) < 0.5: #secondary criteria after 25 mins
+                                    print('Warning: Using Secondary Temp Criteria After 25mins')
                                     break
                                 else:
-                                    print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 20 mins'%str(t))
+                                    print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 25 mins'%str(t))
                                     self.vtvh_interrupt()
 
                         #check if interrupt was pressed
@@ -950,14 +950,30 @@ class Application:
         
         #End of Grid Loops
 
-        #TURN OFF SWITCH HEATER AT END AND IF DIDNT INTERRUPT and last field was 0T
-        if self._vtvh_interrupt==False and self._switch_status == SWITCH_ENABLED and float(field_grids[-1][-1])==0.0:
+        #If box is checked, turn off Xe-Arc Lamp at the end of the run
+        if self.gui.xe_off.get():
+            j1700.turn_off_xe_lamp()
+        #if box is checked, reset to base temp
+        if self.gui.end_base.get():
+            #update temp setpoint on gui then on instrument
+            self.gui.update_temps(setpoint='1.7K')
+            self.set_temperature()
+        #if box checked, ramp to 0T
+        if self.gui.end_0t.get():
+            #check ramp rate
+            if float(self.get_ramp_rate()) > 0.154 or float(self.get_magnet_temp()) > 4.00:
+                print('Magnet Error: Ramp Rate or Temp too high.')
+                self.vtvh_interrupt()
+            else:
+                #go to zero field
+                self.zero_field()
+            
+        #TURN OFF SWITCH HEATER AT END AND IF at 0T (and other checks)
+        if self._switch_status == SWITCH_ENABLED and ((self._vtvh_interrupt==False and float(field_grids[-1][-1])==0.0) or self.gui.end_0t.get()) and abs(float(self.get_current_magnet_field()))<0.01:
             self.disengage_switch_heater()
             print('Waiting for switch heater to cool (5 mins).')
             sleep(300)
-        #If box is checked, turn off Xe-Arc Lamp at the end of the run
-        if self.gui.xe_off.get() and self._vtvh_interrupt==False:
-            j1700.turn_off_xe_lamp()
+        
         
         #set Cryofree GUI at END
         self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_INACTIVE)

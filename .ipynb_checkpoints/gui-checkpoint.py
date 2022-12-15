@@ -140,9 +140,9 @@ class GUI(tk.Frame):
         self.lbl_gridsHeader=[None]*len(gtxt)
         for i in range(len(gtxt)):
             self.lbl_gridsHeader[i]=tk.Label(self.frm_grids, text=gtxt[i], fg='black', 
-                                        font=small_font, width=(3 if i==0 else 20), justify='center',
-                                            highlightbackground='black',highlightthickness=1)
-            self.lbl_gridsHeader[i].grid(row=0, column=i, sticky=tk.N, padx=0, pady=1)
+                                        font=small_font+' underline', width=(3 if i==0 else 15), justify='center',
+                                        highlightbackground='black',highlightthickness=1)
+            self.lbl_gridsHeader[i].grid(row=0, column=i, sticky=tk.N, padx=2, pady=1)
         self.make_vtvh_grids(self.vtvh_grids_fields,self.vtvh_grids_temps)
         
         self.frm_scanTime=tk.Frame(self.frm_vtvh)
@@ -161,13 +161,23 @@ class GUI(tk.Frame):
         self.btn_vtvh_browse['command'] = self.func_vtvh_browse
         self.lbl_vtvh_browse = tk.Label(self.frm_vtvh, text='Select Folder that Spectral Measurement is Autosaving to:')
         self.lbl_vtvh_browse.grid(row=grid_row+2)
+        self.lbl_end = tk.Label(self.frm_vtvh, text='At End of Run or Interrupt:')
+        self.lbl_end.grid(row=grid_row+4)
         self.xe_off = tk.IntVar()
         self.xe_off.set(1)
         self.chk_xe_off = tk.Checkbutton(self.frm_vtvh, text='Turn off Xe-Arc Lamp?', variable=self.xe_off)
-        self.chk_xe_off.grid(row=grid_row+4)
+        self.chk_xe_off.grid(row=grid_row+5)
+        self.end_0t = tk.IntVar()
+        self.end_0t.set(1)
+        self.chk_end_0t = tk.Checkbutton(self.frm_vtvh, text='Ramp Down to 0T?', variable=self.end_0t)
+        self.chk_end_0t.grid(row=grid_row+6)
+        self.end_base = tk.IntVar()
+        self.end_base.set(1)
+        self.chk_end_base = tk.Checkbutton(self.frm_vtvh, text='Cool to Base Temp (1.7K)?', variable=self.end_base)
+        self.chk_end_base.grid(row=grid_row+7)
         
         self.btn_vtvh = tk.Button(self.frm_vtvh, text='Collect VTVH', state='disabled')
-        self.btn_vtvh.grid(row=grid_row+5)
+        self.btn_vtvh.grid(row=grid_row+8)
         
         
         
@@ -543,16 +553,16 @@ class GUI(tk.Frame):
             row_len=3
             #if there is nothing there indicate that
             if len(fields)==0:
-                fields=[['Empty']]
-                temps=[['Empty']]
+                fields=['Empty']
+                temps=['Empty']
             self.lbl_grids=[[None for i in range(len(temps))] for j in range(row_len)]
             for row in range(len(fields)):
                 txt=[row+1,fields[row],temps[row]]
                 for col in range(len(txt)):
                     self.lbl_grids[col][row]=tk.Label(self.frm_grids, text=txt[col], fg='black', bg='white', 
-                                                font='Arial 10', width=(3 if col==0 else 20), justify='center',
-                                                     highlightbackground='black', highlightthickness=1)
-                    self.lbl_grids[col][row].grid(row=row+1, column=col, sticky=tk.N, padx=0, pady=0)
+                                                font='Arial 10', width=(3 if col==0 else 2*len(txt[col])), justify='center',
+                                                highlightbackground='black', highlightthickness=1)
+                    self.lbl_grids[col][row].grid(row=row+1, column=col, sticky=tk.N, padx=2, pady=1)
     
     def add_vtvh_grid(self):
         for ts,hs in zip(self.user_vtvh_temps(), self.user_vtvh_field()):
@@ -565,8 +575,10 @@ class GUI(tk.Frame):
         self.make_vtvh_grids(self.vtvh_grids_fields,self.vtvh_grids_temps)
         
         #Reset fields to Defaults
-        self.ent_vtvh_field.insert(tk.END, ','.join(map(str,ISOTHERM_DEFAULTS)))
-        self.ent_vtvh_temps.insert(tk.END, ','.join(map(str,TEMP_DEFAULTS)))
+        #self.ent_vtvh_field.delete(0, tk.END)
+        #self.ent_vtvh_field.insert(tk.END, ','.join(map(str,ISOTHERM_DEFAULTS)))
+        #self.ent_vtvh_temps.delete(0, tk.END)
+        #self.ent_vtvh_temps.insert(tk.END, ','.join(map(str,TEMP_DEFAULTS)))
         
     def clear_vtvh_grid(self):
         self.vtvh_grids_fields=[]
