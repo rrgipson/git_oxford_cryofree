@@ -1044,6 +1044,8 @@ class Application:
         #time for temps
         if len(temps)>1:
             time_sum+=(len(fields)*len(temps)*0.15)
+        else:
+            time_sum+=0.15
         time_sum+=(len(fields)*len(temps)*(scanSecs/(60*60)))
         time_sum+=0.2 #12 mins for heating warm/cool (and misc)
         return time_sum #in hours
