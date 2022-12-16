@@ -1036,8 +1036,9 @@ class Application:
         
     def estimate_runtime(self, fields, temps, scanSecs):
         time_sum=0 
-        #0 to first field
+        #0 to first field and last field to 0T
         time_sum+=abs(0-float(fields[0]))/(0.15*60)
+        time_sum+=abs(0-float(fields[-1]))/(0.15*60)
         #time to each of other fields
         for i in range(1,len(fields)):
             time_sum+=abs(float(fields[i-1])-float(fields[i]))/(0.15*60)
