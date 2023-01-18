@@ -9,18 +9,28 @@ WinActivate, Spectra Measurement - J1700/D001461900
 ImageSearch, FoundX, FoundY, 140, 50, 240, 150, C:\Users\Jasco\Desktop\git_oxford_cryofree\lib\J1700_startbutton.png
 ; Click the FoundX and FoundY pixel location on the Spectra Measurement Window 
 ControlClick, X%FoundX% Y%FoundY%, Spectra Measurement - J1700/D001461900
+; Print where it was found to check for errors
 ; MsgBox % "Start Button Found at X " . FoundX . " " . "Y " . FoundY . " - Scan Initiated"
-FileAppend, Start Button Found at X= %FoundX% and Y= %FoundY%, *
+; FileAppend, Start Button Found at X= %FoundX% and Y= %FoundY%, *
 
 ;Send Enter when prompt asks for both lamps to be lit
 Send {Enter}
 
-;Loop until finished with the scan
-Loop,
-{
-   Imagesearch, FoundX, FoundY, 140, 50, 240, 150, C:\Users\Jasco\Desktop\git_oxford_cryofree\lib\J1700_stopbutton.png
-   if (ErrorLevel = 1)
-       break
-   Sleep, 1000
+;If find stop button, loop until it goes away
+Imagesearch, FoundX, FoundY, 140, 50, 240, 150, C:\Users\Jasco\Desktop\git_oxford_cryofree\lib\J1700_stopbutton.png
+if (ErrorLevel = 0){
+   ;Loop until finished with the scan
+   Loop,
+   {
+      Imagesearch, FoundX, FoundY, 140, 50, 240, 150, C:\Users\Jasco\Desktop\git_oxford_cryofree\lib\J1700_stopbutton.png
+      if (ErrorLevel = 1)
+         FileAppend, Scan Success, * 
+         break
+      Sleep, 1000
+   }
+} else {
+   ;if did not find stop button, scan probably didnt start correctly
+   ;MsgBox "Scan Not started"
+   FileAppend, Error: Scan Not Started, *
 }
-MsgBox "Out of Loop"
+; MsgBox "Out of Loop"
