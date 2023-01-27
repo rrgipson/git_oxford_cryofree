@@ -1807,3 +1807,50 @@ Traceback (most recent call last):
     win32.ResetEvent(self._overlapped_read.hEvent)
 AttributeError: 'NoneType' object has no attribute 'hEvent'
 Completed Disconnect Procedure 
+------------------------------New Session Started
+2023-01-27 10:18:27.885280 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 1.7000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 295.951 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 295.4100K 
+VTI Temp: 295.4475K 
+PT2 Temp: 296.0396K 
+Needle Valve Pressure: -0.5801mB 
+Needle Valve Percent: 0.0885% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Error sending, SerialException: @1R7, <class 'serial.serialutil.SerialException'>  
+Completed Disconnect Procedure 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 1.7000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 295.939 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 295.4467K 
+VTI Temp: 295.3858K 
+PT2 Temp: 292.5822K 
+Needle Valve Pressure: 3.6608mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
