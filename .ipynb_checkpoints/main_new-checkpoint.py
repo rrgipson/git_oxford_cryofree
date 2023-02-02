@@ -1087,8 +1087,11 @@ class Application:
             if not self._action_interrupt:
                 self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':20', 'NVControl: Error Opening NV to 20%')
                 sleep(30)
-                self.serial_t.transmit(isobus_temp+SET+NV+AUTO_SET+':ON', 'TempControl: Error setting NV to Auto')
-                print('NV Returned to Automatic Control')
+            
+            #Regardless of interrupt, reset NV to auto control
+            self.serial_t.transmit(isobus_temp+SET+NV+AUTO_SET+':ON', 'TempControl: Error setting NV to Auto')
+            print('NV Returned to Automatic Control')
+            #Finish Quick Cooldown
             self.gui.set_cryofree_frame(connected=self._temp_connect, qkcool_status=INACTIVE)
             print('Quick Cooldown Finished.')
             
