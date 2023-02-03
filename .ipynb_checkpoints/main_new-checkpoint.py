@@ -915,10 +915,16 @@ class Application:
                     actual_fields = []
                     actual_fields.append(float(self.get_current_magnet_field(prt=False)))
 
-                    #take a scan 
-                    print('Taking a Scan - One Lamp Only')
-                    print('Scan Number %i'%scan_num)
-                    j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
+                    #take a scan - read option to use one or both lamps (only difference is an additional 'Enter' key press)
+                    if self.gui.both_lamps.get():
+                        print('Taking a Scan - Both Lamps')
+                        print('Scan Number %i'%scan_num)
+                        j1700.initiate_scan()
+                    else:
+                        print('Taking a Scan - One Lamp Only')
+                        print('Scan Number %i'%scan_num)
+                        j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
+                        
                     #Handle waiting for scan and logging during scan
                     
                     chk_interval=15
@@ -953,6 +959,9 @@ class Application:
         #If box is checked, turn off Xe-Arc Lamp at the end of the run
         if self.gui.xe_off.get():
             j1700.turn_off_xe_lamp()
+        #If box is checked, turn off Tungsten Halogen Lamp at the end of the run
+        if self.gui.wx_off.get():
+            j1700.turn_off_wx_lamp()
         #if box is checked, reset to base temp
         if self.gui.end_base.get():
             #update temp setpoint on gui then on instrument
@@ -1087,8 +1096,11 @@ class Application:
             if not self._action_interrupt:
                 self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':20', 'NVControl: Error Opening NV to 20%')
                 sleep(30)
-                self.serial_t.transmit(isobus_temp+SET+NV+AUTO_SET+':ON', 'TempControl: Error setting NV to Auto')
-                print('NV Returned to Automatic Control')
+            
+            #Regardless of interrupt, reset NV to auto control
+            self.serial_t.transmit(isobus_temp+SET+NV+AUTO_SET+':ON', 'TempControl: Error setting NV to Auto')
+            print('NV Returned to Automatic Control')
+            #Finish Quick Cooldown
             self.gui.set_cryofree_frame(connected=self._temp_connect, qkcool_status=INACTIVE)
             print('Quick Cooldown Finished.')
             

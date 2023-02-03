@@ -37,6 +37,11 @@ def turn_off_xe_lamp():
     print('Turning Off J-1700 Xe-Arc Lamp')
     autohotkey_event = subprocess.run((autohotkey_exe, 'lib/J1700_XeLamp_off.ahk'), capture_output=True) ## Edited by Rob
     print(autohotkey_event.stdout.decode('utf-8').replace('\n',''))
+    
+def turn_off_wx_lamp():
+    print('Turning Off J-1700 Tungsten Halogen NIR Lamp')
+    autohotkey_event = subprocess.run((autohotkey_exe, 'lib/J1700_WXLamp_off.ahk'), capture_output=True) ## Edited by Rob
+    print(autohotkey_event.stdout.decode('utf-8').replace('\n',''))
 
 def test_new_scan():
     print('Jasco scan event - testing new stop/timing procedure')
