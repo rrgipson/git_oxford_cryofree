@@ -156,10 +156,10 @@ class GUI(tk.Frame):
         self.ent_vtvh_scanTime.insert(tk.END, '0')
         self.ent_vtvh_scanTime['state'] = 'disabled'
         #Using both lamps?
-        self.both_lamps = tk.IntVar()
-        self.both_lamps.set(0)
-        self.chk_both_lamps = tk.Checkbutton(self.frm_scanTime, text='Using Both Lamps?', variable=self.both_lamps)
-        self.chk_both_lamps.grid(row=1, column=0)
+        #self.both_lamps = tk.IntVar()
+        #self.both_lamps.set(0)
+        #self.chk_both_lamps = tk.Checkbutton(self.frm_scanTime, text='Using Both Lamps?', variable=self.both_lamps)
+        #self.chk_both_lamps.grid(row=1, column=0)
         
         self.btn_vtvh_browse = tk.Button(self.frm_vtvh, text='Browse for Folder', state='normal')
         self.btn_vtvh_browse.grid(row=grid_row+3)

@@ -916,14 +916,15 @@ class Application:
                     actual_fields.append(float(self.get_current_magnet_field(prt=False)))
 
                     #take a scan - read option to use one or both lamps (only difference is an additional 'Enter' key press)
-                    if self.gui.both_lamps.get():
-                        print('Taking a Scan - Both Lamps')
-                        print('Scan Number %i'%scan_num)
-                        j1700.initiate_scan()
-                    else:
-                        print('Taking a Scan - One Lamp Only')
-                        print('Scan Number %i'%scan_num)
-                        j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
+                    #if self.gui.both_lamps.get():
+                    #    print('Taking a Scan - Both Lamps')
+                    #    print('Scan Number %i'%scan_num)
+                    #    j1700.initiate_scan()
+                    #else:
+                    #The extra enter press doesnt do anything
+                    print('Taking a Scan')
+                    print('Scan Number %i'%scan_num)
+                    j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
                         
                     #Handle waiting for scan and logging during scan
                     
