@@ -12770,3 +12770,28 @@ Traceback (most recent call last):
     win32.ResetEvent(self._overlapped_read.hEvent)
 AttributeError: 'NoneType' object has no attribute 'hEvent'
 Completed Disconnect Procedure 
+------------------------------New Session Started
+2023-02-03 14:08:28.798746 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM:DB8.T1	Open Circuit; 
+---------- 
+Sample Probe Unplugged! (If not, other error present.) 
+---------- 
+Sample Temp Set Point is 80.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R-7.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.387 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R-7.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 77.7150K 
+PT2 Temp: 3.4274K 
+Needle Valve Pressure: 5.2654mB 
+Needle Valve Percent: 18.9044% 
+Sample Temp Set Point is 80.0000K 
+Finished Background Log Update 
