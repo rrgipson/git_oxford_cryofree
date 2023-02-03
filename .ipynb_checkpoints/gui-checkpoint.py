@@ -163,21 +163,29 @@ class GUI(tk.Frame):
         self.lbl_vtvh_browse.grid(row=grid_row+2)
         self.lbl_end = tk.Label(self.frm_vtvh, text='At End of Run or Interrupt:')
         self.lbl_end.grid(row=grid_row+4)
+        #Xe Arc Lamp Turn off
         self.xe_off = tk.IntVar()
         self.xe_off.set(1)
         self.chk_xe_off = tk.Checkbutton(self.frm_vtvh, text='Turn off Xe-Arc Lamp?', variable=self.xe_off)
         self.chk_xe_off.grid(row=grid_row+5)
+        #Tungsten Halogen Lamp Turn Off
+        self.wx_off = tk.IntVar()
+        self.wx_off.set(1)
+        self.chk_wx_off = tk.Checkbutton(self.frm_vtvh, text='Turn off Tungsten-Halogen Lamp?', variable=self.wx_off)
+        self.chk_wx_off.grid(row=grid_row+6)
+        #Ramp to 0T
         self.end_0t = tk.IntVar()
         self.end_0t.set(1)
         self.chk_end_0t = tk.Checkbutton(self.frm_vtvh, text='Ramp Down to 0T?', variable=self.end_0t)
-        self.chk_end_0t.grid(row=grid_row+6)
+        self.chk_end_0t.grid(row=grid_row+7)
+        #Cool to base
         self.end_base = tk.IntVar()
         self.end_base.set(1)
         self.chk_end_base = tk.Checkbutton(self.frm_vtvh, text='Cool to Base Temp (1.7K)?', variable=self.end_base)
-        self.chk_end_base.grid(row=grid_row+7)
+        self.chk_end_base.grid(row=grid_row+8)
         
         self.btn_vtvh = tk.Button(self.frm_vtvh, text='Collect VTVH', state='disabled')
-        self.btn_vtvh.grid(row=grid_row+8)
+        self.btn_vtvh.grid(row=grid_row+9)
         
         
         
@@ -560,7 +568,8 @@ class GUI(tk.Frame):
                 txt=[row+1,fields[row],temps[row]]
                 for col in range(len(txt)):
                     self.lbl_grids[col][row]=tk.Label(self.frm_grids, text=txt[col], fg='black', bg='white', 
-                                                font='Arial 10', width=(3 if col==0 else 2*len(txt[col])), justify='center',
+                                                #font='Arial 10', width=(3 if col==0 else 2*len(txt[col])), justify='center',
+                                                font='Arial 10', justify='center',
                                                 highlightbackground='black', highlightthickness=1)
                     self.lbl_grids[col][row].grid(row=row+1, column=col, sticky=tk.N, padx=2, pady=1)
     
