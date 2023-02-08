@@ -751,7 +751,8 @@ class Application:
         #measure scan duration??
         
         #Put start time in log
-        print_to_log(str(datetime.datetime.now()))
+        vtvh_start_time=datetime.datetime.now()
+        print_to_log(str(vtvh_start_time))
         
         #iterate through all the grids to perform checks
         total_time=0
@@ -916,14 +917,15 @@ class Application:
                     actual_fields.append(float(self.get_current_magnet_field(prt=False)))
 
                     #take a scan - read option to use one or both lamps (only difference is an additional 'Enter' key press)
-                    if self.gui.both_lamps.get():
-                        print('Taking a Scan - Both Lamps')
-                        print('Scan Number %i'%scan_num)
-                        j1700.initiate_scan()
-                    else:
-                        print('Taking a Scan - One Lamp Only')
-                        print('Scan Number %i'%scan_num)
-                        j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
+                    #if self.gui.both_lamps.get():
+                    #    print('Taking a Scan - Both Lamps')
+                    #    print('Scan Number %i'%scan_num)
+                    #    j1700.initiate_scan()
+                    #else:
+                    #The extra enter press doesnt do anything
+                    print('Taking a Scan')
+                    print('Scan Number %i'%scan_num)
+                    j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
                         
                     #Handle waiting for scan and logging during scan
                     
@@ -987,10 +989,18 @@ class Application:
         #set Cryofree GUI at END
         self.gui.set_cryofree_frame(connected=self._field_connect, vtvh_status=VTVH_INACTIVE)
         self._vtvh_interrupt = False
-        print('VTVH Ended')
         self._vtvh_thread = None
-        #Put end time in log
-        print_to_log(str(datetime.datetime.now()))
+        
+        #Put end time in log and print elapsed/predicted times
+        vtvh_end_time = datetime.datetime.now()
+        print_to_log(str(vtvh_end_time))
+        print_to_log('Field and Temp Grids from VTVH:')
+        print_to_log(str(field_grids))
+        print_to_log(str(temp_grids))
+        print('Predicted Time for VTVH: {} hours'.format(total_time))
+        print('Actual Elapsed Time: {}'.format(vtvh_end_time-vtvh_start_time))
+        
+        print('VTVH Ended')
     
     def start_vtvh(self, *args):
         if self.serial_m.is_open and self._field_connect and self.serial_t.is_open and self._temp_connect:
