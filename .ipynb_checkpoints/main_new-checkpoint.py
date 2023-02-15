@@ -784,9 +784,10 @@ class Application:
             #estimate time for run and print 
             runtime=self.estimate_runtime(field_list,temp_list,scanDelay)
             print('Est. Time for Grid: %.2f hours'%runtime)
-            total_time+=runtime
+            
+        total_time=self.estimate_grid_runtime(field_grids, temp_grids, scanDelay)
         print('******')
-        print('Est. Time for Full VTVH: %.2f hours'%total_time)
+        print('Est. Time for Full VTVH: {h:.0f}:{m:.0f}'.format(h=total_time//1, m=(total_time%1)*60))
         print('******')
         
         #turn on switch heater
@@ -997,7 +998,7 @@ class Application:
         print_to_log('Field and Temp Grids from VTVH:')
         print_to_log(str(field_grids))
         print_to_log(str(temp_grids))
-        print('Predicted Time for VTVH: {} hours'.format(total_time))
+        print('Predicted Time for VTVH: {h:.0f}:{m:.0f}'.format(h=total_time//1, m=(total_time%1)*60))
         print('Actual Elapsed Time: {}'.format(vtvh_end_time-vtvh_start_time))
         
         print('VTVH Ended')
@@ -1068,6 +1069,43 @@ class Application:
             time_sum+=0.15
         time_sum+=(len(fields)*len(temps)*(scanSecs/(60*60)))
         time_sum+=0.2 #12 mins for heating warm/cool (and misc)
+        return time_sum #in hours
+    
+    def estimate_grid_runtime(self, field_grid, temp_grid, scanSecs):
+        time_sum=0 
+        #0 to first field and last field to 0T
+        time_sum+=abs(0-float(field_grid[0][0]))/(0.15*60)
+        time_sum+=abs(0-float(field_grid[-1][-1]))/(0.15*60)
+        #time to each of other fields within each grid
+        for fields in field_grid:
+            for i in range(1,len(fields)):
+                time_sum+=abs(float(fields[i-1])-float(fields[i]))/(0.15*60)
+                time_sum+=30.0/(60*60) #add the 30 seconds for field stabilization
+        #time to change fields from end of 1 grid to start of next
+        for i in range(1,len(field_grid)):
+            time_sum+=abs(float(field_grid[i-1][-1])-float(field_grid[i][0]))/(0.15*60)
+        #time for temps within each grid
+        for fields,temps in zip(field_grid,temp_grid):
+            if len(temps)>1:
+                time_sum+=(len(fields)*len(temps)*0.16)
+            else:
+                time_sum+=0.15
+        #temps in between grids
+        for i in range(1,len(temp_grid)):
+            if float(temp_grid[i-1][-1]) == float(temp_grid[i][0]):
+                #if temp is the same, basically no added time
+                time_sum+=0.01
+            elif float(temp_grid[i-1][-1]) > float(temp_grid[i][0]):
+                #slow to decrease temps
+                time_sum+=0.4
+            elif float(temp_grid[i-1][-1]) < float(temp_grid[i][0]):
+                #normal time lapse to get to higher temp
+                time_sum+=0.15
+                
+        #time for each scan
+        time_sum+=(len(fields)*len(temps)*(scanSecs/(60*60)))
+        #12 mins for heating warm/cool (and misc)
+        time_sum+=0.2 
         return time_sum #in hours
     
     def _quick_cooldown(self):
