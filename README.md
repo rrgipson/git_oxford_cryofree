@@ -6,13 +6,14 @@ Code for running the Solomon Lab MCD.
 - The iTC and iPS are connected via separate serial connections. 2 separate serial ports are used (see oxford.py global vars)
 - The iTC (temp controller) is set to read the new SCPI commands
 - The iPS (magnet controller) is set to read legacy commands
-- You will also need to install AutoHotKey if you want to use the code to collect spectra via the J-1700 Jasco software (https://www.autohotkey.com/)
+- You will also need to install AutoHotKey if you want to use the code to collect spectra via the J-1700 Jasco software (https://www.autohotkey.com/). 
 
 ## The Code Components
 1. main_new.py is the one to run as it is the working desing. I changed over from main.py when switching the magnet from legacy to SCPI commands.
 2. oxford.py handles serial communication with the box (implementing pyserial).  
 3. spectrometer.py handles communication with the J1700 and Jasco software via the autohotkey scripts found in lib
-    - Note that there are 2 scripts- the "one lamp" one just had an extra "Enter" keypress to close the popup that tells you there is only 1 lamp on
+    - Note that there are 2 scripts- the "one lamp" one just had an extra "Enter" keypress to close the popup that tells you there is only 1 lamp on (based on testing here, you can always use the one lamp script as the extra enter keypress doesn't do anything if the popup doesn't appear)
+    - You will need to update the path to AutoHotKey in this file before using that feature
 4. gui.py handles the setup and changes made to the gui (activating/deactivating fields) during running.
 5. logger.py contains a class that handles all of the logging activities (writing data from background/VTVH to csv files as well as printed text and errors, stderr is overwritten).
     - the background_log.csv file is in the main folder and the VTVH and error logs are in UserLogs/
