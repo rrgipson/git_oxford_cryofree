@@ -6,6 +6,7 @@ Code for running the Solomon Lab MCD.
 - The iTC and iPS are connected via separate serial connections. 2 separate serial ports are used (see oxford.py global vars)
 - The iTC (temp controller) is set to read the new SCPI commands
 - The iPS (magnet controller) is set to read legacy commands
+- You will also need to install AutoHotKey if you want to use the code to collect spectra via the J-1700 Jasco software (https://www.autohotkey.com/)
 
 ## The Code Components
 1. main_new.py is the one to run as it is the working desing. I changed over from main.py when switching the magnet from legacy to SCPI commands.
