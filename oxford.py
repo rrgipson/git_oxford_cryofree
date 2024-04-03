@@ -56,7 +56,7 @@ class SerialPort:
         self._serial = serial.Serial()
         self._thread = Thread()
         self._queue = queue.Queue()
-	self.endline = endline
+        self.endline = endline
 
     def __del__(self):
         if self._serial.is_open:
