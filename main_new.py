@@ -74,8 +74,8 @@ def format_field(field, zero=0):
 
 class Application:
     def __init__(self):
-        self.serial_t = SerialPort()
-        self.serial_m = SerialPort()
+        self.serial_t = SerialPort('\n')
+        self.serial_m = SerialPort('\r')
         self._temp_connect, self._field_connect = False, False
         self._temp_thread, self._field_thread = None, None
         self._temp_delay, self._field_delay = delay_sensor, delay_sensor

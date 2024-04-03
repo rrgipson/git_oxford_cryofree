@@ -50,12 +50,13 @@ class SerialPort:
     by SerialMessage objects. When the thread detects a SerialMessage object in the queue, it sends the requested
     message, updates the object with the response, then moves on to the next object in the queue (if any).
     """
-    def __init__(self):
+    def __init__(self, endline):
         self.port = ''
         self.is_open = False
         self._serial = serial.Serial()
         self._thread = Thread()
         self._queue = queue.Queue()
+	self.endline = endline
 
     def __del__(self):
         if self._serial.is_open:
@@ -77,7 +78,7 @@ class SerialPort:
                     time.sleep(delay_queue)
                     continue
                 if isinstance(serialmessage, SerialMessage):
-                    newmessage = serialmessage.message.strip() + '\r' #changed to \r
+                    newmessage = serialmessage.message.strip() + self.endline #changed to \r
                     try:
                         time.sleep(delay_before_write)
                         self._serial.write(newmessage.encode('utf-8'))
@@ -93,14 +94,14 @@ class SerialPort:
                         time.sleep(delay_before_read)
                         response = self._serial.readline()
                         if response is not None:
-                            response = response.decode('utf-8').strip('\r') #changed from \n to \r
+                            response = response.decode('utf-8').strip(self.endline) #changed from \n to \r
                         else:
                             response = ''
                         if serialmessage.print_response:
                             print(newmessage[:-1], response) #changed from -2 to -1
                         serialmessage._response = response
                 elif isinstance(serialmessage, str):
-                    newmessage = serialmessage.strip() + '\r' #changed to \r
+                    newmessage = serialmessage.strip() + self.endline #changed to \r
                     try:
                         self._serial.write(newmessage.encode('utf-8'))
                     except ValueError:
@@ -110,7 +111,7 @@ class SerialPort:
                         print('Error sending, SerialException:', newmessage[:-2]+',',
                               exc_info()[0], '\a')
                     else:
-                        response = self._serial.readline().decode('utf-8').strip('\r') #changed from \n to \r
+                        response = self._serial.readline().decode('utf-8').strip(self.endline) #changed from \n to \r
                         print(newmessage[:-2], response)
                 else:
                     raise TypeError

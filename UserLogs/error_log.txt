@@ -17125,3 +17125,124 @@ Initializing serial_disconnect Procedure
 Completed Disconnect Procedure 
 ------------------------------New Session Started
 2024-01-11 10:08:13.360330 
+------------------------------New Session Started
+2024-04-03 14:38:24.845445 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER  
+@2READ:SYS:MAN:HVER  
+TempControl: Version error () 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R-7.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.333 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R-7.00000 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
+------------------------------New Session Started
+2024-04-03 14:44:22.098227 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER  
+@2READ:SYS:MAN:HVER  
+TempControl: Version error () 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R-7.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.332 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R-7.00000 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
+------------------------------New Session Started
+2024-04-03 14:56:55.488174 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER  
+@2READ:SYS:MAN:HVER  
+TempControl: Version error () 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R-7.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.332 K 
+Initializing serial_disconnect Procedure
+Current Magnet Field: 0.0000 T 
+@1A0 A0 
+@1R8 R-7.00000 
+@1C1 C 
+Completed Disconnect Procedure 
+Finished Background Log Update 
+------------------------------New Session Started
+2024-04-03 15:26:40.133490 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER  
+@2READ:SYS:MAN:HVER  
+TempControl: Version error () 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R-7.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.333 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R-7.00000 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
+------------------------------New Session Started
+2024-04-03 15:36:08.973058 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER Q2:INVALID
+ 
+TempControl: Version error (Q2:INVALID
+) 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R-7.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.333 K 
+Current Magnet Field: -0.0000 T 
+@1R8 R-7.00000 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
+------------------------------New Session Started
+2024-04-03 15:42:06.099456 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 1.5000K 
+@1V  
+@1V  
+Magnet: Version error () 
+Finished serial_connect Procedure
+Updating Background Log 
+Sample Temp: 1.5460K 
+VTI Temp: 1.5457K 
+PT2 Temp: 3.3494K 
+Needle Valve Pressure: 4.9845mB 
+Needle Valve Percent: 14.5174% 
+Sample Temp Set Point is 1.5000K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+Completed Disconnect Procedure 
