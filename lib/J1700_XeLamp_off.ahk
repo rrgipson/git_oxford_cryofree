@@ -9,5 +9,5 @@ WinActivate, Spectra Measurement - J1700/D001461900
 ImageSearch, FoundX, FoundY, 150, 50, 1920, 550, C:\Users\Jasco\Desktop\git_oxford_cryofree\lib\J1700_XeLamp.png
 ; Click the FoundX and FoundY pixel location on the Spectra Measurement Window 
 ControlClick, X%FoundX% Y%FoundY%, Spectra Measurement - J1700/D001461900
-; MsgBox % "Start Button Found at X " . FoundX . " " . "Y " . FoundY . " - Scan Initiated"
+; MsgBox % "Xe Lamp Off Button Found at X " . FoundX . " " . "Y " . FoundY . " - Lamp turned off"
 FileAppend, Xe Lamp Off Button Found at X= %FoundX% and Y= %FoundY%, *
