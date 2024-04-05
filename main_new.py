@@ -709,7 +709,7 @@ class Application:
                 field_movement = FIELD_HOLD
             elif status[3:5]=='A1':
                 field_movement = FIELD_GOTO
-            elif statu[3:5]=='A2':
+            elif status[3:5]=='A2':
                 field_movement = FIELD_ZERO
             else:
                 print('Magnet Error: Field Status', status[3:5], 'in', status)
@@ -923,10 +923,10 @@ class Application:
                     #    print('Scan Number %i'%scan_num)
                     #    j1700.initiate_scan()
                     #else:
-                    #The extra enter press doesnt do anything
+                    #The extra enter press doesnt do anything when both lamps lit so will leave this as default ahk script
                     print('Taking a Scan')
                     print('Scan Number %i'%scan_num)
-                    j1700.initiate_scan_onelamp() ##CHANGE WHEN GET NIR LAMP WORKING
+                    j1700.initiate_scan_onelamp() 
                         
                     #Handle waiting for scan and logging during scan
                     
@@ -979,6 +979,9 @@ class Application:
             else:
                 #go to zero field
                 self.zero_field()
+                #Wait for 0T field to be reached - wait needed to properly turn off switch heater
+                while self._action_thread is not None:
+                    sleep(10)
             
         #TURN OFF SWITCH HEATER AT END AND IF at 0T (and other checks)
         if self._switch_status == SWITCH_ENABLED and ((self._vtvh_interrupt==False and float(field_grids[-1][-1])==0.0) or self.gui.end_0t.get()) and abs(float(self.get_current_magnet_field()))<0.01:
