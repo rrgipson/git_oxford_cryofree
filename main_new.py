@@ -794,7 +794,7 @@ class Application:
         if self._switch_status in [SWITCH_DISABLED, SWITCH_WARMING, SWITCH_COOLING] and not self._vtvh_interrupt:
             self.engage_switch_heater()
             #print('Waiting for switch heater to warm up (5 mins).')
-            sleep(310) #waiting for engage switch function
+            sleep(350) #waiting for engage switch function
         elif self._switch_status == SWITCH_ENABLED and not self._vtvh_interrupt:
             print('Switch Heater ON: Waiting 5 Seconds.')
             sleep(5) #Wait 5 seconds if switch heater is on
