@@ -17922,3 +17922,3712 @@ Needle Valve Pressure: 4.6100mB
 Needle Valve Percent: 14.3084% 
 Sample Temp Set Point is 80.0000K 
 Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
+------------------------------New Session Started
+2024-04-04 10:54:17.854808 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM:DB8.T1	Open Circuit; 
+---------- 
+Sample Probe Unplugged! (If not, other error present.) 
+---------- 
+Sample Temp Set Point is 80.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.352 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.1986K 
+VTI Temp: 77.7226K 
+PT2 Temp: 3.3718K 
+Needle Valve Pressure: 4.9827mB 
+Needle Valve Percent: 14.4915% 
+Sample Temp Set Point is 80.0000K 
+Finished Background Log Update 
+Setting VTI Temp to 1.6166 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617:VALID 
+Setting Sample Temp to 1.7 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700:VALID 
+Sample Temp Set Point is 1.7000K 
+Setting NV to Manual 
+@2SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF STAT:SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF:VALID 
+@2SET:DEV:DB5.P1:PRES:LOOP:FSET:100 STAT:SET:DEV:DB5.P1:PRES:LOOP:FSET:100:VALID 
+Sample Temp: 71.1119K 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+------------------------------New Session Started
+2024-04-04 11:44:13.542766 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 1.7000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Magnet Temp: 3.778 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 84.5859K 
+VTI Temp: 91.3535K 
+PT2 Temp: 5.0938K 
+Needle Valve Pressure: 35.4457mB 
+Needle Valve Percent: 83.5111% 
+Setting VTI Temp to 1.6166 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617:VALID 
+Setting Sample Temp to 1.7 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700:VALID 
+Sample Temp Set Point is 1.7000K 
+Setting NV to Manual 
+@2SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF STAT:SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF:VALID 
+@2SET:DEV:DB5.P1:PRES:LOOP:FSET:100 STAT:SET:DEV:DB5.P1:PRES:LOOP:FSET:100:VALID 
+Sample Temp: 84.6333K 
+Setting VTI Temp to 77.721 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:77.72 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:77.72:VALID 
+Setting Sample Temp to 80.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:80.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:80.00:VALID 
+Sample Temp Set Point is 80.0000K 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+------------------------------New Session Started
+2024-04-04 11:47:35.625549 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 80.0000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 5.263 K 
+Setting VTI Temp to 1.6166 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617:VALID 
+Setting Sample Temp to 1.7 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700:VALID 
+Sample Temp Set Point is 1.7000K 
+Setting NV to Manual 
+@2SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF STAT:SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF:VALID 
+@2SET:DEV:DB5.P1:PRES:LOOP:FSET:100 STAT:SET:DEV:DB5.P1:PRES:LOOP:FSET:100:VALID 
+Sample Temp: 86.3645K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 86.3658K 
+VTI Temp: 85.4583K 
+PT2 Temp: 6.5120K 
+Needle Valve Pressure: 42.4449mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
+Sample Temp: 84.5968K 
+Sample Temp: 78.2822K 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+------------------------------New Session Started
+2024-04-04 11:56:47.964340 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 1.7000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 6.860 K 
+Current Magnet Field: -0.0001 T 
+Setting VTI Temp to 77.721 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:77.72 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:77.72:VALID 
+Setting Sample Temp to 80.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:80.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:80.00:VALID 
+Sample Temp Set Point is 80.0000K 
+@1R8 R0.00000 
+Sample Temp: 75.6473K 
+VTI Temp: 52.5840K 
+PT2 Temp: 7.8968K 
+Needle Valve Pressure: 43.6737mB 
+Needle Valve Percent: 100.0000% 
+Sample Temp Set Point is 80.0000K 
+Finished Background Log Update 
+Setting VTI Temp to 1.6166 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617:VALID 
+Setting Sample Temp to 1.7 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700:VALID 
+Sample Temp Set Point is 1.7000K 
+Setting NV to Manual 
+@2SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF STAT:SET:DEV:DB5.P1:PRES:LOOP:FAUT:OFF:VALID 
+@2SET:DEV:DB5.P1:PRES:LOOP:FSET:100 STAT:SET:DEV:DB5.P1:PRES:LOOP:FSET:100:VALID 
+Sample Temp: 75.3750K 
+Sample Temp: 74.0677K 
+Sample Temp: 65.4348K 
+Sample Temp: 53.8258K 
+Sample Temp: 40.4728K 
+Sample Temp: 25.7512K 
+Sample Temp: 13.1867K 
+@2SET:DEV:DB5.P1:PRES:LOOP:FSET:35 STAT:SET:DEV:DB5.P1:PRES:LOOP:FSET:35:VALID 
+Sample Temp: 11.9179K 
+Sample Temp: 10.1124K 
+Sample Temp: 8.5018K 
+Sample Temp: 7.0302K 
+Sample Temp: 6.1030K 
+@2SET:DEV:DB5.P1:PRES:LOOP:FSET:20 STAT:SET:DEV:DB5.P1:PRES:LOOP:FSET:20:VALID 
+@2SET:DEV:DB5.P1:PRES:LOOP:FAUT:ON STAT:SET:DEV:DB5.P1:PRES:LOOP:FAUT:ON:VALID 
+NV Returned to Automatic Control 
+Quick Cooldown Finished. 
+------------------------------New Session Started
+2024-04-04 13:30:34.359648 
+Initializing serial_connect Procedure
+@2READ:SYS:MAN:HVER STAT:SYS:MAN:HVER:81 
+@2READ:SYS:ALRM STAT:SYS:ALRM: 
+Sample Temp Set Point is 1.7000K 
+@1V IPS    Version  4.01 (c) OXFORD 2011 
+@1X X00A0C1H2M00 
+@1C1 C 
+@1R8 R0.00000 
+Finished serial_connect Procedure
+Updating Background Log 
+Magnet Temp: 3.358 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R0.00000 
+Sample Temp: 1.9658K 
+VTI Temp: 1.9448K 
+PT2 Temp: 3.3492K 
+Needle Valve Pressure: 4.9148mB 
+Needle Valve Percent: 12.9061% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
+@1H1 H1 
+@1A0 A0 
+@1X X00A0C1H1M40 
+Wait 5 mins for Switch Heater Warming 
+ @1R8 R0.00000 
+@1J+3.5000 J+3.5000 
+@1R8 R3.50000 
+@1A1 A1 
+ @1X X00A0C1H1M40 
+@1J-3.5000 J-3.5000 
+@1R8 R-3.50000 
+@1A1 A1 
+Updating Background Log 
+ Magnet Temp: 3.628 K 
+@1X X00A1C1H1M41 
+Current Magnet Field: -1.0314 T 
+@1A0 A0 
+@1R8 R-3.50000 
+Sample Temp: 1.9525K 
+VTI Temp: 1.9236K 
+PT2 Temp: 3.5061K 
+Needle Valve Pressure: 4.9724mB 
+Needle Valve Percent: 10.6554% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
+@1A1 A1 
+ @1X X00A1C1H1M41 
+@1A0 A0 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Updating Background Log 
+Magnet Temp: 3.480 K 
+Current Magnet Field: -3.5000 T 
+@1R8 R-3.50000 
+Sample Temp: 7.3543K 
+VTI Temp: 7.3535K 
+PT2 Temp: 3.4402K 
+Needle Valve Pressure: 4.9515mB 
+Needle Valve Percent: 12.8573% 
+Sample Temp Set Point is 7.5000K 
+Finished Background Log Update 
+Scan Time Read as 1 mins and 6 secs 
+Starting Full VTVH Run 
+2024-04-04 17:54:34.538912
+Fields in Grid: ['-7', '-6.3', '-5.6', '-4.9', '-4.2', '-3.5', '-2.8', '-2.1', '-1.4', '-0.7', '0', '0.7', '1.4', '2.1', '2.8', '3.5', '4.2', '4.9', '5.6', '6.3', '7'] 
+Temps in Grid: ['2'] 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 66 seconds. 
+Est. Time for Grid: 3.85 hours 
+Fields in Grid: ['7', '6.3', '5.6', '4.9', '4.2', '3.5', '2.8', '2.1', '1.4', '0.7', '0', '-0.7', '-1.4', '-2.1', '-2.8', '-3.5', '-4.2', '-4.9', '-5.6', '-6.3', '-7'] 
+Temps in Grid: ['5'] 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 66 seconds. 
+Est. Time for Grid: 3.85 hours 
+Fields in Grid: ['-7', '-6.3', '-5.6', '-4.9', '-4.2', '-3.5', '-2.8', '-2.1', '-1.4', '-0.7', '0', '0.7', '1.4', '2.1', '2.8', '3.5', '4.2', '4.9', '5.6', '6.3', '7'] 
+Temps in Grid: ['7.5'] 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 66 seconds. 
+Est. Time for Grid: 3.85 hours 
+Fields in Grid: ['7', '6.3', '5.6', '4.9', '4.2', '3.5', '2.8', '2.1', '1.4', '0.7', '0', '-0.7', '-1.4', '-2.1', '-2.8', '-3.5', '-4.2', '-4.9', '-5.6', '-6.3', '-7'] 
+Temps in Grid: ['15'] 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 66 seconds. 
+Est. Time for Grid: 3.85 hours 
+Fields in Grid: ['-7', '-6.3', '-5.6', '-4.9', '-4.2', '-3.5', '-2.8', '-2.1', '-1.4', '-0.7', '0', '0.7', '1.4', '2.1', '2.8', '3.5', '4.2', '4.9', '5.6', '6.3', '7'] 
+Temps in Grid: ['25'] 
+Fields Read in Correctly 
+Temps Read in Correctly 
+Each scan takes 66 seconds. 
+Est. Time for Grid: 3.85 hours 
+****** 
+Est. Time for Full VTVH: 12:6 
+****** 
+Switch Heater ON: Waiting 5 Seconds. 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.473 K 
+Sample Temp Set Point is 7.5000K 
+Next Grid Starts with a Different Temp. Will do full temp checking. 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-7.0000 J-7.0000 
+@1R8 R-7.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -7 T 
+Next Field Reached -7 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0248K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 2.0436K 
+1 2.0436 0.0 
+Sample Temp: 2.0453K 
+2 2.0444500000000003 0.0008500000000000174 
+Sample Temp: 2.0461K 
+Temps: [2.0436, 2.0453, 2.0461] 
+3 2.0450000000000004 0.0010424330514074438 
+Next Temp Reached 2 K (took 2 mins) 
+Taking a Scan 
+Scan Number 1 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.496 K 
+@1R8 R-7.00000 
+VTI Temp: 1.9224K 
+Needle Valve Pressure: 5.0040mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 1 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.496 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-6.3000 J-6.3000 
+@1R8 R-6.30000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -6.3 T 
+Next Field Reached -6.3 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0268K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 2 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.546 K 
+@1R8 R-6.30000 
+VTI Temp: 1.9090K 
+Needle Valve Pressure: 5.0942mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 2 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.543 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-5.6000 J-5.6000 
+@1R8 R-5.60000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -5.6 T 
+Next Field Reached -5.6 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0162K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 3 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.550 K 
+@1R8 R-5.60000 
+VTI Temp: 1.9089K 
+Needle Valve Pressure: 5.0990mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 3 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.547 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-4.9000 J-4.9000 
+@1R8 R-4.90000 
+@1A1 A1 
+ At New Field: -4.9 T 
+@1X X00A0C1H1M00 
+Next Field Reached -4.9 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0062K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 4 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.548 K 
+@1R8 R-4.90000 
+VTI Temp: 1.9107K 
+Needle Valve Pressure: 5.1489mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 4 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.545 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-4.2000 J-4.2000 
+@1R8 R-4.20000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -4.2 T 
+Next Field Reached -4.2 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0023K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 5 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.549 K 
+@1R8 R-4.20000 
+VTI Temp: 1.9192K 
+Needle Valve Pressure: 5.0864mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 5 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.546 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-3.5000 J-3.5000 
+@1R8 R-3.50000 
+@1A1 A1 
+ At New Field: -3.5 T 
+@1X X00A0C1H1M00 
+Next Field Reached -3.5 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 1.9964K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 6 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.542 K 
+@1R8 R-3.50000 
+VTI Temp: 1.9225K 
+Needle Valve Pressure: 4.9920mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 6 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.539 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-2.8000 J-2.8000 
+@1R8 R-2.80000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -2.8 T 
+Next Field Reached -2.8 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 1.9824K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 7 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.544 K 
+@1R8 R-2.80000 
+VTI Temp: 1.9211K 
+Needle Valve Pressure: 4.9506mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 7 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.541 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-2.1000 J-2.1000 
+@1R8 R-2.10000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -2.1 T 
+Next Field Reached -2.1 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 1.9847K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 8 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.540 K 
+@1R8 R-2.10000 
+VTI Temp: 1.9431K 
+Needle Valve Pressure: 4.9578mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 8 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.536 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-1.4000 J-1.4000 
+@1R8 R-1.40000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -1.4 T 
+Next Field Reached -1.4 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0018K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 9 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.543 K 
+@1R8 R-1.40000 
+VTI Temp: 1.9546K 
+Needle Valve Pressure: 4.9589mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 9 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.539 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J-0.7000 J-0.7000 
+@1R8 R-0.70000 
+@1A1 A1 
+Updating Background Log 
+Magnet Temp: 3.740 K 
+Current Magnet Field: -0.8898 T 
+@1R8 R-0.70000 
+Sample Temp: 1.9948K 
+VTI Temp: 1.9567K 
+PT2 Temp: 3.5296K 
+Needle Valve Pressure: 5.1056mB 
+Needle Valve Percent: 10.4799% 
+Sample Temp Set Point is 2.0000K 
+Finished Background Log Update 
+ At New Field: -0.7 T 
+@1X X00A0C1H1M00 
+Next Field Reached -0.7 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0000K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 10 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.555 K 
+@1R8 R-0.70000 
+VTI Temp: 1.9614K 
+Needle Valve Pressure: 4.9665mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 10 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.551 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 0 T 
+Next Field Reached 0 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0049K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 11 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.576 K 
+@1R8 R0.00000 
+VTI Temp: 1.9647K 
+Needle Valve Pressure: 4.9537mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 11 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.570 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+0.7000 J+0.7000 
+@1R8 R0.70000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 0.7 T 
+Next Field Reached 0.7 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0056K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 12 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.570 K 
+@1R8 R0.70000 
+VTI Temp: 1.9705K 
+Needle Valve Pressure: 4.8896mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 12 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.564 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+1.4000 J+1.4000 
+@1R8 R1.40000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 1.4 T 
+Next Field Reached 1.4 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0062K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 13 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.540 K 
+@1R8 R1.40000 
+VTI Temp: 1.9729K 
+Needle Valve Pressure: 4.7860mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 13 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.535 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+2.1000 J+2.1000 
+@1R8 R2.10000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 2.1 T 
+Next Field Reached 2.1 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0098K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 14 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.528 K 
+@1R8 R2.10000 
+VTI Temp: 1.9615K 
+Needle Valve Pressure: 4.7377mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 14 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.524 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+2.8000 J+2.8000 
+@1R8 R2.80000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 2.8 T 
+Next Field Reached 2.8 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0155K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 15 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.519 K 
+@1R8 R2.80000 
+VTI Temp: 1.9519K 
+Needle Valve Pressure: 4.7470mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 15 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.515 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+3.5000 J+3.5000 
+@1R8 R3.50000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 3.5 T 
+Next Field Reached 3.5 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0280K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 16 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.516 K 
+@1R8 R3.50000 
+VTI Temp: 1.9507K 
+Needle Valve Pressure: 4.6967mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 16 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.513 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+4.2000 J+4.2000 
+@1R8 R4.20000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 4.2 T 
+Next Field Reached 4.2 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0417K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 17 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.518 K 
+@1R8 R4.20000 
+VTI Temp: 1.9514K 
+Needle Valve Pressure: 4.7478mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 17 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.515 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+4.9000 J+4.9000 
+@1R8 R4.90000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 4.9 T 
+Next Field Reached 4.9 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0408K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 18 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.524 K 
+@1R8 R4.90000 
+VTI Temp: 1.9359K 
+Needle Valve Pressure: 4.8920mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 18 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.521 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+5.6000 J+5.6000 
+@1R8 R5.60000 
+@1A1 A1 
+ At New Field: 5.6 T 
+@1X X00A0C1H1M00 
+Next Field Reached 5.6 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0304K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 19 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.528 K 
+@1R8 R5.60000 
+VTI Temp: 1.9219K 
+Needle Valve Pressure: 4.9270mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 19 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.525 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+6.3000 J+6.3000 
+@1R8 R6.30000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 6.3 T 
+Next Field Reached 6.3 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0295K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 20 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.535 K 
+@1R8 R6.30000 
+VTI Temp: 1.9126K 
+Needle Valve Pressure: 5.0081mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 20 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.532 K 
+Sample Temp Set Point is 2.0000K 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+@1J+7.0000 J+7.0000 
+@1R8 R7.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 7 T 
+Next Field Reached 7 T 
+Setting VTI Temp to 1.913 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.913:VALID 
+Setting Sample Temp to 2.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:2.000:VALID 
+Sample Temp Set Point is 2.0000K 
+Sample Temp: 2.0311K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 21 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.542 K 
+@1R8 R7.00000 
+VTI Temp: 1.9105K 
+Needle Valve Pressure: 5.0071mB 
+Sample Temp Set Point is 2.0000K 
+Logged VTVH Data for Scan 21 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.540 K 
+Sample Temp Set Point is 2.0000K 
+Next Grid Starts with a Different Temp. Will do full temp checking. 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J+7.0000 J+7.0000 
+@1R8 R7.00000 
+@1A1 A1 
+ At New Field: 7 T 
+@1X X00A0C1H1M00 
+Next Field Reached 7 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 4.8558K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 5.0347K 
+1 5.0347 0.0 
+Sample Temp: 5.0278K 
+2 5.03125 0.003449999999999953 
+Sample Temp: 5.0193K 
+Temps: [5.0347, 5.0278, 5.0193] 
+3 5.027266666666667 0.006298324292134138 
+Next Temp Reached 5 K (took 2 mins) 
+Taking a Scan 
+Scan Number 22 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.489 K 
+@1R8 R7.00000 
+VTI Temp: 4.8790K 
+Needle Valve Pressure: 4.8645mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 22 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.489 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J+6.3000 J+6.3000 
+@1R8 R6.30000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 6.3 T 
+Next Field Reached 6.3 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0034K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 23 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.543 K 
+@1R8 R6.30000 
+VTI Temp: 4.8883K 
+Needle Valve Pressure: 5.0243mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 23 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.541 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J+5.6000 J+5.6000 
+@1R8 R5.60000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 5.6 T 
+Next Field Reached 5.6 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0627K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 24 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.547 K 
+@1R8 R5.60000 
+VTI Temp: 4.8937K 
+Needle Valve Pressure: 5.0225mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 24 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.544 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J+4.9000 J+4.9000 
+@1R8 R4.90000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 4.9 T 
+Next Field Reached 4.9 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0597K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 25 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.544 K 
+@1R8 R4.90000 
+VTI Temp: 4.8947K 
+Needle Valve Pressure: 4.9589mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 25 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.541 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J+4.2000 J+4.2000 
+@1R8 R4.20000 
+@1A1 A1 
+Updating Background Log 
+Magnet Temp: 3.603 K 
+Current Magnet Field: 4.6946 T 
+@1R8 R4.20000 
+Sample Temp: 5.0662K 
+VTI Temp: 4.8746K 
+PT2 Temp: 3.4883K 
+Needle Valve Pressure: 5.0562mB 
+Needle Valve Percent: 12.6543% 
+Sample Temp Set Point is 5.0000K 
+Finished Background Log Update 
+ @1X X00A0C1H1M00 
+At New Field: 4.2 T 
+Next Field Reached 4.2 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0643K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 26 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.547 K 
+@1R8 R4.20000 
+VTI Temp: 4.8921K 
+Needle Valve Pressure: 5.0051mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 26 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.544 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J+3.5000 J+3.5000 
+@1R8 R3.50000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 3.5 T 
+Next Field Reached 3.5 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0582K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 27 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.543 K 
+@1R8 R3.50000 
+VTI Temp: 4.8783K 
+Needle Valve Pressure: 5.0477mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 27 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.540 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J+2.8000 J+2.8000 
+@1R8 R2.80000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 2.8 T 
+Next Field Reached 2.8 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0509K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 28 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.542 K 
+@1R8 R2.80000 
+VTI Temp: 4.8955K 
+Needle Valve Pressure: 5.0228mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 28 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.539 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J+2.1000 J+2.1000 
+@1R8 R2.10000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 2.1 T 
+Next Field Reached 2.1 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0551K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 29 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.543 K 
+@1R8 R2.10000 
+VTI Temp: 4.8853K 
+Needle Valve Pressure: 4.9789mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 29 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.540 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J+1.4000 J+1.4000 
+@1R8 R1.40000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 1.4 T 
+Next Field Reached 1.4 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0403K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 30 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.551 K 
+@1R8 R1.40000 
+VTI Temp: 4.8860K 
+Needle Valve Pressure: 5.0521mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 30 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.547 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J+0.7000 J+0.7000 
+@1R8 R0.70000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 0.7 T 
+Next Field Reached 0.7 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0455K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 31 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.559 K 
+@1R8 R0.70000 
+VTI Temp: 4.8768K 
+Needle Valve Pressure: 5.1077mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 31 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.555 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 0 T 
+Next Field Reached 0 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0422K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 32 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.584 K 
+@1R8 R0.00000 
+VTI Temp: 4.8861K 
+Needle Valve Pressure: 5.1613mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 32 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.578 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J-0.7000 J-0.7000 
+@1R8 R-0.70000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -0.7 T 
+Next Field Reached -0.7 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0626K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 33 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.588 K 
+@1R8 R-0.70000 
+VTI Temp: 4.8847K 
+Needle Valve Pressure: 5.2046mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 33 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.582 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J-1.4000 J-1.4000 
+@1R8 R-1.40000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -1.4 T 
+Next Field Reached -1.4 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0485K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 34 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.551 K 
+@1R8 R-1.40000 
+VTI Temp: 4.8831K 
+Needle Valve Pressure: 4.9972mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 34 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.547 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J-2.1000 J-2.1000 
+@1R8 R-2.10000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -2.1 T 
+Next Field Reached -2.1 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0526K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 35 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.538 K 
+@1R8 R-2.10000 
+VTI Temp: 4.8843K 
+Needle Valve Pressure: 4.9699mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 35 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.534 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J-2.8000 J-2.8000 
+@1R8 R-2.80000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -2.8 T 
+Next Field Reached -2.8 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0518K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 36 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.532 K 
+@1R8 R-2.80000 
+VTI Temp: 4.8724K 
+Needle Valve Pressure: 4.9011mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 36 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.528 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J-3.5000 J-3.5000 
+@1R8 R-3.50000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -3.5 T 
+Next Field Reached -3.5 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0696K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 37 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.524 K 
+@1R8 R-3.50000 
+VTI Temp: 4.8601K 
+Needle Valve Pressure: 4.9863mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 37 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.521 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J-4.2000 J-4.2000 
+@1R8 R-4.20000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -4.2 T 
+Next Field Reached -4.2 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0676K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 38 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.523 K 
+@1R8 R-4.20000 
+VTI Temp: 4.8765K 
+Needle Valve Pressure: 4.8662mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 38 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.520 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J-4.9000 J-4.9000 
+@1R8 R-4.90000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -4.9 T 
+Next Field Reached -4.9 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0652K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 39 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.526 K 
+@1R8 R-4.90000 
+VTI Temp: 4.8893K 
+Needle Valve Pressure: 4.8105mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 39 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.524 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J-5.6000 J-5.6000 
+@1R8 R-5.60000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -5.6 T 
+Next Field Reached -5.6 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0682K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 40 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.525 K 
+@1R8 R-5.60000 
+VTI Temp: 4.8796K 
+Needle Valve Pressure: 4.9025mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 40 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.522 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J-6.3000 J-6.3000 
+@1R8 R-6.30000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -6.3 T 
+Next Field Reached -6.3 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0732K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 41 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.529 K 
+@1R8 R-6.30000 
+VTI Temp: 4.8977K 
+Needle Valve Pressure: 4.8325mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 41 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.526 K 
+Sample Temp Set Point is 5.0000K 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+@1J-7.0000 J-7.0000 
+@1R8 R-7.00000 
+@1A1 A1 
+Updating Background Log 
+Magnet Temp: 3.560 K 
+Current Magnet Field: -6.4274 T 
+@1R8 R-7.00000 
+Sample Temp: 5.0727K 
+VTI Temp: 4.8794K 
+PT2 Temp: 3.4620K 
+Needle Valve Pressure: 4.8785mB 
+Needle Valve Percent: 11.4626% 
+Sample Temp Set Point is 5.0000K 
+Finished Background Log Update 
+ At New Field: -7 T 
+@1X X00A0C1H1M00 
+Next Field Reached -7 T 
+Setting VTI Temp to 4.877 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:4.877:VALID 
+Setting Sample Temp to 5.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:5.000:VALID 
+Sample Temp Set Point is 5.0000K 
+Sample Temp: 5.0719K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 42 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.535 K 
+@1R8 R-7.00000 
+VTI Temp: 4.8858K 
+Needle Valve Pressure: 4.8996mB 
+Sample Temp Set Point is 5.0000K 
+Logged VTVH Data for Scan 42 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.533 K 
+Sample Temp Set Point is 5.0000K 
+Next Grid Starts with a Different Temp. Will do full temp checking. 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J-7.0000 J-7.0000 
+@1R8 R-7.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -7 T 
+Next Field Reached -7 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.4824K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 7.5175K 
+1 7.5175 0.0 
+Sample Temp: 7.5111K 
+2 7.5143 0.0032000000000000917 
+Sample Temp: 7.5067K 
+Temps: [7.5175, 7.5111, 7.5067] 
+3 7.5117666666666665 0.004434210439550799 
+Next Temp Reached 7.5 K (took 2 mins) 
+Taking a Scan 
+Scan Number 43 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.485 K 
+@1R8 R-7.00000 
+VTI Temp: 7.3510K 
+Needle Valve Pressure: 4.8317mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 43 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.485 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J-6.3000 J-6.3000 
+@1R8 R-6.30000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -6.3 T 
+Next Field Reached -6.3 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.5038K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 44 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.538 K 
+@1R8 R-6.30000 
+VTI Temp: 7.3561K 
+Needle Valve Pressure: 4.8091mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 44 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.536 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J-5.6000 J-5.6000 
+@1R8 R-5.60000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -5.6 T 
+Next Field Reached -5.6 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.4984K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 45 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.538 K 
+@1R8 R-5.60000 
+VTI Temp: 7.3314K 
+Needle Valve Pressure: 4.9635mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 45 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.535 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J-4.9000 J-4.9000 
+@1R8 R-4.90000 
+@1A1 A1 
+ At New Field: -4.9 T 
+@1X X00A0C1H1M00 
+Next Field Reached -4.9 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.4974K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 46 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.539 K 
+@1R8 R-4.90000 
+VTI Temp: 7.3567K 
+Needle Valve Pressure: 4.9001mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 46 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.537 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J-4.2000 J-4.2000 
+@1R8 R-4.20000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -4.2 T 
+Next Field Reached -4.2 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.4955K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 47 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.540 K 
+@1R8 R-4.20000 
+VTI Temp: 7.3373K 
+Needle Valve Pressure: 4.9565mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 47 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.537 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J-3.5000 J-3.5000 
+@1R8 R-3.50000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -3.5 T 
+Next Field Reached -3.5 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.5024K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 48 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.541 K 
+@1R8 R-3.50000 
+VTI Temp: 7.3469K 
+Needle Valve Pressure: 4.9535mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 48 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.538 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J-2.8000 J-2.8000 
+@1R8 R-2.80000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -2.8 T 
+Next Field Reached -2.8 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.5034K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 49 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.542 K 
+@1R8 R-2.80000 
+VTI Temp: 7.3527K 
+Needle Valve Pressure: 4.9712mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 49 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.540 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J-2.1000 J-2.1000 
+@1R8 R-2.10000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -2.1 T 
+Next Field Reached -2.1 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.5032K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 50 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.544 K 
+@1R8 R-2.10000 
+VTI Temp: 7.3438K 
+Needle Valve Pressure: 4.9953mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 50 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.540 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J-1.4000 J-1.4000 
+@1R8 R-1.40000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -1.4 T 
+Next Field Reached -1.4 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.5073K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 51 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.546 K 
+@1R8 R-1.40000 
+VTI Temp: 7.3625K 
+Needle Valve Pressure: 4.9501mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 51 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.543 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J-0.7000 J-0.7000 
+@1R8 R-0.70000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -0.7 T 
+Next Field Reached -0.7 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.5021K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 52 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.559 K 
+@1R8 R-0.70000 
+VTI Temp: 7.3582K 
+Needle Valve Pressure: 5.1070mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 52 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.554 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 0 T 
+Next Field Reached 0 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.5051K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 53 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.583 K 
+@1R8 R0.00000 
+VTI Temp: 7.3585K 
+Needle Valve Pressure: 5.0926mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 53 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.576 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J+0.7000 J+0.7000 
+@1R8 R0.70000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 0.7 T 
+Next Field Reached 0.7 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.5111K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 54 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.580 K 
+@1R8 R0.70000 
+VTI Temp: 7.3519K 
+Needle Valve Pressure: 5.1056mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 54 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.574 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J+1.4000 J+1.4000 
+@1R8 R1.40000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 1.4 T 
+Next Field Reached 1.4 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.5028K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 55 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.553 K 
+@1R8 R1.40000 
+VTI Temp: 7.3429K 
+Needle Valve Pressure: 5.0954mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 55 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.549 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J+2.1000 J+2.1000 
+@1R8 R2.10000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 2.1 T 
+Next Field Reached 2.1 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.5058K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 56 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.542 K 
+@1R8 R2.10000 
+VTI Temp: 7.3479K 
+Needle Valve Pressure: 5.0429mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 56 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.539 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J+2.8000 J+2.8000 
+@1R8 R2.80000 
+@1A1 A1 
+Updating Background Log 
+Magnet Temp: 3.607 K 
+ Current Magnet Field: 2.8000 T 
+@1X X00A0C1H1M00 
+@1R8 R2.80000 
+Sample Temp: 7.5037K 
+VTI Temp: 7.3548K 
+PT2 Temp: 3.5077K 
+At New Field: 2.8 T 
+Needle Valve Pressure: 5.0954mB 
+Needle Valve Percent: 11.3161% 
+Sample Temp Set Point is 7.5000K 
+Finished Background Log Update 
+Next Field Reached 2.8 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.4988K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 57 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.529 K 
+@1R8 R2.80000 
+VTI Temp: 7.3514K 
+Needle Valve Pressure: 5.0384mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 57 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.526 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J+3.5000 J+3.5000 
+@1R8 R3.50000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 3.5 T 
+Next Field Reached 3.5 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.4959K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 58 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.530 K 
+@1R8 R3.50000 
+VTI Temp: 7.3500K 
+Needle Valve Pressure: 4.9524mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 58 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.527 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J+4.2000 J+4.2000 
+@1R8 R4.20000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 4.2 T 
+Next Field Reached 4.2 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.4976K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 59 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.529 K 
+@1R8 R4.20000 
+VTI Temp: 7.3823K 
+Needle Valve Pressure: 4.8341mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 59 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.526 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J+4.9000 J+4.9000 
+@1R8 R4.90000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 4.9 T 
+Next Field Reached 4.9 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.4982K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 60 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.532 K 
+@1R8 R4.90000 
+VTI Temp: 7.3440K 
+Needle Valve Pressure: 4.9693mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 60 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.530 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J+5.6000 J+5.6000 
+@1R8 R5.60000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 5.6 T 
+Next Field Reached 5.6 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.4912K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 61 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.534 K 
+@1R8 R5.60000 
+VTI Temp: 7.3522K 
+Needle Valve Pressure: 5.0082mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 61 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.531 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J+6.3000 J+6.3000 
+@1R8 R6.30000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 6.3 T 
+Next Field Reached 6.3 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.4954K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 62 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.538 K 
+@1R8 R6.30000 
+VTI Temp: 7.3432K 
+Needle Valve Pressure: 5.0676mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 62 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.535 K 
+Sample Temp Set Point is 7.5000K 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+@1J+7.0000 J+7.0000 
+@1R8 R7.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 7 T 
+Next Field Reached 7 T 
+Setting VTI Temp to 7.347 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:7.347:VALID 
+Setting Sample Temp to 7.5 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:7.500:VALID 
+Sample Temp Set Point is 7.5000K 
+Sample Temp: 7.4961K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 63 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.543 K 
+@1R8 R7.00000 
+VTI Temp: 7.3792K 
+Needle Valve Pressure: 4.9208mB 
+Sample Temp Set Point is 7.5000K 
+Logged VTVH Data for Scan 63 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.541 K 
+Sample Temp Set Point is 7.5000K 
+Next Grid Starts with a Different Temp. Will do full temp checking. 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J+7.0000 J+7.0000 
+@1R8 R7.00000 
+@1A1 A1 
+ At New Field: 7 T 
+@1X X00A0C1H1M00 
+Next Field Reached 7 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 14.5845K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 14.9852K 
+1 14.9852 0.0 
+Sample Temp: 14.9824K 
+2 14.9838 0.00140000000000029 
+Sample Temp: 14.9928K 
+Temps: [14.9852, 14.9824, 14.9928] 
+3 14.9868 0.0043939352142093055 
+Next Temp Reached 15 K (took 2 mins) 
+Taking a Scan 
+Scan Number 64 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.490 K 
+@1R8 R7.00000 
+VTI Temp: 13.7735K 
+Needle Valve Pressure: 4.9298mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 64 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.490 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J+6.3000 J+6.3000 
+@1R8 R6.30000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 6.3 T 
+Next Field Reached 6.3 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0033K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 65 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.542 K 
+@1R8 R6.30000 
+VTI Temp: 13.7641K 
+Needle Valve Pressure: 4.9871mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 65 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.540 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J+5.6000 J+5.6000 
+@1R8 R5.60000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 5.6 T 
+Next Field Reached 5.6 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0011K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 66 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.546 K 
+@1R8 R5.60000 
+VTI Temp: 13.7670K 
+Needle Valve Pressure: 5.0506mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 66 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.543 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J+4.9000 J+4.9000 
+@1R8 R4.90000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 4.9 T 
+Next Field Reached 4.9 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0022K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 67 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.547 K 
+@1R8 R4.90000 
+VTI Temp: 13.7790K 
+Needle Valve Pressure: 4.8826mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 67 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.543 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J+4.2000 J+4.2000 
+@1R8 R4.20000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 4.2 T 
+Next Field Reached 4.2 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0050K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 68 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.546 K 
+@1R8 R4.20000 
+VTI Temp: 13.7748K 
+Needle Valve Pressure: 4.7764mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 68 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.543 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J+3.5000 J+3.5000 
+@1R8 R3.50000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 3.5 T 
+Next Field Reached 3.5 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 14.9976K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 69 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.542 K 
+@1R8 R3.50000 
+VTI Temp: 13.7771K 
+Needle Valve Pressure: 4.9800mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 69 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.539 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J+2.8000 J+2.8000 
+@1R8 R2.80000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 2.8 T 
+Next Field Reached 2.8 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0072K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 70 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.542 K 
+@1R8 R2.80000 
+VTI Temp: 13.7689K 
+Needle Valve Pressure: 5.0612mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 70 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.540 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J+2.1000 J+2.1000 
+@1R8 R2.10000 
+@1A1 A1 
+ At New Field: 2.1 T 
+@1X X00A0C1H1M00 
+Next Field Reached 2.1 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 14.9978K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 71 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.544 K 
+@1R8 R2.10000 
+VTI Temp: 13.7710K 
+Needle Valve Pressure: 4.9734mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 71 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.540 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J+1.4000 J+1.4000 
+@1R8 R1.40000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 1.4 T 
+Next Field Reached 1.4 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0044K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 72 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.546 K 
+@1R8 R1.40000 
+VTI Temp: 13.7720K 
+Needle Valve Pressure: 5.1359mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 72 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.542 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J+0.7000 J+0.7000 
+@1R8 R0.70000 
+@1A1 A1 
+Updating Background Log 
+Magnet Temp: 3.736 K 
+Current Magnet Field: 0.9301 T 
+@1R8 R0.70000 
+Sample Temp: 14.9956K 
+VTI Temp: 13.7501K 
+PT2 Temp: 3.5273K 
+Needle Valve Pressure: 4.9751mB 
+Needle Valve Percent: 11.9799% 
+Sample Temp Set Point is 15.0000K 
+Finished Background Log Update 
+ @1X X00A0C1H1M00 
+At New Field: 0.7 T 
+Next Field Reached 0.7 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0096K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 73 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.558 K 
+@1R8 R0.70000 
+VTI Temp: 13.7718K 
+Needle Valve Pressure: 4.9207mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 73 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.554 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 0 T 
+Next Field Reached 0 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0042K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 74 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.582 K 
+@1R8 R0.00000 
+VTI Temp: 13.7868K 
+Needle Valve Pressure: 4.9672mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 74 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.576 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J-0.7000 J-0.7000 
+@1R8 R-0.70000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -0.7 T 
+Next Field Reached -0.7 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0102K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 75 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.579 K 
+@1R8 R-0.70000 
+VTI Temp: 13.7882K 
+Needle Valve Pressure: 5.1841mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 75 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.573 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J-1.4000 J-1.4000 
+@1R8 R-1.40000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -1.4 T 
+Next Field Reached -1.4 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0083K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 76 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.552 K 
+@1R8 R-1.40000 
+VTI Temp: 13.7724K 
+Needle Valve Pressure: 4.9305mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 76 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.548 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J-2.1000 J-2.1000 
+@1R8 R-2.10000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -2.1 T 
+Next Field Reached -2.1 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0067K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 77 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.536 K 
+@1R8 R-2.10000 
+VTI Temp: 13.7835K 
+Needle Valve Pressure: 4.7655mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 77 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.533 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J-2.8000 J-2.8000 
+@1R8 R-2.80000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -2.8 T 
+Next Field Reached -2.8 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0049K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 78 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.532 K 
+@1R8 R-2.80000 
+VTI Temp: 13.7707K 
+Needle Valve Pressure: 4.9539mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 78 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.528 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J-3.5000 J-3.5000 
+@1R8 R-3.50000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -3.5 T 
+Next Field Reached -3.5 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0002K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 79 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.529 K 
+@1R8 R-3.50000 
+VTI Temp: 13.7716K 
+Needle Valve Pressure: 4.9738mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 79 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.526 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J-4.2000 J-4.2000 
+@1R8 R-4.20000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -4.2 T 
+Next Field Reached -4.2 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0036K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 80 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.529 K 
+@1R8 R-4.20000 
+VTI Temp: 13.7716K 
+Needle Valve Pressure: 4.8286mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 80 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.525 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J-4.9000 J-4.9000 
+@1R8 R-4.90000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -4.9 T 
+Next Field Reached -4.9 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0051K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 81 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.532 K 
+@1R8 R-4.90000 
+VTI Temp: 13.7667K 
+Needle Valve Pressure: 4.8494mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 81 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.529 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J-5.6000 J-5.6000 
+@1R8 R-5.60000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -5.6 T 
+Next Field Reached -5.6 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0046K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 82 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.530 K 
+@1R8 R-5.60000 
+VTI Temp: 13.7657K 
+Needle Valve Pressure: 4.7535mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 82 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.527 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J-6.3000 J-6.3000 
+@1R8 R-6.30000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -6.3 T 
+Next Field Reached -6.3 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0016K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 83 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.536 K 
+@1R8 R-6.30000 
+VTI Temp: 13.7669K 
+Needle Valve Pressure: 4.9232mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 83 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.533 K 
+Sample Temp Set Point is 15.0000K 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+@1J-7.0000 J-7.0000 
+@1R8 R-7.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -7 T 
+Next Field Reached -7 T 
+Setting VTI Temp to 13.761 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:13.761:VALID 
+Setting Sample Temp to 15.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:15.000:VALID 
+Sample Temp Set Point is 15.0000K 
+Sample Temp: 15.0079K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 84 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.542 K 
+@1R8 R-7.00000 
+VTI Temp: 13.7652K 
+Needle Valve Pressure: 4.8882mB 
+Sample Temp Set Point is 15.0000K 
+Logged VTVH Data for Scan 84 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.540 K 
+Sample Temp Set Point is 15.0000K 
+Next Grid Starts with a Different Temp. Will do full temp checking. 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J-7.0000 J-7.0000 
+@1R8 R-7.00000 
+@1A1 A1 
+ At New Field: -7 T 
+@1X X00A0C1H1M00 
+Next Field Reached -7 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 24.8548K 
+Waiting 5 mins for temp to stabilize 
+Sample Temp: 24.9884K 
+1 24.9884 0.0 
+Sample Temp: 24.9940K 
+2 24.9912 0.00280000000000058 
+Sample Temp: 24.9993K 
+Temps: [24.9884, 24.994, 24.9993] 
+3 24.9939 0.004450468140171055 
+Next Temp Reached 25 K (took 2 mins) 
+Taking a Scan 
+Scan Number 85 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.489 K 
+@1R8 R-7.00000 
+VTI Temp: 23.6119K 
+Needle Valve Pressure: 4.7739mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 85 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.488 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J-6.3000 J-6.3000 
+@1R8 R-6.30000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -6.3 T 
+Next Field Reached -6.3 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0009K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 86 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.540 K 
+@1R8 R-6.30000 
+VTI Temp: 23.6031K 
+Needle Valve Pressure: 4.8217mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 86 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.538 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J-5.6000 J-5.6000 
+@1R8 R-5.60000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -5.6 T 
+Next Field Reached -5.6 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0002K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 87 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.544 K 
+@1R8 R-5.60000 
+VTI Temp: 23.6094K 
+Needle Valve Pressure: 4.9058mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 87 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.541 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J-4.9000 J-4.9000 
+@1R8 R-4.90000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -4.9 T 
+Next Field Reached -4.9 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0017K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 88 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.541 K 
+@1R8 R-4.90000 
+VTI Temp: 23.6101K 
+Needle Valve Pressure: 4.8973mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 88 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.538 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J-4.2000 J-4.2000 
+@1R8 R-4.20000 
+@1A1 A1 
+Updating Background Log 
+Magnet Temp: 3.571 K 
+Current Magnet Field: -4.7938 T 
+@1R8 R-4.20000 
+Sample Temp: 24.9997K 
+VTI Temp: 23.6022K 
+PT2 Temp: 3.4732K 
+Needle Valve Pressure: 5.0397mB 
+Needle Valve Percent: 12.5902% 
+Sample Temp Set Point is 25.0000K 
+Finished Background Log Update 
+ At New Field: -4.2 T 
+@1X X00A1C1H1M01 
+@1A0 A0 
+Next Field Reached -4.2 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0003K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 89 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.556 K 
+@1R8 R-4.20000 
+VTI Temp: 23.6077K 
+Needle Valve Pressure: 4.9359mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 89 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.552 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J-3.5000 J-3.5000 
+@1R8 R-3.50000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -3.5 T 
+Next Field Reached -3.5 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0022K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 90 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.541 K 
+@1R8 R-3.50000 
+VTI Temp: 23.6092K 
+Needle Valve Pressure: 5.0353mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 90 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.538 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J-2.8000 J-2.8000 
+@1R8 R-2.80000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -2.8 T 
+Next Field Reached -2.8 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0016K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 91 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.544 K 
+@1R8 R-2.80000 
+VTI Temp: 23.6098K 
+Needle Valve Pressure: 4.8629mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 91 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.541 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J-2.1000 J-2.1000 
+@1R8 R-2.10000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -2.1 T 
+Next Field Reached -2.1 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0015K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 92 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.542 K 
+@1R8 R-2.10000 
+VTI Temp: 23.6166K 
+Needle Valve Pressure: 4.8643mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 92 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.539 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J-1.4000 J-1.4000 
+@1R8 R-1.40000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -1.4 T 
+Next Field Reached -1.4 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0025K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 93 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.546 K 
+@1R8 R-1.40000 
+VTI Temp: 23.6137K 
+Needle Valve Pressure: 4.9979mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 93 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.542 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J-0.7000 J-0.7000 
+@1R8 R-0.70000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: -0.7 T 
+Next Field Reached -0.7 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0021K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 94 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.558 K 
+@1R8 R-0.70000 
+VTI Temp: 23.6102K 
+Needle Valve Pressure: 5.0435mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 94 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.554 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J+0.0000 J+0.0000 
+@1R8 R0.00000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 0 T 
+Next Field Reached 0 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0039K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 95 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.582 K 
+@1R8 R0.00000 
+VTI Temp: 23.6249K 
+Needle Valve Pressure: 4.9975mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 95 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.576 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J+0.7000 J+0.7000 
+@1R8 R0.70000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 0.7 T 
+Next Field Reached 0.7 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0069K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 96 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.586 K 
+@1R8 R0.70000 
+VTI Temp: 23.6295K 
+Needle Valve Pressure: 5.0950mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 96 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.580 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J+1.4000 J+1.4000 
+@1R8 R1.40000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 1.4 T 
+Next Field Reached 1.4 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0024K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 97 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.547 K 
+@1R8 R1.40000 
+VTI Temp: 23.6162K 
+Needle Valve Pressure: 5.0100mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 97 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.543 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J+2.1000 J+2.1000 
+@1R8 R2.10000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 2.1 T 
+Next Field Reached 2.1 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0016K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 98 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.536 K 
+@1R8 R2.10000 
+VTI Temp: 23.6139K 
+Needle Valve Pressure: 4.9833mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 98 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.532 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J+2.8000 J+2.8000 
+@1R8 R2.80000 
+@1A1 A1 
+ At New Field: 2.8 T 
+@1X X00A0C1H1M00 
+Next Field Reached 2.8 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0034K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 99 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.530 K 
+@1R8 R2.80000 
+VTI Temp: 23.6162K 
+Needle Valve Pressure: 4.8968mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 99 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.527 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J+3.5000 J+3.5000 
+@1R8 R3.50000 
+@1A1 A1 
+ At New Field: 3.5 T 
+@1X X00A0C1H1M00 
+Next Field Reached 3.5 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0021K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 100 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.528 K 
+@1R8 R3.50000 
+VTI Temp: 23.6084K 
+Needle Valve Pressure: 4.9052mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 100 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.525 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J+4.2000 J+4.2000 
+@1R8 R4.20000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 4.2 T 
+Next Field Reached 4.2 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0020K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 101 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.531 K 
+@1R8 R4.20000 
+VTI Temp: 23.6056K 
+Needle Valve Pressure: 4.9400mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 101 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.528 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J+4.9000 J+4.9000 
+@1R8 R4.90000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 4.9 T 
+Next Field Reached 4.9 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0009K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 102 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.531 K 
+@1R8 R4.90000 
+VTI Temp: 23.6064K 
+Needle Valve Pressure: 4.9322mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 102 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.528 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J+5.6000 J+5.6000 
+@1R8 R5.60000 
+@1A1 A1 
+ At New Field: 5.6 T 
+@1X X00A0C1H1M00 
+Next Field Reached 5.6 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0017K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 103 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.529 K 
+@1R8 R5.60000 
+VTI Temp: 23.6096K 
+Needle Valve Pressure: 4.9080mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 103 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.527 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J+6.3000 J+6.3000 
+@1R8 R6.30000 
+@1A1 A1 
+ @1X X00A0C1H1M00 
+At New Field: 6.3 T 
+Next Field Reached 6.3 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0017K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 104 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.535 K 
+@1R8 R6.30000 
+VTI Temp: 23.6114K 
+Needle Valve Pressure: 4.8523mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 104 to UserLogs/vtvh_log.csv 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.533 K 
+Sample Temp Set Point is 25.0000K 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+@1J+7.0000 J+7.0000 
+@1R8 R7.00000 
+@1A1 A1 
+Updating Background Log 
+Magnet Temp: 3.552 K 
+Current Magnet Field: 6.3850 T 
+@1R8 R7.00000 
+Sample Temp: 25.0014K 
+VTI Temp: 23.6051K 
+PT2 Temp: 3.4655K 
+Needle Valve Pressure: 4.9215mB 
+Needle Valve Percent: 12.9747% 
+Sample Temp Set Point is 25.0000K 
+Finished Background Log Update 
+ At New Field: 7 T 
+@1X X00A0C1H1M00 
+Next Field Reached 7 T 
+Setting VTI Temp to 23.601000000000003 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:23.60:VALID 
+Setting Sample Temp to 25.0 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:25.00:VALID 
+Sample Temp Set Point is 25.0000K 
+Sample Temp: 25.0018K 
+Only 1 Temp. Proceeding. 
+Taking a Scan 
+Scan Number 105 
+Jasco scan event 
+Start Button Found at X= 192 and Y= 112 
+Magnet Temp: 3.539 K 
+@1R8 R7.00000 
+VTI Temp: 23.6079K 
+Needle Valve Pressure: 4.9089mB 
+Sample Temp Set Point is 25.0000K 
+Logged VTVH Data for Scan 105 to UserLogs/vtvh_log.csv 
+Turning Off J-1700 Xe-Arc Lamp 
+Xe Lamp Off Button Found at X= 430 and Y= 108 
+Turning Off J-1700 Tungsten Halogen NIR Lamp 
+Tungsten Halogen Lamp Off Button Found at X=  and Y=  
+Setting VTI Temp to 1.6166 
+@2SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617 STAT:SET:DEV:MB1.T1:TEMP:LOOP:TSET:1.617:VALID 
+Setting Sample Temp to 1.7 
+@2SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700 STAT:SET:DEV:DB8.T1:TEMP:LOOP:TSET:1.700:VALID 
+Sample Temp Set Point is 1.7000K 
+Magnet Ramp Rate: 0.1540 T/min 
+Magnet Temp: 3.535 K 
+@1A2 A2 
+Current Magnet Field: 6.9995 T 
+2024-04-05 07:41:01.910417
+Field and Temp Grids from VTVH:
+[['-7', '-6.3', '-5.6', '-4.9', '-4.2', '-3.5', '-2.8', '-2.1', '-1.4', '-0.7', '0', '0.7', '1.4', '2.1', '2.8', '3.5', '4.2', '4.9', '5.6', '6.3', '7'], ['7', '6.3', '5.6', '4.9', '4.2', '3.5', '2.8', '2.1', '1.4', '0.7', '0', '-0.7', '-1.4', '-2.1', '-2.8', '-3.5', '-4.2', '-4.9', '-5.6', '-6.3', '-7'], ['-7', '-6.3', '-5.6', '-4.9', '-4.2', '-3.5', '-2.8', '-2.1', '-1.4', '-0.7', '0', '0.7', '1.4', '2.1', '2.8', '3.5', '4.2', '4.9', '5.6', '6.3', '7'], ['7', '6.3', '5.6', '4.9', '4.2', '3.5', '2.8', '2.1', '1.4', '0.7', '0', '-0.7', '-1.4', '-2.1', '-2.8', '-3.5', '-4.2', '-4.9', '-5.6', '-6.3', '-7'], ['-7', '-6.3', '-5.6', '-4.9', '-4.2', '-3.5', '-2.8', '-2.1', '-1.4', '-0.7', '0', '0.7', '1.4', '2.1', '2.8', '3.5', '4.2', '4.9', '5.6', '6.3', '7']]
+[['2'], ['5'], ['7.5'], ['15'], ['25']]
+Predicted Time for VTVH: 12:6 
+Actual Elapsed Time: 13:46:27.371505 
+VTVH Ended 
+ @1X X00A0C1H1M00 
+Updating Background Log 
+Magnet Temp: 3.476 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R7.00000 
+Sample Temp: 1.9329K 
+VTI Temp: 1.9112K 
+PT2 Temp: 3.4333K 
+Needle Valve Pressure: 4.9819mB 
+Needle Valve Percent: 13.1121% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
+@1A0 A0 
+@1H0 H0 
+@1X X00A0C1H2M00 
+ @1R8 R7.00000 
+Updating Background Log 
+Magnet Temp: 3.321 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R7.00000 
+Sample Temp: 1.9090K 
+VTI Temp: 1.8867K 
+PT2 Temp: 3.3497K 
+Needle Valve Pressure: 5.0243mB 
+Needle Valve Percent: 13.3028% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
+Updating Background Log 
+Magnet Temp: 3.322 K 
+Current Magnet Field: 0.0000 T 
+@1R8 R7.00000 
+Sample Temp: 1.9033K 
+VTI Temp: 1.8824K 
+PT2 Temp: 3.3540K 
+Needle Valve Pressure: 4.9909mB 
+Needle Valve Percent: 13.3379% 
+Sample Temp Set Point is 1.7000K 
+Finished Background Log Update 
+Initializing serial_disconnect Procedure
+@1A0 A0 
+@1C1 C 
+Completed Disconnect Procedure 
