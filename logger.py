@@ -114,6 +114,7 @@ class LOGGER:
         f.write(data)
         #close file
         f.close()
+        return logfile
                      
     def generate_bg_log(self):
         #add correct things
@@ -195,8 +196,8 @@ class LOGGER:
         data= self.format_for_csv(data_list)
         
         #send dict and file to send_to_file
-        self.send_to_file(logfile=self.log_file, data=data, header=header)
-        print('Logged VTVH Data for Scan', scan_num, 'to', self.log_file)
+        actual_file = self.send_to_file(logfile=self.log_file, data=data, header=header)
+        print('Logged VTVH Data for Scan', scan_num, 'to', actual_file)
         
     def get_newest_file(self, dirpath):
         if dirpath == None or (not os.path.exists(dirpath)) or len(os.listdir(dirpath))==0:

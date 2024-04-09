@@ -1127,10 +1127,8 @@ class Application:
                 self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':100', 'NVControl: Error Opening NV to 100%')
             
             #Wait until 17K reached
-            while float(self.get_sample_temp()) > 17:
-                if self._action_interrupt:
-                    break
-                sleep(240)
+            while float(self.get_sample_temp()) > 17 and not self._action_interrupt:
+                sleep(30)
 
             #Step down
             if not self._action_interrupt:
@@ -1138,17 +1136,14 @@ class Application:
                 sleep(30)
             
             #Wait till next temp point
-            while float(self.get_sample_temp()) > 7:
-                if self._action_interrupt:
-                    break
-                sleep(60)
+            while float(self.get_sample_temp()) > 7 and not self._action_interrupt:
+                sleep(20)
             
+            #Regardless of interrupt, reset NV to 20% then to auto control
             #Step Down and then Reset to Auto Control (Should be set to 5mBar)
-            if not self._action_interrupt:
-                self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':20', 'NVControl: Error Opening NV to 20%')
-                sleep(30)
-            
-            #Regardless of interrupt, reset NV to auto control
+            print('Please Wait ~45 seconds for quick cool to finish resetting the Needle Valve.')
+            self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':20', 'NVControl: Error Opening NV to 20%')
+            sleep(30)
             self.serial_t.transmit(isobus_temp+SET+NV+AUTO_SET+':ON', 'TempControl: Error setting NV to Auto')
             print('NV Returned to Automatic Control')
             #Finish Quick Cooldown
