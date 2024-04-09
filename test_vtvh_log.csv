@@ -5,3 +5,8 @@ Date,Scan_Num,Magnet_Temp(K),Magnet_Field(T),Field_SetPoint(T),Sample_Temp(K),VT
 2022-10-07 10:56:33.342742,None,None,None,None,None,None,None,None,\vtvh_log.csv
 2022-10-07 10:59:00.632699,None,None,None,None,None,None,None,None,vtvh_log.csv
 2022-10-07 11:02:27.121837,None,None,None,None,None,None,None,None,vtvh_log.csv
+
+Date,Scan_Num,Magnet_Temp(K),Field_SetPoint(T),VTI_Temp(K),NV_Pressure(mB),SampleTemp_SetPt(K),File
+2024-04-09 10:55:10.116789,None,None,None,None,None,None,None
+2024-04-09 10:55:51.256373,None,None,None,None,None,None,None
+2024-04-09 10:58:55.046187,None,None,None,None,None,None,None

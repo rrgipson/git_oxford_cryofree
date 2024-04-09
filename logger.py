@@ -11,17 +11,20 @@ import datetime
 import builtins
 from tkinter import filedialog
 
+ERROR_LOG_PATH = os.path.join('C:', os.sep, 'UserData','Crew','cryofree_magnet','code_logs','error_log.txt')
+#ERROR_LOG_PATH = os.path.join('UserLogs','error_log.txt')
+
 #redefined the print function in order to log errors in error_log.txt
 def print(*args, sep=' ', end='\n',**kwargs):
     builtins.print(*args, sep=sep, end=end,**kwargs)
-    with open('UserLogs/error_log.txt', 'a+') as f:
+    with open(ERROR_LOG_PATH, 'a+') as f:
         for s in args:
             f.write(str(s))
             f.write(sep)
         f.write(end)
 
 def print_to_log(string):
-    with open('UserLogs/error_log.txt', 'a+') as f:
+    with open(ERROR_LOG_PATH, 'a+') as f:
         f.write(string)
         f.write('\n')
 

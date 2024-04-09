@@ -28,3 +28,6 @@ Date,Magnet_Temp(K),Magnet_Field(T),Field_SetPoint(T),Sample_Temp(K),VTI_Temp(K)
 2022-10-07 10:56:33.313534,test1,test2,None,None,None,None,None,None,None
 2022-10-07 10:59:00.596371,test1,test2,None,None,None,None,None,None,None
 2022-10-07 11:02:27.121837,test1,test2,None,None,None,None,None,None,None
+2024-04-09 10:55:10.099842,test1,test2,None,None,None,None,None,None,None
+2024-04-09 10:55:51.252357,test1,test2,None,None,None,None,None,None,None
+2024-04-09 10:58:55.038439,test1,test2,None,None,None,None,None,None,None
