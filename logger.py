@@ -13,6 +13,7 @@ from tkinter import filedialog
 
 ERROR_LOG_PATH = os.path.join('C:', os.sep, 'UserData','Crew','cryofree_magnet','code_logs','error_log.txt')
 #ERROR_LOG_PATH = os.path.join('UserLogs','error_log.txt')
+BG_LOG_PATH = os.path.join('C:', os.sep, 'UserData','Crew','cryofree_magnet','code_logs','background_log.csv')
 
 #redefined the print function in order to log errors in error_log.txt
 def print(*args, sep=' ', end='\n',**kwargs):
@@ -31,7 +32,7 @@ def print_to_log(string):
 class LOGGER:
     def __init__(self):
         #things for background logging 
-        self.bg_file = 'background_log.csv'
+        self.bg_file = BG_LOG_PATH
         self.bg_log_delay = 120 #minutes
         
         self.log_file = 'current_log.csv'
@@ -153,7 +154,7 @@ class LOGGER:
         
         #send dict and file to send_to_file
         self.send_to_file(logfile=self.bg_file, data=data, header=header)
-        print('Finished Background Log Update')
+        print(f'Finished Background Log Update ({self.bg_file})')
         
     def generate_vtvh_log(self, scan_num=None, after=False, extras=None):
         #add correct things
