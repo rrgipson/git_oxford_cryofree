@@ -962,9 +962,11 @@ class Application:
         #If box is checked, turn off Xe-Arc Lamp at the end of the run
         if self.gui.xe_off.get():
             j1700.turn_off_xe_lamp()
+            sleep(10)
         #If box is checked, turn off Tungsten Halogen Lamp at the end of the run
         if self.gui.wx_off.get():
             j1700.turn_off_wx_lamp()
+            sleep(5)
         #if box is checked, reset to base temp
         if self.gui.end_base.get():
             #update temp setpoint on gui then on instrument
