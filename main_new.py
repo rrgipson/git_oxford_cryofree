@@ -301,8 +301,8 @@ class Application:
                 print('TempControl: Invalid set point request of', self.gui.user_temperature(), '\a')  # try to beep
             else:
                 #UPDATED FOR CRYOFREE
-                if temperature < 1.7:
-                    temperature = 1.7 #base temp
+                if temperature < 1.56:
+                    temperature = 1.56 #base temp
                     
                 if temperature <= 10:
                     vti_temp= (0.988*float(temperature)) - 0.063 #based on regression of factory tested temp offsets
@@ -970,7 +970,7 @@ class Application:
         #if box is checked, reset to base temp
         if self.gui.end_base.get():
             #update temp setpoint on gui then on instrument
-            self.gui.update_temps(setpoint='1.7K')
+            self.gui.update_temps(setpoint='1.56K')
             self.set_temperature()
         #if box checked, ramp to 0T
         if self.gui.end_0t.get():
