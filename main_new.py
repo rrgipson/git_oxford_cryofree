@@ -1117,7 +1117,7 @@ class Application:
         if self._temp_connect:
             self.gui.set_cryofree_frame(connected=self._temp_connect, qkcool_status=ACTIVE)
             #Set Temp to Base
-            self.gui.update_temps(setpoint='1.7K')
+            self.gui.update_temps(setpoint='1.56K')
             self.set_temperature()
             
             if not self._action_interrupt:
@@ -1125,8 +1125,8 @@ class Application:
                 print('Setting NV to Manual')
                 self.serial_t.transmit(isobus_temp+SET+NV+AUTO_SET+':OFF', 'TempControl: Error setting NV to Manual')
 
-                #Open NV to 100%
-                self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':100', 'NVControl: Error Opening NV to 100%')
+                #Open NV to 80%
+                self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':80', 'NVControl: Error Opening NV to 80%')
             
             #Wait until 17K reached
             while float(self.get_sample_temp()) > 17 and not self._action_interrupt:

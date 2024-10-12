@@ -186,7 +186,7 @@ class GUI(tk.Frame):
         #Cool to base
         self.end_base = tk.IntVar()
         self.end_base.set(1)
-        self.chk_end_base = tk.Checkbutton(self.frm_vtvh, text='Cool to Base Temp (1.7K)?', variable=self.end_base)
+        self.chk_end_base = tk.Checkbutton(self.frm_vtvh, text='Cool to Base Temp (1.56K)?', variable=self.end_base)
         self.chk_end_base.grid(row=grid_row+8)
         
         self.btn_vtvh = tk.Button(self.frm_vtvh, text='Collect VTVH', state='disabled')
