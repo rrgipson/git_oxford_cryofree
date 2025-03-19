@@ -562,7 +562,7 @@ class Application:
         
         
     ### ROB'S UPDATES FOR THE CRYOFREE SYSTEM
-    def get_ramp_rate(self): #gets field set point
+    def get_ramp_rate(self): #gets field ramp rate
         ramp_rate = '—'
         if self.serial_m.is_open and self._field_connect:
             response = self.serial_m.transmit(isobus_magnet + 'R9', 'Magnet: Error reading ramp rate', False)
@@ -790,6 +790,17 @@ class Application:
         print('Est. Time for Full VTVH: {h:.0f}:{m:.0f}'.format(h=total_time//1, m=(total_time%1)*60))
         print('******')
         
+        #Do quick cooldown if specified
+        if self.gui.start_wQuickCool.get():
+            self.start_qkcool(startedByVTVH=True)
+            #Wait for quick cool to end
+            while self._action_thread is not None:
+                sleep(10)
+            #Check for magnet to cool down before proceeding
+            while float(self.get_magnet_temp()) > 3.80 and not self._vtvh_interrupt:
+                sleep(30) #wait 30 seconds before checking again
+
+
         #turn on switch heater
         if self._switch_status in [SWITCH_DISABLED, SWITCH_WARMING, SWITCH_COOLING] and not self._vtvh_interrupt:
             self.engage_switch_heater()
@@ -849,6 +860,12 @@ class Application:
                 #Go to first temp in list while going to next field
                 self.gui.update_temps(setpoint=str(temp_list[0])+'K')
                 self.set_temperature()
+
+                # toggle NIR lamp on/off based on next field if selected
+                if self.gui.toggle_NIRlamp.get():
+                    if abs(float(self.get_current_magnet_field())-h) > 2.0:
+                        ramp_time = float(self.get_ramp_rate())
+                    pass
 
                 #go to next field
                 self.set_field_and_go(newfield=h)
@@ -1156,9 +1173,9 @@ class Application:
         else:
             print('Quick Cooldown Error: Not Connected.')
             
-    def start_qkcool(self, *args):
+    def start_qkcool(self, startedByVTVH=False, *args):
         if self.serial_t.is_open and self._temp_connect:
-            if self._vtvh_thread is not None:  # if an action is already being taken
+            if self._vtvh_thread is not None or startedByVTVH:  # if a vtvh action is already being taken and this isn't part of it
                 print('VTVH is currently in progress; interrupt or try again afterwards')
             elif self._action_thread is not None: #if already performing an action
                 print('Other action being taken. Please interrupt or try again afterwards')
