@@ -728,14 +728,15 @@ class Application:
         self.gui.set_field_frame(connected=self._field_connect, switch_setting=self._switch_status,
                                  field_movement=field_movement, setpoint_change=setpoint)
         
-    def set_field_and_go(self,newfield = 0.0):
+    def set_field_and_go(self,newfield = 0.0, wait=True):
         self.gui.update_fields(setpoint=newfield) #update field setpoint in GUI
         self.set_field() #update field setpoint at instrument
         self.goto_field() #go to new field
         #Wait for new field to be reached
-        while self._action_thread is not None:
+        while self._action_thread is not None and wait:
             sleep(10)
-        print('At New Field:', newfield, 'T')
+        if wait:
+            print('At New Field:', newfield, 'T')
         
     def vtvh_interrupt(self):
         print('Interrupting VTVH')
@@ -832,13 +833,13 @@ class Application:
         #Iterate through each grid
         for field_list,temp_list in zip(field_grids, temp_grids):
             #check if interrupt was pressed
-            if self._vtvh_interrupt == True:
+            if self._vtvh_interrupt:
                 break
                 
             #go to each field
             for h in field_list:
                 #check if interrupt was pressed
-                if self._vtvh_interrupt == True:
+                if self._vtvh_interrupt:
                     break
                 #check ramp rate
                 if float(self.get_ramp_rate()) > 0.154:
@@ -862,21 +863,44 @@ class Application:
                 self.set_temperature()
 
                 # toggle NIR lamp on/off based on next field if selected
+                wait_for_ramp = True
                 if self.gui.toggle_NIRlamp.get():
-                    if abs(float(self.get_current_magnet_field())-h) > 2.0:
-                        ramp_time = float(self.get_ramp_rate())
-                    pass
+                    #get the distance to the next field
+                    field_diff = abs(float(self.get_current_magnet_field())-h)
+                    #decide whether to toggle based on distance to the next field
+                    if field_diff >= 2.0:
+                        #calculate the amount of time the ramp will take
+                        ramp_time = np.divide(field_diff,float(self.get_ramp_rate()))*60 #seconds
+                        print(f'Time to next field: {ramp_time} sec.')
+                        #turn off the NIR lamp
+                        j1700.turn_off_wx_lamp()
+                        #set wait_for_ramp to false so can turn it back on before the ramp ends
+                        wait_for_ramp = False                        
 
                 #go to next field
-                self.set_field_and_go(newfield=h)
+                self.set_field_and_go(newfield=h, wait=wait_for_ramp)
+
+                #If not using set_field_and_go built in wait for ramp, then do so manually here
+                if not wait_for_ramp:
+                    time_off = 0
+                    #wait for lamp to be off for ramp time minus the delay for warm up
+                    while time_off <= (ramp_time - 300):
+                        sleep(10)
+                        time_off += 10
+                    #turn the lamp back on
+                    j1700.turn_on_wx_lamp()
+                    #wait for the ramp to finish
+                    while self._action_thread is not None:
+                        sleep(10)
+
                 #Let field stabilize
                 sleep(30)
-                print('Next Field Reached %s T'%str(h))
+                print(f'Next Field Reached {h} T')
 
                 #go to each temperature and scan
                 for t in temp_list:
                     #check if interrupt was pressed
-                    if self._vtvh_interrupt == True:
+                    if self._vtvh_interrupt:
                         break
 
                     #update temp setpoint on gui then on instrument
@@ -897,7 +921,7 @@ class Application:
                         #old_criteria=abs(float(t)-float(self.get_sample_temp())) > 0.05
                         while not (len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 0.5 and np.std(last3_temps) < (0.01*np.sqrt(float(t)))): #Temp Accuarcy Cutoff
                             print(len(last3_temps),np.mean(last3_temps),np.std(last3_temps))
-                            if self._vtvh_interrupt == True:
+                            if self._vtvh_interrupt:
                                 break
                             sleep(60) #waits 1 min between temp checks
                             temp_chk=float(self.get_sample_temp())
@@ -911,11 +935,11 @@ class Application:
                                     print('Warning: Using Secondary Temp Criteria After 25mins')
                                     break
                                 else:
-                                    print('VTVH TIMEOUT: Temperature (%s K) Not Reached after 25 mins'%str(t))
+                                    print(f'VTVH TIMEOUT: Temperature ({t} K) Not Reached after 25 mins')
                                     self.vtvh_interrupt()
 
                         #check if interrupt was pressed
-                        if self._vtvh_interrupt == True:
+                        if self._vtvh_interrupt:
                             break
 
                         #print that made it to new temp
