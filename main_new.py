@@ -868,7 +868,7 @@ class Application:
                     #get the distance to the next field
                     field_diff = abs(float(self.get_current_magnet_field())-h)
                     #decide whether to toggle based on distance to the next field
-                    if field_diff >= 2.0:
+                    if field_diff >= 3.0:
                         #calculate the amount of time the ramp will take
                         ramp_time = np.divide(field_diff,float(self.get_ramp_rate()))*60 #seconds
                         print(f'Time to next field: {ramp_time} sec.')
@@ -887,11 +887,22 @@ class Application:
                     while time_off <= (ramp_time - 300):
                         sleep(10)
                         time_off += 10
-                    #turn the lamp back on
-                    j1700.turn_on_wx_lamp()
-                    #wait for the ramp to finish
-                    while self._action_thread is not None:
+                    #if going to a new temp, use temp 5 min wait for lamp warm up
+                    if new_temp:
+                        lamp_on_time = 301
+                    # if not going to a new temp, want to turn on the lamp before ramp finishes
+                    else: 
+                        #turn the lamp back on
+                        j1700.turn_on_wx_lamp()
+                        lamp_on_time = 0 
+                    #wait for the ramp to finish and for the lamp to warm up
+                    while self._action_thread is not None or lamp_on_time < 300:
                         sleep(10)
+                        lamp_on_time += 10
+                    #check if going to a new temp
+                    if new_temp:
+                        #turn the lamp back on in the case where will warm up during temp wait
+                        j1700.turn_on_wx_lamp()
 
                 #Let field stabilize
                 sleep(30)
