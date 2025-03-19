@@ -866,8 +866,8 @@ class Application:
                     self.gui.update_temps(setpoint=str(t)+'K')
                     self.set_temperature()
 
-                    #only wait and run temp checks if you've got more than 1 temp or current temp is off by more than 0.75K
-                    if len(temp_list)>1 or abs(float(t)-float(self.get_sample_temp()))>0.75 or new_temp:
+                    #only wait and run temp checks if you've got more than 1 temp or current temp is off by more than 10%
+                    if len(temp_list)>1 or abs(float(t)-float(self.get_sample_temp()))>(0.1*float(t)) or new_temp:
                         #reset new_temp checker
                         new_temp=False
                         #wait 5 mins for temp to be reached/stabilize
@@ -1149,6 +1149,7 @@ class Application:
             self.serial_t.transmit(isobus_temp+SET+NV+AUTO_SET+':ON', 'TempControl: Error setting NV to Auto')
             print('NV Returned to Automatic Control')
             #Finish Quick Cooldown
+            self._action_thread = None
             self.gui.set_cryofree_frame(connected=self._temp_connect, qkcool_status=INACTIVE)
             print('Quick Cooldown Finished.')
             
