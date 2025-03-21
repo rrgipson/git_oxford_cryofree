@@ -1210,7 +1210,7 @@ class Application:
             
     def start_qkcool(self, startedByVTVH=False, *args):
         if self.serial_t.is_open and self._temp_connect:
-            if self._vtvh_thread is not None or startedByVTVH:  # if a vtvh action is already being taken and this isn't part of it
+            if self._vtvh_thread is not None and not startedByVTVH:  # if a vtvh action is already being taken and this isn't part of it
                 print('VTVH is currently in progress; interrupt or try again afterwards')
             elif self._action_thread is not None: #if already performing an action
                 print('Other action being taken. Please interrupt or try again afterwards')
