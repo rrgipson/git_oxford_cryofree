@@ -39,12 +39,12 @@ def turn_off_xe_lamp():
     print(autohotkey_event.stdout.decode('utf-8').replace('\n',''))
     
 def turn_off_wx_lamp():
-    print('Turning On J-1700 Tungsten Halogen NIR Lamp')
+    print('Turning Off J-1700 Tungsten Halogen NIR Lamp')
     autohotkey_event = subprocess.run((autohotkey_exe, 'lib/J1700_WXLamp_off.ahk'), capture_output=True) ## Edited by Rob
     print(autohotkey_event.stdout.decode('utf-8').replace('\n',''))
 
 def turn_on_wx_lamp():
-    print('Turning Off J-1700 Tungsten Halogen NIR Lamp')
+    print('Turning On J-1700 Tungsten Halogen NIR Lamp')
     autohotkey_event = subprocess.run((autohotkey_exe, 'lib/J1700_WXLamp_on.ahk'), capture_output=True) ## Edited by Rob
     print(autohotkey_event.stdout.decode('utf-8').replace('\n',''))
 
