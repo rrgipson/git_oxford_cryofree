@@ -191,13 +191,13 @@ class GUI(tk.Frame):
         #Start run with quick cool
         self.start_wQuickCool = tk.IntVar()
         self.start_wQuickCool.set(0)
-        self.start_wQuickCool = tk.Checkbutton(self.frm_vtvh, text='Start VTVH Run with Quick Cooldown?', variable=self.start_wQuickCool)
-        self.start_wQuickCool.grid(row=grid_row+9)
+        self.chk_start_wQuickCool = tk.Checkbutton(self.frm_vtvh, text='Start VTVH Run with Quick Cooldown?', variable=self.start_wQuickCool)
+        self.chk_start_wQuickCool.grid(row=grid_row+9)
         #Toggle NIR Lamp On and Off During VTVH Run
         self.toggle_NIRlamp = tk.IntVar()
         self.toggle_NIRlamp.set(0)
-        self.toggle_NIRlamp = tk.Checkbutton(self.frm_vtvh, text='Turn NIR Lamp On/Off During VTVH?', variable=self.toggle_NIRlamp)
-        self.toggle_NIRlamp.grid(row=grid_row+10)
+        self.chk_toggle_NIRlamp = tk.Checkbutton(self.frm_vtvh, text='Turn NIR Lamp On/Off During VTVH?', variable=self.toggle_NIRlamp)
+        self.chk_toggle_NIRlamp.grid(row=grid_row+10)
         
         self.btn_vtvh = tk.Button(self.frm_vtvh, text='Collect VTVH', state='disabled')
         self.btn_vtvh.grid(row=grid_row+11)
