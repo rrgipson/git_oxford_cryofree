@@ -866,12 +866,12 @@ class Application:
                 wait_for_ramp = True
                 if self.gui.toggle_NIRlamp.get():
                     #get the distance to the next field
-                    field_diff = abs(float(self.get_current_magnet_field())-h)
+                    field_diff = abs(float(self.get_current_magnet_field())-float(h))
                     #decide whether to toggle based on distance to the next field
-                    if field_diff >= 0.9:
+                    if field_diff >= 2.9:
                         #calculate the amount of time the ramp will take
                         ramp_time = np.divide(field_diff,float(self.get_ramp_rate()))*60 #seconds
-                        print(f'Time to next field: {ramp_time} sec.')
+                        print(f'Time to next field: {ramp_time:.1f} sec.')
                         #turn off the NIR lamp
                         j1700.turn_off_wx_lamp()
                         #set wait_for_ramp to false so can turn it back on before the ramp ends
