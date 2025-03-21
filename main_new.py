@@ -868,7 +868,7 @@ class Application:
                     #get the distance to the next field
                     field_diff = abs(float(self.get_current_magnet_field())-h)
                     #decide whether to toggle based on distance to the next field
-                    if field_diff >= 3.0:
+                    if field_diff >= 1.0:
                         #calculate the amount of time the ramp will take
                         ramp_time = np.divide(field_diff,float(self.get_ramp_rate()))*60 #seconds
                         print(f'Time to next field: {ramp_time} sec.')
