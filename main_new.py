@@ -923,8 +923,8 @@ class Application:
                         #reset new_temp checker
                         new_temp=False
                         #wait 5 mins for temp to be reached/stabilize
-                        print('Waiting 5 mins for temp to stabilize')
-                        sleep(300)
+                        print('Waiting 2 mins for temp to stabilize')
+                        sleep(120)
 
                         #check every minute to see if have reached the correct temp
                         tempcheck_iters=0
