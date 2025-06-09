@@ -887,6 +887,9 @@ class Application:
                     while time_off <= (ramp_time - 300.0):
                         sleep(10)
                         time_off += 10.0
+                        #check if interrupt was pressed
+                        if self._vtvh_interrupt:
+                            break
                     #if going to a new temp, use temp 5 min wait for lamp warm up
                     if new_temp:
                         lamp_on_time = 301
@@ -899,6 +902,9 @@ class Application:
                     while self._action_thread is not None or lamp_on_time < 300:
                         sleep(10)
                         lamp_on_time += 10
+                        #check if interrupt was pressed
+                        if self._vtvh_interrupt:
+                            break
                     #check if going to a new temp
                     if new_temp:
                         #turn the lamp back on in the case where will warm up during temp wait
