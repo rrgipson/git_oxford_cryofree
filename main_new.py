@@ -1183,8 +1183,8 @@ class Application:
                 print('Setting NV to Manual')
                 self.serial_t.transmit(isobus_temp+SET+NV+AUTO_SET+':OFF', 'TempControl: Error setting NV to Manual')
 
-                #Open NV to 80%
-                self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':80', 'NVControl: Error Opening NV to 80%')
+                #Open NV to 95%
+                self.serial_t.transmit(isobus_temp +SET+NV+SETPT_PERC+':95', 'NVControl: Error Opening NV to 95%')
             
             #Wait until 17K reached
             while float(self.get_sample_temp()) > 17 and not self._action_interrupt:
