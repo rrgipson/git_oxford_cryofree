@@ -105,7 +105,7 @@ class LOGGER:
         #if don't have permission (open already by user), try open a "new" file
         except PermissionError:
             print('Please close the log file.')
-            logfile=logfile.replace('.','_new.')
+            logfile=logfile.replace('.','_new_DO_NOT_OPEN_WHILE_CODE_IS_RUNNING.')
             f = open(logfile, 'a+')
             print('Wrote to %s instead (you may want to merge later)'%logfile)
         
