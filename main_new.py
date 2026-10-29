@@ -928,7 +928,13 @@ class Application:
                     if len(temp_list)>1 or abs(float(t)-float(self.get_sample_temp()))>(0.1*float(t)) or new_temp:
                         #reset new_temp checker
                         new_temp=False
-                        #wait 5 mins for temp to be reached/stabilize
+                        # allow for extra time if cooling based on cooling rate of 0.4 K/min
+                        temp_now = float(self.get_sample_temp())
+                        if temp_now > float(t):
+                            temp_wait_mins = np.multiply(2.5,abs(float(t)-temp_now)) + 25
+                        else: 
+                            temp_wait_mins = 25
+                        #wait 2 mins for temp to be reached/stabilize
                         print('Waiting 2 mins for temp to stabilize')
                         sleep(120)
 
@@ -947,12 +953,12 @@ class Application:
                                 last3_temps.pop(0)
                             tempcheck_iters+=1 #count number of checks done 
                             #if temp hasnt stabilized after 25 mins, interrupt the vtvh run
-                            if tempcheck_iters>25:
+                            if tempcheck_iters > temp_wait_mins:
                                 if len(last3_temps)==3 and abs(float(t)-np.mean(last3_temps)) < 1.0 and np.std(last3_temps) < 0.5: #secondary criteria after 25 mins
-                                    print('Warning: Using Secondary Temp Criteria After 25mins')
+                                    print(f'Warning: Using Secondary Temp Criteria After {temp_wait_mins} mins')
                                     break
                                 else:
-                                    print(f'VTVH TIMEOUT: Temperature ({t} K) Not Reached after 25 mins')
+                                    print(f'VTVH TIMEOUT: Temperature ({t} K) Not Reached after {temp_wait_mins} mins')
                                     self.vtvh_interrupt()
 
                         #check if interrupt was pressed
